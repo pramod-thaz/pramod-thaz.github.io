@@ -2,4 +2,12 @@
 
 - **Purpose:** CRE Analytics
 - **Author:** Pramod Thaz
-- **Description:** Analytic exploration of models & heuristics for mechanized reasoning in complex systems - mainly, CRE investments and asset management
+- **Topics:** 
+    1. Bayesian Networks
+    2. System Dynamics
+    3. Performance Management
+    4. Space Market research
+    5. Python
+    
+
+[Repositories](https://github.com/pramod-thaz?tab=repositories)
