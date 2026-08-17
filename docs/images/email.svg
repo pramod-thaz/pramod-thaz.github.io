@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="38" viewBox="0 0 220 38" role="img" aria-labelledby="title">
+  <title id="title">Email to request collaborator access</title>
+  <rect x="0" y="0" width="220" height="38" rx="19" fill="#4f46e5"/>
+  <rect x="15" y="11" width="23" height="17" rx="3" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+  <polyline points="17,13 26.5,21 36,13" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="48" y="24.5" font-family="FiraGO, 'Fira Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="500" letter-spacing="0.2" fill="#ffffff">pramodty@gmail.com</text>
+</svg>
