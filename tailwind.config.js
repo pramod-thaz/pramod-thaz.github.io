@@ -29,12 +29,12 @@ module.exports = {
       fontSize: {
         sm2: "0.9375rem", // 15px label
         base: "1rem", // 16px base
-        md: "1.0625rem", // 17px body
+        md: "0.96875rem", // 15.5px body
         lg: "1.125rem", // 18px heading
       },
       lineHeight: {
         snugish: "1.32",
-        normal: "1.34",
+        normal: "1.5",
       },
       maxWidth: {
         "letter": "66.40625rem",
