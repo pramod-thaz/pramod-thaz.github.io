@@ -1,0 +1,435 @@
+<!DOCTYPE HTML>
+<html lang="en" class="latte sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>23. Index Based Strategies - CFA Level III Notes</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/catppuccin-e08be6a9.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "latte";
+            const default_dark_theme = "mocha";
+            window.path_to_searchindex_js = "../searchindex-2521da27.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-b96c3611.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('latte')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-mocha">Mocha</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CFA Level III Notes</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <p>#EXAMPLE</p>
+<ol>
+<li>Determine the manager that is best suited to meet the needs. Justify your response.
+<ol>
+<li>Manager A is using a value-weighted approach which requires no input from the fund manager’s beliefs. Candidates: Look for key words. The 2nd and 3 rd choice ==mention “strategically” which should quickly hint at active strategies compared to passive strategies.== Note, all passive strategies are discussed in readings 15 and 16 while active strategies are discussed in readings 17 and 18. Get great at identifying them!</li>
+</ol>
+</li>
+<li>Calculate the change in contract value expected. Show your calculations
+<ol>
+<li>𝐶𝐶ℎ𝑎𝑎𝑖𝑖𝑎𝑎𝑌𝑌 𝑌𝑌𝑖𝑖 𝑖𝑖𝑖𝑖𝑖𝑖𝑟𝑟𝑟𝑟𝑎𝑎𝑖𝑖𝑟𝑟 𝑖𝑖𝑎𝑎𝑌𝑌𝑟𝑟𝑌𝑌 = 250 × (2,353 − 2,350) = 750 Or 𝐶𝐶𝑟𝑟𝑟𝑟𝑟𝑟𝑌𝑌𝑖𝑖𝑟𝑟 𝑖𝑖𝑖𝑖𝑖𝑖𝑟𝑟𝑟𝑟𝑎𝑎𝑖𝑖𝑟𝑟 𝑟𝑟𝑖𝑖𝑌𝑌𝑟𝑟 𝑖𝑖𝑎𝑎𝑌𝑌𝑟𝑟𝑌𝑌 = 2,350 × 250 = 587,500 𝐸𝐸𝐶𝐶𝑝𝑝𝑌𝑌𝑖𝑖𝑟𝑟𝑌𝑌𝑌𝑌 𝑖𝑖𝑖𝑖𝑖𝑖𝑟𝑟𝑟𝑟𝑎𝑎𝑖𝑖𝑟𝑟 𝑟𝑟𝑖𝑖𝑌𝑌𝑟𝑟 𝑖𝑖𝑎𝑎𝑌𝑌𝑟𝑟𝑌𝑌 𝑌𝑌𝑖𝑖 𝑟𝑟𝑅𝑅𝑖𝑖 𝑌𝑌𝑎𝑎𝑦𝑦𝑏𝑏 = 2,353 × 250 = 588,250 𝐶𝐶ℎ𝑎𝑎𝑖𝑖𝑎𝑎𝑌𝑌 𝑌𝑌𝑖𝑖 𝑖𝑖𝑖𝑖𝑖𝑖𝑟𝑟𝑟𝑟𝑎𝑎𝑖𝑖𝑟𝑟 𝑖𝑖𝑎𝑎𝑌𝑌𝑟𝑟𝑌𝑌 = 588,250 − 587,500 = 750 The expected change in contract value is 750.</li>
+</ol>
+</li>
+<li>Calculate at what futures price a margin call will be triggered. Show your calculations.</li>
+</ol>
+<h3 id="scenario-details"><a class="header" href="#scenario-details">Scenario Details</a></h3>
+<p>Let’s assume an investor goes <strong>long (buys) 1 S&amp;P 500 E-mini Futures Contract</strong>.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th><strong>Parameter</strong></th><th><strong>Value</strong></th><th><strong>Notes</strong></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Initial Futures Price</strong></td><td><strong>5,000 index points</strong></td><td>Total Contract Value = $5,000 \times $50 = $250,000$</td></tr>
+<tr><td><strong>Contract Multiplier</strong></td><td><strong>$50 per point</strong></td><td>Every 1-point price move = $50 gain/loss</td></tr>
+<tr><td><strong>Initial Margin Required</strong></td><td><strong>$12,000</strong></td><td>Upfront cash deposited</td></tr>
+<tr><td><strong>Maintenance Margin</strong></td><td><strong>$10,000</strong></td><td>Minimum required account balance</td></tr>
+<tr><td><strong>Margin Call Buffer</strong></td><td><strong>$2,000</strong></td><td>$(\text{Initial Margin} - \text{Maintenance Margin})$</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="1-how-much-can-the-price-fall-before-triggering-a-margin-call"><a class="header" href="#1-how-much-can-the-price-fall-before-triggering-a-margin-call">1. How Much Can the Price Fall Before Triggering a Margin Call?</a></h3>
+<p>A margin call occurs when your cumulative losses exceed the buffer between your initial margin ($12,000) and your maintenance margin ($10,000).</p>
+<p>$$\text{Maximum Allowed Loss} = \text{Initial Margin} - \text{Maintenance Margin} = $12,000 - $10,000 = \mathbf{$2,000}$$
+Now, convert that dollar loss into index points:</p>
+<p>$$\text{Max Allowed Drop (in Points)} = \frac{\text{Maximum Allowed Loss}}{\text{Contract Multiplier}} = \frac{$2,000}{$50/\text{point}} = \mathbf{40\text{ points}}$$</p>
+<h4 id="break-even--margin-call-thresholds"><a class="header" href="#break-even--margin-call-thresholds"><strong>Break-Even &amp; Margin Call Thresholds:</strong></a></h4>
+<p>$$\text{Margin Call Trigger Price} = 5,000 - 40 = \mathbf{4,960\text{ points}}$$</p>
+<p>$$\text{Percentage Drop Required} = \frac{40}{5,000} = \mathbf{0.80%}$$</p>
+<blockquote>
+<p><strong>Takeaway:</strong> The futures price only needs to fall by <strong>0.80% (40 points)</strong> for the investor to get a margin call.</p>
+</blockquote>
+<ol>
+<li>Explain the ==high tracking error of Manager D with two reasons.== Do not use the row mentioning tracking error as an explanation.
+<ol>
+<li>==Dividends are reinvested the next day rather than same day which creates cash drag.== Cash balances create tracking error.</li>
+<li>The portfolio contains a ==significantly smaller number of securities held than the index== ==leading to tracking error.==</li>
+</ol>
+</li>
+</ol>
+<h1 id="a-factor-based-strategies"><a class="header" href="#a-factor-based-strategies">A. FACTOR BASED STRATEGIES</a></h1>
+<p>Index strategies use ==<strong>rules-based replication</strong>== of an index (e.g., S&amp;P 500) → ↑transparency, ↓costs, diversification, tax efficiency (low turnover).</p>
+<p><strong>CAPM limitation</strong>: Only market beta explains returns. Evidence supports additional <strong>systematic risk factors</strong> (and associated premiums):
+<strong>“SSM-QDV”</strong></p>
+<ul>
+<li><strong>Size</strong>: Small-cap premium (compensation for higher risk)</li>
+<li><strong>Style (Value)</strong>: Low P/E &amp; P/B outperform growth (high P/E, high EPS growth)</li>
+<li><strong>Momentum</strong>: Prior winners continue to outperform (short-term)</li>
+<li><strong>Quality</strong>: Consistent earnings + low debt → outperform in downturns</li>
+<li><strong>Dividend Yield</strong>: High-yield stocks outperform in declining rate environments</li>
+<li><strong>Volatility (Low-Vol)</strong>: Lower-vol stocks outperform in high-uncertainty periods</li>
+</ul>
+<p><strong>Passive Factor-Based (PFB) Strategy</strong>:</p>
+<ul>
+<li>Factor <strong>premiums</strong> treated as given (passive).</li>
+<li>Only <strong>active decision</strong> = ==desired factor <strong>betas/exposures</strong>.==</li>
+<li>Simple model: $r=βfactor×Premiumfactor r = \beta_{\text{factor}} \times \text{Premium}_{\text{factor}} r=βfactor​×Premiumfactor​$</li>
+</ul>
+<p><strong>Factor-based index</strong> (valid benchmark) requires transparent rules on: factor selection, betas/exposures, rebalancing.</p>
+<p><strong>vs Cap-Weighted Index</strong>:</p>
+<ul>
+<li>Factor index weights based on fundamentals (size, value, earnings, yield, etc.) → ==less prone to mispricing (overvalued stocks not overweighted)==. ==Cap-weighted indexes are prone to mispricing== because overvalued stocks are over-weighted based on price alone.</li>
+<li>Cap-weighted dominated by largest stocks; ==any outperformance of factor index often = <strong>extra pay for extra risk</strong> (not alpha).==</li>
+<li>Result: ==<strong>High tracking error (TE)</strong>== vs cap-weighted.</li>
+<li>Fees: higher than cap-weighted but lower than pure active.
+#EXAMPLE</li>
+</ul>
+<blockquote>
+<p>HHI = Σ wᵢ² = 0.0286.<br>Effective # stocks = 1 / HHI = 1 / 0.0286 ≈ <strong>34.97</strong> (approximately 35).<br>(This is the number of equal-weighted stocks that would match the concentration.)</p>
+</blockquote>
+<p><strong>Price Weighted Index</strong>
+#EXAMPLE
+Price-weighted index: weight = price per share / sum of all prices → equivalent to holding <strong>one share of each</strong> constituent stock.</p>
+<p>#EXAMPLE
+Factor-based strategies (including momentum) ==<strong>concentrate</strong> risk exposures vs. broad market-cap== weighting; investors vulnerable when the factor (momentum) is out of favor.</p>
+<p><strong>PFB Structures</strong>:
+#imp</p>
+<ul>
+<li><strong>Return-Oriented</strong>: Tilt to high-dividend, momentum, etc. #EXAMPLE Momentum = amount of a stock’s excess price return over a period → classic <strong>return-oriented</strong> factor strategy.</li>
+<li><strong>Risk-Oriented</strong>: Low-vol tilt <strong>or</strong> optimize whole-portfolio volatility (==requires correlation estimates==).</li>
+<li><strong>Diversification-Oriented</strong>: Multi-factor exposure + <strong>factor rotation</strong>. ==<em>Risk</em>: Premiums decay as exploited (e.g., size premium squeezed as small-caps become expensive).==</li>
+</ul>
+<h1 id="b-approaches-to-passive-equity-investing"><a class="header" href="#b-approaches-to-passive-equity-investing">B. APPROACHES TO PASSIVE EQUITY INVESTING</a></h1>
+<p><strong>Three main approaches</strong>:</p>
+<p><strong>1. Pooled Funds</strong></p>
+<ul>
+<li><strong>Mutual Funds (MFs)</strong>:
+<ul>
+<li>Easy unit purchase, record-keeping by sponsor, many options available.</li>
+<li>Manager handles all ops: rebalancing, adds/deletes, reinvest cash flows, proxy voting.</li>
+<li><strong>CONS:</strong> Tax-inefficient (must sell stocks on redemptions → capital gains); cannot trade intra-day; higher fees.</li>
+</ul>
+</li>
+<li><strong>ETFs</strong>:
+<ul>
+<li>Trade like stocks (margin if bullish, short if bearish).</li>
+<li>==<strong>In-kind</strong> creation/redemption → highly tax-efficient (no cap gains triggered on ETF share sales).==</li>
+<li>Wider variety of indexes (easier factor exposure, e.g., long small-cap ETF + short large-cap ETF).</li>
+<li>==Lower management fees than MFs==.</li>
+<li>Tradeoff: ==ETF (lower fee) vs MF (lower trading costs — no commissions/spreads).==</li>
+<li><strong>CONS:</strong> Trading costs (bid-ask spreads, commissions); potential large discount to NAV if underlying basket illiquid (e.g., EM ETFs).</li>
+</ul>
+</li>
+</ul>
+<p><strong>2. Derivative-Based Strategies</strong></p>
+<ul>
+<li>Synthetic exposure: T-bill + long index futures = index return.</li>
+<li><strong>Advantages</strong>: ==Very low cost, leverage (margin only), high liquidity for tactical shifts/rebalancing/equitizing cash, efficient overlays.==</li>
+<li><strong>Disadvantages</strong>: #imp
+<ul>
+<li>OTC (forwards/swaps): counterparty risk + illiquidity.</li>
+<li>==Long options: lose full premium if OTM.==</li>
+<li>Daily ==settlement== → cash flow management + margin calls.</li>
+<li>Must ==roll contract==s for long-term exposure (best used as <strong>overlay</strong>, not core holding).</li>
+<li>==Basis risk== (imperfect correlation with index). #EXAMPLE</li>
+<li>Regulations may restrict availability; mostly institutional only.
+#EXAMPLE</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Bonus = USD5,750,000. Policy weight US equity = 15% → need USD862,500 exposure.<br>E-mini multiplier = 50; futures price = 2,464.29 → contract value = 2,464.29 × 50 = USD123,214.50.<br>Contracts needed = 862,500 / 123,214.50 ≈ <strong>7.00</strong>. Buy 7 E-mini contracts (equitizing cash inflow while respecting policy weights).</p>
+</blockquote>
+<p><strong>3. Separately Managed Accounts (SMAs)</strong></p>
+<ul>
+<li>Large institutions self-manage index portfolio.</li>
+<li>Requires: ==accounting/compliance systems, broker relationships, direct index data access.==</li>
+</ul>
+<h1 id="c-construction-of-passively-managed-equity-portfolios"><a class="header" href="#c-construction-of-passively-managed-equity-portfolios">C. CONSTRUCTION OF PASSIVELY MANAGED EQUITY PORTFOLIOS</a></h1>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>The three requirements for an index to be the basis for an equity investment strategy are: <strong>(a) rule-based, (b) transparent, and (c) investable.</strong>
+<strong>Buffering</strong> (Statement 2) makes benchmarks more investable by gradual/ orderly index transitions.<br><strong>Free-float</strong> adjustment <strong>increases</strong> (does not lower) investability/liquidity because it excludes non-tradable shares (founders/government/etc.), accurately reflecting true liquidity.</p>
+</blockquote>
+<p><strong>Four approaches</strong>:</p>
+<ol>
+<li><strong>Full Replication</strong> ==Hold every index constituent at exact index weights==. <em>Obstacles</em>: Thousands of stocks, ==large AUM== required, ==illiquid== names → ==↑TE==, constant data feed needed from index provider. #EXAMPLE</li>
+<li><strong>Stratified Sampling</strong> Partition index into mutually exclusive, exhaustive, proportional strata (by industry, size, style, domicile, etc.). Hold a <strong>subset</strong> of stocks in each stratum to match factor exposures. ✓ Works with ==smaller portfolios and illiquid/large indexes.== #EXAMPLE ==Stratified sampling is used for indexes with <strong>large # constituents</strong> or <strong>low AUM</strong>; it holds <strong>fewer</strong> securities than the index while still tracking closely and reducing brokerage costs==</li>
+<li><strong>Optimization</strong> Mathematical program: minimize TE subject to constraints (e.g., max 100 most liquid stocks). Relies on historical correlations. ==Use historical $\rho$ (correlations) to minimize $TE$ with fewer stocks. match index characteristics/performance== <em>Risk</em>: ==Correlations break down → frequent re-optimization → high turnover &amp; trading costs.==</li>
+<li><strong>Blended Approach</strong> Full replication on liquid/large-cap portion (e.g., top 1,000); stratified sampling or optimization on remainder (e.g., next 2,000). ==Index split into sub-indexes, each tracked optimally.==</li>
+</ol>
+<h1 id="d-managing-tracking-error"><a class="header" href="#d-managing-tracking-error">D. MANAGING TRACKING ERROR</a></h1>
+<ul>
+<li><strong>Numerical Step-Logic (Worked Example):</strong>
+<ul>
+<li><strong>Step 1:</strong> $AR_t = R_{PF} - R_{Index}$.</li>
+<li><strong>Step 2:</strong> $\overline{AR} = \frac{\sum AR_t}{n}$.</li>
+<li><strong>Step 3:</strong> $TE = \sqrt{\frac{\sum(AR_t - \overline{AR})^2}{n-1}}$.</li>
+</ul>
+</li>
+<li><strong>Numerical Mapping (Fund ABC):</strong> Mean $AR = 2%$, $TE = 0.7%$.
+<ul>
+<li><strong>Math:</strong> $2% \pm (1 \times 0.7%)$.</li>
+<li><strong>Result:</strong> 68% probability active returns fall between <strong>1.3% and 2.7%</strong>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Goal of index manager</strong>: ==Non-negative active return + <strong>low TE</strong>.==</p>
+<p><strong>Factors that increase TE</strong>:</p>
+<ul>
+<li>Larger number of index constituents (↑ trading costs).</li>
+<li>Higher management fees.</li>
+<li>Sampling or optimization (vs full replication).</li>
+<li><strong>Cash drag</strong> (portfolio not fully invested while index is); mitigate by <strong>equitizing cash</strong> with index futures.</li>
+<li>Intra-day trading (index uses closing prices); mitigate by trading near market close.</li>
+</ul>
+<p><strong>TE control</strong>: minimize trading costs, net investor flows, equitization via derivatives to offset cash drag</p>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>Tracking error rises with (1) more constituents and (2) higher expense ratios. EFA (MSCI EAFE ETF) has <strong>933 constituents</strong> (vs. 60 and 506) + highest expense (0.33%) → highest expected tracking error under full replication.</p>
+</blockquote>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>Lowest tracking error comes from <strong>lowest cash holdings</strong> + <strong>lowest fees</strong>. Portfolio 3 has the lowest of both (cash 2.13%, fees 0.07%) vs. the others and the index fund.</p>
+</blockquote>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>Tracking error rises with ==(1) more constituents and (2) higher expense ratios.== EFA (MSCI EAFE ETF) has <strong>933 constituents</strong> (vs. 60 and 506) + highest expense (0.33%) → highest expected tracking error under full replication.</p>
+</blockquote>
+<h1 id="e-sources-of-return-and-risk-on-a-passive-portfolio"><a class="header" href="#e-sources-of-return-and-risk-on-a-passive-portfolio">E. SOURCES OF RETURN AND RISK ON A PASSIVE PORTFOLIO</a></h1>
+<p><strong>Attribution Analysis</strong> — decomposes total return by decision:</p>
+<ul>
+<li>Asset allocation (mix across classes)</li>
+<li>Domestic vs international</li>
+<li>Style exposures (size, value/growth, momentum, quality, etc.)</li>
+<li>Security selection (company-specific)</li>
+</ul>
+<p>#EXAMPLE contribution analysis
+Sector | Portfolio Contribution | Benchmark Contribution | Difference<br>Information technology | 2.01% | 2.05% | <strong>–0.04%</strong> (largest negative)</p>
+<p><strong>Ways to enhance passive returns</strong>:</p>
+<ul>
+<li><strong>Securities Lending</strong>: Earn lender fee on shares lent out. <em>Risks</em>: Counterparty fails to return shares, collateral value drops (market risk), lose voting rights during loan (but borrower must compensate dividends). #EXAMPLE</li>
+<li><strong>Shareholder Activism</strong>: Pressure portfolio companies (sell unprofitable divisions, cut costs). Index funds/pensions have voting power. <em>Trade-off</em>: Absolute returns may rise, but higher costs → portfolio likely lags index net of costs.</li>
+</ul>
+
+                    </main>
+
+                    <div class="copyright" style="font-size:0.9rem;opacity:0.7;padding:0 1rem 0.5rem;">© 2026 Pramod Thaz. All rights reserved.</div>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../GENERAL/FORMULAS.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../PORTFOLIO MANAGEMENT/24. ACTIVE EQUITY STRATEGIES.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../GENERAL/FORMULAS.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../PORTFOLIO MANAGEMENT/24. ACTIVE EQUITY STRATEGIES.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    <script src="/cfa-level-iii-notes/paywall.js"></script></body>
+</html>

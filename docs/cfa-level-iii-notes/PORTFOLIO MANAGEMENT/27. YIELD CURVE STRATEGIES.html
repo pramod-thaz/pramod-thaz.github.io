@@ -1,0 +1,963 @@
+<!DOCTYPE HTML>
+<html lang="en" class="latte sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>27. Yield Curve Strategies - CFA Level III Notes</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/catppuccin-e08be6a9.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "latte";
+            const default_dark_theme = "mocha";
+            window.path_to_searchindex_js = "../searchindex-2521da27.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-b96c3611.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('latte')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-mocha">Mocha</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CFA Level III Notes</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <p>YC strategies ==use <strong>Treasury Bonds</strong> (pure interest rate play).== This avoids influence from credit and liquidity risk.
+==Par yield curve: stylized representation of YTM at various maturities; often extracted from available bond yields via a model (not directly traded
+<strong>Framework:</strong>
+$$
+\text{YTM (Corp)} = \text{YTM (Treasury)} + \text{Spread}
+$$</p>
+<ul>
+<li><strong>Corp Bonds</strong>: exposed to Interest rate + Credit + Liquidity risk</li>
+<li><strong>Treasury Bonds</strong>: exposed <strong>only</strong> to interest rate risk</li>
+</ul>
+<blockquote>
+<p>Yield curve strategies structure a portfolio so that it profits from changes in the yield curve (Δyc).</p>
+</blockquote>
+<h1 id="a-types-of-yield-curve-strategies"><a class="header" href="#a-types-of-yield-curve-strategies">A. Types of Yield Curve Strategies</a></h1>
+<p>There are three primary sources of yield curve change:</p>
+<h3 id="1-change-in-level-parallel-shifts"><a class="header" href="#1-change-in-level-parallel-shifts">1. Change in Level (Parallel Shifts)</a></h3>
+<ul>
+<li><strong>Parallel Up</strong>: Entire yield curve shifts upward by the same amount.</li>
+<li><strong>Parallel Down</strong>: Entire yield curve shifts downward by the same amount.</li>
+</ul>
+<h3 id="2-change-in-slope"><a class="header" href="#2-change-in-slope">2. Change in Slope</a></h3>
+<p>Slope of the yield curve is typically measured by the <strong>30-year minus 2-year spread</strong>:
+$$
+\text{Slope} = \text{YTM}<em>{30} - \text{YTM}</em>{2}
+$$</p>
+<ul>
+<li><strong>Steepening</strong>: Spread increases (long rates rise relative to short rates, or short rates fall relative to long rates).</li>
+<li><strong>Flattening</strong>: Spread decreases.</li>
+<li><strong>Inverted</strong>: ==When $\text{YTM}<em>{30} &lt; \text{YTM}</em>{2}$ (negative spread).==</li>
+</ul>
+<h3 id="3-change-in-curvature-butterfly"><a class="header" href="#3-change-in-curvature-butterfly">3. Change in Curvature (Butterfly)</a></h3>
+<p>Curvature is measured using the <strong>Butterfly Spread</strong> (body vs. wings):
+$$
+\text{Butterfly Spread} = 2 \times \text{YTM}<em>{\text{Middle (Body)}} - (\text{YTM}</em>{\text{Short (Wing)}} + \text{YTM}_{\text{Long (Wing)}})
+$$</p>
+<ul>
+<li>When the body rises above the wings (middle yields increase relative to short and long), ==the curve becomes <strong>more curved</strong> (positive butterfly).==</li>
+<li>The three sources of ΔYC (<strong>Level</strong>, <strong>Slope</strong>, <strong>Curvature</strong>) can occur simultaneously and are <strong>uncorrelated</strong>.</li>
+</ul>
+<h1 id="b-factors-affecting-fixed-income-portfolio-return"><a class="header" href="#b-factors-affecting-fixed-income-portfolio-return">B. Factors Affecting Fixed Income Portfolio Return</a></h1>
+<p>Recall the Taylor expansion for bond price change:</p>
+<p>$$
+% \Delta P \approx (-D \times \Delta r) + \frac{1}{2} C \times (\Delta r)^2
+$$</p>
+<ul>
+<li><strong>Duration (D)</strong>: Linear (first-order) approximation of %ΔP — <strong>larger effect</strong>.</li>
+<li><strong>Convexity (C)</strong>: Curvature (second-order) term — <strong>smaller effect</strong> but important for large moves or non-parallel shifts.</li>
+</ul>
+<h3 id="example-bond-characteristics"><a class="header" href="#example-bond-characteristics">Example: Bond Characteristics</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Maturity</th><th>Modified Duration</th><th>Convexity</th></tr>
+</thead>
+<tbody>
+<tr><td>2 yr</td><td>1.8</td><td>11</td></tr>
+<tr><td>10 yr</td><td>9.2</td><td>80</td></tr>
+<tr><td>30 yr</td><td>24.6</td><td>400</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="strategy-comparison-bullet-vs-barbell-duration-matched"><a class="header" href="#strategy-comparison-bullet-vs-barbell-duration-matched">Strategy Comparison: Bullet vs. Barbell (Duration-Matched)</a></h3>
+<p><strong>Strategy I: Bullet</strong><br>100% in the 10-year bond → Portfolio Duration $D_p = 9.2$, Convexity $C_p = 80$
+<strong>Strategy II: Barbell</strong> (2 yr + 30 yr)<br>Find weights such that $D_p = 9.2$ (matches bullet, same interest rate risk level).</p>
+<p>$$
+D_p = w_2 \times 1.8 + w_{30} \times 24.6 = 9.2
+$$
+Solving:
+$$
+w_2 = 0.675, \quad w_{30} = 0.325
+$$
+<strong>Portfolio Convexity for Barbell</strong>:
+$$
+C_p = (0.675 \times 11) + (0.325 \times 400) = 137.425
+$$</p>
+<h3 id="parallel-yield-change-scenarios-50-bps"><a class="header" href="#parallel-yield-change-scenarios-50-bps">Parallel Yield Change Scenarios (±50 bps)</a></h3>
+<p><strong>Case 1: Parallel shift +50 bps</strong> ($\Delta r = +0.005$)
+$$
+%\Delta P \approx (-D_p \times \Delta r) + \frac{1}{2} C_p \times (\Delta r)^2
+$$</p>
+<ul>
+<li><strong>Bullet</strong>: $(-9.2)(0.005) + \frac{1}{2}(80)(0.005)^2 = -0.046 + 0.001 = -4.5%$</li>
+<li><strong>Barbell</strong>: $(-9.2)(0.005) + \frac{1}{2}(137.425)(0.005)^2 = -0.046 + 0.001718 = -4.428%$
+<strong>Case 2: Parallel shift -50 bps</strong> ($\Delta r = -0.005$)</li>
+<li><strong>Bullet</strong>: $(-9.2)(-0.005) + \frac{1}{2}(80)(0.005)^2 = +0.046 + 0.001 = +4.70%$</li>
+<li><strong>Barbell</strong>: $(-9.2)(-0.005) + \frac{1}{2}(137.425)(0.005)^2 = +0.046 + 0.001718 = +4.772%$</li>
+</ul>
+<blockquote>
+<blockquote></blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th><strong>Approach</strong></th><th><strong>Best For</strong></th><th><strong>Advantages</strong></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Portfolio Level</strong><br><br>  <br><br><em>(Find $D_p$ and $C_p$ first)</em></td><td>Quick risk assessment &amp; scenario analysis</td><td>• Allows you to instantly stress-test the entire portfolio under multiple yield shifts ($\pm 50\text{ bps}$, $\pm 100\text{ bps}$) without re-calculating every single holding.<br><br>  <br><br>• Standard industry practice for summary risk reporting.</td></tr>
+<tr><td><strong>Bond Level</strong><br><br>  <br><br><em>(Find individual $\Delta P_i$ first)</em></td><td>Non-parallel shifts &amp; complex portfolios</td><td>• Necessary if the yield curve shift is <strong>non-parallel</strong> (e.g., short-term rates change by $+50\text{ bps}$ while long-term rates change by $+10\text{ bps}$).<br><br>  <br><br>• Essential when individual bonds have embedded options (like callable or puttable bonds) where duration/convexity changes non-linearly with yield shifts.</td></tr>
+</tbody>
+</table>
+</div>
+</blockquote>
+<p><strong>Conclusion</strong>: In both scenarios, the <strong>Barbell outperformed the Bullet by ~7 bps</strong>.<br><strong>Higher convexity is beneficial when large yield moves (volatility) are expected.</strong></p>
+<blockquote>
+<p>#EXAMPLE
+-2.407% = (-4.880 × 0.005) + [0.5 × 26.5 × (0.005²)]<br>-2.390% = 0.5894 × {[-1.994 × 0.005] + [0.5 × 5 × (0.005²)]} + 0.4106 × {[-9.023 × 0.005] + [0.5 × 90.8 × (0.005²)]}</p>
+</blockquote>
+<p>#EXAMPLE ??</p>
+<h1 id="c-the-role-of-convexity"><a class="header" href="#c-the-role-of-convexity">C. The Role of Convexity</a></h1>
+<p>Convexity ($C$) captures the <strong>curvature</strong> in the price-yield relationship. It measures the gap between the actual price and the linear (duration-only) estimate.</p>
+<h3 id="advantages-of-higher-convexity-example"><a class="header" href="#advantages-of-higher-convexity-example">Advantages of Higher Convexity #EXAMPLE</a></h3>
+<ul>
+<li>Price rises <strong>faster</strong> when yields fall.</li>
+<li>Price falls <strong>slower</strong> when yields rise.</li>
+<li>Acts as ==<strong>insurance</strong>== against yield volatility. The improved price performance outweighs the higher initial price paid.</li>
+</ul>
+<h3 id="disadvantages-of-higher-convexity"><a class="header" href="#disadvantages-of-higher-convexity">Disadvantages of Higher Convexity</a></h3>
+<ul>
+<li>Holding duration constant, ==higher-convexity bonds are <strong>more expensive</strong> (higher price → lower yield).==</li>
+<li>If yields do <strong>not</strong> move much, ==you overpaid for convexity you didn’t need.==</li>
+</ul>
+<h3 id="high-convexity-vs-low-convexity-strategies-duration-held-constant"><a class="header" href="#high-convexity-vs-low-convexity-strategies-duration-held-constant">High Convexity vs. Low Convexity Strategies (Duration held constant)</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Strategy</th><th>Cash Flow Dispersion</th><th>Convexity</th><th>Notes</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Barbell</strong></td><td>High (dispersed)</td><td>Higher</td><td>Wings at short + long end</td></tr>
+<tr><td><strong>Bullet</strong></td><td>Low (concentrated)</td><td>Lower</td><td>Cash flows clustered in middle</td></tr>
+<tr><td><strong>Longer Maturity</strong></td><td>Higher</td><td>Higher</td><td>vs. short-term bonds</td></tr>
+<tr><td><strong>Higher Coupon</strong></td><td>Higher</td><td>Higher</td><td>More cash flows earlier (more dispersion)</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Summary — When to prefer higher convexity</strong>:</p>
+<ul>
+<li>==If you expect <strong>large yield volatility</strong> (Δr ↑ in magnitude).==</li>
+<li>==Select: Barbell portfolios, longer-maturity bonds, or higher-coupon bonds.==</li>
+</ul>
+<h1 id="d-carry-trade-inter-market"><a class="header" href="#d-carry-trade-inter-market">D. Carry Trade: Inter-Market</a></h1>
+<p><strong>Goal</strong>: Borrow in a <strong>low-yield</strong> currency/market and invest in a <strong>high-yield</strong> currency/market. Expected profit = yield spread (leveraged strategy).</p>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>UK yields: 6%</li>
+<li>Japan yields: 4%</li>
+<li>FX: ¥150 / £
+<strong>If no change in yields or FX</strong>:</li>
+<li>Borrow in Japan at 4% → Invest in UK at 6% → <strong>2% spread profit</strong>.
+<strong>Balance Sheet View</strong>:</li>
+</ul>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th></th><th>UK (Long)</th><th>Japan (Short)</th><th>Net (Equity)</th></tr>
+</thead>
+<tbody>
+<tr><td>Yield</td><td>+6%</td><td>-4%</td><td><strong>+2%</strong></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td>![](_rect_imgs/27. X Yield-Curve-Strategies -merged__27_Yield_Curve_Strategies_1_p5_71-42.png)</td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="risks-of-inter-market-carry-trade"><a class="header" href="#risks-of-inter-market-carry-trade">Risks of Inter-Market Carry Trade</a></h3>
+<ol>
+<li><strong>Interest rate risk</strong>: UK yields rise → UK bond prices fall → Assets ↓</li>
+<li><strong>FX risk</strong>:
+<ul>
+<li>£ depreciates → Assets (UK bonds in £ terms) ↓</li>
+<li>Yen appreciates → Liabilities (Japan borrowing) ↑ in £ terms</li>
+</ul>
+</li>
+<li><strong>Duration mismatch</strong> between assets and liabilities → increases interest rate exposure.</li>
+<li><strong>Uncovered Interest Rate Parity (UIRP)</strong> does not hold in practice. Yield differentials are not always offset by expected FX changes.</li>
+</ol>
+<p><strong>Alternative ==via Currency Swap</strong>:==
+Investor effectively:</p>
+<ul>
+<li>Holds UK bond (earns £ fixed)</li>
+<li>Issues Japan debt (pays ¥ floating/fixed)
+==Exposes investor to same risk factors as spot carry trade.==</li>
+</ul>
+<p>#EXAMPLE MXN carry trade ==90 day bills for 1 yr==
+![](_rect_imgs/27. X Yield-Curve-Strategies -merged__1_27_YIELD_CURVE_STRATEGIES_p7_74-170.png)</p>
+<h1 id="e-carry-trade-intra-market"><a class="header" href="#e-carry-trade-intra-market">E. Carry Trade: Intra-Market</a></h1>
+<p>Borrow and invest <strong>within the same market/currency</strong> (typically along the yield curve).</p>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>Short 4-year bond @ 3% (liability)</li>
+<li>Long 10-year bond @ 5% (asset)</li>
+<li>Net spread/profit = <strong>2%</strong></li>
+</ul>
+<p>Assumes <strong>no change in the yield curve</strong>. Risk = yield curve changes (especially steepening or level rise).</p>
+<h3 id="alternatives-to-spot-carry-trade"><a class="header" href="#alternatives-to-spot-carry-trade">Alternatives to Spot Carry Trade</a></h3>
+<p><strong>1. ==Interest Rate Swap</strong>==</p>
+<ul>
+<li>Investor <strong>receives fixed</strong> (long-term ==average yield==) and <strong>pays floating</strong> (LIBOR).</li>
+<li>Equivalent to: Long a long-term bond + Short (issue) short-term floating debt.</li>
+<li>==Profit declines  if rates rise: (Fixed received - Floating paid) decreases.==</li>
+</ul>
+<p>#EXAMPLE #imp valueing swap
+Say a UK-based manager seeks to extend duration beyond an index by adding 10-year exposure</p>
+<p>delta_R  = coupon income + delta_P</p>
+<p>![](Pasted image 20260630145248.png)</p>
+<p>![](Pasted image 20260630145352.png)</p>
+<p><strong>SWAP OVERLAY</strong> #imp #EXAMPLE</p>
+<blockquote>
+<p>In this example, the manager enters into a pay-fixed swap overlay with a notional principal equal to one-half of the size of the total bond portfolio.  ==As the pay-fixed swap is a “short” duration position, it is a negative contribution to portfolio duration and therefore subtracted from rather than added to the portfolio.== Recall the $100 million “index” portfolio has a modified duration of 5.299, or (1.994 + 4.88 + 9.023)/3. If the manager enters a $50 million notional 5-year pay-fixed swap with an assumed modified duration of 4.32, the portfolio’s modified duration falls to 3.139, or [(5.299 × ==100==) – (4.32 × ==50==)]/==100==. Stated differently, the bond portfolio BPV falls from $52,990 to $31,390 with the swap. For a 25 bp yield increase, this $21,600 reduction in active portfolio BPV reduces the ==adverse impact of higher rates== by approximately $540,000 versus the “index” portfolio.</p>
+</blockquote>
+<p><strong>2. ==Long Bond Futures</strong>==
+Framework:
+$$
+F = \frac{S_0 (1 + r)^T}{(1 + y)^T} \quad \text{(with income yield } y\text{)}
+$$</p>
+<p><strong>Example</strong>: Long 1-year futures on a 10-year deliverable bond.</p>
+<ul>
+<li>Effectively: <strong>Paying</strong> the short-term rate (cost of carry) and <strong>receiving</strong> the long-term yield.</li>
+<li>If upward-sloping yield curve and rates unchanged → profit (positive carry).</li>
+</ul>
+<p><strong>Summary — Strategies when upward-sloping YC and rates expected unchanged (i.e. carry trade)</strong>:</p>
+<ul>
+<li>Spot: Short ST bonds → Long LT bonds</li>
+<li>Swap: Receive fixed → Pay floating</li>
+<li>Futures: Long bond futures</li>
+</ul>
+<h1 id="f-strategies-if-expect-no-change-in-yields"><a class="header" href="#f-strategies-if-expect-no-change-in-yields">F. Strategies if Expect <strong>No Change</strong> in Yields</a></h1>
+<p><strong>Scenario</strong>: Upward-sloping yield curve (LT &gt; ST) + Expect yields to remain stable.</p>
+<h3 id="i-buy--hold-long-maturity-long-duration-bonds"><a class="header" href="#i-buy--hold-long-maturity-long-duration-bonds">I. Buy &amp; Hold Long-Maturity (Long Duration) Bonds</a></h3>
+<ul>
+<li>Over a multi-year horizon, the higher yield of the long bond compounds to higher total return than rolling short-term bonds (which stay at low ST rates).</li>
+</ul>
+<p>==<strong>More aggressive (levered) version</strong> — “Repo Carry”:==</p>
+<ul>
+<li>Short (borrow) 1-year bond @ 3%</li>
+<li>Long (invest) 10-year bond @ 5%</li>
+<li>Earn <strong>2% spread</strong> with no net capital (levered carry trade).</li>
+</ul>
+<blockquote>
+<p>#EXAMPLE
+The fall in long-term yields-to-maturity will lead to price appreciation under the “buy-and-hold” strategy. The difference between long-term and short-term yields-to-maturity in b will fall, ==leading to negative carry if short-term yields-to-maturity rise sharply.== As for c, ==higher short-term yields-to-maturity will enable the manager to reinvest bond coupon payments at a higher rate.==</p>
+</blockquote>
+<h3 id="ii-ride-the-yield-curve"><a class="header" href="#ii-ride-the-yield-curve">II. Ride the Yield Curve</a></h3>
+<p><strong>Example</strong> (1-year investment horizon):</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Bond</th><th>Coupon</th><th>Price (t=0)</th><th>Price at t=1 (if yields unchanged)</th><th>Total Return</th></tr>
+</thead>
+<tbody>
+<tr><td>1-year</td><td>6%</td><td>100 (par)</td><td>100</td><td>6%</td></tr>
+<tr><td>2-year</td><td>8%</td><td>100 (par)</td><td>$\frac{$100 + 8}{1.06} = 101.90$</td><td><strong>9.90%</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Why it works</strong>:</p>
+<ul>
+<li>==Lock in higher coupon.==</li>
+<li>As bond approaches maturity (“rolls down” the curve), ==its YTM falls → price rises (positive roll-down return).==</li>
+<li><strong>Steeper curve</strong> = more roll-down profit.</li>
+</ul>
+<h3 id="iii-sell-convexity"><a class="header" href="#iii-sell-convexity">III. Sell Convexity</a></h3>
+<ul>
+<li>Higher-convexity bonds are expensive (lower yield).</li>
+<li>If you expect <strong>low volatility</strong> (no large Δr), sell high-Cx bonds and buy low-Cx bonds to capture the convexity premium (higher yield).</li>
+</ul>
+<p><strong>Ways to sell convexity</strong>:</p>
+<ul>
+<li>Long callable bonds (or short putable bonds)</li>
+<li>![](_rect_imgs/27. X Yield-Curve-Strategies -merged__27_Yield_Curve_Strategies_1_p10_68-499.png)</li>
+<li>Sell options directly (collect premium; expect them to expire worthless if low vol)</li>
+</ul>
+<p>==<strong>Risk</strong>: If yields move sharply or volatility increases, short-convexity positions lose.==</p>
+<p>#EXAMPLE inverted YC  #imp</p>
+<blockquote>
+<p>Buy and Hold <strong>Note – all three profit with upward sloping curve</strong>. Not required to explain this correct answer. ==With a buy and hold strategy, we extend our duration beyond our target. By constructing a longer duration portfolio – the fall in longer term YTM will lead to price appreciation.==
+Rolling down the Yield : With an inverted curve, we lose by selling the security at a higher yield which leads to price depreciation.
+Repo Carry Trade :The inverted curve leads to a negative carry where the difference between the ST YTM and LT YTM falls.</p>
+</blockquote>
+<h1 id="g-strategies-if-expect-a-change-in-yields"><a class="header" href="#g-strategies-if-expect-a-change-in-yields">G. Strategies if Expect a <strong>Change</strong> in Yields</a></h1>
+<h3 id="i-duration-management"><a class="header" href="#i-duration-management">I. Duration Management</a></h3>
+<ul>
+<li>==<strong>Expect yields to fall</strong> → Lengthen portfolio duration (maximize price gains).==</li>
+<li>==<strong>Expect yields to rise</strong> → Shorten portfolio duration (minimize price losses).==
+<strong>Issue</strong>: Modified duration assumes <strong>parallel</strong> yield curve shifts. ==For non-parallel shifts, use <strong>Key Rate Duration (KRD)</strong>.==</li>
+</ul>
+<h4 id="key-rate-duration-krd"><a class="header" href="#key-rate-duration-krd">Key Rate Duration (KRD)</a></h4>
+<p>KRD measures sensitivity to a <strong>specific point</strong> on the yield curve (non-parallel shifts).
+$$
+% \Delta P_{PF} = w_1 D_1 \Delta r_1 + w_2 D_2 \Delta r_2 + w_3 D_3 \Delta r_3 + \dots
+$$
+$$
+\text{KRD}_i = w_i \times D_i
+$$
+![](_rect_imgs/27. X Yield-Curve-Strategies -merged__27_Yield_Curve_Strategies_1_p11_63-306.png)
+<strong>LONG SHORT - NON PARALLEL YC / KRD</strong> #imp #EXAMPLE
+![](_rect_imgs/27. X Yield-Curve-Strategies -merged__1_27_YIELD_CURVE_STRATEGIES_p4_68-26.png)</p>
+<p><strong>NOT SURE IF THIS IS CORRECT</strong> - maybe just focus  on mid and long end
+![](Pasted image 20260604150218.png)
+<strong>Interpretation</strong>:</p>
+<ul>
+<li><strong>Bullet</strong> portfolio: High KRD in the <strong>middle</strong> of the curve.</li>
+<li><strong>Barbell</strong> portfolio: High KRD at the <strong>short and long ends</strong>.</li>
+</ul>
+<p><strong>Key Rate PVBP</strong> (Price Value of a Basis Point) is an alternative metric (absolute $ change per 1bp move at a specific maturity).</p>
+<h3 id="example-key-rate-pvbp-analysis-per-100-par"><a class="header" href="#example-key-rate-pvbp-analysis-per-100-par">Example: Key Rate PVBP Analysis (per 100 par)</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>PF</th><th>$D_p$</th><th>$C_p$</th><th>Total PVBP</th><th>5yr KRD</th><th>10yr KRD</th><th>15yr KRD</th><th>Shape</th></tr>
+</thead>
+<tbody>
+<tr><td>PF-1</td><td>9</td><td>56</td><td>0.067</td><td>0.008</td><td>==0.049==</td><td>0.012</td><td><strong>Bullet</strong></td></tr>
+<tr><td>PF-2</td><td>9</td><td>==81==</td><td>0.067</td><td>==0.027==</td><td>0.006</td><td>==0.053==</td><td><strong>Barbell</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Non-parallel scenarios</strong> (focus on mid-to-long end; short-end KRD has low impact due to low duration):
+![](_rect_imgs/27. X Yield-Curve-Strategies -merged__27_Yield_Curve_Strategies_1_p12_60-271.png)</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Scenario</th><th>Pivot</th><th>Δr Pattern</th><th>Winner</th><th>Reason ==(V_bbl)==</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Bear Steepening</strong></td><td>Short end</td><td>|Δr_LT| &gt; |Δr_MT|</td><td>Bullet</td><td>Barbell falls more</td></tr>
+<tr><td><strong>Bull Steepening</strong></td><td>Long end</td><td>|Δr_LT| &lt; |Δr_MT|</td><td>Bullet</td><td>Barbell rises less</td></tr>
+<tr><td><strong>Bull Flattening</strong></td><td>Short end</td><td>|Δr_LT| &gt; |Δr_MT| (down)</td><td>Barbell</td><td>Barbell rises more</td></tr>
+<tr><td><strong>Bear Flattening</strong></td><td>Long end</td><td>|Δr_LT| &lt; |Δr_MT| (up)</td><td>Barbell</td><td>Barbell falls less</td></tr>
+<tr><td><strong>Rule of thumb</strong>:</td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>
+<p>==<strong>Flattening</strong> → Prefer <strong>Barbell</strong>==</p>
+</li>
+<li>
+<p>==<strong>Steepening</strong> → Prefer **Bullet</p>
+</li>
+<li>
+<p>A <strong>Duration-Neutral (Spread-Only) Steepener</strong> sets:
+$$\text{Money Duration}<em>{\text{Long Front End}} = \text{Money Duration}</em>{\text{Short Back End}}$$</p>
+<p><em>(Net Money Duration = 0; you only profit from the curve shape changing, not flat rate moves).</em></p>
+</li>
+<li>
+<p>A <strong>Directional Bull Steepener</strong> sets:
+$$\text{Money Duration}<em>{\text{Long Front End}} &gt; \text{Money Duration}</em>{\text{Short Back End}}$$</p>
+<p><em>(Net Money Duration &gt; 0; you profit from both falling rates and curve steepening).</em></p>
+</li>
+</ul>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Strategy Type &amp; Name</th><th>Long Position (Buy)</th><th>Short Position (Sell)</th><th>Strategic Rationale</th><th>Net Duration Profile</th><th>Simplified Math Rule (DV01)</th></tr>
+</thead>
+<tbody>
+<tr><td>Directional Bear Steepener</td><td>Short-Term <em>(2Y)</em></td><td>Long-Term <em>(10Y)</em></td><td>Long yields spike. Shorting long bonds profits from collapsing prices.</td><td>Net Short</td><td>Buy standard amount of 2Y; Short standard amount of 10Y. <em>(10Y DV01 dominates).</em></td></tr>
+<tr><td>Duration-Neutral Steepener <em>(Can be Bull or Bear)</em></td><td>Short-Term <em>(2Y)</em></td><td>Long-Term <em>(10Y)</em></td><td>Extracted profit strictly from the widening yield spread.</td><td>Perfectly Neutral</td><td>Overweight 2Y Notional so that:  <br><code>2Y Notional × 2Y DV01 = 10Y Notional × 10Y DV01</code></td></tr>
+<tr><td>Directional Bull Steepener</td><td>Short-Term <em>(2Y)</em></td><td>Long-Term <em>(10Y)</em></td><td>Short yields plunge. Buying short bonds captures the fastest rate drops.</td><td>Net Long</td><td>Hyper-Overweight 2Y Notional so 2Y DV01 completely dwarfs 10Y short DV01.</td></tr>
+<tr><td>Directional Bear Flattener</td><td>Long-Term <em>(10Y)</em></td><td>Short-Term <em>(2Y)</em></td><td>Short yields spike. Shorting short bonds shields you from damage.</td><td>Net Short</td><td>Hyper-Overweight 2Y Notional on the short side to dwarf the 10Y long DV01.</td></tr>
+<tr><td>Duration-Neutral Flattener <em>(Can be Bull or Bear)</em></td><td>Long-Term <em>(10Y)</em></td><td>Short-Term <em>(2Y)</em></td><td>Extracted profit strictly from the narrowing yield spread.</td><td>Perfectly Neutral</td><td>Overweight 2Y Notional so that:  <br><code>2Y Notional × 2Y DV01 = 10Y Notional × 10Y DV01</code></td></tr>
+<tr><td>Directional Bull Flattener</td><td>Long-Term <em>(10Y)</em></td><td>Short-Term <em>(2Y)</em></td><td>Long yields plunge. Buying long bonds maximizes duration gains.</td><td>Net Long</td><td>Buy standard amount of 10Y; Short standard amount of 2Y. <em>(10Y DV01 dominates).</em></td></tr>
+<tr><td><strong>The Math: Step-by-Step Scenarios</strong></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>To make the math simple, we assume a 10-Year Bond has a DV01 of $70 per million, and a 2-Year Bond has a DV01 of $20 per million.</td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li><strong>The Duration-Neutral Steepener Example</strong></li>
+</ol>
+<ul>
+<li>Goal: Insulate the trade from parallel rate shifts. Profit only if the curve steepens.</li>
+<li>The Sizing Math: You must match total dollar durations.
+<ul>
+<li>Short $1,000,000 of 10Y = -$70 DV01</li>
+<li>Buy $3,500,000 of 2Y = +$70 DV01 <em>($3.5M × $20)</em></li>
+<li><em>Net Portfolio DV01 = $0</em></li>
+</ul>
+</li>
+<li>The Profit Mechanics:
+<ul>
+<li>If Bear Steepening: Overall rates go up. 10Y yield spikes by 10 bps; 2Y yield rises by only 2 bps.
+<ul>
+<li>10Y Short makes: 10 bps × $70 = +$700</li>
+<li>2Y Long loses: 2 bps × -$70 = -$140</li>
+<li>Net Profit: +$560</li>
+</ul>
+</li>
+<li>If Bull Steepening: Overall rates go down. 2Y yield plunges by 10 bps; 10Y yield drops by only 2 bps.
+<ul>
+<li>2Y Long makes: 10 bps × $70 = +$700</li>
+<li>10Y Short loses: 2 bps × -$70 = -$140</li>
+<li>Net Profit: +$560</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li><strong>The Duration-Neutral Flattener Example</strong></li>
+</ol>
+<ul>
+<li>Goal: Insulate the trade from parallel rate shifts. Profit only if the curve flattens.</li>
+<li>The Sizing Math: You swap the legs but keep the exact same DV01 weighting.
+<ul>
+<li>Buy $1,000,000 of 10Y = +$70 DV01</li>
+<li>Short $3,500,000 of 2Y = -$70 DV01</li>
+<li><em>Net Portfolio DV01 = $0</em></li>
+</ul>
+</li>
+<li>The Profit Mechanics:
+<ul>
+<li>If Bear Flattening: Overall rates go up. 2Y yield spikes by 10 bps; 10Y yield rises by only 2 bps.
+<ul>
+<li>2Y Short makes: 10 bps × $70 = +$700</li>
+<li>10Y Long loses: 2 bps × -$70 = -$140</li>
+<li>Net Profit: +$560</li>
+</ul>
+</li>
+<li>If Bull Flattening: Overall rates go down. 10Y yield plunges by 10 bps; 2Y yield drops by only 2 bps.
+<ul>
+<li>10Y Long makes: 10 bps × $70 = +$700</li>
+<li>2Y Short loses: 2 bps × -$70 = -$140</li>
+<li>Net Profit: +$560</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>#EXAMPLE
+![](_rect_imgs/27. X Yield-Curve-Strategies -merged__1_27_YIELD_CURVE_STRATEGIES_p8_70-548.png)</p>
+<p>#EXAMPLE</p>
+<p>#EXAMPLE
+![](Pasted image 20260704065027.png)</p>
+<h3 id="ii-convexity-management"><a class="header" href="#ii-convexity-management">II. Convexity Management</a></h3>
+<p>If expecting <strong>large yield moves</strong> (high volatility):</p>
+<ul>
+<li>Increase portfolio convexity (more dispersed cash flows).</li>
+<li>Buy options (positive gamma/convexity).</li>
+<li>Go long putable bonds or short callable bonds.
+![](_rect_imgs/27. X Yield-Curve-Strategies -merged__27_Yield_Curve_Strategies_1_p14_64-384.png)
+<strong>Risk</strong>: Overpaying for convexity if volatility does not materialize.</li>
+</ul>
+<p>#EXAMPLE
+![](_rect_imgs/27. X Yield-Curve-Strategies -merged__1_27_YIELD_CURVE_STRATEGIES_p5_68-590.png)
+The value of a bond with an embedded option is equal to the sum of the value of an option-free bond plus the value to the embedded option. ==The bond investor can be either long or short the embedded option, depending on the type of bond. With a callable bond, the embedded call option is owned by the issuer of the bond, who can exercise this option if yields-to-maturity decrease (the bond investor is short the call option). With a putable bond, the embedded put option is owned by the bond investor, who can exercise the option if yields-to-maturity increase.==</p>
+<p>Value of long PB increases less than OFB. ==But for short PB, the price decreases (invert) above pic==</p>
+<p>#EXAMPLE Expect shift in YC upwards
+![](_rect_imgs/27. X Yield-Curve-Strategies -merged__1_27_YIELD_CURVE_STRATEGIES_p5_61-240.png)
+a. Long a receiver swaption<br>b. ==Short== a payer swaption<br>c. Long a put option on a bond futures contract</p>
+<p>C is correct - A put option increases in value as the yield curve shifts upward, while the price of the underlying bond declines below the strike. B is incorrect because a payer swaption is an option to pay-fixed/receive-floating in an interest rate swap. A long, not a short, position in a payer swaption would benefit from higher rates.</p>
+<blockquote>
+<p>#EXAMPLE
+![](_rect_imgs/27. X Yield-Curve-Strategies -merged__1_27_YIELD_CURVE_STRATEGIES_p6_64-614.png)
+For a putable bond, the bond investor has the option to “put” the bond back to the issuer if yields-to-maturity rise. The more rates rise, the more valuable this embedded option becomes. This increasing option value will partially offset the decline in value of the putable bond relative to the option-free bond. This can be seen in the lower panel of Exhibit 22: ==The dotted line for the putable bond has a flatter slope than the solid line for the option-free bond; its price will decrease more slowly as yields-to-maturity increase.==</p>
+<p>For a callable bond, the bond issuer has an option to “call” the bond if yields-to-maturity decline; the more rates rise, the lower the call option value. ==Since the bond investor is short the embedded option and the value of the embedded option has fallen, this will partially offset the decline in the value of the callable bond relative to the option-free bond.== The top panel of
+Exhibit 22 shows that the ==dotted line for the callable bond has a flatter slope than the solid line for the option-free bond.==
+As rates continue to increase, the embedded option for the putable bond rises in value more quickly at the margin as it shifts toward becoming an inthe-money option. In contrast, the deep out-of-the-money embedded call option moves further out-of-the-money as rates increase and the marginal impact of further rate increases declines.</p>
+</blockquote>
+<p><strong>Exhibit 24: Long Option, Swaption, and Bond Futures Option Strategies</strong></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Strategy</th><th>Description</th><th>Targeted Return</th><th>Portfolio Duration Impact</th></tr>
+</thead>
+<tbody>
+<tr><td>Long bond call option</td><td>Purchase right to take forward bond delivery</td><td>Max (Bond price at lower yield – Strike price, 0) – Call premium</td><td>Increase portfolio duration</td></tr>
+<tr><td>Long bond put option</td><td>Purchase right to deliver bond in the future</td><td>Max (Strike price – Bond price at higher yield, 0) – Put premium</td><td>Decrease portfolio duration</td></tr>
+<tr><td>Long payer swaption</td><td>Own the right to pay-fixed on an interest rate swap at a strike rate</td><td>Max (Strike rate – Swap rate, 0) – Swaption premium</td><td>Decrease in portfolio duration</td></tr>
+<tr><td>Long receiver swaption</td><td>Own the right to receive-fixed on an interest rate swap at a strike rate</td><td>Max (Swap rate – Strike rate, 0) – Swaption premium</td><td>Increase in portfolio duration</td></tr>
+<tr><td>Long call option on bond future</td><td>Own the right to take forward bond delivery at a strike price</td><td>Max (Bond futures price at lower yield – Strike price, 0) – Call premium</td><td>Increase in portfolio duration</td></tr>
+<tr><td>Long put option on bond future</td><td>Own the right to deliver bond in the future at a strike price</td><td>Max (Strike price – Bond futures price at higher yield, 0) – Put premium</td><td>Decrease in portfolio duration</td></tr>
+</tbody>
+</table>
+</div>
+<h1 id="h-use-of-derivatives-in-yield-curve-strategies"><a class="header" href="#h-use-of-derivatives-in-yield-curve-strategies">H. Use of Derivatives in Yield Curve Strategies</a></h1>
+<p>Derivatives allow <strong>overlay</strong> adjustments without selling illiquid bonds in the physical portfolio.</p>
+<h3 id="example-increase-portfolio-pvbp-expect-yields-to-fall"><a class="header" href="#example-increase-portfolio-pvbp-expect-yields-to-fall">Example: Increase Portfolio PVBP (expect yields to fall)</a></h3>
+<p>![](_rect_imgs/27. X Yield-Curve-Strategies -merged__27_Yield_Curve_Strategies_1_p14_64-75.png)</p>
+<h4 id="1-bond-futures-overlay"><a class="header" href="#1-bond-futures-overlay">1. Bond Futures Overlay</a></h4>
+<ul>
+<li>Long bond futures (each contract PVBP = $180 per $100k notional).</li>
+<li>Number of contracts:
+$$
+N_f = \frac{\text{Target PVBP} - \text{Current PVBP}}{\text{Futures PVBP per contract}} = \frac{10,000}{180} \approx 56 \text{ (scaled example)}
+$$</li>
+</ul>
+<p><strong>Note</strong>: Only hedges <strong>parallel</strong> shifts. Non-parallel moves create yield curve risk (residual exposure).
+![](_rect_imgs/27. X Yield-Curve-Strategies -merged__27_Yield_Curve_Strategies_1_p15_71-381.png)
+Notes:</p>
+<ol>
+<li>==Longer the term, greater the D, and hence lower NP==</li>
+<li>==Pf and Futures durations may be different - this exposed to YC risk if non-paarallel changes==</li>
+</ol>
+<h4 id="2-interest-rate-swap-overlay"><a class="header" href="#2-interest-rate-swap-overlay">2. Interest Rate Swap Overlay</a></h4>
+<ul>
+<li><strong>Short</strong> the swap (pay fixed / receive floating) to increase effective duration/PVBP.</li>
+<li>Notional principal sized to achieve target PVBP.</li>
+<li>Longer swap tenor → higher DV01/PVBP per unit notional → smaller notional needed.
+![](_rect_imgs/27. X Yield-Curve-Strategies -merged__27_Yield_Curve_Strategies_1_p16_72-519.png)</li>
+</ul>
+<p>Notes:</p>
+<ol>
+<li>==Longer the term, greater the D, and hence lower NP==</li>
+<li>==Pf and Swap durations may be different - this exposed to YC risk if non-paarallel changes==</li>
+<li>==Swaps OTC - counterparty risk==</li>
+</ol>
+<h4 id="3-leverage"><a class="header" href="#3-leverage">3. Leverage</a></h4>
+<p>$$
+\text{Leverage Ratio} = \frac{\text{Target PVBP}}{\text{Current PVBP}} = 1.25
+$$</p>
+<p>Balance sheet after leverage:</p>
+<ul>
+<li>Assets: 125% of capital, Duration = 4</li>
+<li>Liabilities (ST borrowing): 25% of capital, Duration ≈ 0</li>
+<li>Equity: 100% of capital</li>
+<li><strong>Post-leverage Duration</strong> ≈ 5.0 (achieves target exposure)
+![](_rect_imgs/27. X Yield-Curve-Strategies -merged__27_Yield_Curve_Strategies_1_p17_69-423.png)</li>
+</ul>
+<hr>
+<p><strong>Exhibit 7: Derivatives-Based Static Yield Curve Strategies</strong></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Strategy</th><th>Description</th><th>Targeted Return</th><th>Goal</th></tr>
+</thead>
+<tbody>
+<tr><td>Long futures position</td><td>Purchase contract for future bond delivery</td><td>(Δ Price / Δ Bond yield) – Margin cost</td><td>Synthetically increase duration (up-front margin and daily mark-to-market valuation)</td></tr>
+<tr><td>Receive-fixed swap</td><td>Fixed-rate receiver on an interest rate swap</td><td>(Swap rate – MRR) + (Δ Swap mark-to-market / Δ Swap yield)</td><td>Synthetically increase portfolio duration (up-front / mark-to-market collateral) +/- Swap carry</td></tr>
+<tr><td><strong>Exhibit 11: Major Yield Curve Strategies to Increase Portfolio Duration</strong></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Strategy</th><th>Description</th><th>Expected Excess Return</th><th>Downside Risks</th></tr>
+</thead>
+<tbody>
+<tr><td>Cash bond purchase (“bullet”)</td><td>Extend duration with longer-dated bonds</td><td>Price appreciation as yield-to-maturity declines</td><td>Higher yield levels</td></tr>
+<tr><td>Receive-fixed swap</td><td>Fixed-rate receiver on an interest rate swap</td><td>Swap MTM gain plus “carry” (fixed minus floating rate)</td><td>Higher swap yield levels and/or higher floating rates</td></tr>
+<tr><td>Long futures position</td><td>Purchase contract for forward bond delivery</td><td>Futures MTM gain – Margin cost</td><td>Higher bond yields and/or higher margin cost</td></tr>
+<tr><td><strong>Exhibit 12: Major Yield Curve Strategies to Reduce Portfolio Duration</strong></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Strategy</th><th>Description</th><th>Expected Excess Return</th><th>Downside Risks</th></tr>
+</thead>
+<tbody>
+<tr><td>Cash bond sale (“bullet”)</td><td>Reduce duration with short sale/switch to shorter-dated bonds</td><td>Smaller price decline as yield-to-maturity increases</td><td>Lower yield levels</td></tr>
+<tr><td>Pay-fixed (interest rate swap)</td><td>Fixed-rate payer on an interest rate swap</td><td>Swap MTM gain plus “swap carry” (MRR – Fixed swap rate)</td><td>Swap MTM loss amid lower swap yield levels and/or lower floating rates</td></tr>
+<tr><td>Short futures position</td><td>Sell contract for forward bond delivery</td><td>Futures MTM gain – Margin cost</td><td>Futures MTM loss amid lower bond yields and/or higher margin cost</td></tr>
+</tbody>
+</table>
+</div>
+<h1 id="i-strategies-for-changes-in-yield-curve-slope"><a class="header" href="#i-strategies-for-changes-in-yield-curve-slope">I. Strategies for Changes in Yield Curve Slope</a></h1>
+<p>Use <strong>Key Rate PVBP</strong> (focus on mid and long segments; ignore very short end due to low duration impact).</p>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>If you expect <strong>steepening</strong> (long rates rise more), reduce Key Rate exposure at the long end (lower long KRD).</li>
+<li>Position the portfolio accordingly using bullets/barbells or derivatives.
+![](_rect_imgs/27. X Yield-Curve-Strategies -merged__27_Yield_Curve_Strategies_1_p18_68-284.png)</li>
+</ul>
+<p>#EXAMPLE</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Tenor</th><th>Active</th><th>Index</th><th>Difference</th></tr>
+</thead>
+<tbody>
+<tr><td>5y</td><td>-1.188</td><td>1.633</td><td>-2.821</td></tr>
+<tr><td>10y</td><td>2.909</td><td>3.200</td><td>-0.291</td></tr>
+<tr><td>30y</td><td>11</td><td>8.067</td><td>2.933</td></tr>
+<tr><td>Portfolio</td><td>12.72</td><td>12.9</td><td>-0.179</td></tr>
+</tbody>
+</table>
+</div>
+<p>![](_rect_imgs/27. X Yield-Curve-Strategies -merged__1_27_YIELD_CURVE_STRATEGIES_p6_69-381.png)</p>
+<h1 id="j-strategies-for-curvature-changes-in-yield-curve"><a class="header" href="#j-strategies-for-curvature-changes-in-yield-curve">J. Strategies for Curvature Changes in Yield Curve</a></h1>
+<h3 id="i-expect-yield-curve-to-become-more-curved--ve-butterfly"><a class="header" href="#i-expect-yield-curve-to-become-more-curved--ve-butterfly">I. Expect Yield Curve to Become <strong>More Curved</strong> (-ve Butterfly)</a></h3>
+<p>![](_rect_imgs/27. X Yield-Curve-Strategies -merged__27_Yield_Curve_Strategies_1_p19_63-564.png)</p>
+<ul>
+<li><strong>Long Butterfly</strong> (also called “long wings, short body”):
+<ul>
+<li><strong>Long Barbell</strong> (short + long maturities — the “wings”)</li>
+<li><strong>Short Bullet</strong> (intermediate maturity — the “body”)
+![](Pasted image 20260701191441.png)
+<strong>Parameters</strong>:
+Levered   Strategy</li>
+</ul>
+</li>
+<li>==Overall portfolio duration = 0 (market-neutral to parallel shifts).==</li>
+<li>==Net <strong>long convexity</strong> (barbell has higher Cx than bullet).==</li>
+</ul>
+<p><strong>Benefits</strong>:</p>
+<ul>
+<li>Profits if curvature increases (body underperforms wings).</li>
+<li>==Also profits if curve <strong>flattens</strong>.==</li>
+<li>Benefits from ==rising volatility (higher Cx).==</li>
+</ul>
+<p><strong>Risks</strong>: Costs more (lower yield); underperforms if curvature does not increase or volatility falls.</p>
+<h3 id="ii-expect-yield-curve-to-become-less-curved-ve-butterfly"><a class="header" href="#ii-expect-yield-curve-to-become-less-curved-ve-butterfly">II. Expect Yield Curve to ==Become <strong>Less Curved</strong>== (+ve Butterfly)</a></h3>
+<ul>
+<li>
+<p><strong>Short Butterfly</strong>:</p>
+<ul>
+<li><strong>Long Bullet</strong> (body)</li>
+<li><strong>Short Barbell</strong> (wings)</li>
+</ul>
+</li>
+<li>
+<p>Net ==<strong>short convexity</strong>.==</p>
+</li>
+<li>
+<p>Profits if ==curvature decreases or volatility falls.==</p>
+</li>
+<li>
+<p>==Also benefis if YC steepens==</p>
+</li>
+</ul>
+<h3 id="iii-condor-variation-of-butterfly"><a class="header" href="#iii-condor-variation-of-butterfly">III. Condor (Variation of Butterfly)</a></h3>
+<p>![](_rect_imgs/27. X Yield-Curve-Strategies -merged__27_Yield_Curve_Strategies_1_p21_63-395.png)</p>
+<ul>
+<li>Spreads the “body” across two intermediate points (e.g., 5yr + 20yr) instead of concentrating on one (e.g., 10yr).</li>
+<li>More ==conservative than butterfly: smaller profit/loss if curvature changes, because long and short cash flows are better matched.==</li>
+<li>==Lower dispersion → lower net convexity vs. pure butterfly.==</li>
+</ul>
+<h1 id="k-yield-curve-strategies-across-currencies"><a class="header" href="#k-yield-curve-strategies-across-currencies">K. Yield Curve Strategies Across Currencies</a></h1>
+<p>International investing offers <strong>diversification</strong> and <strong>higher return potential</strong>, but introduces FX risk.</p>
+<p><strong>Example</strong>: UK investor buys 2-year zero-coupon US Treasury (currently trading at 95, par $100m, net value $95m).</p>
+<ul>
+<li>Spot FX: $1.20 / £ (or £0.8333 / $)</li>
+<li>Cost in £ today: £79.167m</li>
+</ul>
+<p><strong>After 1 year</strong> (assume):</p>
+<ul>
+<li>US Treasury value: $97.2m</li>
+<li>Expected FX: $1.14 / £ (£0.8772 / $)</li>
+<li>Proceeds in £: £85.263m</li>
+<li><strong>Total Return in £</strong>: +7.7%
+![](_rect_imgs/27. X Yield-Curve-Strategies -merged__27_Yield_Curve_Strategies_1_p22_70-544.png)
+<strong>Return Breakdown</strong>:</li>
+<li>US Treasury local return: +2.315%</li>
+<li>FX return (£ appreciation): +5.268%</li>
+<li><strong>Approximate</strong>: $R_{DC} \approx R_{FC} + R_{FX} = 7.583%$</li>
+<li><strong>Exact</strong>: $(1 + R_{DC}) = (1 + R_{FC})(1 + R_{FX})$ → $R_{DC} = 7.7%$</li>
+</ul>
+<p><strong>Risks (Unhedged)</strong>:</p>
+<ul>
+<li>==US Treasury price risk (sold before maturity).==</li>
+<li>==FX risk on principal and any coupons.==</li>
+</ul>
+<p><strong>Hedging</strong>:</p>
+<ul>
+<li>==Sell FX forward==</li>
+<li>Use <strong>currency swap</strong> (==synthetic foreign bond exposure==)</li>
+</ul>
+<p><strong>Hedging with Currency Swap</strong>:</p>
+<ul>
+<li>Creates synthetic exposure.</li>
+<li>In practice, a ==<strong>basis spread</strong> exists between direct and synthetic (swap) foreign yields.==</li>
+<li>If basis is positive, synthetic may be cheaper or more expensive depending on sign.
+![](_rect_imgs/27. X Yield-Curve-Strategies -merged__27_Yield_Curve_Strategies_1_p23_68-467.png)</li>
+</ul>
+<blockquote>
+<p>Interest Rate Parity (IRP) implies that risk-free rates across currencies, once hedged for FX, should be equal. Deviations create arbitrage or carry opportunities (subject to basis risk).
+<strong>Exhibit 30: Active Cross-Currency Strategies</strong></p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Strategy</th><th>Purchase</th><th>Sell / Borrow</th><th>Expected Unhedged Return</th></tr>
+</thead>
+<tbody>
+<tr><td>Receive-fixed / pay-fixed</td><td>High-yielding fixed-income asset</td><td>Lower-yield fixed-rate loan</td><td>Carry (higher yield minus lower yield) assuming uncovered interest parity does not hold</td></tr>
+<tr><td>Receive-fixed / pay-floating</td><td>High-yielding fixed-rate asset</td><td>Short-term, lower yield floating-rate loan rolled over until maturity</td><td>Carry (higher yield minus lower yield) plus long- versus short-term rate differential for lower-yielding currency</td></tr>
+<tr><td>Receive-floating / pay-fixed</td><td>High-yield floating-rate asset</td><td>Lower-yield fixed-rate loan</td><td>Carry (higher floating yield minus lower fixed yield)</td></tr>
+<tr><td>Receive-floating / pay-floating</td><td>High-yield floating-rate asset</td><td>Short-term, lower yield floating-rate loan rolled over until maturity</td><td>Carry (higher floating yield minus lower floating yield)</td></tr>
+</tbody>
+</table>
+</div>
+<h1 id="l-evaluating-expected-return-of-yield-curve-strategies"><a class="header" href="#l-evaluating-expected-return-of-yield-curve-strategies">L. Evaluating Expected Return of Yield Curve Strategies</a></h1>
+<p><strong>Example</strong>: 3-year, 5% coupon bond trading at par (YTM = 5%). 1-year investment horizon.</p>
+<p><strong>Expected yield changes over next year</strong>:</p>
+<ul>
+<li><strong>Roll-down</strong> (if curve shape unchanged): Δr (roll) = <strong>-10 bps</strong> (YTM falls as bond shortens).</li>
+<li><strong>Constant-maturity</strong> change: Δr (CM) = <strong>+30 bps</strong> (yields at the remaining maturity expected to rise).</li>
+</ul>
+<p><strong>Total expected yield change</strong>:
+$$
+E(\Delta r) = -0.10% + 0.30% = +0.20%
+$$</p>
+<h3 id="framework-for-expected-return"><a class="header" href="#framework-for-expected-return">==Framework== for Expected Return</a></h3>
+<p>$$
+E(R) = \text{Income} + % \Delta P_{\text{roll}} + % \Delta P_{\text{CM}}
+$$</p>
+<p><strong>Step-by-step calculation</strong> (detailed in notes):</p>
+<ul>
+<li>Income (coupon): +5%</li>
+<li>Roll-down price change: +0.186%</li>
+<li>Constant-maturity price change (using duration ≈ 1.9 at t=2): -0.57%</li>
+<li><strong>Total E(R) ≈ 4.616%</strong>
+![](_rect_imgs/27. X Yield-Curve-Strategies -merged__27_Yield_Curve_Strategies_1_p24_69-51.png)
+<strong>Alternative (total ΔP approach)</strong> yields similar result (~4.63%).</li>
+</ul>
+<p><strong>Note on FX</strong>: ==For foreign bonds, further adjust E(R) by expected %ΔFX (appreciation adds, depreciation subtracts).==
+#EXAMPLE
+![](_rect_imgs/27. X Yield-Curve-Strategies -merged__1_27_YIELD_CURVE_STRATEGIES_p9_74-71.png)</p>
+<h2 id="example-_rect_imgs27-x-yield-curve-strategies--merged__1_27_yield_curve_strategies_p10_73-105png"><a class="header" href="#example-_rect_imgs27-x-yield-curve-strategies--merged__1_27_yield_curve_strategies_p10_73-105png">#EXAMPLE
+![](_rect_imgs/27. X Yield-Curve-Strategies -merged__1_27_YIELD_CURVE_STRATEGIES_p10_73-105.png)</a></h2>
+<h2 id="quick-reference-summary"><a class="header" href="#quick-reference-summary">Quick Reference Summary</a></h2>
+<p>==Higher yielding currency will trade at forward discount==</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Expectation</th><th>Preferred Positioning</th><th>Key Metric to Watch</th></tr>
+</thead>
+<tbody>
+<tr><td>Large yield volatility</td><td>Higher Convexity (Barbell)</td><td>Convexity / Options</td></tr>
+<tr><td>Parallel yield decline</td><td>Lengthen Duration</td><td>Modified Duration</td></tr>
+<tr><td>Steepening</td><td>Bullet (reduce long KRD)</td><td>Key Rate PVBP (long end)</td></tr>
+<tr><td>Flattening</td><td>Barbell</td><td>Key Rate PVBP (long end)</td></tr>
+<tr><td>More curved (↑ curvature)</td><td>Long Butterfly</td><td>Butterfly spread</td></tr>
+<tr><td>Less curved (↓ curvature)</td><td>Short Butterfly</td><td>Butterfly spread</td></tr>
+<tr><td>Upward slope + stable rates</td><td>Carry / Ride the curve</td><td>Roll-down + Carry</td></tr>
+<tr><td>International opportunity</td><td>Unhedged or hedged carry</td><td>FX + Basis</td></tr>
+</tbody>
+</table>
+</div>
+
+                    </main>
+
+                    <div class="copyright" style="font-size:0.9rem;opacity:0.7;padding:0 1rem 0.5rem;">© 2026 Pramod Thaz. All rights reserved.</div>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../PORTFOLIO MANAGEMENT/26. LIABILITY BASED STRATEGIES.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../PORTFOLIO MANAGEMENT/28. CREDIT STRATEGIES.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../PORTFOLIO MANAGEMENT/26. LIABILITY BASED STRATEGIES.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../PORTFOLIO MANAGEMENT/28. CREDIT STRATEGIES.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    <script src="/cfa-level-iii-notes/paywall.js"></script></body>
+</html>

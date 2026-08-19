@@ -1,0 +1,540 @@
+<!DOCTYPE HTML>
+<html lang="en" class="latte sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>24. Active Equity Strategies - CFA Level III Notes</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/catppuccin-e08be6a9.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "latte";
+            const default_dark_theme = "mocha";
+            window.path_to_searchindex_js = "../searchindex-2521da27.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-b96c3611.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('latte')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-mocha">Mocha</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CFA Level III Notes</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <p>#EXAMPLE</p>
+<ol>
+<li>Determine (circle) which manager based on the three conclusive statements is at odds with exhibit 2. For the managers at odd, justify the reasoning.
+<ol>
+<li>Alfie No No justification needed here. Statement 1 and exhibit 2 are consistent with each other. We can see that P/E and P/B are below the index values.</li>
+<li>Aloo Yes  We can see that there is consistent growth of 15.3% which is not mentioned in statement 2.</li>
+<li>Benny Yes  Although value and momentum are factors and consistent with exhibit 2, we can see that statement 3 and exhibit 2 are at odds because growth is a significant factor as well (19% &gt; 10.2%). ==It seems that Benny is a hybrid growth/value investor with momentum as a factor.==</li>
+</ol>
+</li>
+<li>Determine (circle) the managers approach to portfolio construction (top-down or bottom-up) and the investment strategy. Justify your response
+<ol>
+<li>Companies looking for extremely low valuations relative to their assets are deep value investing.</li>
+<li>Candidates: THIS IS NOT BOTTOM-UP/DEEP-VALUE. Manager C is employing a top-down, sector rotation strategy. The manager is focusing on the macroeconomic environment (key word: RECESSION). The manager has ROTATED into deep value motivated by the economic recession. ==Note: Sector and industry rotation can be top-down macroeconomic OR bottom-up fundamental. We must look at key words==</li>
+</ol>
+</li>
+<li>InvestingStyle
+<ol>
+<li>ompany B has a P/E of: 30 2.7 = 11.1 ==which is lower than the P/E of 15 for its sectors making== it a good candidate for relative value approach.</li>
+<li>Company C has ==high dividend yield of 10%== and has a P/E of: 20 3.5 = 5.71 which is the same as the sector. This combination makes it a good candidate for income investing.</li>
+</ol>
+</li>
+<li>Determine the stock that would be the best addition to the fund. Show your calculation
+<ol>
+<li>𝐵𝐸𝐸𝐺𝐺𝐴𝐴 = 25 2.5� 20 = 0.5 𝐵𝐵𝐸𝐸𝐺𝐺𝐵𝐵 = 30 2.7� 23 = 0.48 𝐵𝐵𝐸𝐸𝐺𝐺𝐶𝐶 = 20 3.5� 2 = 2.86 ==Although company B has a lower PEG ratio, its growth forecast at 23% is lower than the sectors long-term growth forecast of 25%.== Company A has a slightly higher PEG ratio at .50 and its growth forecast at 20% is greater than the sectors long-term growth forecast. This makes company A the best choice.</li>
+</ol>
+</li>
+<li>Determine (circle) the managers two approaches to portfolio construction (systematic or discretionary/top-down or bottom-up). Justify your respons
+<ol>
+<li>Firm specific factors such as ESG and management signal a discretionary approach. Discretionary managers often include nonfinancial variables such as these. Along with this, concentrated portfolios can result from discretionary analysis since they search for active returns through insight to the company</li>
+<li>The GARP approach is a bottom-up approach and is used to understand the risk and return characteristics of individual securities</li>
+</ol>
+</li>
+</ol>
+<h1 id="a-approaches-to-active-management"><a class="header" href="#a-approaches-to-active-management">A. Approaches to Active Management</a></h1>
+<p><strong>Goal</strong>: Beat benchmark. Two categories:</p>
+<p><strong>Fundamental (Discretionary)</strong></p>
+<ul>
+<li>Heavy manager judgment: company/industry analysis, DCF (absolute) or multiples (relative) valuation, financials, growth, leverage.</li>
+<li>Portfolio: few stocks, large positions, industry/sector allocation, arbitrary limits (e.g., max 10% single stock), ==continuous monitoring.==</li>
+<li>Risk: mostly <strong>idiosyncratic</strong> (company-specific). Success depends on manager insight.</li>
+</ul>
+<p><strong>Quantitative (Systematic / Rules-Based)</strong></p>
+<ul>
+<li>Model-driven (created upfront); manager expertise mainly at model construction.</li>
+<li>Identify factors via statistical analysis of past data → avoid:
+<ul>
+<li><strong>Survivorship bias</strong> (==include all stocks at start of period, not just current survivors==).</li>
+<li><strong>Look-ahead bias</strong> (==use only data available in real time;== e.g., use expected earnings, not actual released later).</li>
+</ul>
+</li>
+<li>Portfolio: baskets for factor exposures (e.g., long small-cap index + short large-cap for size tilt), factor allocation, optimization for weights (no arbitrary limits), ==periodic rules-based rebalancing.==</li>
+<li>Risk: <strong>factor level</strong> (premiums may not persist). Success depends on model quality &amp; predictive power (IC). #EXAMPLE portfolio/factor level risk monitoring</li>
+</ul>
+<p><strong>Key Differences</strong>:</p>
+<ul>
+<li>Diversification: Fundamental → ==lower (higher idiosyncratic risk)==; Quant → higher (==factor risk==).</li>
+<li>Allocation: Industry weights vs factor betas/exposures.</li>
+<li>Monitoring: Continuous limit checks vs scheduled rebalance.</li>
+<li><strong>Quant &amp; Fundamental have low correlation</strong> → excellent diversifiers when combined.</li>
+<li>Quantitative uses <em>historical</em> data for decisions; fundamental (not quant) emphasizes forecasting future prospects/earnings/cash flows. #EXAMPLE</li>
+</ul>
+<p>#EXAMPLE #contrast contruction process</p>
+<blockquote>
+<p>Fundamental: Construct the ==portfolio by overweighting stocks that are expected to outperform their peers or the market as a whole.== Where necessary for risk reduction, underweight some benchmark stocks that are expected to underperform. ==The stocks that fell out in the pre-screening process do not have explicit forecasts and will not be included in the portfolio.==</p>
+<p>Quantitative: Construct the portfolio by ==maximizing the objective function (such as portfolio alpha or information ratio) with risk models.==<br>#EXAMPLE rebalance process
+Fundamental: The manager ==monitors each stock continuously and sells stocks when their market prices surpass the target prices== (either through appreciation of the stock price or through reduction of the target price due to changes in expectations).</p>
+<p>Quantitative: Portfolios are usually rebalanced at regular intervals, such as monthly.</p>
+</blockquote>
+<h1 id="b-bottom-up-bu-active-strategies"><a class="header" href="#b-bottom-up-bu-active-strategies">B. BOTTOM UP (BU) ACTIVE STRATEGIES</a></h1>
+<blockquote>
+<p>Start at <strong>company level</strong> → identify strong candidates → value via DCF or multiples → buy if undervalued <strong>and</strong> price expected to converge to intrinsic value within investment horizon.</p>
+</blockquote>
+<p><strong>Company Qualities Sought</strong>:</p>
+<ul>
+<li>Strong brand &amp; sustainable business model (pricing power, margins).</li>
+<li>Competitive advantage (tech, scarce resources, high barriers, distribution).</li>
+<li>Superior management (long-term focus, high ROIC, low turnover, strong ESG, shareholder-aligned).</li>
+</ul>
+<p><strong>Value Strategies</strong> (cheap vs earnings/book): #EXAMPLE</p>
+<ul>
+<li><strong>Relative Value</strong>: Low P/E vs peers (but check fundamentals justify it; ==P/E not comparable across industries)==. #EXAMPLE ==compare to sector peers==</li>
+<li><strong>Contrarian</strong>: Buy when sentiment ==deeply bearish (overreaction);== expect rebound on earnings recovery.</li>
+</ul>
+<blockquote>
+<ul>
+<li>==<strong>High Quality Value</strong>: Cheap + financially strong, consistent earnings, high ROE.== #EXAMPLE High-quality value = attractive valuation metrics <em>supported by</em> financial strength/profitability (stocks can trade far from intrinsic value due to irrationality). High P/B vs. peers but still below intrinsic fits.</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Income</strong>: High or growing dividend yield (defensive in downturns). #EXAMPLE</li>
+<li>==<strong>Deep Value</strong>: Distressed== companies trading at steep discount (irrational market pricing). #EXAMPLE</li>
+<li><strong>Restructure &amp; Distress</strong>: Buy cheap during hardship; influence restructuring or profit from liquidation (acquire large blocks for influence).</li>
+<li>==<strong>Special Situations</strong>: Corporate events (M&amp;A, spinoffs) — needs industry + legal expertise.==</li>
+</ul>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>Tokra claims emphasis on P/B (should be low), momentum (high), return on assets (high). But portfolio ==P/B is <em>higher</em> than index (5.4 vs 4.8), despite low sector deviations—contradicts value tilt.==<br>(A) Furlings’ lower P/B/P/E  vs peers + higher net income/assets fit relative-value orientation. (B) Asgard’s data consistent with GARP (==reasonable valuations== + above-average growth).</p>
+</blockquote>
+<p><strong>Growth Strategies</strong>:</p>
+<ul>
+<li>High revenue/earnings growth (reinvest earnings, accept high P/E). #EXAMPLE</li>
+</ul>
+<blockquote>
+<ul>
+<li>A growth investor would tend to be less concerned about the relatively high valuation levels (high P/E, P/B, and EV/EBITDA) and low dividend yield.</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>GARP</strong> (Growth at Reasonable Price): Above-average growth (==IN EARNINGS==) but <strong>reasonable valuation</strong>. Key metric: ==<strong>PEG ratio</strong> (P/E ÷ growth rate) — lower PEG preferred.== #EXAMPLE
+==<strong>Bottom-up</strong>: starts at company level; uses company &amp; industry analysis to assess intrinsic value → determine if stock is undervalued/overvalued.==
+==<strong>Fundamental managers focus on</strong>: business model &amp; branding, competitive advantages, mgmt &amp; corp governance.==
+==<strong>Bottom-up divided into</strong>: value-based &amp; growth-based approaches.==</li>
+</ul>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>Bottom-up fundamental strategies often lead to unintended macro (e.g., sector or country) risk exposures. ==A portfolio overlay is an array of derivative positions managed separately from the securities portfolio to achieve overall portfolio characteristics that are desired by the portfolio manager==. the investor may be able to ==adjust the sector weights to align with the benchmark’s weights via long and short positions in derivatives==. In this way, top-down strategies can be effective in controlling risk exposures. Overlays can also be used to attempt to add active returns that are not correlated with those generated by the underlying portfolio strategy.</p>
+</blockquote>
+<h1 id="c-top-down-td-active-strategies"><a class="header" href="#c-top-down-td-active-strategies">C. TOP DOWN (TD) ACTIVE STRATEGIES</a></h1>
+<p>Start with <strong>macroeconomic forecast</strong> (economic cycle phase) → identify outperforming regions/sectors/styles → gain exposure via ETFs, futures, or BU stock selection within them.</p>
+<p><strong>Common Tactics</strong>: #imp</p>
+<ul>
+<li>==<strong>Sector Rotation</strong>:== Tilt to sectors expected to outperform in next cycle phase (use industry ETFs for broad exposure).</li>
+<li><strong>Style Rotation</strong>: Time small-cap vs large-cap, value vs growth, etc.</li>
+<li><strong>Volatility</strong>: If expected actual vol &gt; implied vol → buy options (or long straddle if direction uncertain).</li>
+<li><strong>Thematic</strong>: Demographic/trend plays (e.g., aging population → healthcare stocks).</li>
+<li><strong>Overlays</strong>: Hedge unintended macro exposures (e.g., short currency futures on foreign holdings) or add active views (long another currency even without underlying exposure).</li>
+</ul>
+<p>==<strong>Top-down</strong>: focuses on macro environment, demographic trends, &amp; govt policies for investment decisions.==
+==<strong>Top-down used in</strong>: country/geographic allocation, sector/industry rotation, equity style rotation, volatility-based strategies, &amp; thematic investing.==
+#EXAMPLE</p>
+<blockquote>
+<ul>
+<li>select countries to overweight or underweight</li>
+<li>Once the country or region weights are determined by a top-down process, the portfolio can be constructed by selecting stocks in the relevant countries or regions.</li>
+<li>A portfolio manager with expertise in identifying drivers of sector or industry returns will establish a view on those drivers and will set weights for those sectors in a portfolio. For example, the performance of the energy sector is typically driven by the price of crude oil. The returns of the materials sector rest on forecasts for commodity prices. Once a view is established on the return and risk of each sector, a manager can then decide which industries to invest in and what weightings to assign to those industries relative to the benchmark.</li>
+<li>passive factor investing—sometimes marketed as “smart beta” products—has given portfolio managers more tools and flexibility for investing in different equity styles.</li>
+<li>One can exploit the fact, for example, that high-quality stocks tend to perform well in recessions, or that cyclical deep-value companies are more likely to deliver superior returns in a more “risk-on” environment</li>
+<li>where the ==investment mandate permits,== top-down managers can choose among different equity style ETFs and structured products to obtain risk exposures that are consistent with their views on different stages of the economic cycle or their views on market sentiment.</li>
+</ul>
+</blockquote>
+<p>#EXAMPLE - combine top down and bottom-up.  Furlings combines top-down + bottom-up but allocation driven by managers’ discretion/judgment. Strong emphasis on financial reporting analysis, small number of high-conviction firms per sector, valuation, competitive advantages, governance—core to fundamental management. Head manager’s experience drives top-down sector bets.</p>
+<h1 id="d-factor-based-active-strategies"><a class="header" href="#d-factor-based-active-strategies">D. FACTOR-BASED ACTIVE STRATEGIES</a></h1>
+<p>Beyond CAPM (market only): <strong>rewarded systematic factors</strong> with long-term premiums.</p>
+<p><strong>Key Factors</strong>:</p>
+<ul>
+<li><strong>Size</strong>: Small-cap premium (higher risk).</li>
+<li><strong>Style (Value)</strong>: Low P/E &amp; P/B outperform growth (distress risk or behavioral overreaction).</li>
+<li><strong>Momentum</strong>: Prior winners continue (behavioral overreaction; can be industry-wide → sector risk). #EXAMPLE</li>
+</ul>
+<blockquote>
+<ul>
+<li>price momentum has performed substantially better in Europe than in the United States. Managers should be aware that what appears to be impressive performance in backtests does not necessarily imply that the factor will continue to add value in the future.</li>
+<li>Using the ==simple price momentum factor means that a portfolio buys past winners and shorts past losers.== The resulting portfolio could have ==exposure to potentially significant industry bets - By equalizing exposure across sectors, the strategy removes the risk of inadvertently making massive macroeconomic bets.== ==Sector-neutral price momentum== focuses on stock selection without such risk exposures and thus tends to reduce downside risk.</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Quality</strong>: Consistent earnings + low debt (outperform in downturns); or high earnings quality (reported earnings close to CFO).</li>
+</ul>
+<blockquote>
+<p>#EXAMPLE 2-month price increase is momentum—not growth (no earnings-growth proxy).</p>
+</blockquote>
+<p><strong>Construction Issues</strong>:</p>
+<ul>
+<li>Non-standardized categories (e.g., small-cap cutoff? P/E threshold for value?).</li>
+<li><strong>Datamining</strong> risk → require economic rationale + <strong>out-of-sample</strong> testing.</li>
+<li>Avoid ==survivorship/look-ahead bias in backtests.==</li>
+<li>Premiums not guaranteed to persist.</li>
+</ul>
+<p><strong>Extracting Premiums (Long-Short)</strong>: e.g., ==long smallest 10% + short largest 10% for size premium.== <strong>Drawbacks</strong>: Ignores middle 80%, assumes ==linearity== (risk may rise exponentially), ==concentrated portfolios, shorting restrictions, not pure factor (other exposures creep in)==.</p>
+<p><strong>Active Element</strong>: <strong>Factor tilting/rotation</strong> — adjust betas based on views (e.g., ↑ size beta if small-caps expected to outperform).</p>
+<h1 id="e-activist-strategies"><a class="header" href="#e-activist-strategies">E. ACTIVIST STRATEGIES</a></h1>
+<p>Accumulate shares to force value-enhancing changes:</p>
+<ul>
+<li>==Sell unproductive assets, cut costs, change senior mgmt, alter cap structure, ↑ dividends/buybacks.== <strong>mgmt/strategy/capital structure</strong> changes</li>
+</ul>
+<p><strong>Tactics</strong> (no need for majority ownership):</p>
+<ul>
+<li>Board representation, direct engagement/lawsuits (fiduciary breach), proxy fights, AGM proposals, media campaigns. #EXAMPLE</li>
+</ul>
+<p><strong>Defensive Mechanisms</strong> (==by target==):</p>
+<ul>
+<li>Multi-class shares (==founder super-voting rights)==, ==poison pill (dilutive new shares)==, staggered board (slow control acquisition).</li>
+</ul>
+<p><strong>Target Characteristics</strong>:</p>
+<ul>
+<li>Below-peer growth, ==persistent negative momentum, weak governance, underutilized assets.== #EXAMPLE</li>
+</ul>
+<p><strong>Pros/Cons</strong>: Disciplines management (pro); can distract or ==encourage short-termism (con)==. <strong>Empirical</strong>: Positive stock reaction on activist involvement; activists typically exit after value realized (not long-term holders).</p>
+<p>#EXAMPLE
+[🔗 Pmp Active Investing Strategies](PMP - Active Investing Strategies#^26e2f3)</p>
+<blockquote>
+<p>The company offers upside potential because of its ability to improve operating performance and cash payout using asset disposals, a strategy being implemented by other com￾panies in its sector. Neither Company A nor Company B offers an attractive opportunity for activist investing: Company A is already operating efficient￾ly, while Company B is more suitable for investors that focus ==on restructur￾ing and distressed investing==.</p>
+</blockquote>
+<h1 id="f-alternative-active-strategies"><a class="header" href="#f-alternative-active-strategies">F. ALTERNATIVE ACTIVE STRATEGIES</a></h1>
+<ul>
+<li><strong>Statistical Arbitrage</strong> (quant/rules-based): Pairs trading — e==xploit temporary divergence== from historical correlation ==(long underperformer, short outperformer)==; expect mean reversion. Use stop-losses. ==Risk = structural (non-reverting) divergence.==
+<ul>
+<li>#EXAMPLE</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Pair 1 is the most suitable for the fund. The companies’ share prices have been correlated in the past, with the share price ratio reverting to the mov￾ing average. ==They have similar businesses, and there is no indication of a <strong>change in either company’s strategies</strong>, as there is for Pair 3==. By contrast with the price ratio for Pair 1, the past correlation of share prices for Pair 2 ==may have been spurious== and is not described as exhibiting mean reversion.
+- #EXAMPLE :** Ideal pairs trade: ==(1) current price ratio significantly different from long-term average + mean-reverting history, AND (2) high historical return correlation.== Only 3&amp;4 meet both.
+-</p>
+</blockquote>
+<ul>
+<li><strong>Market Microstructure</strong> (HFT/quant): Exploit temporary order imbalances (buy before price adjusts to equilibrium).</li>
+<li><strong>Event-Driven</strong>: Exploit inefficiencies around M&amp;A (==long target @ discount, possibly short acquirer==), earnings, restructuring, special dividends, buybacks, spinoffs. ==Risk = deal fails or long duration (annualized return falls as time lengthens).==</li>
+</ul>
+<h1 id="g-fundamental-active-investment-strategies"><a class="header" href="#g-fundamental-active-investment-strategies">G. FUNDAMENTAL ACTIVE INVESTMENT STRATEGIES</a></h1>
+<p><strong>7-Step Process</strong>: #imp #EXAMPLE</p>
+<ol>
+<li>Define investment universe (per mandate).</li>
+<li>Prescreen (e.g., P/E filter) → shortlist.</li>
+<li>In-depth company + industry analysis (==neutral weight if no view==).</li>
+<li>Project earnings &amp; cash flows.</li>
+<li>Estimate intrinsic value (DCF/multiples); long undervalued, short overvalued; update continuously.</li>
+<li>Weight positions for optimal risk-adjusted return (client risk tolerance); ==add stop-losses.==</li>
+<li>Periodic rebalance to align with objectives. #EXAMPLE continuous monitoring of holdings; rebalance any time based on company-specific info.</li>
+</ol>
+<p><strong>Main Pitfalls</strong>:</p>
+<ul>
+<li><strong>Behavioral Biases</strong> (==cognitive &amp; emotional==): #imp
+<ul>
+<li>Confirmation (seek confirming info only) → mitigate: broad information sources.</li>
+<li>Illusion of Control → mitigate: strict position limits (IPS).</li>
+<li>Availability (overweight recent/familiar) → mitigate: long-term focus.</li>
+<li>Loss Aversion (hold losers too long) → mitigate: automatic stop-losses.</li>
+<li>Overconfidence (overestimate skill) → mitigate: thorough performance attribution.</li>
+<li>Regret Aversion (avoid action or hold too long) → mitigate: periodic position review + rationale.</li>
+</ul>
+</li>
+<li><strong>Value Trap</strong>: Appears cheap but fundamentals deteriorating (==need turnaround catalyst==). #EXAMPLE</li>
+<li><strong>Growth Trap</strong>: ==Pay high price for growth that fails to materialize (competition or maturation) → sharp price drop.==</li>
+</ul>
+<p>#EXAMPLE
+The portfolio manager has a ==growth orientation with a focus on companies that have delivered EPS growth in recent years and that have maintained their earnings and price growth momentum.== Criterion 1 specifies accelerating EPS growth rates over recent fiscal years, while criterion 2 discards companies for which recent earnings growth has been negative. Criterion 3 further screens for companies that have ==beaten consensus earnings expectations—have had a positive earnings surprise==—in the most recent quarter. A positive earnings surprise suggests that past earnings growth is continuing. Criteria 4 and 5 screen for positive recent stock price momentum. Criterion 6 retains only stocks with at least average market liquidity. Note the absence of any valuation multiples among the screening criteria: ==A value investor’s screening criteria would typically include a rule to screen out issues that are expensively valued relative to earnings or assets.==</p>
+<h1 id="h-quantitative-active-investment-strategies"><a class="header" href="#h-quantitative-active-investment-strategies">H. QUANTITATIVE ACTIVE INVESTMENT STRATEGIES</a></h1>
+<p><strong>5-Step Process</strong>: #imp</p>
+<ol>
+<li>Define market opportunity / hypothesis on return drivers. #EXAMPLE</li>
+<li>Gather/clean/reshape data: company mapping, fundamentals (financials, prices, dividends), survey/sentiment, unconventional (e.g., online mentions).</li>
+<li>Backtest → ==compute <strong>IC</strong> (correlation of predicted vs realized returns; higher = better predictive power).== For multi-factor: mean-variance optimization for factor weights (==correlated factors get lower weigh==t). #EXAMPLE IC measures correlation between current factor scores FS(t) and <em>next-period</em> strategy returns SR(t+1).</li>
+<li>Out-of-sample validation.</li>
+<li>Construct portfolio (use var/cov for risk minimization; factor in trading costs when choosing between similar stocks).</li>
+</ol>
+<p><strong>Main Pitfalls</strong>:</p>
+<ul>
+<li><strong>Backtesting Issues</strong>: ==Survivorship bias, look-ahead bias (e.g year-end prices + same-year financials published <em>weeks later</em>) , datamining (no economic rationale), overfitting.== #EXAMPLE</li>
+<li><strong>Trading Issues</strong>: IPS turnover limits, high transaction costs (illiquids), short availability constraints. → Without these, model overestimates returns. Also stress-test crisis (correlations spike → diversification fails).</li>
+<li>Quant &amp; Fundamental ==low correlation== → strong diversifier when used together.</li>
+</ul>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>The performance of quantitative strategies is generally not highly correlated with that of fundamental approaches. T==herefore, in theory, adding a quantitative overlay may provide some diversification benefit to the firm.==<br>In practice, however, because the processes behind quantitative and fundamental investing tend to be quite different, combining these two approaches is not always straightforward. Quantitative investing requires a ==large upfront investment in data, technology, and model development==. It is generally desirable to use factors and models that are different from those used by most other investors to avoid ==potential crowded trades.== Managers need to be particularly careful with their back-testing so that the results do not suffer from ==look-ahead and survivorship biases.== ==Transaction costs and short availability== (if the fund involves shorting) should be incorporated into the ==back-testing==.</p>
+</blockquote>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>Short interest can be defined as the ratio of the number of stocks shorted to the number of stocks in the available inventory for lending.<br>They proposed that if stocks with poor price momentum are heavily shorted²⁴ relative to outperforming stocks, ==it indicates that many investors are following a momentum style. Hence, momentum as an investment strategy might get crowded.== A measure of crowding that may be called a “crowding coefficient” can be estimated by regressing short interest on price momentum.</p>
+</blockquote>
+<h1 id="i-equity-investment-styles"><a class="header" href="#i-equity-investment-styles">I. EQUITY INVESTMENT STYLES</a></h1>
+<p><strong>Two Dimensions</strong>:</p>
+<ol>
+<li><strong>Stock Characteristics</strong>: Relative valuation (Value/Growth/Blend), Market cap (small/mid/large), Price momentum, Volatility, Dividend yield, Earnings quality.</li>
+<li><strong>Membership Based</strong>: Sector/Industry, Country of origin, Market type (Developed/Developing/Frontier).</li>
+</ol>
+<p><strong>Good Categorization Conditions</strong>: ==High correlation <strong>within</strong> group, low correlation <strong>between</strong> groups.==</p>
+<p><strong>Benefits</strong>: Clear style from mandate, proper benchmarking (avoid false “active” signal), fair peer comparison.</p>
+<p><strong>==Style== Identification Methods</strong>: #imp</p>
+<ul>
+<li><strong>Holding-Based (HB)</strong>: Classify each holding bottom-up → aggregate. Most accurate/granular (if data available). Issue: ==ambiguous breakpoints== (e.g., small-cap cutoff $3B vs $10B changes classification); value/growth overlap possible.</li>
+<li><strong>Return-Based (RB)</strong>: Regress portfolio returns vs style indexes (useful when holdings undisclosed). Captures historical tilts (good for rotation managers). Issues: ==limited/ imperfect style indexes; may treat non-index exposures as idiosyncratic; broad indexes may miss specific strategies (e.g., GARP vs broad growth).==</li>
+</ul>
+<p><strong>HB vs RB</strong>: HB more precise when holdings known; RB better for history/rotation and non-disclosed portfolios. Use together (RB broad screen + HB deep dive). Categories can still be too broad (performance varies within same style due to other factor exposures).</p>
+<blockquote>
+<p>#EXAMPLE Adding ==new factor changes return correlations== (affects returns-based style) <em>and</em> changes portfolio holdings (affects holdings-based style).</p>
+</blockquote>
+<p>#EXAMPLE #explain discrepancy
+■ Holdings-based style analysis on the current portfolio shows that the fund has value and growth exposures of ==0.85== and 0.15, respectively.<br>■ Returns-based style analysis with 60 months’ historical returns shows that the value and growth exposures of the fund are equal to 0.4 and ==0.6==, respectively.</p>
+<p>Explain: Some active equity managers may maintain one investment style over time in the belief that that particular style will outperform the general market. Others may rotate or switch between styles to a==ccommodate the then-prevailing investment thesis.== Returns-based style analysis regresses the portfolio’s historical returns against the returns of the corresponding style indexes (over 60 months in this example). Its output indicates the ==average effect of investment styles== employed during the period. ==While the holdings-based analysis suggests that the current investment style of the equity fund is value oriented, the returns-based analysis indicates that the style actually employed was <strong>likely in the growth category for a period of time</strong> within the past five years.==</p>
+<p>#EXAMPLE</p>
+<blockquote>
+<p><strong>THE MORNINGSTAR STYLE BOX</strong>
+In a style box, each style pair splits the stock universe into two to three groups, such as value, core (or “blend”), and growth. The same universe can be split by another style definition—for example, large cap, mid cap, and small cap. It uses holdings-based style analysis and classifies about the same number of stocks in each of the value, core, and growth styles.
+Two of the three style categories are “value” and “growth,” common to both stocks and funds. However, the third, central column is ==labeled “core” for stocks== (i.e., those stocks for which neither value nor growth characteristics dominate) ==and “blend” for funds== (meaning that the fund holds a mixture of growth and value stocks).</p>
+<p>For each stock, Morningstar assigns a growth score and a value score, each based on five components. The scores are scaled to a range of 0 to 100, and the difference between the stock’s growth and value scores is called the net style score. If this net style score is strongly negative, approaching -100, the stock’s style is classified as value. If the result is strongly positive, the stock is classified as growth. If the scores for value and growth are similar in strength, the net style score will be close to zero and the stock will be classified as core.</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Value Score Components and Weights</th><th>Growth Score Components and Weights</th></tr>
+</thead>
+<tbody>
+<tr><td>Forward-looking measures<br>*Price to projected earnings</td><td>Forward-looking measures<br>*Long-term projected earnings growth</td></tr>
+<tr><td>Historical measures<br>*Price to book</td><td>Historical measures<br>*Historical earnings growth</td></tr>
+<tr><td>*Price to sales</td><td>*Sales growth</td></tr>
+<tr><td>*Price to cash flow</td><td>*Cash flow growth</td></tr>
+<tr><td>*Dividend yield</td><td>*Book value growth</td></tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p><strong>MSCI INDEXES</strong>
+The value investment style characteristics for index construction are defined using <strong>three</strong> variables: ==book-value-to-price ratio, 12-month forward-earnings-to-price ratio, and dividend yield.== The growth investment style characteristics for index construction are defined using <strong>five</strong> variables: ==long-term forward EPS growth rate, short-term forward EPS growth rate, current internal growth rate, long-term historical EPS growth trend, and long-term historical sales-per-share growth trend==. Z-scores for each variable are calculated and aggregated for each security to determine the security’s overall style characteristics. For example, a stock is assigned a so-called “value inclusion factor” of 0.6, which means that the stock could have both value and growth characteristics and contributes to the performance of the value and growth indexes by 60% and 40%, respectively</p>
+</blockquote>
+<p><strong>LIPPER</strong>
+#EXAMPLE Lipper does have core classification (Z-score method over 6 characteristics). classifies securities as either value, growth, or core</p>
+
+                    </main>
+
+                    <div class="copyright" style="font-size:0.9rem;opacity:0.7;padding:0 1rem 0.5rem;">© 2026 Pramod Thaz. All rights reserved.</div>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../PORTFOLIO MANAGEMENT/23. INDEX BASED STRATEGIES.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../PORTFOLIO MANAGEMENT/25. ACTIVE EQUITY PORT CONSTRUCTION.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../PORTFOLIO MANAGEMENT/23. INDEX BASED STRATEGIES.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../PORTFOLIO MANAGEMENT/25. ACTIVE EQUITY PORT CONSTRUCTION.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    <script src="/cfa-level-iii-notes/paywall.js"></script></body>
+</html>

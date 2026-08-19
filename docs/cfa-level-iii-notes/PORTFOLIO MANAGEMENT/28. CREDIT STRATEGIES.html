@@ -1,0 +1,832 @@
+<!DOCTYPE HTML>
+<html lang="en" class="latte sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>28. Credit Strategies - CFA Level III Notes</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/catppuccin-e08be6a9.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "latte";
+            const default_dark_theme = "mocha";
+            window.path_to_searchindex_js = "../searchindex-2521da27.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-b96c3611.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('latte')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-mocha">Mocha</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CFA Level III Notes</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="a-risk-considerations-for-spread-based-securities"><a class="header" href="#a-risk-considerations-for-spread-based-securities">A. RISK CONSIDERATIONS FOR SPREAD BASED SECURITIES</a></h1>
+<p><strong>Symbolic Architecture:</strong><br>[ $\text{YTM}(i) = \text{YTM(Treasury)} + \text{Yield Spread}(i)$ ]  <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code>
+Spread = compensation for ==credit/liquidity/option risks== beyond benchmark curve.<br>Credit Risk = PV(Expected Loss) = POD × LGD (Loss Severity).<br>Ex: POD=30%, LGD=20% → spread ≈ 6% of par.<br>Senior secured LGD lower than junior unsecured (==same POD, different recovery==).<br>Historic Credit Loss Rate (e.g., BBB 2.7%) estimates future LGD.
+#EXAMPLE</p>
+<blockquote>
+<ol>
+<li>Using the POD approximation (POD ≈ Spread/LGD and LGD = (1 - RR)), the analyst uses the current ==first lien bank loan credit spread== and expected first lien bank loan recovery rate to estimate the issuer’s POD to be 2.778% (=1.00%/(1 - 0.64)).  #review <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code>
+========</li>
+<li>Using the issuer POD from Answer 1 and the expected second lien bank loan recovery rate of 29%, the bank analyst solves for the expected second lien spread using (POD x LGD) to get 197 bps (=2.778% x (1 - 0.29)).</li>
+</ol>
+</blockquote>
+<p><strong>Spread Curve Factors:</strong></p>
+<ol>
+<li>Credit Rating: HY &gt; IG spreads; upward sloping (later CFs more uncertain).</li>
+<li>Business Cycle: Early expansion (inverted HY), late (steep positive), peak (narrowest), contraction (highest, HY inverted, IG flat).  #EXAMPLE <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code>
+![](_rect_imgs/28. X CREDIT STRATEGIES - merged__1_28_FIXED_INCOME_ACTIVE_MANAGEMENT_CREDIT_STRATEGIES_p1_81-132.png)
+Negative correlation HY spreads vs Treasury yields (flight-to-safety).<br>Distressed bonds: price → recovery value; <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code> ==<strong>empirical duration (regerssion)</strong> ≈0 (vs <strong>analytical/(formula-based)</strong> high)==.</li>
+</ol>
+<p><strong>==ALWAYS USE MV OF BOND - NOT FACE VALUE==</strong> if needed calculated MV using PV calc #EXAMPLE</p>
+<h1 id="b-credit-migration"><a class="header" href="#b-credit-migration">B. CREDIT MIGRATION</a></h1>
+<p>Downgrades more common; ==impact asymmetric (downgrade ↑spread more than upgrade ↓).==<br>Extreme: downgrading from IG → HY forces sales (mandate breach) → sharp P↓/spread↑.</p>
+<h1 id="c-yield-spread-vs-g-spread"><a class="header" href="#c-yield-spread-vs-g-spread">C. YIELD SPREAD vs. G-SPREAD</a></h1>
+<p><strong>Symbolic Architecture:</strong><br><strong>y-sp:</strong> vs on-the-run Treasury closest maturity.<br><strong>G-sp:</strong> interpolated benchmark exactly matching bond maturity.
+#EXAMPLE</p>
+<blockquote>
+<p>For a given all-in YTM, the lower the (on-the-run or interpolated) benchmark rate, the higher the relevant spread measure over the benchmark. Therefore, the higher yield spread versus G-spread most likely arises from the government benchmark having a shorter maturity than the bond and an upward sloping government yield curve.</p>
+</blockquote>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>The OAS measure is best suited to compare the impact of embedded options on similar bonds because it incorporates a volatility assumption to account for the value of bond options.</p>
+</blockquote>
+<p>#EXAMPLE
+![](Pasted image 20260702164124.png)</p>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>If benchmark rates changed and the spreads didnt , then calculate the delta of the change  to benchmark <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code>
+For the yield spread measure, neither the 1.29% spread nor the 7-year government rate of 1.39% has changed, so an analyst considering only these two factors would expect the bank bond price to remain unchanged.</p>
+<p>However, for the G-spread measure, the 20 bp increase in the 10-year government YTM causes the 8-year interpolated government YTM to change.</p>
+<ol>
+<li>
+<p>The 7-year and the 10-year bond weights for the interpolation are the same as for Question 1, $w_7$ = 66.7% and $w_{10}$ = 33.3%.</p>
+</li>
+<li>
+<p>The new 8-year government rate is a weighted average of the 7-year bond rate and the 10-year bond rate using the weights in Step 1.</p>
+</li>
+</ol>
+<p>$r_{8\text{yr}}$ = $w_7$ × $r_{7\text{yr}}$ + $w_{10}$ × $r_{10\text{yr}}$<br>= (66.7% × 1.39%) + (33.3% × 1.86%) = 1.55%<br>The bank bond YTM has risen by ==0.07% (1.48% to 1.55% for benchmark alone)== 2.75% (=1.55% + 1.20%).</p>
+<p>The bank bond price change can be estimated by multiplying the yield change by modified duration ($-ModDur$ × $\Delta$Yield) as in earlier lessons. This change can be calculated as -0.497% (=-==.71 (corp bond duration)== × 0.07%).</p>
+<p>Note that we can confirm this using the Excel PV function ($=-PV$ (rate, nper, pmt, FV, type)) where “rate” is the interest rate per period (0.0268), “nper” is the number of periods (8), “pmt” is the periodic coupon (2.75), “FV” is future value (100), and “type” corresponds to payments made at the end of each period (0).</p>
+<p>Initial bank bond price: 100.50 ($=-PV$ (0.0268, 8, 2.75, 100, 0))<br>New bank bond price: 100 ($=-PV$ (0.0275, 8, 2.75, 100, 0))<br>Price change: -0.497% (= (99.39 - 100.50)/100.50)<br>==The G-spread calculation provides a more accurate representation of the estimated bank bond price change in this case because it incorporates the term structure of interest rates.== <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code></p>
+</blockquote>
+<p><strong>Numerical Ex (6y Corp YTM=4.8%; 5y Treas=3.2%, 8y=3.9%):</strong><br><strong>y-sp:</strong> 4.8% – 3.2% = 1.6% (160bps).<br><strong>G-sp Step 1:</strong> Interpolated 6y Treas = 3.2% + (1/3)(3.9%–3.2%) = 3.433%.<br><strong>Step 2:</strong> 4.8% – 3.433% = 1.367% (137bps).</p>
+<p><strong>Notes:</strong> G-sp more accurate (exact maturity); ==upward yc → G-sp &lt; y-sp.==  <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code>
+Both capture credit/liquidity/option; 4 risks: i-rate (benchmark), credit, liquidity, option.<br>![](_rect_imgs/28. X CREDIT STRATEGIES - merged__28_Fixed_Income_Active_Management_Credit_Strategies_p5_98-434.png)</p>
+<p><strong>Note:</strong> ==G-sp better reflects pure credit risk.==</p>
+<h1 id="d-interpolated-spread-vs-asset-swap-spread"><a class="header" href="#d-interpolated-spread-vs-asset-swap-spread">D. INTERPOLATED SPREAD vs. ASSET SWAP SPREAD</a></h1>
+<p><strong>Symbolic Architecture:</strong><br>Both use ==interpolated swap rate as benchmark== (MRR-based, bank credit built-in).<br><strong>ASw:</strong> ==Bond coupon== – swap rate (existing bond).<br><strong>I-sp:</strong> ==Bond YTM (i.e. coupon on new bond issued at par)== – swap rate (par new bond).
+#EXAMPLE</p>
+<p><strong>Numerical Ex (6y Corp YTM=4.8% C=4.9%; 5y swap=3.4%, 8y=4.2%):</strong><br>Step 0: Swap rate = treasury YTM + ==swap spread==
+==<strong>Step 1:</strong> 6y swap = 3.4% + (1/3)(4.2%–3.4%) = 3.67%.==<br>==<strong>Step 2 ASw:</strong> 4.9% – 3.67% = 1.23%.==<br>==<strong>Step 3 I-sp:</strong> 4.8% – 3.67% = 1.13%.==</p>
+<h1 id="e-z-spread--sticky-notereviewvar--color-red-rgb"><a class="header" href="#e-z-spread--sticky-notereviewvar--color-red-rgb">E. Z-SPREAD  <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code></a></h1>
+<p>![](_rect_imgs/28. X CREDIT STRATEGIES - merged__28_Fixed_Income_Active_Management_Credit_Strategies_p7_75-622.png)
+<strong>Symbolic Architecture:</strong><br>Z-sp over Treasury spot rates (assumes CFs to maturity).<br>Ignores embedded options.</p>
+<p><strong>Deadly Trap:</strong> Apply Z-sp to option-embedded bonds (==use OAS==).</p>
+<h1 id="f-option-adjusted-spread-oas"><a class="header" href="#f-option-adjusted-spread-oas">F. OPTION ADJUSTED SPREAD (OAS)</a></h1>
+<p><strong>Symbolic Architecture:</strong><br>OAS = spread ==over spots (like z-sp)  == after adjusting CFs for embedded options.<br>OAS = Z-sp – option (call) spread.
+![](_rect_imgs/28. X CREDIT STRATEGIES - merged__28_Fixed_Income_Active_Management_Credit_Strategies_p7_73-62.png)</p>
+<p><strong>Numerical Ex (same credit/liquidity; X 1y callable Z-sp=270bps call=130bps; Y 3y Z-sp=210bps call=50bps):</strong><br>OAS_X = 270 – 130 = 140bps; OAS_Y = 210 – 50 = 160bps → Y more attractive.</p>
+<p><strong>Notes:</strong> OAS sensitive to volatility assumption; portfolio OAS = wtd avg.<br>When comparing EOs, use OAS (factors out option risk).</p>
+<p><strong>Portfolio OAS</strong>  wtd verage
+#EXAMPLE
+![](_rect_imgs/28. X CREDIT STRATEGIES - merged__1_28_FIXED_INCOME_ACTIVE_MANAGEMENT_CREDIT_STRATEGIES_p3_73-444.png)</p>
+<p><strong>Logic:</strong> ==Higher call risk → higher call spread → lower OAS.==</p>
+<h1 id="g-yield-measures-for-floating-rate-notes"><a class="header" href="#g-yield-measures-for-floating-rate-notes">G. YIELD MEASURES FOR FLOATING RATE NOTES</a></h1>
+<p><strong>Symbolic Architecture:</strong><br>Coupon = LIBOR(ref) + Quoted Margin (fixed at issue).<br>Discount Margin (DM) = required over current LIBOR (changes with risk).<br>==FRN @ premium: Quoted &gt; DM==; @ discount: Quoted &lt; DM; @ par: equal.</p>
+<p><strong>Numerical Ex 1 (10y FRN, 4y ago, C=LIBOR180+2%, today LIBOR=5%, DM=3%):</strong><br><strong>Step 1:</strong> Coupon = 5% + 2% = 7%.<br><strong>Step 2:</strong> PMT (6mo) = (7%/2)×100 = 3.50.<br><strong>Step 3:</strong> Required = 5% + 3% = 8%.<br><strong>Step 4:</strong> PV (semi, N=12, I=4%, PMT=3.50, FV=100) = 95.31 (discount).<br>#EXAMPLE ==NOTE PERIODIC ADJUSTMENT== <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code>
+![](_rect_imgs/28. X CREDIT STRATEGIES - merged__1_28_FIXED_INCOME_ACTIVE_MANAGEMENT_CREDIT_STRATEGIES_p4_76-379.png)
+<strong>Numerical Ex 2 (12y FRN quarterly, C=LIBOR90+3%, today LIBOR90=5.77%, P=106):</strong><br><strong>Step 1:</strong> Coupon = 5.77% + 3% = 8.77%.<br><strong>Step 2:</strong> Quarterly PMT = (8.77%/4)×100 = 2.175.<br><strong>Step 3:</strong> YTM quarterly I≈1.98% → annualized 7.92%.<br><strong>Step 4:</strong> DM = 7.92% – 5.77% = ==2.15% (222bps). Premium since Quoted &gt; DM.==</p>
+<p><strong>Z-DM</strong> : The zero-discount margin (Z-DM) incorporates forward MRR into the yield
+spread calculation for FRNs. ==As in the case of the zero-volatility spread for fixed-rate==
+==bonds shown earlier, the Z-DM is the fixed periodic adjustment applied to the FRN==
+==pricing model to solve for the observed market price.==
+#EXAMPLE
+The ==QM will be above the DM if issuer creditworthiness improves==. As MRRs rise over the next three years, the upward-sloping curve will cause the ==Z-DM to remain below the DM.==</p>
+<h1 id="h-impact-of-yield-spreads-on-portfolio-returns"><a class="header" href="#h-impact-of-yield-spreads-on-portfolio-returns">H. IMPACT OF YIELD SPREADS ON PORTFOLIO RETURNS</a></h1>
+<p><strong>Rolling Yield:</strong><br>#EXAMPLE</p>
+<blockquote>
+<p>Calculate the corporate bond rolling yield per £100 face value.
+![](Pasted image 20260702192908.png)
+![](Pasted image 20260702193016.png)</p>
+<p>Diff in Rolling Yields = 2.75% - 1.8% = 0.95%
+B==ecause the UK gilt yield curve is upward sloping in this example, we can conclude that the relative rolling yield using an interpolated benchmark (interpolated 10yr rate) would be lower than the 0.95% difference in Question 1.==<br>====
+<strong>Symbolic Architecture:</strong><br>==[ $% \Delta P = (-D)(\Delta sp) + \frac12 C_x (\Delta sp)^2$ ] (via spread).==  &lt;– different than % delta sp using with DTS
+==DTS = D × OAS (<strong>adjusts D to spread leve</strong>l).==<br>==Portfolio DTS = wtd avg individual DTS.==<br>![](_rect_imgs/28. X CREDIT STRATEGIES - merged__28_Fixed_Income_Active_Management_Credit_Strategies_p11_75-424.png)
+<strong>Numerical Ex (A-rated w=0.25 OAS=100bps D=5 DTS=500; BB w=0.75 OAS=400bps D=7 DTS=2800):</strong><br><strong>Step 1:</strong> ==Portfolio DTS = 0.25×500 + 0.75×2800 = 2225.==<br><strong>Step 2:</strong> Index OAS=200bps widens 20bps → %Δsp=10%.<br><strong>Approach I (individual):</strong> A: –5×0.1% = –0.50%; BB: –7×0.4% = –2.80%; Portfolio –2.225%.<br><strong>Approach II (whole):</strong> –2225 × 10% = –222.5bps or –2.225%.
+![](<em>rect_imgs/28. X CREDIT STRATEGIES - merged__28_Fixed_Income_Active_Management_Credit_Strategies_p12_60-409.png)
+#EXAMPLE
+Portfolio DTS is the market value–weighted average of DTS based on Equation 8, or $\sum</em>{i=1}^{n} w_i (EffSpreadDur_i \times Spread_i)$.<br>![](Pasted image 20260702204807.png)</p>
+</blockquote>
+<p><strong>TIP:</strong> DTS combines weights, D, spread levels.</p>
+<h1 id="i-estimating-excess-return-due-to-credit-risk"><a class="header" href="#i-estimating-excess-return-due-to-credit-risk">I. ESTIMATING EXCESS RETURN DUE TO CREDIT RISK</a></h1>
+<p><strong>Symbolic Architecture:</strong><br>==Excess R = Spread Income + %ΔP(Δsp) + %ΔP(ΔCredit Loss).==<br>= Spread Income + (-D)*(delta SP) + (-1)*PD * LGD
+E[ExcessSpread] ≈ Spread₀ - (EffSpreadDur (no -ve sign) × ΔSpread) - (POD × LGD).<br><code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code>
+Credit Loss = POD × LGD (probability weighted).
+![](_rect_imgs/28. X CREDIT STRATEGIES - merged__28_Fixed_Income_Active_Management_Credit_Strategies_p12_64-123.png)
+<strong>Numerical Ex (sp=2.6%, spD=4, ==6mo horizon; sp income=1.3%==;== Δsp=–60bp; POD=2%, LGD=35%):</strong><br><strong>Step 1:</strong> Spread income = 2.6% × 0.5 = 1.3%.<br><strong>Step 2:</strong> %ΔP(sp) = ==–4 ×== (–0.6%) = +2.4%.  (dont forget -ve)
+<strong>Step 3:</strong> Expected loss 6mo = ==0.5 ×== (2% × 35%) = –0.35%.  (half year; dont forget -ve)
+<strong>Excess R</strong> = ==1.3%== + 2.4% – 0.35% = 3.35%.<br>==Total E(R) with benchmark 5% (2.5% 6mo) = 5.85%.  = 2.5%  (from interest rates) + 3.35% from credit==</p>
+<blockquote>
+<p>#EXAMPLE
+![](Pasted image 20260702205000.png)
+Part 2 is instantanieous excess return</p>
+</blockquote>
+<p>#EXAMPLE  Find the spread of new issues using interpolation and adding a premium
+![](Pasted image 20260702210851.png)</p>
+<p><strong>Logic:</strong> ==Hedge i-rate → pure credit exposure.== #imp</p>
+<blockquote>
+<p>#EXAMPLE asset swap to hedge i-rate risk
+![](_rect_imgs/28. X CREDIT STRATEGIES - merged__1_28_FIXED_INCOME_ACTIVE_MANAGEMENT_CREDIT_STRATEGIES_p8_68-289.png)
+<code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code> Because the investor’s bond position represents a long position (i.e., long both spread duration and benchmark duration), the ==best hedge would be a short-duration (or pay-fixed swap) position== rather than A. As for B, the ==hedge unwind occurs once the bond position is sold rather than over time, which exposes the investor to benchmark interest rate risk for the portion of the bond sold.== The proportional swap unwind in C ensures that the offsetting swap position matches the benchmark interest rate risk of the bond.</p>
+</blockquote>
+<p>Credit strategies are actve, excess return  only looks at part of return dfue to credit risk</p>
+<h1 id="j-bottom-up-approaches-to-credit-strategies"><a class="header" href="#j-bottom-up-approaches-to-credit-strategies">J. BOTTOM-UP APPROACHES TO CREDIT STRATEGIES</a></h1>
+<p><strong>Symbolic Architecture:</strong><br>Security selection within universe (mandate-defined).<br>Compare peers (same industry/currency/D/rating); tradeoff spread vs risk.<br>Ratios: EBITDA/Assets, Debt/Capital, EBITDA/Interest.<br><code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code>
+<strong>Z-score</strong> ==Reduced Form==
+i) [(Working Capital) / (Total Assets)] ii) [(Retained Earnings) / (Total Assets)] iii) [(EBIT) / (Total Assets)] iv) [(Market Value of Equity) / (Total Liabilities)] v) [(Sales) / (Total Assets)]
+Consequently, if any of the above ratios were to increase, the z-score would increase, thus indicating a lower likelihood of default.</p>
+<p><strong>Structural models (asset volatility, distance to default -==uses market value==).</strong><br>#EXAMPLE</p>
+<blockquote>
+<p>Higher equity volatility increases the likelihood that the market value of the issuer’s assets will fall below the default threshold. A higher coverage ratio in A implies higher cash flow as a percentage of assets, increasing the issuer’s ability to service its debt obligations. The decrease in the issuer’s leverage ratio in C represents a decline in the amount of debt versus equity, reducing the issuer’s likelihood of financial distress.</p>
+</blockquote>
+<p><strong>Sovereigns</strong>: ==ability (GDP) + willingness (political).==
+<strong>Structured</strong>: recourse + internal enhancements.
+==International credit mkts: developed mkts share common macro factors (mkt/credit cycle Δs affect rates, FX, spreads). EM: higher growth + greater sovereign/geopolitical risk, currency restrictions, capital controls.==</p>
+<h1 id="k-spread-curves"><a class="header" href="#k-spread-curves">K. SPREAD CURVES</a></h1>
+<p><strong>Symbolic Architecture:</strong><br>Compare bond spread vs fitted benchmark curve of ==equal maturity==.<br>Attractive (u/v buy): bond sp &gt; bench sp; unattractive (o/v short): bond sp &lt; bench sp.<br>Trades: ==long attractive (buy bond/long call/sell CDS); short unattractive==.
+![](_rect_imgs/28. X CREDIT STRATEGIES - merged__28_Fixed_Income_Active_Management_Credit_Strategies_p16_74-218.png)</p>
+<p><strong>Caution:</strong> ==Spread includes liquidity (not pure credit).==</p>
+<p>==Credit spread curve slopes change over cycle: <strong>steepening → low near-term default expectations &amp; higher growth expectations; flattening/inversion → rising default expectations &amp; lower growth.==</strong></p>
+<h1 id="l-top-down-approaches-to-credit-strategies"><a class="header" href="#l-top-down-approaches-to-credit-strategies">L. TOP DOWN APPROACHES TO CREDIT STRATEGIES</a></h1>
+<p><strong>Symbolic Architecture:</strong><br>Macro views (GDP, defaults, spreads) → sector OW (e.g., HY in expansion).<br>Consider: ==non-linear default risk (exponential downgrade impact)==, ratings lag market (use implied spreads), sector allocations - ==Active managers will overweight the sectors that are expected to do well in the coming economic environment.==, factor-based (==defensive/momentum==), ESG (exclusion/inclusion/green bonds).
+#EXAMPLE
+![](_rect_imgs/28. X CREDIT STRATEGIES - merged__1_28_FIXED_INCOME_ACTIVE_MANAGEMENT_CREDIT_STRATEGIES_p8_67-515.png)</p>
+<p>==Stable credit curve: mgrs ↑ spread duration for existing exposures &amp;/or ↑ avg portfolio credit risk; capitalize on divergent views w/ cash-/derivative-based strategies.==</p>
+<h1 id="m-liquidity-risk"><a class="header" href="#m-liquidity-risk">M. LIQUIDITY RISK</a></h1>
+<p><strong>Measures:</strong> Trading volume (higher=more liquid), bid-ask spread (wider=illiquid).<br><strong>Mitigation</strong>: hold cash/IG, l==imit position sizes + swap hedge then gradual sell, CDS (more liquid), ETFs (intraday, no maturity, sector exposure)==.</p>
+<h1 id="n-tail-risk"><a class="header" href="#n-tail-risk">N. TAIL RISK</a></h1>
+<p><strong>Symbolic Architecture:</strong> Extreme left-tail losses.<br><strong>Approaches</strong>: Parametric (normal mean/variance), Historic simulation, Monte Carlo - assumption dependent.<br><strong>VaR</strong> (e.g., 5% daily $7.4M), CVaR (average beyond VaR), Incremental VaR.<br>#EXAMPLE <strong>VaR calculation</strong> <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code></p>
+<blockquote>
+<p>We must adjust the annualized yield volatility to reflect a one-month period instead. The time interval under consideration is $1/12^{th}$ of a year, and therefore the volatility measure is 0.00505 (==1.75% × $\sqrt{1/12}$==), which for a 99% confidence interval equals ==117.7 b==ps = (0.00505 × ==2.33== standard deviations). We may quantify the bond’s market value change using either a duration approximation or the actual price change as follows. We may use the Excel MDURATION to solve for the ==bond’s duration as 12.025==. ==We can therefore approximate the change in bond value using the familiar (-Mod-Dur x ΔYield) expression as $6,439,808 = ($50 million x 0.91 (market value) x (-12.025 x .0177)).==</p>
+</blockquote>
+<blockquote>
+<p>The expected change in yield based on a 99% confidence interval for the bond and a 1.50 bps yield volatility over 21 trading days equals 16 bps = (1.50 bps × 2.33 standard deviations × √21). We can quantify the bond’s market value change by multiplying the familiar (–ModDur × ∆Yield) expression by bond price to get $1,234,105 = ($75 million × 1.040175 × (–9.887 × .0016)).<code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code></p>
+</blockquote>
+<p><strong>Limitations</strong>:
+i) VaR estimates based on the assumption that returns are normally distributed, will often underestimate the frequency and severity of the negative returns (particularly since most asset returns are negatively skewed and/or have a high kurtosis).
+ii) VaR may fail to capture the spike in correlation between market risk and liquidity risk when there is a crisis. For example, during a crisis, liquidity will dry up just as asset prices are plunging. Therefore, in addition to getting a lower price for selling an asset, the investor will likely incur steeper transaction costs (through wider spreads), thus further impairing his return.
+ii) VaR only indicates the ‘minimum’ loss that is possible; it does not actually give a value as to how much may be lost if a tail event were to occur. To rectify this deficiency, ==‘Conditional’ VaR (or CVaR), measures the average of the losses which may occur whenever the VaR threshold is breached.== For example, an asset may have a 5% VaR of $7.4M and a CVaR of $9.1M; meaning that whenever losses exceeded $7.4M, they averaged to around $9.1M. A somewhat related measure is ‘==Incremental’ VaR==, ==which quantifies the impact on portfolio risk by adding or removing a particular security== <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code></p>
+<blockquote>
+<p>#EXAMPLE relative VaR evaluates all active portfolio positions versus the benchmark index and could be important for an active fixed-income mandate that aims to beat an index once the portfolio change has been made.</p>
+</blockquote>
+<p><strong>Mitigation</strong>: position limits, risk budgeting, CDS protection.</p>
+<p>==Structured financial instruments: access to liquid bond portfolios, FI CFs from real estate &amp; consumer loans, enhanced returns via tranching (volatility &amp;/or debt exposure across credit spectrum).==</p>
+<blockquote>
+<blockquote>
+<h3 id="cds-pricing"><a class="header" href="#cds-pricing">CDS Pricing</a></h3>
+</blockquote>
+<ul>
+<li>Price: The quoted clean price of the CDS (where a price of <code>1.00</code> means it is trading at par).</li>
+<li>Fixed Coupon ($c$): The standardized, fixed premium rate of the contract (e.g., 1% or 5%).</li>
+<li>CDS Spread ($s$): The current market spread for a new contract of the same maturity.</li>
+<li>Duration: The risky presentation value of a basis point (RPV01), or effective spread duration. [2, 3, 6, 7, 8]</li>
+</ul>
+<hr>
+<h2 id="the-derivation-and-market-intuition"><a class="header" href="#the-derivation-and-market-intuition">The Derivation and Market Intuition</a></h2>
+<p>The formula is derived from the Upfront Premium calculation. [6, 9]</p>
+<h2 id="step-1-calculate-the-upfront-premium"><a class="header" href="#step-1-calculate-the-upfront-premium">Step 1: Calculate the Upfront Premium</a></h2>
+<p>When you buy protection, the market thinks you should be paying the <em>Current Market Spread ($s$)</em>. If the contract’s <em>Fixed Coupon ($c$)</em> is different, you must settle the difference upfront:<br>$$\text{Upfront Premium Paid by Buyer} \approx (\text{CDS Spread} - \text{Fixed Coupon}) \times \text{Duration}$$</p>
+<ul>
+<li>If the market spread is higher than the fixed coupon, the buyer pays an upfront premium to the seller.</li>
+<li>If the market spread is lower, the buyer receives an upfront premium from the seller. [3, 4]</li>
+</ul>
+<h2 id="step-2-convert-to-the-quoted-bond-like-price"><a class="header" href="#step-2-convert-to-the-quoted-bond-like-price">Step 2: Convert to the Quoted Bond-Like Price</a></h2>
+<p>To make credit derivatives look and trade like standard corporate bonds, the industry developed a standardized pricing convention. The quoted price is defined as:<br>$$\text{Price} = 1 - \text{Upfront Premium Paid by Buyer}$$</p>
+<p>Substitute the Upfront Premium formula into this convention:<br>$$\text{Price} = 1 - [(\text{CDS Spread} - \text{Fixed Coupon}) \times \text{Duration}]$$</p>
+<p>Distribute the negative sign inside the brackets:<br>$$\mathbf{\text{Price} = 1 + [(\text{Fixed Coupon} - \text{CDS Spread}) \times \text{Duration}]}$$ <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code></p>
+<hr>
+<h2 id="important-catch-the-inverse-relationship"><a class="header" href="#important-catch-the-inverse-relationship">Important Catch: The Inverse Relationship</a></h2>
+<p>Because this formula mirrors bond pricing conventions, a higher price does not mean protection is more valuable to buy; it means credit risk has decreased. [1]</p>
+<ul>
+<li>If Credit Risk Falls (Spreads Narrow): The <code>CDS Spread</code> drops. The math creates a positive number inside the brackets, causing the Price to rise above 1 (e.g., 1.03 or 103% of par). [1, 6]</li>
+<li>If Credit Risk Rises (Spreads Widen): The <code>CDS Spread</code> spikes. The subtraction yields a negative number, pushing the Price below 1 (e.g., 0.95 or 95% of par). [1, 5, 10]</li>
+</ul>
+<p><strong>Therefore, a protection buyer is effectively <em>shorting</em> this price index—they profit when this quoted price goes <em>down</em></strong>. [1, 5]</p>
+</blockquote>
+<h1 id="o-credit-default-swap-cds-features"><a class="header" href="#o-credit-default-swap-cds-features">O. CREDIT DEFAULT SWAP (CDS) FEATURES</a></h1>
+<p><strong>Symbolic Architecture:</strong><br>Buyer pays fixed premium (1% IG, 5% HY); seller pays on credit event.<br>==Upfront = (fixed – CDS sp) × CDS Duration.==</p>
+<p>![](_rect_imgs/28. X CREDIT STRATEGIES - merged__28_Fixed_Income_Active_Management_Credit_Strategies_p22_70-365.png)</p>
+<p><strong>Numerical Ex 1 (HY, fixed=5%, CDS sp=7%, Dur=6):</strong><br>Underpay 2% → upfront buyer to seller = 2% × 6 = 12% NP.<br>#EXAMPLE</p>
+<p><strong>Numerical Ex 2 (IG fixed=1%, value to long +4%, Dur=7):</strong><br><strong>Step 1:</strong> +4% = (1% – CDS sp) × 7 → CDS sp = 0.43%.<br>![](_rect_imgs/28. X CREDIT STRATEGIES - merged__28_Fixed_Income_Active_Management_Credit_Strategies_p23_62-191.png)</p>
+<blockquote>
+<p>#EXAMPLE Value of a CDS when spread changes #imp
+==either %V_cds = D * delta_SP== <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code>
+![](_rect_imgs/28. X CREDIT STRATEGIES - merged__1_28_FIXED_INCOME_ACTIVE_MANAGEMENT_CREDIT_STRATEGIES_p9_61-623.png)
+==or, recalculate new upfront premium after change in spread==
+New Upfront premium: 1.90% of CDS notional (= (1.00% - 0.60%) × 4.75).  vs 2.375% before
+The protection buyer realizes a mark-to-market gain equal to 0.475% (2.375% - 1.90%) of the CDS contract notional because of the wider CDS spread.  <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code></p>
+</blockquote>
+<p><strong>Note:</strong> CDS pure credit play.</p>
+<h1 id="p-advantages-of-using-cds-contracts"><a class="header" href="#p-advantages-of-using-cds-contracts">P. ADVANTAGES OF USING CDS CONTRACTS</a></h1>
+<ol>
+<li>==Alter credit exposure without i-rate risk (pure play).==  e.g. sell CDS - the premiums will look attractve as sp goes down.</li>
+<li>==Capital efficient (premium fraction of bond price).==</li>
+<li>==More liquid than underlying bond==.</li>
+</ol>
+<h1 id="q-types-of-cds-contracts"><a class="header" href="#q-types-of-cds-contracts">Q. TYPES OF CDS CONTRACTS</a></h1>
+<ol>
+<li>Single Name: one bond.</li>
+<li>Index Based: basket.</li>
+<li>==Payer== Option on Index: ==right to buy protection== (credit risk ↑ view).</li>
+<li>==Receiver== Option on Index: ==right to sell protection== (credit risk ↓ view).</li>
+</ol>
+<h1 id="r-cds-strategies-changing-credit-exposure-bottom-up"><a class="header" href="#r-cds-strategies-changing-credit-exposure-bottom-up">R. CDS Strategies: Changing Credit Exposure (Bottom-Up)</a></h1>
+<p><strong>Example:</strong> Investor wants to reduce portfolio exposure to Bond L.<br>CDS on Bond L: Term = 3 years, Notional = $100m, Duration = 3.74 years, Prevailing CDS spread = 1.4%.</p>
+<p><strong>Step 1:</strong> Undercapitalizing an exposure implicitly assumes the investor expects risks (and spreads) to <strong>increase</strong>.<br>→ <strong>Buy Protection</strong> (short credit via CDS). <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code></p>
+<p><strong>Step 2:</strong> If spreads rise to 1.6%:</p>
+<p>$$
+% \Delta V_{\text{CDS}} = (D) \times (\Delta \text{sp})
+$$</p>
+<p>where (\Delta \text{sp} = ==(1.6% - 1.4%) = 0.2%==)</p>
+<p>$$
+% \Delta V_{\text{CDS}} = (3.74) \times (0.2%) = 0.748%
+$$</p>
+<p>$$
+\Delta V_{\text{CDS}} = 0.748% \times $100\text{m} = $748{,}000 \text{ gain}
+$$</p>
+<p><strong>Note:</strong> This is a Bottom-Up approach — the investor identifies specific bond issues whose spread is expected to change. The premium stream on a CDS behaves like a bond coupon stream, so the same duration framework applies.
+#EXAMPLE</p>
+<blockquote>
+<p>The manager can underweight the issuer’s credit by purchasing protection in the CDS market. This short risk position will realize a gain if the issuer’s spreads widen. For example, if the issuer’s credit spreads widen from 110 bps p.a. to 125 bps p.a., we can estimate the change in CDS contract value by multiplying (–Δ(CDS Spread) × EffSpreadDur_CDS)
+![](_rect_imgs/28. X CREDIT STRATEGIES - merged__1_28_FIXED_INCOME_ACTIVE_MANAGEMENT_CREDIT_STRATEGIES_p9_68-412.png)</p>
+</blockquote>
+<h1 id="s-cds-strategies-long-short-positions-top-down"><a class="header" href="#s-cds-strategies-long-short-positions-top-down">S. CDS Strategies: Long-Short Positions (Top-Down)</a></h1>
+<p><strong>Example:</strong> Investor using a Top-Down approach expects the economy to weaken in the short term.
+<strong>Consequences &amp; Positioning:</strong></p>
+<ol>
+<li><strong>Non-Investment Grade bonds</strong> will underperform (credit risk ↑).<br><strong>Strategy:</strong> Buy Protection on Non-IG Index CDS.<br>CDS: Term = 3 years, Duration = 2.5, Notional = $100m.<br>Spread expected to widen by 40 bps (0.40%).
+$$
+% \Delta V_{\text{CDS}} = (D) \times (\Delta \text{sp}) = (2.5) \times (0.40%) = 1.0%
+$$
+$$
+\Delta V_{\text{CDS}} = 1.0% \times $100\text{m} = +$1\text{m gain}
+$$
+(Protection becomes more valuable as risk/spreads rise.)</li>
+<li><strong>Investment Grade bonds</strong> will outperform (flight to quality).<br><strong>Strategy:</strong> Sell Protection (long credit) on IG Index CDS.<br>CDS: Term = 3 years, Duration = 2.8, Notional = +$100m.<br>Spread expected to tighten by 10 bps (0.10%).
+$$
+% \Delta V_{\text{CDS}} = (D) \times (\Delta \text{sp}) = (2.8) \times (0.10%) = 0.28%
+$$
+$$
+\Delta V_{\text{CDS}} = 0.28% \times $100\text{m} = +$0.28\text{m gain}
+$$
+(Collecting fixed premium as spreads tighten.)</li>
+</ol>
+<p><strong>Combined Result:</strong></p>
+<ul>
+<li>Buy Protection (short CDS) on Non-IG: <strong>+$1M</strong></li>
+<li>Sell Protection (long CDS) on IG: <strong>+$0.28M</strong></li>
+<li><strong>Total Gain: +$1.28M</strong> <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code>
+#EXAMPLE <strong>CDS Long-Short Strategies</strong> <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code></li>
+</ul>
+<blockquote>
+<p>Short risk (French issuer): €46,970 (= –€10,000,000 × (–0.10% × 4.697))<br>Long risk (German issuer): €116,725 (= €10,000,000 × (–(–0.25%) × 4.669))<br>![](_rect_imgs/28. X CREDIT STRATEGIES - merged__1_28_FIXED_INCOME_ACTIVE_MANAGEMENT_CREDIT_STRATEGIES_p9_70-153.png)</p>
+</blockquote>
+<h1 id="t-cds-strategies-curve-trades"><a class="header" href="#t-cds-strategies-curve-trades">T. CDS Strategies: Curve Trades</a></h1>
+<p>An upward-sloping CDS curve implies low near-term default probability (typical in a healthy economy).</p>
+<p><strong>Example:</strong> Investor expects the CDS curve to <strong>steepen</strong> ((\Delta) 5yr spread = +20 bps, (\Delta) 10yr spread = +60 bps).</p>
+<p><strong>Strategy:</strong></p>
+<ol>
+<li>Sell Protection on 5yr CDS (risk increase is smaller). Duration = 4.2.</li>
+<li>Buy Protection on 10yr CDS (risk increase is larger). Duration = 7.8, Notional = +$10m.</li>
+</ol>
+<p><strong>Step (i): Hedge against parallel shift</strong> (make overall duration zero).
+From:
+$$
+\text{BPV} = (D) \times (P) \times (0.0001)
+$$</p>
+<ul>
+<li>10yr BPV = ((7.8) \times (10\text{m}) \times (0.0001) = 7{,}800) (offset needed)</li>
+<li>5yr BPV = ((4.2) \times (NP) \times (0.0001) = 7{,}800)</li>
+<li>Notional on 5yr leg (NPS) = <strong>$18.57M</strong> <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code></li>
+</ul>
+<p><strong>Step (ii) &amp; (iii) — If curve steepens as expected:</strong></p>
+<p>$\Delta V_{\text{CDS}} = (D) \times (\text{NP}) \times (\Delta \text{sp})$</p>
+<ul>
+<li>10yr CDS (Buy Protection): ((7.8) \times (10\text{m}) \times (0.60%) = +$468{,}000) <strong>Gain</strong></li>
+<li>5yr CDS (Sell Protection): ((4.2) \times (18.57\text{M}) \times (0.20%) = -$155{,}988) <strong>Loss</strong>
+<strong>Overall Gain: +$312{,}012</strong></li>
+</ul>
+<p><strong>Opposite View (Flatten or Invert — common in strong growth or recession):</strong><br>Buy protection on 5yr (risk ↑ more) and sell protection on 10yr (risk ↑ less).</p>
+<p>#EXAMPLE same as EOC 29</p>
+<blockquote>
+<p>Part i.
+With a flattening and focusing solely on the IG credit portfolio, to benefit the appropriate
+strategy entails buying protection on the 5-year CDX IG index (short risk) and selling
+protection on the 10-year CDX IG index (long risk).
+Part ii.
+Let A represent the NP for the 5-year
+Let B represent the NP for the 10-year
+𝐴𝐴 × 4.5 = 𝐵𝐵 × 9.4
+𝐵𝐵 = 0.48𝐴𝐴
+The notional value is 0.48 times versus the 5-year allowing for duration matching <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code></p>
+</blockquote>
+<p>#EXAMPLE <strong>Duration-Weighted Single-Name CDS Curve Steepener</strong></p>
+<blockquote>
+<p>A steeper credit curve implies that ((CDS Spread)₁₀yr - (CDS Spread)₅yr) will increase. The appropriate long-short strategy to position for this change is to purchase protection based on the 10-year, €10,000,000 notional and to sell protection on an equivalent duration 5-year CDS contract.<br>![](_rect_imgs/28. X CREDIT STRATEGIES - merged__1_28_FIXED_INCOME_ACTIVE_MANAGEMENT_CREDIT_STRATEGIES_p10_71-125.png)</p>
+</blockquote>
+<h1 id="u-static-credit-spread-curve-strategies"><a class="header" href="#u-static-credit-spread-curve-strategies">U. STATIC CREDIT SPREAD CURVE STRATEGIES</a></h1>
+<ol>
+<li>Tilt lower-rated (higher sp),
+![](Pasted image 20260702144819.png)</li>
+<li>Extend sp duration (longer maturity) if spreads fair/stable.
+![](Pasted image 20260702144925.png)
+![](Pasted image 20260702145011.png)</li>
+</ol>
+<p>#EXAMPLE <strong>Adding Credit Duration under a Static Credit Curve</strong> <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code>
+#EXAMPLE same  as above - adding duration
+![](Pasted image 20260704082508.png)
+![](Pasted image 20260704083826.png)
+![](Pasted image 20260704082817.png)
+#EXAMPLE <strong>Using CDS for a Static Fixed-Income Credit Strategy</strong>  <code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code>
+![](_rect_imgs/28. X CREDIT STRATEGIES - merged__1_28_FIXED_INCOME_ACTIVE_MANAGEMENT_CREDIT_STRATEGIES_p12_61-660.png)</p>
+<h1 id="v-dynamic-credit-spread-curve-strategies"><a class="header" href="#v-dynamic-credit-spread-curve-strategies">V. Dynamic Credit Spread Curve Strategies</a></h1>
+<p>Used when the <strong>investor’s view differs from the market’s implied view</strong> (embedded in current OAS/spreads). Involves forecasting changes in spreads and expected losses, then positioning long/short (or via CDS synthetics).</p>
+<p>Two bonds available (same benchmark weighting assumed):</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Bond</th><th>Rating</th><th>Current OAS</th><th>E(Loss) = (POD) × (LGD)</th><th>Spread Duration</th></tr>
+</thead>
+<tbody>
+<tr><td>K</td><td>AA</td><td>2.3%</td><td>0.05%</td><td>5.8</td></tr>
+<tr><td>L</td><td>BBB</td><td>4.2%</td><td>6.1%</td><td>3.7</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Step 1: Excess Spread assuming no change in spreads</strong> ==#imp equation==</p>
+<p>$$
+\text{Excess Spread} = \text{Current OAS} - [(D) \times (\Delta\text{sp}) + \text{E(Loss)}]
+$$</p>
+<ul>
+<li>Bond K: (2.3% - [(5.8) \times (0%) + 0.05%] = -2.25%)</li>
+<li>Bond L: (4.2% - [(3.7) \times (0%) + 6.1%] = -1.9%)</li>
+</ul>
+<p><strong>Step 2: Benchmark (equally weighted)</strong></p>
+<p>$$
+\text{Excess Spread (Benchmark)} = \frac{-2.25% + (-1.9%)}{2} = -2.075% \quad (\text{or } +0.175% \text{ relative in some framings})
+$$</p>
+<p><strong>Step 3: Investor expects economic slowdown</strong></p>
+<ul>
+<li>Spreads + E(Loss) on Bond K (AA) ↑ by ~25%</li>
+<li>Spreads + E(Loss) on Bond L (BBB) ↑ by ~60%</li>
+</ul>
+<h1 id="revised-projections"><a class="header" href="#revised-projections"><strong>Revised projections:</strong></a></h1>
+<ul>
+<li>Bond K: (\Delta\text{sp} = 25% \times 2.3% = +0.575%); E(Loss) = (0.05% \times 1.25 = 0.0625%)</li>
+<li>Bond L: (\Delta\text{sp} = 60% \times 4.2% = +2.52%); E(Loss) = (6.1% \times 1.60 = 9.76%)</li>
+</ul>
+<p><strong>Step 4: Revised Excess Spreads</strong></p>
+<p>$$
+\text{Excess Spread} = \text{Current OAS} - [(D)(\Delta\text{sp}) + \text{E(Loss)}]
+$$</p>
+<ul>
+<li>Bond K: (2.3% - [(5.8)(0.575%) + 0.0625%] = -1.098%)</li>
+<li>Bond L: (4.2% - [(3.7)(2.52%) + 9.76%] = -14.88%)</li>
+</ul>
+<p><strong>Step 5: Portfolio Positioning &amp; Return (Long high-quality / Short low-quality)</strong></p>
+<ul>
+<li>L==ong Bond K (higher quality, less spread widening): –1.098%==</li>
+<li>==Short Bond L (lower quality, more spread widening): –14.88% (liability becomes gain)==</li>
+<li><strong>Portfolio Excess Spread (Equity return)</strong> = –1.098% – (–14.88%) = <strong>+13.782%</strong></li>
+</ul>
+<p>#EXAMPLE <strong>Tactical Credit Strategies – Economic Slowdown Scenario</strong>
+==Note spread_0 is same as current OAS== #imp
+![](Pasted image 20260703070816.png)
+![](Pasted image 20260703070850.png)</p>
+<p>#EXAMPLE same as BB 29 #imp <strong>one yr return assuming no change in credit spreadlevels</strong>
+![](Pasted image 20260704075835.png)</p>
+<p>#EXAMPLE <strong>Tactical Credit Strategies: Economic Recovery Scenario</strong></p>
+<blockquote>
+<p>The economic rebound scenario results in the following new OAS and expected losses, with expected excess returns E [ExcessSpread] ≈ Spread₀ – (EffSpreadDur × ΔSpread) – (POD × LGD) in the far right column:</p>
+</blockquote>
+<p>![](_rect_imgs/28. X CREDIT STRATEGIES - merged__1_28_FIXED_INCOME_ACTIVE_MANAGEMENT_CREDIT_STRATEGIES_p14_70-522.png)</p>
+<p><strong>Key Takeaways &amp; Exam Tips:</strong></p>
+<ul>
+<li>==Higher-quality bonds outperform in slowdowns (less spread widening + lower loss given default impact).==</li>
+<li><code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code> Use ==<strong>synthetics via CDS</strong> when shorting cash bonds is costly/illiquid in crises==: Buy protection (short credit) on lower-quality names; Sell protection (long credit) on higher-quality names.</li>
+<li>==Excess spread framework isolates credit-specific return after expected losse==s.</li>
+<li>Assumptions (e.g., linear % changes in spreads/losses) are stylized—real markets have non-linear migration and liquidity effects.</li>
+</ul>
+<h1 id="w-global-credit-strategies--developed-vs-emerging-markets"><a class="header" href="#w-global-credit-strategies--developed-vs-emerging-markets">W. Global Credit Strategies – Developed vs. Emerging Markets</a></h1>
+<p><strong>9 Key Differences (Exam Favorite – Memorize Structure):</strong></p>
+<ol>
+<li><strong>Issuers &amp; Derivatives Liquidity</strong>: Developed = wide variety + liquid CDS/derivatives market → easier complex strategies. ==Emerging = many state-owned/sponsored issuers → fewer actively traded bonds.==</li>
+<li><strong>Industry Diversification</strong>: Developed = broad sectors. ==Emerging = concentrated in few industries → higher volatility.==</li>
+<li><strong>Instrument Variety</strong>: Developed = bonds + active MBS/ABS/CDOs etc. E==merging = dominated by bonds.==</li>
+<li><strong>Accounting Standards</strong>: Significant differences → harder cross-border peer comparisons.</li>
+<li><strong>Exchange Rate Regime &amp; Monetary Policy</strong>: ==Fixed peg → stability but loss of independent monetary policy (must mirror anchor currency central bank) → more crisis-prone.==</li>
+<li><strong>Currency Volatility (Floating Regimes)</strong>: Emerging currencies far more volatile. Yield advantage easily erased (e.g., 3% extra yield wiped out by &gt;3% currency depreciation).</li>
+<li><strong>Political Risk</strong>: Higher in emerging markets. Assess sovereign ability + <strong>willingness</strong> to repay, rule of law, transparency, capital controls risk.</li>
+<li><strong>Sovereign Rating Ceiling</strong>: Sovereign rating caps all issuers in jurisdiction (most emerging sovereigns at lower end of IG).</li>
+<li><strong>Credit Quality Drivers &amp; Ratios</strong> (GDP-focused):
+<ul>
+<li>External Debt / GDP (foreign-currency debt burden; cannot print FX).</li>
+<li>Reserves / GDP (buffer for foreign obligations).
+#EXAMPLE</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>==The government budget deficit as a percentage of GDP is a gauge of fiscal stability for the domestic economy, while the external debt-to-GDP ratio is a measure of financial leverage to foreign lenders.== ==Currency reserves as a percentage of GDP measure the available liquidity in foreign currency to meet external obligations.==</p>
+</blockquote>
+<p><strong>Exam Note:</strong> Emerging market excess yield is compensation for these amplified risks (currency, political, concentration, liquidity). Always evaluate sovereign ceiling and willingness-to-pay separately from ability-to-pay.</p>
+<p>#EXAMPLE
+![](_rect_imgs/28. X CREDIT STRATEGIES - merged__1_28_FIXED_INCOME_ACTIVE_MANAGEMENT_CREDIT_STRATEGIES_p14_72-285.png)</p>
+<blockquote>
+<blockquote></blockquote>
+<p>#EXAMPLE <strong>Credit Strategies across Developed Markets</strong>  (skip)
+To capitalize on expected greater euro spread tightening, the manager would sell protection on the iTraxx-Xover index. To calculate expected return, first consider the US corporate bond portfolio. The economic rebound scenario results in the following new OAS and expected losses for the portfolio, with expected excess returns E [ExcessSpread] ≈ Spread₀ – (EffSpread-Dur × ΔSpread) – (POD × LGD) in the far right column:<br><strong>Complete Explanation of the Solution</strong><br><strong>Credit Strategies across Developed Markets</strong></p>
+<h3 id="1-overall-investment-thesis-and-positioning"><a class="header" href="#1-overall-investment-thesis-and-positioning">1. Overall Investment Thesis and Positioning</a></h3>
+<p>The manager expects a <strong>stronger economic recovery in Europe</strong> than in the United States. Specifically:</p>
+<ul>
+<li>European high-yield credit spreads are expected to narrow by <strong>25%</strong>.</li>
+<li>US credit spreads and expected losses are expected to decline by only <strong>10%</strong>.</li>
+<li>The euro is expected to appreciate by <strong>1%</strong> against the US dollar.</li>
+</ul>
+<p>To capitalize on the <strong>greater spread tightening in Europe</strong>, the manager should take <strong>long credit exposure</strong> to European high-yield debt.</p>
+<p>Since the vehicle is a CDS index, this is achieved by <strong>selling protection</strong> on the <strong>iTraxx-Xover</strong> (the 5-year European high-yield CDS index). Selling protection means the manager receives the fixed 5% premium and will profit if European spreads tighten as expected.</p>
+<h3 id="2-us-corporate-bond-portfolio--expected-excess-return"><a class="header" href="#2-us-corporate-bond-portfolio--expected-excess-return">2. US Corporate Bond Portfolio – Expected Excess Return</a></h3>
+<p>The base formula used for the expected excess return on credit bonds is:</p>
+<p>$$
+E[\text{Excess Spread}] \approx \text{Initial OAS} - (\text{EffSpreadDur} \times \Delta\text{Spread}) - (\text{POD} \times \text{LGD})
+$$</p>
+<p>Under the manager’s scenario, <strong>all US OAS levels and expected loss rates decline by 10%</strong>.</p>
+<p><strong>Updated values and excess spread calculations:</strong></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Rating Category</th><th>New OAS</th><th>New Expected Loss</th><th>E[Excess Spread] Calculation</th><th>E[Excess Spread]</th></tr>
+</thead>
+<tbody>
+<tr><td>A</td><td>1.26%</td><td>0.09%</td><td>(1.26% - (5.5 \times 0) - 0.09%)</td><td><strong>2.08%</strong>? (as given)</td></tr>
+<tr><td>Baa</td><td>1.80%</td><td>0.27%</td><td>(1.80% - (6.0 \times 0) - 0.27%)</td><td><strong>3.93%</strong></td></tr>
+<tr><td>Ba</td><td>3.38%</td><td>0.90%</td><td>(3.38% - (4.5 \times 0) - 0.90%)</td><td><strong>4.54%</strong></td></tr>
+<tr><td>B</td><td>4.95%</td><td>4.05%</td><td>(4.95% - (4.0 \times 0) - 4.05%)</td><td><strong>3.65%</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Equally weighted US corporate bond portfolio expected return:</strong></p>
+<p>$$
+\frac{2.08% + 3.93% + 4.54% + 3.65%}{4} = \mathbf{3.30%}
+$$</p>
+<p>This 3.30% represents the expected excess return from the US corporate bond allocation.</p>
+<h3 id="3-itraxx-xover-valuation--detailed-explanation-including-9575-per-10425"><a class="header" href="#3-itraxx-xover-valuation--detailed-explanation-including-9575-per-10425">3. iTraxx-Xover Valuation – Detailed Explanation (Including “95.75 per $104.25”)</a></h3>
+<p>This is the most technical part of the solution.</p>
+<h4 id="base-cds-index-valuation-formula"><a class="header" href="#base-cds-index-valuation-formula">Base CDS Index Valuation Formula</a></h4>
+<p><code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code>
+When a CDS index uses a <strong>standardized fixed coupon</strong> (here 5%), the position has an upfront value. The approximate <strong>value to the protection seller</strong> is:</p>
+<p>$$
+\text{Value to Protection Seller} \approx (\text{Fixed Coupon} - \text{Market Spread}) \times \text{EffSpreadDur}_{\text{CDS}}
+$$</p>
+<p><strong>Initial situation:</strong></p>
+<ul>
+<li>Fixed Coupon = 5%</li>
+<li>Market Spread = 400 bps = 4%</li>
+<li>EffSpreadDur_CDS = 4.25</li>
+</ul>
+<p>$$
+\text{Initial Value} = (5% - 4%) \times 4.25 = 1% \times 4.25 = +4.25% \text{ of notional}
+$$</p>
+<h4 id="where-9575-per-10425-comes-from"><a class="header" href="#where-9575-per-10425-comes-from">Where “95.75 per $104.25” Comes From</a></h4>
+<p>The original solution expresses this same 4.25% upfront value in two equivalent ways:</p>
+<ul>
+<li>From the <strong>protection buyer’s</strong> perspective: They must pay 4.25 points upfront → quoted “price” = <strong>95.75</strong> (i.e., 100 – 4.25).</li>
+<li>From the <strong>protection seller’s</strong> perspective: They receive 4.25 points upfront → their position is worth <strong>104.25</strong> (i.e., 100 + 4.25).</li>
+</ul>
+<p>This “95.75 per $104.25” phrasing is simply showing both sides of the same transaction using an older bond-price quotation style. It is <strong>not</strong> required for calculations.</p>
+<p>The solution immediately gives the cleaner and preferred expression — the <strong>Price Factor</strong>:</p>
+<p>$$
+\text{Price Factor} = 1 + \bigl[ \text{EffSpreadDur}_{\text{CDS}} \times (\text{Fixed Coupon} - \text{Market Spread}) \bigr]
+$$</p>
+<p>$$
+\text{Initial Price Factor} = 1 + (4.25 \times 1%) = \mathbf{1.0425}
+$$</p>
+<p>This 1.0425 is the standard way to represent the value of the protection-selling position.</p>
+<h3 id="4-new-price-factor-after-european-spread-tightening"><a class="header" href="#4-new-price-factor-after-european-spread-tightening">4. New Price Factor After European Spread Tightening</a></h3>
+<p>European high-yield spreads narrow by 25% → iTraxx-Xover market spread falls to <strong>300 bps</strong> (3%).</p>
+<p>$$
+\text{New Value to Protection Seller} = (5% - 3%) \times 4.25 = 2% \times 4.25 = +8.50% \text{ of notional}
+$$</p>
+<p>$$
+\text{New Price Factor} = 1 + (4.25 \times 2%) = \mathbf{1.085}
+$$</p>
+<h3 id="5-return-calculations"><a class="header" href="#5-return-calculations">5. Return Calculations</a></h3>
+<p><code>[!!sticky-note|REVIEW|var(--color-red-rgb)]</code>
+<strong>Return in euro terms:</strong></p>
+<p>$$
+R_{\text{Euro}} = \frac{1.085 - 1.0425}{1.0425} = \frac{0.0425}{1.0425} \approx \mathbf{4.077%}
+$$</p>
+<p><strong>Convert to US dollar return</strong> (using the currency return formula):</p>
+<p>$$
+R_{\text{USD}} = (1 + R_{\text{Euro}}) \times (1 + R_{\text{FX}}) - 1
+$$</p>
+<p>Where ( R_{\text{FX}} = +1% ) (euro appreciation).</p>
+<p>$$
+R_{\text{USD}} = (1 + 4.077%) \times (1 + 1%) - 1 = 1.04077 \times 1.01 - 1 = \mathbf{5.118%}
+$$</p>
+<h3 id="6-overall-portfolio-expected-return"><a class="header" href="#6-overall-portfolio-expected-return">6. Overall Portfolio Expected Return</a></h3>
+<p>The iTraxx-Xover position is sized to match the US high-yield bond allocation. This effectively gives the iTraxx-Xover a <strong>50% weight</strong> in the total strategy.</p>
+<p>$$
+\text{Total Expected Return} = 3.30% + \frac{5.118%}{2} = 3.30% + 2.559% = \mathbf{5.86%}
+$$</p>
+<h3 id="summary-of-key-insights"><a class="header" href="#summary-of-key-insights">Summary of Key Insights</a></h3>
+<ul>
+<li>The manager <strong>sells protection</strong> on iTraxx-Xover to profit from expected stronger European spread tightening.</li>
+<li>The “<strong>95.75 per $104.25</strong>” is simply an alternative way of expressing the initial +4.25% upfront value from both the buyer’s and seller’s perspectives. The clean version used for calculations is the <strong>Price Factor = 1.0425</strong>.</li>
+<li>The Price Factor method ((1 + \text{Duration} \times (\text{Fixed Coupon} - \text{Market Spread}))) is the standard way to measure mark-to-market gains on CDS indices with standardized coupons.</li>
+<li>The 4.25 duration amplifies the benefit of the 100 bps spread tightening.</li>
+<li>Euro appreciation adds an extra 1% tailwind when converting returns back to USD.</li>
+<li>The final <strong>5.86%</strong> is the blended expected excess return of the combined US corporate bond portfolio + European CDS index strategy.</li>
+</ul>
+</blockquote>
+<h1 id="x-structured-financial-instruments-abs--securitization"><a class="header" href="#x-structured-financial-instruments-abs--securitization">X. Structured Financial Instruments (ABS / Securitization)</a></h1>
+<p><strong>Securitization Process (4 Steps):</strong></p>
+<ol>
+<li>Bank/originator places loans in a pool.</li>
+<li>Pool/SPV issues ABS securities (tranches).</li>
+<li>Investors buy ABS shares.</li>
+<li>Proceeds go to originator (bank). Future loan cash flows (net of servicing fees) flow to ABS investors.</li>
+</ol>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Converts illiquid loans into tradable securities.</li>
+<li>Investors get <strong>pure exposure</strong> to underlying asset class (e.g., mortgages) without the originator’s other businesses.</li>
+<li>Custom risk/return: aggressive investors pick high-risk/high-yield pools; conservative pick guaranteed ones.</li>
+</ul>
+<p><strong>Tranche Structure (Risk Redistribution) – Worked Example</strong>
+Pool = $60M loans.</p>
+<ul>
+<li>Senior Tranche K: $25M par</li>
+<li>Junior Tranche L: $35M par</li>
+</ul>
+<p><strong>Cash Flow Waterfall (Principal – Scheduled + Unscheduled/Prepayments):</strong></p>
+<ul>
+<li>All principal repayments go <strong>first to Senior K</strong> until K is fully paid off ($25M repaid).</li>
+<li>Only then do remaining principal payments go to Junior L.</li>
+</ul>
+<p>→ <strong>Senior K</strong>: Lower risk/return (capital protection).<br>→ <strong>Junior L</strong>: Higher risk/return (absorbs losses first; higher yield).</p>
+<p><strong>Economic Outlook Application:</strong></p>
+<ul>
+<li>Expect contraction (defaults ↑) → Buy <strong>Senior Tranche K</strong> (protection).</li>
+<li>Expect expansion (defaults ↓) → Buy <strong>Junior Tranche L</strong> (higher yield).</li>
+</ul>
+<p><strong>Specific Instrument Types:</strong></p>
+<ul>
+<li><strong>MBS</strong>: Backed by residential/commercial mortgages.</li>
+<li>==<strong>CDO</strong>: Backed by pool of private loans / corporate debt.==</li>
+<li>==<strong>CLO</strong>: Backed by floating-rate loans.== not targeted #EXAMPLE</li>
+<li><strong>Covered Bond</strong>: ==Senior debt issued by bank/financial institution. Dual recourse: (1) issuer’s general cash flows + (2) segregated cover pool (mortgages/loans). Stronger protection than plain ABS.==
+#EXAMPLE</li>
+</ul>
+<blockquote>
+<p>As the housing sector slows and default rates rise, credit spreads of lower-rated MBS tend to widen by more than those of higher-rated MBS. The investor retains exposure to real estate cash flows while reducing exposure to spread widening. The shift to a BB rated credit card ABS tranche increases credit exposure, while the switch from BBB rated to A rated CDOs represents a reduction in overall market risk rather than a more targeted underweight, as in C.</p>
+</blockquote>
+<h1 id="y-analytical-tools-for-fixed-income-portfolios"><a class="header" href="#y-analytical-tools-for-fixed-income-portfolios">Y. Analytical Tools for Fixed-Income Portfolios</a></h1>
+<p><strong>Generic Process (Inputs → Model → Outputs)</strong></p>
+<p><strong>I. Inputs</strong></p>
+<ol>
+<li>Positions: Specific securities, amounts, long/short.</li>
+<li>Market Data: Live/real-time prices for continuous valuation.</li>
+<li>Credit &amp; ESG ratings for each holding.</li>
+<li>Issuer financial information (from statements).</li>
+</ol>
+<p><strong>II. Model Parameters</strong></p>
+<ol>
+<li>Time horizon (affects return/risk projections; 1yr vs. 10yr very different).</li>
+<li>Portfolio constraints (leverage limits, derivatives allowed?, shorting allowed? — affects exploitability of mispricings).</li>
+<li>VaR methodology (historical simulation vs. analytical/parametric).</li>
+</ol>
+<p><strong>III. Outputs</strong></p>
+<ol>
+<li>Summary statistics (portfolio + benchmark): Return, spreads, duration, convexity, tracking error, top holdings, etc.</li>
+<li>Breakdowns: Sector weights, credit ratings, currency exposure, geographic allocation.</li>
+<li>Projected future cash flows (coupons + principal repayments) with timing.</li>
+</ol>
+<p><strong>Uses:</strong></p>
+<ul>
+<li>Assess overall risk/return positioning.</li>
+<li>Simulate trade impact (e.g., shifting 10% to MBS → effect on portfolio duration, convexity, spread).</li>
+<li>Check alignment with mandate (index ETF manager cares most about <strong>tracking error</strong>; active manager may focus on <strong>Sharpe ratio</strong>).</li>
+</ul>
+
+                    </main>
+
+                    <div class="copyright" style="font-size:0.9rem;opacity:0.7;padding:0 1rem 0.5rem;">© 2026 Pramod Thaz. All rights reserved.</div>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../PORTFOLIO MANAGEMENT/27. YIELD CURVE STRATEGIES.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../PORTFOLIO MANAGEMENT/29. TRADE STRATEGIES AND EXEC.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../PORTFOLIO MANAGEMENT/27. YIELD CURVE STRATEGIES.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../PORTFOLIO MANAGEMENT/29. TRADE STRATEGIES AND EXEC.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    <script src="/cfa-level-iii-notes/paywall.js"></script></body>
+</html>

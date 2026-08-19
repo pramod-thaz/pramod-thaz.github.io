@@ -1,0 +1,1217 @@
+<!DOCTYPE HTML>
+<html lang="en" class="latte sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ALL FORMULAS BY MODULE - CFA Level III Notes</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/catppuccin-e08be6a9.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "latte";
+            const default_dark_theme = "mocha";
+            window.path_to_searchindex_js = "../searchindex-2521da27.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-b96c3611.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('latte')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-mocha">Mocha</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CFA Level III Notes</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="all-formulas-by-module"><a class="header" href="#all-formulas-by-module">ALL FORMULAS BY MODULE</a></h1>
+<hr>
+<p>Duplicates are intentional to show frequency of formulas across practice questions vs mocks.</p>
+<h1 id="asset-allocation"><a class="header" href="#asset-allocation">Asset Allocation</a></h1>
+<h2 id="1-cme-i"><a class="header" href="#1-cme-i">1. CME I</a></h2>
+<ul>
+<li>
+<p>Taylor rule (optimal short-term real rate form used in source):<br>$$R_{\text{optimal, real}} = R_{\text{neutral}} + 0.5 \times GDP_{g,\text{forecast}} - GDP_{g,\text{trend}} + 0.5 \times (I_{\text{forecast}} - I_{\text{target}})$$</p>
+</li>
+<li>
+<p>Taylor rule (target nominal policy rate form):<br>$i^{*} = r_{\text{neutral}} + \pi_{e} + 0.5(\hat{Y}<em>{e} - \hat{Y}</em>{\text{trend}}) + 0.5(\pi_{e} - \pi_{\text{target}})$</p>
+</li>
+<li>
+<p>National income identity linking net exports:<br>$(X - M) = $S - I$ + (T - G)$</p>
+</li>
+</ul>
+<p><strong>[FORMULAS IN MOCKS]</strong></p>
+<ul>
+<li>
+<p>Taylor rule (target real short-term policy rate):<br>$r^* = r_{\text{neutral}} + 0.5(Y_e - Y_{\text{trend}}) + 0.5(\pi_e - \pi_{\text{target}})$<br>(Nominal target rate adds expected inflation; $Y_e$ is expected real GDP growth = nominal GDP growth − expected inflation.)</p>
+</li>
+<li>
+<p>Long-run real GDP growth:<br>$\text{Real GDP growth} = \text{growth from labor productivity} + \text{growth from labor inputs}$</p>
+</li>
+<li>
+<p>Debt-to-GDP ratio:<br>$\dfrac{\text{Short-term external debt} + \text{Medium- and long-term external debt}}{\text{Nominal GDP}}$</p>
+</li>
+<li>
+<p>Foreign-exchange reserves / short-term debt:<br>$\dfrac{\text{FX reserves}}{\text{Short-term external debt}}$</p>
+</li>
+</ul>
+<hr>
+<h2 id="2-cme---ii"><a class="header" href="#2-cme---ii">2. CME - II</a></h2>
+<ul>
+<li>
+<p>Grinold–Kroner expected equity return:<br>$E[R_e] \approx D/P + $%\Delta E - %\Delta S$ + %\Delta P/E$<br>where $%\Delta E$ (nominal earnings growth) = real GDP growth + long-term inflation + corporate earnings growth premium; $%\Delta S$ = change in shares outstanding (negative for buy-backs).</p>
+</li>
+<li>
+<p>CAPM beta:<br>$\beta_i = \frac{\operatorname{Cov}(R_i,R_M)}{\operatorname{Var}(R_M)}$</p>
+</li>
+<li>
+<p>Singer–Terhaar risk premium (fully integrated):<br>$RP_i = \sigma_i \times \rho_{i,M} \times (\text{Sharpe ratio of GIM})$</p>
+</li>
+<li>
+<p>Singer–Terhaar risk premium (fully segmented):<br>$RP_i = \sigma_i \times (\text{Sharpe ratio})$</p>
+</li>
+<li>
+<p>Real-estate expected return:<br>$E(R_{re}) = \text{CapRate} + \text{NOI growth rate} - %\Delta\text{CapRate}$<br>(NOI growth includes real growth + inflation; a decline in cap rate contributes positively).</p>
+</li>
+<li>
+<p>Number of distinct covariance elements in an $N$-asset VCV matrix:<br>$\frac{N(N-1)}{2}$</p>
+</li>
+</ul>
+<p><strong>[FORMULAS IN MOCKS]</strong></p>
+<ul>
+<li>
+<p>Grinold–Kroner expected equity return:<br>Expected income return = Dividend yield − Change in shares outstanding<br>Expected nominal earnings growth return = Real earnings growth + Inflation<br>Expected repricing return = Rate of P/E ratio expansion<br>$E(R) =$ income return + nominal earnings growth return + repricing return<br>(Note: net share repurchases imply negative change in shares outstanding, which increases income return.)</p>
+</li>
+<li>
+<p>Commercial real estate expected return (finite horizon):<br>$E(R_e) =$ Current capitalization rate + NOI growth rate − %Δ Cap rate<br>where %Δ Cap rate = (Expected cap rate − Current cap rate) / Current cap rate<br>(NOI growth rate is typically real NOI growth + inflation.)</p>
+</li>
+<li>
+<p>Emerging-market vulnerability ratios:<br>Debt-to-GDP = (Short-term external debt + Medium- and long-term external debt) / Nominal GDP<br>Foreign-exchange reserves / Short-term debt</p>
+</li>
+<li>
+<p>Unsmoothed variance of real-estate returns:<br>$\operatorname{Var}(r) = \left[ \frac{1+\lambda}{1-\lambda} \right] \times \operatorname{Var}(R)$<br>(Standard deviation is the square root.)</p>
+</li>
+<li>
+<p>Singer–Terhaar equity risk premium:<br>$\text{Segmented RP} = \sigma \times \text{SR}<em>{\text{segmented}}$<br>$\text{Fully integrated RP} = \sigma \times \rho</em>{\text{global}} \times \text{SR}_{\text{global}}$<br>$\text{Weighted RP} = \text{Segmented RP} \times $1 - \text{degree of integration}$ + \text{Fully integrated RP} \times \text{degree of integration}$</p>
+</li>
+</ul>
+<hr>
+<h2 id="3-overview-of-aa"><a class="header" href="#3-overview-of-aa">3. Overview of AA</a></h2>
+<p>Economic net worth:
+$$
+\text{Economic Net Worth} = \text{Total Economic Assets} - \text{Total Economic Liabilities}
+$$
+where Total Economic Assets = Financial assets + Extended assets (e.g., human capital, PV of pledged contributions); Total Economic Liabilities = Financial liabilities + Extended liabilities (e.g., PV of future obligations, consumption needs, specific goals).</p>
+<p>Comparative performance ratios (from allocation evaluation):
+$$
+\text{Ratio 1} = \frac{(k - RF)}{\sigma}
+$$
+$$
+\text{Ratio 2} = \frac{(k - k_T)}{\sigma}
+$$
+$$
+\text{Ratio 3} = \frac{(k - RF)}{\beta}
+$$
+where $k$ = expected annual return, $RF$ = risk-free return, $k_T$ = target return, $\sigma$ = annual volatility, $\beta$ = CAPM beta.</p>
+<p>Sharpe ratio (used for ranking allocations):
+$$
+\text{Sharpe ratio} = \frac{\text{Expected return} - \text{Risk-free rate}}{\text{Expected volatility}}
+$$</p>
+<p><strong>[FORMULAS IN MOCKS]</strong></p>
+<ul>
+<li>Economic net worth = Total economic assets − Total economic liabilities<br>(Economic assets include financial assets + human capital/PV of earnings + residence + other extended assets; liabilities include mortgage + PV of future consumption + other extended liabilities.)</li>
+</ul>
+<hr>
+<h2 id="4-principles-of-aa"><a class="header" href="#4-principles-of-aa">4. Principles of AA</a></h2>
+<p>Safety-first / probability ratio (for ranking portfolios against a required threshold return $R_L$):
+$$
+\frac{E(R_P) - R_L}{\sigma_P}
+$$</p>
+<p>Utility / objective function in mean-variance optimization (returns and variance in percent form):
+$$
+U_m = E(R_{s,m}) - 0.005 \lambda \sigma^2(R_{s,m})
+$$
+$or equivalently $E(R) - 0.005\lambda\sigma^2$$</p>
+<p>Marginal contribution to total risk $MCTR$:
+$$
+\text{MCTR}<em>i = \beta</em>{i,p} \times \sigma_p
+$$</p>
+<p>Absolute contribution to total risk $ACTR$:
+$$
+\text{ACTR}_i = w_i \times \text{MCTR}_i
+$$</p>
+<p>For an optimal portfolio the ratio of excess return to MCTR equals the portfolio Sharpe ratio:
+$$
+\frac{E(R_p) - R_f}{\text{MCTR}_i} = \frac{E(R_p) - R_f}{\sigma_p}
+$$</p>
+<p>Funding ratio:
+$$
+\text{Funding ratio} = \frac{\text{Market value of assets}}{\text{Present value of liabilities}}
+$$</p>
+<p>Reverse-optimization / CAPM equilibrium return:
+$$
+E(R_i) = R_f + \beta_i \times \text{Market risk premium}
+$$</p>
+<p>Inflation-adjusted annual cash-flow (growing-annuity form used for living-expenditure goals):
+$$
+\text{Cash flow} = \text{Capital} \times \frac{k - g}{1 - \left(\frac{1+g}{1+k}\right)^n} \times \frac{1}{1+k}
+$$
+(where $k$ = required success-rate return, $g$ = inflation)</p>
+<p>Present-value funding of a future goal:
+$$
+\text{PV} = \frac{\text{FV}}{(1 + k)^n}
+$$
+(where $k$ is the minimum expected return consistent with the required success probability)</p>
+<p><strong>[FORMULAS IN MOCKS]</strong></p>
+<ul>
+<li>
+<p>Mean-variance utility: $U_m = E(R_m) - 0.005 \lambda \sigma_m^2$</p>
+</li>
+<li>
+<p>Corner-portfolio weights for target return:<br>Target return = $w \times R_3 + $1-w$ \times R_4$<br>Solve for $w$.</p>
+</li>
+<li>
+<p>Leverage to achieve target return (borrowing at risk-free rate):<br>Target return = $w \times R_{\text{tangency}} + $1-w$ \times R_f$<br>$w =$ (Target − $R_f$)/( $R_{\text{tangency}}$ − $R_f$)<br>(When $w &gt; 1$, the cash weight is negative = leverage.)</p>
+</li>
+<li>
+<p>Condition for mean-variance improvement from adding a new asset class:<br>Sharpe ratio of new asset &gt; Sharpe ratio of current portfolio × correlation between them.</p>
+</li>
+<li>
+<p>Foundation/endowment nominal return objective (spending + inflation + costs):<br>$(1 + \text{spending rate})(1 + \text{expected inflation})(1 + \text{investment costs}) - 1$</p>
+</li>
+<li>
+<p>Sharpe ratio of a corner portfolio:<br>$\text{Sharpe} = \dfrac{E(r) - r_f}{\sigma}$</p>
+</li>
+<li>
+<p>Weight of the tangency (corner) portfolio when combined with the risk-free asset to achieve a target return:<br>$r_{\text{target}} = E(r_P) \times w + r_f \times (1-w)$<br>$\Rightarrow w = \dfrac{r_{\text{target}} - r_f}{E(r_P) - r_f}$</p>
+</li>
+<li>
+<p>Resulting portfolio standard deviation $risk-free asset has $\sigma=0$$:<br>$\sigma_{\text{port}} = w \times \sigma_P$</p>
+</li>
+<li>
+<p>Ratio of excess return to marginal contribution to total risk (optimality condition for risk budgeting):<br>$\dfrac{E(r_i) - r_f}{\text{MCTR}_i} = \text{Sharpe of tangency portfolio}$</p>
+</li>
+<li>
+<p>Ratio of excess return to MCTR (solving for $r_f$):<br>$\dfrac{E(r) - r_f}{\text{MCTR}} = \text{given ratio}$<br>$\Rightarrow r_f = E(r) - (\text{ratio} \times \text{MCTR})$</p>
+</li>
+<li>
+<p>Present value of a goals-based multi-period cash-flow stream (end-of-year payments):<br>$\text{PV} = \sum_{t=1}^{N} \dfrac{\text{PMT}}{(1 + r_{\min})^t}$<br>$or financial-calculator inputs: $N$, $I/Y = r_{\min}$, $\text{PMT}$, $\text{FV}=0$, solve $\text{PV}$$</p>
+</li>
+</ul>
+<hr>
+<h2 id="5-asset-alloc-wrw-constraints"><a class="header" href="#5-asset-alloc-wrw-constraints">5. Asset Alloc w/RW Constraints</a></h2>
+<p>Tactical incremental return contribution of an asset class:</p>
+<p>$(TAA weight−Policy weight)×Period return$</p>
+<p>After-tax rebalancing range:
+$$
+\text{After-tax rebalancing range} = \frac{\text{Pre-tax rebalancing range}}{1 - t}
+$$</p>
+<p>After-tax return on an asset (when gains are taxed at rate $t$):
+$$
+\text{After-tax return} = \text{Pre-tax return} \times (1 - t)
+$$</p>
+<hr>
+<h1 id="portfolio-construction"><a class="header" href="#portfolio-construction">Portfolio Construction</a></h1>
+<h2 id="overview-of-equity"><a class="header" href="#overview-of-equity">Overview of Equity</a></h2>
+<ul>
+<li>
+<p>Explicit trading costs = Brokerage commissions + Transaction taxes + Exchange fees + Regulatory fees<br>(expressed in percent or basis points converted to percent)</p>
+</li>
+<li>
+<p>Herfindahl–Hirschman Index $HHI$ = $\sum w_i^2$<br>where $w_i$ are the portfolio weights (including the sum of squared weights of remaining holdings)</p>
+</li>
+<li>
+<p>Effective number of stocks = $\dfrac{1}{\text{HHI}}$</p>
+</li>
+</ul>
+<hr>
+<h2 id="overview-of-fixed-income"><a class="header" href="#overview-of-fixed-income">Overview of Fixed Income</a></h2>
+<ul>
+<li>
+<p>Coupon income = $\dfrac{\text{Annual average coupon payment}}{\text{Current average bond price}}$</p>
+</li>
+<li>
+<p>Rolldown return = $\dfrac{\text{Expected average bond price at end of horizon} - \text{Current average bond price}}{\text{Current average bond price}}$<br>(assumes unchanged yield curve over the strategy horizon)</p>
+</li>
+<li>
+<p>Rolling yield = Coupon income + Rolldown return</p>
+</li>
+<li>
+<p>Expected change in price based on yield or spread view ≈ $(- \text{Modified Duration} \times \Delta y) + \left[\frac{1}{2} \times \text{Convexity} \times (\Delta y)^{2}\right]$</p>
+</li>
+<li>
+<p>Leveraged portfolio return = $\dfrac{(\text{Return on invested funds} \times \text{Value of portfolio assets}) - (\text{Borrowing rate} \times \text{Value of borrowed funds})}{\text{Value of portfolio equity}}$</p>
+</li>
+<li>
+<p>Total expected return = Rolling yield $+/-$ $E$(Change in price based on investor’s benchmark yield view) $+/-$ $E$(Change in price due to investor’s view of credit spread) $+/-$ $E$(Currency gains or losses)</p>
+</li>
+<li>
+<p>Level of inflation protection for coupons = Percentage of portfolio in floating-coupon bonds + Percentage of portfolio in inflation-linked bonds</p>
+</li>
+</ul>
+<p><strong>[FORMULAS IN MOCKS]</strong></p>
+<ul>
+<li>
+<p>Rolling yield = Coupon income + Rolldown return<br>Coupon income = Annual coupon payment / Current bond price<br>Rolldown return = (Expected price in one year assuming unchanged yield curve − Current price) / Current price</p>
+</li>
+<li>
+<p>Expected return due to change in benchmark YTM:<br>$(- \text{ModDur} \times \Delta \text{Yield}) + [0.5 \times \text{Convexity} \times (\Delta \text{Yield})^2]$</p>
+</li>
+<li>
+<p>Expected return due to change in spread:<br>$(- \text{ModDur} \times \Delta \text{Spread}) + [0.5 \times \text{Convexity} \times (\Delta \text{Spread})^2]$</p>
+</li>
+<li>
+<p>Leveraged return:<br>$\dfrac{r_I \times V_E + V_B - (V_B \times r_B)}{V_E}$</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>Rolling yield:<br>$\text{Rolling yield} = \text{Coupon income} + \text{Rolldown return}$<br>$\text{Coupon income} = \frac{\text{Annual coupon payment}}{\text{Current bond price}}$<br>$\text{Rolldown return} = \frac{P_1 - P_0}{P_0}$ (assuming unchanged yield curve)</p>
+</li>
+<li>
+<p>Expected return due to change in benchmark YTM or spread:<br>$(-\text{ModDur} \times \Delta\text{Yield}) + \left[ 0.5 \times \text{Convexity} \times (\Delta\text{Yield})^2 \right]$</p>
+</li>
+<li>
+<p>Leveraged return:<br>$r_L = r_1 + \frac{V_B}{V_E} (r_1 - r_B)$</p>
+</li>
+</ul>
+<hr>
+<h2 id="alternatives"><a class="header" href="#alternatives">Alternatives</a></h2>
+<ul>
+<li>
+<p>Expected distribution = $[\text{Prior-year NAV} \times (1 + \text{Growth rate})] \times \text{Distribution rate}$</p>
+</li>
+<li>
+<p>Expected NAV = $\text{Prior-year NAV} \times $1 + \text{Growth rate}$ + \text{Capital contributions} - \text{Distributions}$</p>
+</li>
+<li>
+<p>$\text{NAV}<em>t = [\text{NAV}</em>{t-1} \times (1 + G)] + C_t - D_t$<br>where $G$ is the growth rate, $C_t$ is the capital contribution, and $D_t$ is the distributions</p>
+</li>
+</ul>
+<hr>
+<h2 id="private-wealth"><a class="header" href="#private-wealth">Private Wealth</a></h2>
+<ul>
+<li>
+<p>After-tax distribution income (annual yield) = $B \left{ [1 + r(1 - t_x)]^T - 1 \right}$<br>(where $B$ is beginning portfolio value/basis, $r$ is pretax yield, $t_x$ is tax rate on distributions, $T=1$ for annual)</p>
+</li>
+<li>
+<p>Real purchasing power of fixed nominal income = $\dfrac{\text{Nominal income}}{(1 + \pi)^T}$</p>
+</li>
+<li>
+<p>Future value interest factor adjusted for tax and inflation (capital gains with deferred tax treated as $t=0$) = $\left[ \dfrac{1 + r}{1 + \pi} \right]^T$</p>
+</li>
+<li>
+<p>Average tax rate = $\dfrac{\text{Total tax liability}}{\text{Total taxable income}}$</p>
+</li>
+<li>
+<p>After-tax nominal return = $r(1 - t)$</p>
+</li>
+<li>
+<p>After-tax real return = $\dfrac{1 + r(1 - t)}{1 + \pi} - 1$<br>(or approximately after-tax nominal return minus inflation)</p>
+</li>
+<li>
+<p>Inflation-adjusted future value (pretax) = $\text{Notional} \times \left[ \dfrac{1 + R_P}{1 + i} \right]^T$</p>
+</li>
+<li>
+<p>Inflation-adjusted after-tax future value = $\text{Notional} \times \left[ \dfrac{1 + R_P(1 - \text{Tax rate})}{1 + i} \right]^T$</p>
+</li>
+<li>
+<p>Investable net worth = Liquid investments + Cash – Short-term liabilities (excludes primary residence, vehicles, business assets/liabilities, checking for day-to-day use)</p>
+</li>
+</ul>
+<p><strong>[FORMULAS IN MOCKS]</strong></p>
+<ul>
+<li>After-tax future value of non-dividend-paying equities (capital-gains only): $FV_{cg} = PV \bigl[(1 + r)^n $1 - t_{cg}$ + t_{cg}\bigr]$ .</li>
+</ul>
+<ul>
+<li>Accrual-equivalent after-tax return $R_{AE}$ solves $PV (1 + R_{AE})^n = FV$. Accrual-equivalent tax rate $T_{AE}$ solves $r(1 - T_{AE}) = R_{AE}$.</li>
+</ul>
+<ul>
+<li>Real after-tax required return = (Cash need / Asset base).<br>Nominal after-tax required return ≈ Real after-tax return + Inflation (arithmetic) or $(1 + real)(1 + inflation) - 1$ (geometric).</li>
+</ul>
+<ul>
+<li>
+<p>Shortfall risk ≈ Nominal pre-tax expected return − 2 × Nominal expected standard deviation. $Q68, Q96$</p>
+</li>
+<li>
+<p>Real after-tax return of a portfolio = Nominal pre-tax return × (1 − tax rate) − Inflation. $Q68, Q96$</p>
+</li>
+<li>
+<p>Minimum portfolio size that meets next-year net cash need at real after-tax return $r$: $\text{min Portfolio} = \text{net cash need} / r$.<br>Maximum donation = Current portfolio − min Portfolio.</p>
+</li>
+</ul>
+<ul>
+<li>Accrual-equivalent after-tax annual return: $\left( \frac{\text{Ending Value}}{\text{Beginning Value}} \right)^{1/n} - 1$</li>
+</ul>
+<ul>
+<li>
+<p>Real after-tax portfolio return: Nominal pre-tax return $\times $1 - \text{tax rate}$ - \text{inflation}$</p>
+</li>
+<li>
+<p>Shortfall risk: Nominal pre-tax expected return $- 2 \times$ standard deviation</p>
+</li>
+<li>
+<p>Minimum portfolio size that meets next-year net cash need: $\text{Net cash need} / \text{real after-tax expected return}$</p>
+</li>
+<li>
+<p>Maximum immediate donation: Current portfolio $-$ minimum portfolio</p>
+</li>
+<li>
+<p>Worst-case (downside) return = Expected nominal total return − 2 × standard deviation</p>
+</li>
+<li>
+<p>After-tax standard deviation = $\sigma \times (1 - TR)$ where $TR$ is the tax rate</p>
+</li>
+<li>
+<p>Taxable-account terminal value = $BV \times [1 + r(1 - t)]^n$</p>
+</li>
+<li>
+<p>Tax-deferred terminal value (after tax on gain) = $BV \times (1 + r)^n \times 1 - t + BV \times t$ (or equivalent net-of-tax gain + basis)</p>
+</li>
+<li>
+<p>Maximum spending rate that preserves real portfolio value:</p>
+</li>
+<li>
+<p>Expected nominal return that preserves real value of portfolio =
+(1 + spending rate) × (1 + inflation) × (1 + management fee) – 1
+Multiplicative: $\text{spending} = \frac{1 + r}{(1 + i)(1 + f)} - 1$<br>Additive approximation: $\text{spending} \approx r - i - f$<br>where $r$ = expected nominal return, $i$ = inflation, $f$ = management fee</p>
+</li>
+<li>
+<p>After-tax expected return on a taxable asset = Pre-tax expected return $\times (1 - t)$</p>
+</li>
+<li>
+<p>After-tax risk of a taxable asset = Pre-tax standard deviation $\times (1 - t)$ $Q163, Q164$</p>
+</li>
+<li>
+<p>After-tax future value (accrual taxes):<br>$FV_t = \left[ 1 + R(1 - t_x) \right]^T$</p>
+</li>
+<li>
+<p>Tax drag (as % of investment gains):<br>$\text{Tax drag} = \frac{FV_{\text{no tax}} - FV_{\text{tax}}}{FV_{\text{no tax}} - \text{Initial value}}$</p>
+</li>
+</ul>
+<hr>
+<h2 id="institutional"><a class="header" href="#institutional">Institutional</a></h2>
+<ul>
+<li>
+<p>Portfolio expected return = $\sum (w_i \times r_i)$</p>
+</li>
+<li>
+<p>Modified duration of bank equity capital after restructuring:<br>$D_E = \left(\dfrac{A}{E}\right) D_A - \left(\dfrac{L}{E}\right) D_L \times \left(\dfrac{\Delta y_L}{\Delta y_A}\right)$<br>where $A$ = assets, $E$ = equity, $L$ = liabilities, $D_A$ = modified duration of assets, $D_L$ = modified duration of liabilities, and $\Delta y_L / \Delta y_A$ is the relative yield change of liabilities to assets.</p>
+</li>
+</ul>
+<p><strong>[FORMULAS IN MOCKS]</strong></p>
+<ul>
+<li>Modified duration of equity capital:<br>$D_E^* = \left( \frac{A}{E} \right) D_A^* - \left( \frac{A}{E} - 1 \right) D_L^* \left( \frac{\Delta i}{\Delta y} \right)$<br>where $\frac{A}{E}$ is the assets-to-equity ratio, $D_A^<em>$ modified duration of assets, $D_L^</em>$ modified duration of liabilities, and $\frac{\Delta i}{\Delta y}$ is the change in liability yield per unit change in asset yield.</li>
+</ul>
+<hr>
+<h2 id="trading"><a class="header" href="#trading">Trading</a></h2>
+<ul>
+<li>
+<p>Inside (market) bid–ask spread = Highest bid price − Lowest ask price</p>
+</li>
+<li>
+<p>Effective bid–ask spread (buy order) = $2 \times \bigl(\text{Trade price} - \dfrac{\text{Ask price} + \text{Bid price}}{2}\bigr)$<br>or equivalently $2 \times (\text{Trade price} - \text{Midpoint of the market at order entry})$</p>
+</li>
+<li>
+<p>Average effective spread = $\dfrac{\sum \text{Effective spreads of individual trades}}{N}$</p>
+</li>
+<li>
+<p>Volume-weighted average execution price for a multi-level fill against the book = $\dfrac{\sum (\text{Size}_i \times \text{Price}_i)}{\text{Total shares}}$</p>
+</li>
+<li>
+<p>Effective-spread transaction cost per share (midquote benchmark) = $\dfrac{\text{Trade price} - \text{Prevailing bid}}{2}$ (for buys)<br>Total transaction cost estimate = Effective-spread cost per share $\times$ Total shares traded</p>
+</li>
+</ul>
+<p><strong>[FORMULAS IN MOCKS]</strong></p>
+<ul>
+<li>
+<p>Effective spread (sell order): $2 \times (\text{Midpoint of market at order entry} - \text{Trade price})$</p>
+</li>
+<li>
+<p>VWAP transaction cost estimate: $(\text{Day VWAP} - \text{Trade VWAP}) \times \text{Shares sold}$</p>
+</li>
+</ul>
+<ul>
+<li>Effective spread (buy order):<br>$2 \times \left[ \text{Trade price} - \frac{\text{Bid} + \text{Ask}}{2} \right]$</li>
+</ul>
+<hr>
+<h1 id="performance"><a class="header" href="#performance">Performance</a></h1>
+<h2 id="portfolio-performance-evaluation"><a class="header" href="#portfolio-performance-evaluation">Portfolio Performance Evaluation</a></h2>
+<p>Brinson-Hood-Beebower $BHB$ selection effect:<br>$S_i = W_i \times (R_i - B_i)$</p>
+<p>BHB allocation effect:<br>$A_i = $w_i - W_i$ \times B_i$</p>
+<p>BHB interaction effect:<br>$I_i = $w_i - W_i$ \times (R_i - B_i)$</p>
+<p>Brinson-Fachler allocation effect:<br>$A_i = $w_i - W_i$ \times (B_i - B)$</p>
+<p>where $w_i$ = portfolio weight in sector $i$, $W_i$ = benchmark weight in sector $i$, $R_i$ = portfolio return in sector $i$, $B_i$ = benchmark return in sector $i$, $B$ = overall benchmark return.</p>
+<p>Combined selection + interaction:<br>$W_i(R_i - B_i) + (w_i - W_i)(R_i - B_i)$</p>
+<p>Sortino ratio:<br>$SR_D = \frac{r_p - r_T}{\sigma_D}$<br>$$\sigma_D$ = target semi-deviation below target return $r_T$$</p>
+<p>Sharpe ratio:<br>$SR = \frac{r_p - r_f}{\sigma}$</p>
+<p>Misfit active return (definition): difference between broad market benchmark return and manager’s normal portfolio return.</p>
+<p><strong>[FORMULAS IN MOCKS]</strong></p>
+<ul>
+<li>
+<p>Brinson–Hood–Beebower selection effect: $W_b \times (R_p - R_b)$</p>
+</li>
+<li>
+<p>Brinson–Fachler allocation effect: $(W_p - W_b) \times (R_b - B)$</p>
+</li>
+<li>
+<p>Interaction effect: $(W_p - W_b) \times (R_p - R_b)$</p>
+</li>
+<li>
+<p>Sortino ratio: $\dfrac{\text{Average fund return} - \text{Minimum acceptable return}}{\text{Target semi-standard deviation}}$</p>
+</li>
+<li>
+<p>Implementation shortfall $IS$: Execution cost + Opportunity cost + Fees<br>Execution cost = $\sum s_j p_j - $\sum s_j$ p_d$<br>Opportunity cost = $(S - \sum s_j)(p_n - p_d)$<br>Fees = shares executed × commission per share</p>
+</li>
+<li>
+<p>Factor contribution to active return:<br>$\text{Contribution} = $\text{Portfolio sensitivity} - \text{Benchmark sensitivity}$ \times \text{Factor return}$</p>
+</li>
+<li>
+<p>Active return:<br>$A = P - B$</p>
+</li>
+<li>
+<p>Style return:<br>$S = B - M$</p>
+</li>
+<li>
+<p>Excess return:<br>$E = P - M$</p>
+</li>
+</ul>
+<hr>
+<h2 id="investment-manager-selection"><a class="header" href="#investment-manager-selection">Investment Manager Selection</a></h2>
+<p>Investment management fee (base + sharing, subject to cap):</p>
+<p>$\text{Fee} = \text{Base Fee} + [\text{Sharing Fee} \times (\text{Gross Active Return} - \text{Base Fee})]$</p>
+<p>Capped at Maximum Annual Fee if exceeded.</p>
+<p>Net active return:</p>
+<p>$\text{Net Active Return} = \text{Gross Active Return} - \text{Billed Fee}$</p>
+<p>where Billed Fee = Base + (active return above base × sharing %).</p>
+<p>High-water mark adjustment: Prior losses must be recouped before sharing fee applies on subsequent gains (e.g., adjust gross return downward by prior loss amount before calculating sharing portion).</p>
+<p>Capture ratio:</p>
+<p>$\text{Capture Ratio} = \frac{\text{Upside Capture}}{\text{Downside Capture}}$</p>
+<p>Modified Dietz sub-period return (with external cash flows):</p>
+<p>$r = \frac{EMV - BMV - CF}{BMV + \sum (CF_i \times w_i)}$</p>
+<p>where wi w_i wi​ is the weighting factor (proportion of period cash flow was invested). Sub-period returns are geometrically linked.</p>
+<p><strong>[FORMULAS IN MOCKS]</strong></p>
+<ul>
+<li>
+<p>Capture ratio: $\dfrac{\text{Upside capture}}{\text{Downside capture}}$</p>
+</li>
+<li>
+<p>Performance-based fee (sharing structure):<br>Base fee + (Sharing percentage × (Gross active return − Base fee))<br>Subject to maximum annual fee cap</p>
+</li>
+<li>
+<p>Capture ratio:<br>$\text{Capture ratio} = \dfrac{\text{Upside capture}}{\text{Downside capture}}$</p>
+</li>
+</ul>
+<hr>
+<h2 id="overview-of-the-global-investment-performance-standards"><a class="header" href="#overview-of-the-global-investment-performance-standards">Overview of the Global Investment Performance Standards</a></h2>
+<p>Modified Dietz sub-period return with external cash flow:<br>$$
+$r = \frac{EMV - BMV - CF}{BMV + \sum (CF_i \times w_i)}$
+$$<br>where $w_i$ is the weighting factor (proportion of the period the cash flow was in the portfolio). Sub-period returns are geometrically linked to obtain the full-period return.</p>
+<p>Composite return (asset-weighted):<br>$$
+$r_{comp} = \sum (w_p \times r_p)$
+$$<br>where $w_p$ is the weight of each portfolio based on beginning assets (or beginning assets plus weighted cash flows).</p>
+<hr>
+<h1 id="derivatives"><a class="header" href="#derivatives">Derivatives</a></h1>
+<h2 id="option-strategies"><a class="header" href="#option-strategies">Option Strategies</a></h2>
+<ul>
+<li>
+<p>Collar position delta:<br>$$\text{Collar delta}=\Delta_{\text{stock}}+\Delta_{\text{put}}-\Delta_{\text{call}}$$</p>
+</li>
+<li>
+<p>Synthetic long stock (put-call parity):<br>$$S_0=c_0-p_0+\frac{X}{(1+r)^T}$$</p>
+</li>
+<li>
+<p>Synthetic short stock:<br>$$-S_0=p_0-c_0-\frac{X}{(1+r)^T}$$</p>
+</li>
+<li>
+<p>Protective-put maximum loss:<br>$$\text{Max loss}=S_0-X+p_0$$</p>
+</li>
+<li>
+<p>Protective-put breakeven:<br>$$\text{Breakeven}=S_0+p_0$$</p>
+</li>
+<li>
+<p>Bull-call-spread maximum profit:<br>$$\text{Max profit}=(X_H-X_L)-(c_L-c_H)$$</p>
+</li>
+<li>
+<p>Bull-call-spread breakeven:<br>$$\text{Breakeven}=X_L+(c_L-c_H)$$</p>
+</li>
+<li>
+<p>Bear-put-spread net cost / maximum loss:<br>$$\text{Net cost}=p_H-p_L$$<br>Maximum loss occurs when underlying $\ge X_H$.</p>
+</li>
+<li>
+<p>Straddle / strangle cost and breakevens:<br>$$\text{Cost}=c+p$$<br>Long-straddle breakevens $=X\pm\text{cost}$<br>Long-strangle upper breakeven $=X_{\text{call}}+\text{cost}$</p>
+</li>
+<li>
+<p>Covered-call effective sale price:<br>$$\text{Effective sale price}=X+c_0$$<br>Breakeven $=S_0-c_0$</p>
+</li>
+<li>
+<p>Covered-call position delta:<br>$$\text{Position delta}=(1-\Delta_{\text{call}})\times\text{shares}$$</p>
+</li>
+<li>
+<p>Variance of option gamma: highest for ATM options near expiration.</p>
+</li>
+</ul>
+<p><strong>[FORMULAS IN MOCKS]</strong></p>
+<ul>
+<li>
+<p>Collar delta: $\text{Collar delta} = \Delta_{\text{underlying}} + \Delta_{\text{put}} - \Delta_{\text{call}}$</p>
+</li>
+<li>
+<p>Straddle cost (per share): ATM put premium + ATM call premium</p>
+</li>
+<li>
+<p>Strangle cost (per share): OTM put premium + OTM call premium<br>Percentage increase to break even: $\frac{\text{Strangle cost}}{\text{Current share price}}$</p>
+</li>
+<li>
+<p>Short seagull spread cost (per share): ATM put premium − OTM put premium − OTM call premium</p>
+</li>
+<li>
+<p>Long straddle maximum loss = total premium paid<br>Downside breakeven = strike − total premium<br>Upside breakeven = strike + total premium</p>
+</li>
+<li>
+<p>Put-spread net cost: long-put premium − short-put premium</p>
+</li>
+<li>
+<p>Bull-call-spread maximum gain = difference in strikes − net premium paid<br>Breakeven = lower strike + net premium paid</p>
+</li>
+<li>
+<p>Covered-call gain (stock + short OTM call, stock finishes below strike):<br>$\text{Gain per share} = $S_T - S_0$ + \text{Call premium received}$</p>
+</li>
+<li>
+<p>Combined position delta (long stock + short option):<br>$\Delta_{\text{position}} = 1 + \Delta_{\text{option}}$<br>$for a short put: $1 - (\text{negative put delta}) = 1 + |\Delta_{\text{put}}|$$</p>
+</li>
+<li>
+<p>Bull put spread (short higher-strike put + long lower-strike put) breakeven:<br>$\text{Breakeven} = \text{Higher strike} - \text{Net premium received}$</p>
+</li>
+<li>
+<p>Short seagull spread net cost (per share):<br>$\text{Net cost} = \text{ATM put premium} - \text{OTM put premium} - \text{OTM call premium}$</p>
+</li>
+<li>
+<p>Long straddle maximum loss:<br>$\text{Max loss} = \text{Call premium} + \text{Put premium}$<br>Upside breakeven $= \text{Strike} + \text{Total premium}$<br>Downside breakeven $= \text{Strike} - \text{Total premium}$</p>
+</li>
+</ul>
+<hr>
+<h2 id="swaps-forwards-and-futures-strategies"><a class="header" href="#swaps-forwards-and-futures-strategies">Swaps, Forwards, and Futures Strategies</a></h2>
+<ul>
+<li>
+<p>Basis-point-value hedge ratio (bond futures):<br>$$BPVHR=\left{\frac{BPV_T-BPV_P}{BPV_{CTD}}\right}\times CF$$<br>where $$BPV_T=MDUR_T\times0.0001\times MV_P$$ and $$BPV_P=MDUR_P\times0.0001\times MV_P$$ (or given directly).</p>
+</li>
+<li>
+<p>Equity-index futures contracts for beta adjustment or equitization:<br>$$N_f=\left(\frac{\beta_T-\beta_S}{\beta_f}\right)\times\frac{S}{F}$$<br>where $F=$ futures price $\times$ multiplier. Positive $N_f$ = buy; negative = sell.</p>
+</li>
+<li>
+<p>Interest-rate-swap notional to change portfolio modified duration:<br>$$(MV_P\times MDUR_P)+(N_S\times MDUR_S)=MV_P\times MDUR_T$$<br>Solve for $N_S$.</p>
+</li>
+<li>
+<p>Variance-swap settlement:<br>Variance notional $=\dfrac{\text{Vega notional}}{2\times\text{Volatility strike}}$<br>Settlement $=\text{Variance notional}\times(\text{Realized variance}-\text{Variance strike})$<br>where Variance $=(\text{Volatility})^2$.</p>
+</li>
+<li>
+<p>Fed-funds-futures implied rate and rate-change probability:<br>Implied FFE rate $=100-\text{futures price}$<br>Probability of a 25 bp move $=\dfrac{\text{Implied FFE}-\text{Current midpoint}}{\text{New midpoint after move}-\text{Current midpoint}}$.</p>
+</li>
+<li>
+<p>Equity-swap net payment (cash-settled):<br>Net cash $=\text{Notional}\times(\text{Floating-rate return}-\text{Equity total return})$.</p>
+</li>
+<li>
+<p>CTD selection (invoice price minus dirty price cost):<br>Amount received $=(\text{Futures settlement}/100)\times CF\times\text{Contract size}$<br>Bond cost $=(\text{Dirty price}/100)\times\text{Contract size}$.<br>Lowest (most negative) difference = cheapest-to-deliver.</p>
+</li>
+</ul>
+<p><strong>[FORMULAS IN MOCKS]</strong></p>
+<ul>
+<li>
+<p>Interest-rate swap notional to change modified duration:<br>$NS = \left( \frac{\text{MDUR}_T - \text{MDUR}_P}{\text{MDUR}_S} \right) \times MVP$<br>where $\text{MDUR}_S$ is typically negative for a pay-fixed swap</p>
+</li>
+<li>
+<p>Variance notional: $\text{Variance notional} = \frac{\text{Vega notional}}{2 \times \text{Strike}}$<br>Value of variance swap at time $t$:<br>$\text{VarSwap}_t = \text{Variance notional} \times PV_t(T) \times \Bigl{ \frac{t}{T} [\text{RealizedVol}(0,t)]^2 + \frac{T-t}{T} [\text{ImpliedVol}(t,T)]^2 - \text{Strike}^2 \Bigr}$<br>$PV_t(T) = \frac{1}{1 + r \times (T-t)}$</p>
+</li>
+<li>
+<p>Equity-index futures contracts to change beta:<br>$N_f = \left( \frac{\beta_T - \beta_S}{\beta_f} \right) \times \left( \frac{S}{F} \right)$<br>where $F =$ futures price $\times$ multiplier</p>
+</li>
+<li>
+<p>Bond futures hedge ratio (BPV method):<br>$\text{BPV}_{HR} = \left( \frac{\text{BPV}_T - \text{BPV}<em>P}{\text{BPV}</em>{\text{CTD}}} \right) \times \text{Conversion factor}$<br>$\text{BPV}_T = \text{MDUR}_T \times 0.0001 \times MVP$</p>
+</li>
+<li>
+<p>Fed-funds futures implied average rate:<br>$\text{Implied rate} = 100 - \text{Futures price}$</p>
+</li>
+<li>
+<p>Probability of a rate hike:<br>$\dfrac{\text{Implied average rate} - \text{Current midpoint}}{\text{Hike midpoint} - \text{Current midpoint}}$</p>
+</li>
+<li>
+<p>Basis-point-value hedge ratio (duration adjustment):<br>$\text{BPVHR} = \dfrac{\text{BPV}<em>{\text{target}} - \text{BPV}</em>{\text{current}}}{\text{BPV}_{\text{CTD}}} \times \text{CF}$<br>$\text{BPV} = \text{Modified duration} \times 0.0001 \times \text{Portfolio value}$</p>
+</li>
+</ul>
+<hr>
+<h2 id="currency"><a class="header" href="#currency">Currency</a></h2>
+<ul>
+<li>
+<p>Domestic-currency return on a foreign asset/portfolio:<br>$$R_{DC}=(1+R_{FC})(1+R_{FX})-1$$<br>where $R_{FX}$ is the percentage change of the foreign currency against the domestic currency (domestic currency is the price currency in the P/B quote).</p>
+</li>
+<li>
+<p>Multi-asset domestic-currency return:  #sunday
+$$R_{DC}=w_1(1+R_{FC,1})(1+R_{FX,1})+w_2(1+R_{FC,2})(1+R_{FX,2})-1$$</p>
+</li>
+<li>
+<p>Domestic-currency return variance approximation:<br>$$\sigma^2(R_{DC})\approx\sigma^2(R_{FC})+\sigma^2(R_{FX})+2\sigma(R_{FC})\sigma(R_{FX})\rho(R_{FC},R_{FX})$$</p>
+</li>
+<li>
+<p>Minimum-variance hedge ratio:<br>$$h=\rho(R_{DC};R_{FX})\times\frac{\sigma(R_{DC})}{\sigma(R_{FX})}$$</p>
+</li>
+<li>
+<p>Carry-trade profit (interest differential):<br>$$\text{Profit}=\text{high-yield currency rate}-\text{low-yield currency rate}$$</p>
+</li>
+<li>
+<p>Bull-call-spread net premium, maximum gain and breakeven:<br>$$\text{Net premium}= \text{premium paid on long call}-\text{premium received on short call}$$<br>$$\text{Maximum gain}=(K_{\text{high}}-K_{\text{low}})-\text{net premium}$$<br>$$\text{Breakeven}=K_{\text{low}}+\text{net premium}$$</p>
+</li>
+<li>
+<p>One-year exchange-rate return from forward:<br>$$\text{Exchange-rate return}=\frac{\text{Forward rate}-\text{Spot rate}}{\text{Spot rate}}$$</p>
+</li>
+<li>
+<p>All-in forward rate (points quoted per 10 000):<br>$$\text{All-in forward}=\text{spot}\pm\frac{\text{forward points}}{10,000}$$</p>
+</li>
+<li>
+<p>Discounted cash-settlement amount on early close-out of forward:<br>$$\text{Present value}=\frac{\text{notional}\times(\text{close-out forward}-\text{original forward})}{1+r\times\frac{t}{360}}$$</p>
+</li>
+</ul>
+<p><strong>[FORMULAS IN MOCKS]</strong></p>
+<ul>
+<li>
+<p>Minimum-variance hedge ratio:<br>$h = \rho(R_{\text{DC}}; R_{\text{DC/FC}}) \times \left( \frac{\sigma(R_{\text{DC}})}{\sigma(R_{\text{DC/FC}})} \right)$<br>Hedge position = $h \times$ foreign-currency asset value</p>
+</li>
+<li>
+<p>Domestic-currency return: $(1 + R_{\text{FC}})(1 + R_{\text{FX}}) - 1$</p>
+</li>
+<li>
+<p>Forward premium/discount: $\frac{F}{S} - 1$</p>
+</li>
+<li>
+<p>Unhedged domestic-currency return:<br>$R_{\text{DC}} = (1 + R_{\text{FC}})(1 + R_{\text{FX}}) - 1$<br>where $R_{\text{FX}} = (S_T - S_0)/S_0$</p>
+</li>
+<li>
+<p>Minimum-variance hedge ratio (currency context, if appearing): $h = \rho \times (\sigma_{\text{DC}} / \sigma_{\text{FX}})$</p>
+</li>
+</ul>
+<hr>
+<h1 id="portfolio-management-pmp"><a class="header" href="#portfolio-management-pmp">Portfolio Management $PMP$</a></h1>
+<h2 id="index-based-strategies"><a class="header" href="#index-based-strategies">Index-Based Strategies</a></h2>
+<ul>
+<li>
+<p>Herfindahl–Hirschman Index $HHI$ = sum of the squared constituent weightings<br>Effective number of stocks $\approx 1/\text{HHI}$</p>
+</li>
+<li>
+<p>Sector (or factor) contribution to return = Sector (or factor) weight $\times$ Sector (or factor) return</p>
+</li>
+<li>
+<p>Active factor-weighting contribution to excess return = $\sum(\text{Portfolio weight}_i - \text{Benchmark weight}_i) \times \text{Return}_i$ (for factors whose weights differ)</p>
+</li>
+<li>
+<p>Number of equity index futures contracts needed = $\dfrac{\text{Target exposure amount}}{\text{Futures contract unit value}}$<br>Contract unit value = Futures price $\times$ Multiplier</p>
+</li>
+</ul>
+<hr>
+<h2 id="active-equity-strategies"><a class="header" href="#active-equity-strategies">Active Equity Strategies</a></h2>
+<ul>
+<li>
+<p>Forward P/E = Price / 1-Year Forward EPS</p>
+</li>
+<li>
+<p>PEG ratio = Forward P/E / Expected EPS growth rate (in percent)</p>
+</li>
+<li>
+<p>Information coefficient (quantitative methods) relates firm returns to model factors using past data</p>
+</li>
+<li>
+<p>Factor-mimicking portfolio $FMP$ is a theoretical long/short, dollar-neutral portfolio with unit exposure to a chosen factor and zero exposure to other factors</p>
+</li>
+</ul>
+<p>**[FORMULAS IN MOCKS]</p>
+<ul>
+<li>
+<ul>
+<li>Sharpe ratio: $SR = \frac{r_p - r_f}{\sigma_p}$ where $r_p$ = portfolio return, $r_f$ = risk-free rate, $\sigma_p$ = portfolio volatility.</li>
+</ul>
+</li>
+<li>
+<p>Cyclically adjusted P/E $CAPE$ = real equity price index / 10-year average real earnings.</p>
+</li>
+<li>
+<p>Maximum position size = Strategy AUM × Position-size limit</p>
+</li>
+<li>
+<p>Average daily volume = Average market capitalization × Average percentage traded each day</p>
+</li>
+<li>
+<p>Daily purchase limit = Average daily volume × Daily volume limit</p>
+</li>
+<li>
+<p>Days to purchase full position = Maximum position size / Daily purchase limit</p>
+</li>
+<li>
+<p>Portfolio active return = $\sum h_{A_i} r_{A_i}$</p>
+</li>
+<li>
+<p>Portfolio active risk (uncorrelated) = $\sqrt{\sum h_{A_i}^2 \sigma_{A_i}^2}$</p>
+</li>
+<li>
+<p>Information ratio = Active return / Active risk</p>
+</li>
+</ul>
+<ul>
+<li>PEG ratio:<br>$\text{PEG} = \dfrac{P/E}{\text{Expected EPS growth rate}}$</li>
+</ul>
+<hr>
+<h2 id="active-equity-portfolio-construction"><a class="header" href="#active-equity-portfolio-construction">Active Equity Portfolio Construction</a></h2>
+<ul>
+<li>
+<p>Expected active return (fundamental law of active management):<br>$$E(R_A)=IC\times\sqrt{BR}\times\sigma_{RA}\times TC$$<br>where $IC$ = information coefficient, $BR$ = breadth (number of independent decisions), $\sigma_{RA}$ = active risk, $TC$ = transfer coefficient.</p>
+</li>
+<li>
+<p>Active share:<br>$$AS=\frac12\sum_{i=1}^N|w_{P,i}-w_{B,i}|$$</p>
+</li>
+<li>
+<p>Active return contribution:<br>$$R_A=\sum_{i=1}^N(w_{P,i}-w_{B,i})R_i$$</p>
+</li>
+<li>
+<p>Contribution of an asset (or factor) to portfolio variance:<br>$$CV_i=\sum_j w_i w_j C_{ij}$$</p>
+</li>
+<li>
+<p>Maximum position size under liquidity constraint:<br>$$\text{Max position}=\text{ADV}\times\text{liquidity limit %}$$</p>
+</li>
+</ul>
+<p>Days to build a maximum position = (AUM × position-size limit) / (ADV × daily-volume limit).</p>
+<p><strong>[FORMULAS IN MOCKS]</strong></p>
+<ul>
+<li>
+<p>Contribution of asset $i$ to total portfolio variance: $C_i = \sum_{j=1}^n x_i x_j C_{ij}$ where $x$ = weights and $C_{ij}$ = covariance</p>
+</li>
+<li>
+<p>Portfolio duration = $\sum w_i \times D_i$; solve for target weight</p>
+</li>
+<li>
+<p>Future value of home = Current value $\times (1 + g)^n$</p>
+</li>
+<li>
+<p>Required monthly rate solved from PV, PMT, FV, n; annualized = monthly $\times 12$ or $(1+\text{monthly})^{12}-1$</p>
+</li>
+<li>
+<p>Mortgage net proceeds = Asset value $\times$ LTV</p>
+</li>
+<li>
+<p>Sale-and-leaseback net proceeds = Sale price − Tax on (Sale price − Cost basis)</p>
+</li>
+</ul>
+<hr>
+<h2 id="liability-driven-and-index-based-strategies"><a class="header" href="#liability-driven-and-index-based-strategies">Liability-Driven and Index-Based Strategies</a></h2>
+<ul>
+<li>
+<p>Number of futures contracts to close the duration / money-duration gap:<br>$N_f = \dfrac{\text{BPV}_L - \text{BPV}_A}{\text{BPV}_f}$<br>(positive = buy/long; negative = sell/short)</p>
+</li>
+<li>
+<p>Futures BPV = $\dfrac{\text{BPV of cheapest-to-deliver}}{\text{Conversion factor of CTD}}$</p>
+</li>
+<li>
+<p>Money duration (dollar duration / BPV) = Modified duration $\times$ Portfolio market value<br>(or the change in value for a 1 bp yield change)</p>
+</li>
+</ul>
+<p><strong>[FORMULAS IN MOCKS]</strong></p>
+<ul>
+<li>
+<p>Maximum spending rate that preserves real portfolio value:<br>multiplicative form $spending = \frac{1 + r}{(1 + i)(1 + f)} - 1$;<br>additive approximation $spending \approx r - i - f$<br>where $r$ = expected nominal return, $i$ = inflation, $f$ = management fee.</p>
+</li>
+<li>
+<p>Dollar duration = Duration × Market value × 0.01.<br>Rebalancing ratio = Desired dollar duration / New dollar duration.<br>Cash required = (Rebalancing ratio − 1) × Market value of positions.</p>
+</li>
+<li>
+<p>Basis-point value $BPV$ = Money duration × 0.0001.<br>Number of futures contracts $N_f = \frac{BPV_{liability} - BPV_{portfolio}}{BPV_{futures}}$.</p>
+</li>
+<li>
+<p>Money duration = Modified duration × Market value</p>
+</li>
+<li>
+<p>Basis-point value $BPV$ = Money duration × 0.0001</p>
+</li>
+<li>
+<p>Number of futures contracts to close duration gap: $N_f = \frac{\text{BPV}<em>{\text{liability}} - \text{BPV}</em>{\text{portfolio}}}{\text{BPV}_{\text{futures}}}$ $Q206, Q232, Q241$</p>
+</li>
+<li>
+<p>Futures BPV ≈ CTD BPV / Conversion factor $Q232, Q241$</p>
+</li>
+<li>
+<p>PVBP = (Market value × Duration) / 10 000</p>
+</li>
+<li>
+<p>Return requirement (arithmetic) = (Annual subscription expense / Investable base) + Management fees + Inflation components</p>
+</li>
+<li>
+<p>Number of interest-rate futures contracts = $\dfrac{(D_T - D_I) \times P_I}{D_{\text{CTD}} \times P_{\text{CTD}}} \times \text{CF}$</p>
+</li>
+</ul>
+<ul>
+<li>Swap notional to close duration gap:<br>$\text{Asset BPV} + \left(\text{NP} \times \dfrac{\text{Swap BPV}}{100}\right) = \text{Liability BPV}$<br>$\Rightarrow \text{NP} = $\text{Liability BPV} - \text{Asset BPV}$ \times \dfrac{100}{\text{Swap BPV}}$</li>
+</ul>
+<hr>
+<h2 id="yield-curve-strategies"><a class="header" href="#yield-curve-strategies">Yield Curve Strategies</a></h2>
+<ul>
+<li>
+<p>Expected total return for a zero-coupon government bond portfolio:<br>$E(R) \approx %$ Rolldown return $+ E(% \Delta$ Price due to investor’s view of benchmark yield$) + E(% \Delta$ Price due to investor’s view of currency value changes$)$</p>
+</li>
+<li>
+<p>Rolldown return:<br>$\text{Rolldown return} = \dfrac{PV_1 - PV_0}{PV_0}$</p>
+</li>
+<li>
+<p>Price change due to yield view:<br>$E(% \Delta$ Price due to investor’s view of benchmark yield$) = $-\text{Duration} \times \Delta \text{Yield}$ + $\bigl[0.5 \times \text{Convexity} \times (\Delta \text{Yield})^2\bigr]$</p>
+</li>
+<li>
+<p>Approximate percentage change in full portfolio value:<br>$%\Delta PV_{\text{Full}} \approx -(\text{ModDur} \times \Delta \text{Yield}) + \bigl[\tfrac12 \times \text{Convexity} \times (\Delta \text{Yield})^2\bigr]$</p>
+</li>
+<li>
+<p>Butterfly spread:<br>$\text{Butterfly spread} = -(\text{short-term yield}) + $2 \times \text{medium-term yield}$ - (\text{long-term yield})$</p>
+</li>
+<li>
+<p>Domestic-currency return on foreign bond:<br>$R_{\text{DC}} = (1 + R_{\text{FC}})(1 + R_{\text{FX}}) - 1$</p>
+</li>
+<li>
+<p>Key-rate duration contribution:<br>$\text{Key rate duration} = \text{Modified duration} \times \dfrac{\text{bond position}}{\text{portfolio position}}$<br>Sum of key-rate durations equals effective portfolio duration.</p>
+</li>
+</ul>
+<p><strong>[FORMULAS IN MOCKS]</strong></p>
+<ul>
+<li>
+<p>Fixed-income expected return ≈ Yield income + Rolldown return + E(Δ price from yield/spread views) − E(credit losses) + E(currency gains/losses).<br>Yield income = Annual coupon / Current price.<br>Rolldown return = (Price at horizon − Beginning price) / Beginning price.</p>
+</li>
+<li>
+<p>Expected fixed-income return: $E(R) \approx$ Yield income + Rolldown return + $E(\Delta\text{price})$ − $E(\text{credit losses})$ + $E(\text{currency})$</p>
+</li>
+<li>
+<p>Yield income = Annual coupon / Current bond price $Q208, Q220, Q224, Q240$</p>
+</li>
+<li>
+<p>Rolldown return = (Price at horizon − Beginning price) / Beginning price $Q208, Q220, Q224, Q240$</p>
+</li>
+<li>
+<p>Butterfly spread = −(Short-term yield) + (2 × Medium-term yield) − Long-term yield</p>
+</li>
+<li>
+<p>Price-change approximation: $-\text{MD} \times \Delta y + 0.5 \times \text{Convexity} \times (\Delta y)^2$</p>
+</li>
+<li>
+<p>Foreign-bond duration contribution = Country beta × Local-currency duration</p>
+</li>
+<li>
+<p>Unhedged foreign-bond return $\approx r_l + e$ where $e = (S_{t+1}-S_t)/S_t$</p>
+</li>
+<li>
+<p>Hedged foreign-bond return $\approx r_l + (i_d - i_f)$ or $i_d + (r_l - i_f)$</p>
+</li>
+</ul>
+<p><strong>[MOCK: _MOCK_PMP_2_1.md]</strong></p>
+<ul>
+<li>Key-rate relative performance approximation:<br>$\Delta\text{Relative value} \approx $\text{KR}<em>{port} - \text{KR}</em>{bench}$ \times \Delta y$</li>
+</ul>
+<hr>
+<h2 id="fixed-income-active-management-credit-strategies"><a class="header" href="#fixed-income-active-management-credit-strategies">Fixed-Income Active Management: Credit Strategies</a></h2>
+<p>$$
+$\text{YTM}(i) = \text{YTM(Treasury)} + \text{Yield Spread}(i)$
+$$</p>
+<p><strong>Expected excess return / excess spread (relative value analysis)</strong><br>EXR ≈ (s × t) − (Δs × SD) − (t × p × L)<br>or<br>Expected excess spread ≈ Spread₀ − (EffSpreadDur × ΔSpread) − (POD × LGD)<br>where s/Spread₀ = credit spread (Z-spread or OAS), t = holding period (years), SD/EffSpreadDur = spread duration, Δs/ΔSpread = expected change in spread, p/POD = probability of default, L/LGD = loss severity/given default.</p>
+<p><strong>Active share</strong><br>Active share = ½ × Σ |w_{portfolio,i} − w_{benchmark,i}| for i = 1 to N</p>
+<p><strong>Fundamental law of active management</strong><br>E(R_A) = IC × √BR × σ_RA × TC<br>where IC = information coefficient, BR = breadth (# independent investment decisions/year), σ_RA = active risk (tracking error), TC = transfer coefficient.</p>
+<p><strong>Approximate bond price change</strong><br>ΔP/P ≈ −MD × Δy   or   −EffSpreadDur × Δs</p>
+<p><strong>G-spread</strong><br>G-spread = bond YTM − linearly interpolated on-the-run government YTM (weights based on maturity distance to bracketing gov bonds)</p>
+<p><strong>I-spread</strong><br>I-spread = bond YTM − linearly interpolated swap rate (swap rate = gov YTM + swap spread for same tenor)</p>
+<p><strong>Asset swap spread $ASW$</strong><br>ASW ≈ bond coupon − interpolated swap rate (same maturity)</p>
+<p><strong>CDS upfront payment / initial price</strong><br>Upfront (% notional) ≈ EffSpreadDur_CDS × (market spread − standard coupon)<br>CDS price (per 100 notional) ≈ 100 − upfront</p>
+<p><strong>VaR / tail risk scaling</strong><br>Horizon yield change (z-score) ≈ daily yield volatility × z × √trading days<br>Position loss ≈ notional × (price/100) × (−MD × Δy)</p>
+<p><strong>[FORMULAS IN MOCKS]</strong></p>
+<ul>
+<li>
+<p>Expected excess return (credit):
+$$\text{EXR} \approx s \times t - \Delta s \times \text{SD} - (t \times p \times L)$$
+where $s$ = spread, $t$ = horizon, SD = spread duration, $p$ = default probability, $L$ = loss severity $Q211, Q226, Q236$</p>
+</li>
+<li>
+<p>Spread duration ≈ DTS / OAS</p>
+</li>
+<li>
+<p>Expected annual credit loss = Probability of default × Loss severity</p>
+</li>
+<li>
+<p>Breakeven spread change (quarterly) = Quarterly yield advantage / Duration</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>Probability of default approximation:<br>$\text{POD} = \dfrac{\text{Spread}}{\text{LGD}},\quad \text{LGD} = 1 - \text{RR}$</p>
+</li>
+<li>
+<p>Credit spread from POD:<br>$\text{Credit spread} = \text{POD} \times \text{LGD}$</p>
+</li>
+<li>
+<p>CDS P&amp;L approximation (protection):<br>$\text{P&amp;L} \approx \text{Notional} \times \Delta\text{Spread} \times \text{Effective spread duration}$<br>(sign flips for short protection)</p>
+</li>
+<li>
+<p>Duration-matching notional for CDS:<br>$\text{Notional}<em>{5y} = \dfrac{\text{EffSpreadDur}</em>{10y}}{\text{EffSpreadDur}<em>{5y}} \times \text{Notional}</em>{10y}$</p>
+</li>
+<li>
+<p>Expected excess spread return:<br>$$E[\text{ExcessSpread}] = \text{Spread}_0 - \text{EffSpreadDur} \times \Delta\text{Spread} - (\text{POD} \times \text{LGD})$$</p>
+</li>
+</ul>
+<hr>
+<h2 id="trade-strategies-and-execution"><a class="header" href="#trade-strategies-and-execution">Trade Strategies and Execution</a></h2>
+<ul>
+<li>
+<p>Delay cost = Number of shares executed $\times$ (Arrival price – Decision price)<br>(signs adjust for sell orders)</p>
+</li>
+<li>
+<p>Arrival cost (bps) = Side $\times$ $\dfrac{\text{Average price} - \text{Arrival price}}{\text{Arrival price}} \times 10{,}000$<br>where Side = $+1$ for buy, $-1$ for sell</p>
+</li>
+<li>
+<p>Implementation shortfall $IS$ = Execution cost + Opportunity cost + Fees<br>Execution cost = $\sum s_j p_j - \sum s_j p_d$<br>Opportunity cost = $(S - \sum s_j)(p_n - p_d)$</p>
+</li>
+<li>
+<p>Expanded implementation shortfall = Delay cost + Trading cost + Opportunity cost + Fees<br>Trading cost = $\sum s_j p_j - $\sum s_j$ p_0$<br>where $p_0$ = arrival price</p>
+</li>
+<li>
+<p>Market-adjusted cost (bps) = Arrival cost (bps) – $\beta \times$ Index cost (bps)<br>Index cost (bps) = Side $\times$ $\dfrac{\text{Index VWAP} - \text{Index arrival price}}{\text{Index arrival price}} \times 10{,}000$</p>
+</li>
+<li>
+<p>VWAP cost (bps) = Side $\times$ $\dfrac{P - \text{VWAP}}{\text{VWAP}} \times 10{,}000$</p>
+</li>
+</ul>
+<p>Liquidity aggregation (bottom-up):
+$$
+\text{Liquid} = \sum $w_i \times %\text{Liquid}_i$
+$$
+$$
+\text{Illiquid} = \sum $w_i \times %\text{Illiquid}_i$
+$$
+Example:
+$$
+\text{Liquid} = $1% \times 100%$ + $24% \times 100%$ + $39% \times 50%$ = 44.5%
+$$
+$$
+\text{Illiquid} = $21% \times 100%$ + $15% \times 50%$ = 28.5%
+$$</p>
+<p>Average composite fee (for net-of-fees comparison):
+$$
+\frac{(0.0100 \times 5) + [0.0060 \times (60 - 5)]}{60} = 0.0063\ $0.63%$
+$$</p>
+<p>Levered cost of obtaining leverage (3× factor = 66.67% borrowed):
+$$
+\frac{\text{Notional} \times 0.6667 \times \text{Borrowing rate}}{\text{Notional}}
+$$
+ETF borrowing rate = 3-month MRR + 35 bps = 2.15%; futures opportunity cost = 3-month MRR = 1.80%.</p>
+<p>Total levered cost = unlevered cost + additional leverage cost.</p>
+<p>Geometric smoothing spending rule:
+$$
+\text{Spending}<em>t = $60% \times \text{Spending}</em>{t-1}$ + [40% \times (5% \times MV_{t-1})]
+$$</p>
+<p><strong>[FORMULAS IN MOCKS]</strong></p>
+<ul>
+<li>Implementation shortfall components: #sunday
+$\text{Execution cost} = \sum S_j P_j - \sum S_j P_d$<br>$\text{Opportunity cost} = (S - \sum S_j)(P_n - P_d)$<br>$\text{Fixed fees} = \text{Shares traded} \times \text{fee per share}$<br>$\text{IS} = \text{Execution cost} + \text{Opportunity cost} + \text{Fixed fees}$<br>$\text{IS (bps)} = \dfrac{\text{IS ($)}}{\text{Total shares} \times P_d} \times 10{,}000$</li>
+</ul>
+<hr>
+                    </main>
+
+                    <div class="copyright" style="font-size:0.9rem;opacity:0.7;padding:0 1rem 0.5rem;">© 2026 Pramod Thaz. All rights reserved.</div>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../GENERAL/ESSAY ANSWER TEMPLATES.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../PORTFOLIO MANAGEMENT/23. INDEX BASED STRATEGIES.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../GENERAL/ESSAY ANSWER TEMPLATES.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../PORTFOLIO MANAGEMENT/23. INDEX BASED STRATEGIES.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    <script src="/cfa-level-iii-notes/paywall.js"></script></body>
+</html>

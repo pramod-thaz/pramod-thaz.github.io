@@ -1,0 +1,798 @@
+<!DOCTYPE HTML>
+<html lang="en" class="latte sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>30. Case Study In Portfolio Management - CFA Level III Notes</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/catppuccin-e08be6a9.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "latte";
+            const default_dark_theme = "mocha";
+            window.path_to_searchindex_js = "../searchindex-2521da27.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-b96c3611.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('latte')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-mocha">Mocha</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CFA Level III Notes</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="a-managing-liquidity-risk"><a class="header" href="#a-managing-liquidity-risk">A. Managing Liquidity Risk</a></h1>
+<p>Financial institutions must maintain sufficient liquidity to meet obligations at all times.</p>
+<ul>
+<li><strong>Banks</strong>: Depositor withdrawals</li>
+<li><strong>Insurance companies</strong>: Policy claims (death, accidents, etc.)</li>
+</ul>
+<h3 id="endowment-fund-example-abc-endowment-supporting-abc-university"><a class="header" href="#endowment-fund-example-abc-endowment-supporting-abc-university">Endowment Fund Example (ABC Endowment supporting ABC University)</a></h3>
+<p><strong>Cash Inflows (c/i)</strong>: Donations + Investment returns<br><strong>Cash Outflows (c/o)</strong>:</p>
+<ul>
+<li>Distributions to university (spending requirements)</li>
+<li>Capital calls on PE fund commitments</li>
+</ul>
+<h3 id="during-crisis--liquidity-crunch-dynamics"><a class="header" href="#during-crisis--liquidity-crunch-dynamics">During Crisis — Liquidity Crunch Dynamics</a></h3>
+<ul>
+<li>==Contributions ↓ (donors face hardships)==</li>
+<li>==Capital calls ↑ (PE managers buy distressed assets)==</li>
+<li>==Investment returns ↓ (capital losses mount)==</li>
+<li>==Spending ↑ (university revenues fall → needs more support)==</li>
+</ul>
+<p><strong>Result</strong>: <code>c/i ↓↓</code> and <code>c/o ↑</code> → <strong>Liquidity Crunch</strong>. Endowment may need to cut distributions or borrow.</p>
+<h3 id="liquidity-budget-key-planning-tool"><a class="header" href="#liquidity-budget-key-planning-tool">Liquidity Budget (Key Planning Tool)</a></h3>
+<p>Categorize assets by time required to convert to cash <strong>without significant market impact</strong>.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Asset Allocation</th><th>0-1 mo</th><th>1-3 mo</th><th>3-6 mo</th><th>Total</th></tr>
+</thead>
+<tbody>
+<tr><td>Small Cap (20%)</td><td>15%</td><td>23%</td><td>62%</td><td>100%</td></tr>
+<tr><td>Large Cap (30%)</td><td>45%</td><td>25%</td><td>30%</td><td>100%</td></tr>
+<tr><td>Bonds (50%)</td><td>70%</td><td>19%</td><td>11%</td><td>100%</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Example Calculation</strong> (==assume portfolio value = $100==):<br>Weighted liquidity available =</p>
+<ul>
+<li>Small Cap: <code>20 × 15% = 3</code></li>
+<li>Large Cap: <code>30 × 45% = 13.5</code></li>
+<li>Bonds: <code>50 × 70% = 35</code></li>
+</ul>
+<p><strong>→ $51.5 available in 0-1 month (51.5% of portfolio)</strong><br>1-3 mo: $21.6 | 3-6 mo: $26.9</p>
+<p><strong>Conclusion</strong>: This portfolio has sufficient liquidity (51.5% convertible into cash within 1 month without significant market impact).</p>
+<blockquote>
+<p><strong>Tradeoff</strong>: More liquid assets → lower expected yield. ==Illiquid assets → higher yield (illiquidity premium) but greater liquidity risk.==</p>
+</blockquote>
+<p>#EXAMPLE</p>
+<blockquote>
+<ul>
+<li>Analyze and monitor portfolio liquidity characteristics over time; same asset class can have vastly different liquidity profiles</li>
+<li><strong>Liquid allocation</strong>: (1% × 100%) + (24% × 100%) + (39% × 50%) = <strong>44.5%</strong> (exceeds 30% minimum)</li>
+<li><strong>Illiquid allocation</strong>: (21% × 100%) + (15% × 50%) = <strong>28.5%</strong> (below 40% maximum)</li>
+<li><strong>Conclusion</strong>: Capacity exists to shift funds from liquid to illiquid investments for higher returns; Bookman can recommend this reallocation</li>
+</ul>
+</blockquote>
+<h1 id="b-managing-illiquid-assets"><a class="header" href="#b-managing-illiquid-assets">B. Managing Illiquid Assets</a></h1>
+<p>Illiquid assets (PE, real estate, certain hedge funds) are difficult and costly to rebalance.</p>
+<h3 id="1-calendar-based-rebalancing"><a class="header" href="#1-calendar-based-rebalancing">1. Calendar-Based Rebalancing</a></h3>
+<p>Rebalance at fixed intervals (e.g., quarter-end). ==Reduces transaction costs but allows drift from SAA between dates.==</p>
+<h3 id="2-percentage-based-band-rebalancing"><a class="header" href="#2-percentage-based-band-rebalancing">2. Percentage-Based (Band) Rebalancing</a></h3>
+<p>Trigger rebalance when allocation breaches a pre-set band (e.g., small cap target 10–15%). Rebalance to outer bound or midpoint.</p>
+<p><strong>Key insight</strong>: Narrow bands → frequent rebalancing &amp; high costs. ==Use <strong>wider bands</strong> for more volatile/illiquid asset classes.==</p>
+<h3 id="3-automatic-adjustment-mechanisms"><a class="header" href="#3-automatic-adjustment-mechanisms">3. Automatic Adjustment Mechanisms</a></h3>
+<p>Instead of trading the illiquid asset directly, adjust a correlated <strong>liquid proxy</strong>.</p>
+<p><strong>Example</strong>: If PE exposure exceeds its limit due to appreciation, reduce public equity allocation to keep overall equity risk in check.<br><strong>Caution</strong>: This increases overall portfolio illiquidity (liquidity risk rises).</p>
+<blockquote>
+<p><strong>PE-Specific Note</strong>: Capital calls occur over time; distributions come at the end. Investors have limited control during ramp-up and wind-down phases. ==Diversify PE holdings across <strong>vintage years</strong> to avoid concentration/maturity risk.==</p>
+</blockquote>
+<h3 id="4-stress-testing"><a class="header" href="#4-stress-testing">4. Stress Testing</a></h3>
+<p>Simulate crisis scenarios (donations ↓, capital calls ↑, returns ↓, spending ↑) to verify the endowment can meet long-term objectives without forced sales at depressed prices.</p>
+<h3 id="5-using-derivatives-for-liquidity"><a class="header" href="#5-using-derivatives-for-liquidity">5. Using Derivatives for Liquidity</a></h3>
+<p><strong>Example</strong>: Want +$50M bond exposure.</p>
+<ul>
+<li>Buying bonds directly uses full $50M capital.</li>
+<li>==Long bond futures (margin ≈ $5M) → instant exposure + <strong>$45M capital freed</strong>== → higher portfolio liquidity.</li>
+</ul>
+<p>#EXAMPLE</p>
+<blockquote>
+<ul>
+<li><strong>Rebalancing band principle</strong>: Wider bands for higher-volatility assets; narrower bands for lower-volatility assets (compare σ to range)</li>
+<li><strong>Cash</strong>: Lowest σ but widest bands → <strong>reduce band width</strong></li>
+<li><strong>Private equity</strong>: Highest σ but tightest bands → <strong>expand band width</strong></li>
+</ul>
+</blockquote>
+<h1 id="c-illiquidity-premium"><a class="header" href="#c-illiquidity-premium">C. Illiquidity Premium</a></h1>
+<blockquote>
+<p><strong>Core Principle</strong>: ==The more illiquid the asset <strong>and/or</strong> the longer the expected illiquidity period, the <strong>higher</strong> the illiquidity premium (additional return) investors require.==</p>
+</blockquote>
+<h3 id="approaches-to-estimating-illiquidity-premium"><a class="header" href="#approaches-to-estimating-illiquidity-premium">==Approaches== to Estimating Illiquidity Premium</a></h3>
+<h4 id="1-put-option-liquidity-value-approach"><a class="header" href="#1-put-option-liquidity-value-approach">1. Put Option (Liquidity) Value Approach</a></h4>
+<p>A put gives the right to sell → effectively generates liquidity (cash flow).</p>
+<p>For equivalent assets differing only in liquidity:</p>
+<p>$$
+P(\text{illiquid asset}) + \text{Value of Put (liquidity)} = P(\text{liquid asset})
+$$</p>
+<p>$$
+\text{Illiquidity Premium ($)} = P(\text{liquid}) - P(\text{illiquid})
+$$
+#EXAMPLE</p>
+<blockquote>
+<ul>
+<li><strong>Illiquidity premium</strong> = expected compensation for locking up capital for an uncertain period</li>
+<li><strong>Estimation via put-option model</strong>: discount size = value of a put option struck at the hypothetical “marketable price” of the illiquid asset at purchase</li>
+<li><strong>formula</strong>: illiquid asset price = marketable price − put price</li>
+<li>If both prices are known/estimated, compute expected return for each; the spread = illiquidity premium (%)</li>
+</ul>
+</blockquote>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>(Bonds identical in interest rate &amp; credit risk, differ only in liquidity):</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Bond</th><th>Liquidity</th><th>Price</th><th>Yield</th></tr>
+</thead>
+<tbody>
+<tr><td>A</td><td>High</td><td>100</td><td>6%</td></tr>
+<tr><td>B</td><td>Low</td><td>103</td><td>8%</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Illiquidity Premium</strong> = ==<strong>2%</strong> (yield) or <strong>$3</strong> (price differential).== (due to liquidity, <del>credit risk,</del> co size)</p>
+</blockquote>
+<h4 id="2-index-based-approach"><a class="header" href="#2-index-based-approach">2. Index-Based Approach</a></h4>
+<p>$$
+\text{Illiquidity Premium (%)} \approx R(\text{Index of Illiquid Assets}) - R(\text{Index of Liquid Assets})
+$$</p>
+<p><strong>Limitations</strong>:</p>
+<ul>
+<li>I==ndex is a broad average== → may under- or over-state the premium for specific assets.</li>
+<li>Observed spread ==may include other premia <strong>(credit risk, size, etc.).==</strong></li>
+<li>Requires ==attribution analysis to isolate the pure liquidity component==.</li>
+</ul>
+<p>#EXAMPLE</p>
+<ul>
+<li>Endowment should target longer-term (more illiquid) investments within asset classes to capture highest liquidity premium</li>
+<li>Literature confirms positive illiquidity–return relationship in public equity, but premium is hard to isolate from market, value, and size factors</li>
+<li>Illiquidity premium estimates use broad indexes; actual investors hold small subsets, so experience varies widely and is exposed to idiosyncratic risk</li>
+<li>These challenges underscore need for liquidity budgeting to capture illiquidity premium while controlling risk</li>
+</ul>
+<h1 id="d-asset-allocation-in-relation-to-liquidity-needs"><a class="header" href="#d-asset-allocation-in-relation-to-liquidity-needs">D. Asset Allocation in Relation to Liquidity Needs</a></h1>
+<h3 id="crisis-impact-on-private-equity-liquidity"><a class="header" href="#crisis-impact-on-private-equity-liquidity">Crisis Impact on Private Equity Liquidity</a></h3>
+<ul>
+<li>==<strong>Capital calls accelerate</strong>: PE managers find distressed opportunities → investors must deploy capital faster than planned.==</li>
+<li>==<strong>Distributions decline</strong>: Managers postpone exits to avoid selling at distressed prices.==</li>
+<li>==<strong>Valuation smoothing/lag</strong>: PE appraised values (based on historical comps) lag public markets. In a crisis, public prices fall but PE values may appear overstated → reported exposure looks inflated while <strong>true liquidity is worse</strong>.==</li>
+</ul>
+<blockquote>
+<p><strong>Recommendation</strong>: Apply <strong>unsmoothing</strong> techniques to obtain realistic volatility and correlation estimates.</p>
+</blockquote>
+<p>#EXAMPLE #explain</p>
+<blockquote>
+<p>The design of the spending rate policy incorporates a ==smoothing, counter-cyclical element,== leading to ==spending rates below 5% in a period of sustained strong investment returns but higher than 5% in a protracted weak return environment.== This design of the spending rate policy ==exacerbates the endowment’s liquidity needs in severe market downturns.==</p>
+</blockquote>
+<h3 id="illustrative-liquidity-pressure-example"><a class="header" href="#illustrative-liquidity-pressure-example">Illustrative Liquidity Pressure Example</a></h3>
+<p>Endowment distributes fixed <strong>$5M/year</strong>.</p>
+<ul>
+<li>Normal: $100M PF → liquidity need = <strong>5%</strong></li>
+<li>Crisis: PF drops to $70M → liquidity ==need rises to <strong>≈7.1%</strong> (<code>$5M / $70M</code>)==</li>
+</ul>
+<p><strong>Problem</strong>: Liquidity requirement increases precisely when assets are becoming <em>more</em> illiquid.</p>
+<h3 id="tools-for-managing-liquidity-risk-institutional"><a class="header" href="#tools-for-managing-liquidity-risk-institutional">==Tools== for Managing Liquidity Risk (Institutional)</a></h3>
+<ol>
+<li>
+<p><strong>Cash Flow Forecasting</strong> - ==forecasting models and commitment-pacing models==</p>
+<ul>
+<li><strong>Outflows</strong>: Forecast spending + capital call drawdowns. Diversify PE across vintage years.</li>
+<li><strong>Inflows</strong>: Donations (highly procyclical — fall sharply in crises).</li>
+</ul>
+</li>
+<li>
+<p><strong>Liquidity Budget</strong> — Map % of portfolio by conversion horizon (see 30.1).</p>
+</li>
+<li>
+<p><strong>Stress Testing</strong> — Ensure ability to meet commitments without liquidating high-risk assets at fire-sale prices.</p>
+</li>
+</ol>
+<p>#EXAMPLE</p>
+<blockquote>
+<p><strong>Project endowment distributions to the university as cash outflows</strong>, governed by a ~5% annual spending rate policy that aims to preserve purchasing power.</p>
+<ul>
+<li>In stress periods, distributions from prior private investments may cease (GPs struggle to exit), while future capital commitments remain legal obligations; GPs may accelerate calls in depressed markets.</li>
+<li>Diversify across fund vintage years to avoid cycle concentration; commit capital steadily to limit large allocation shifts and transaction costs.</li>
+<li>Avoid outsized allocations to few funds to reduce idiosyncratic risk.</li>
+<li>Donor inflows typically drop sharply in stress, raising liquidity needs; liquidating risk/high‑beta assets after losses is valuation‑unfriendly.</li>
+<li>Access to top private‑market managers is competitive and may be unavailable when the portfolio seeks to increase allocations.</li>
+<li>Develop a liquidity budget setting minimum liquidity targets based on conversion timeframes; monitor it regularly.</li>
+<li>Run regular stress tests (historical &amp; hypothetical scenarios) to gauge liquidity‑profile drift and verify the minimum budget is met.</li>
+</ul>
+</blockquote>
+<h1 id="e-asset-allocation-in-relation-to-riskreturn-endowments"><a class="header" href="#e-asset-allocation-in-relation-to-riskreturn-endowments">E. Asset Allocation in Relation to Risk/Return (Endowments)</a></h1>
+<h3 id="typical-endowment-objectives"><a class="header" href="#typical-endowment-objectives">Typical Endowment Objectives</a></h3>
+<ol>
+<li>Meet <strong>current</strong> spending requirements of beneficiary → <strong>Real return</strong> component (e.g., 5%)</li>
+<li>Maintain long-term <strong>purchasing power</strong> → <strong>Inflation</strong> component (e.g., 2%)</li>
+</ol>
+<p>$$
+\text{Required Nominal Return} \approx r_{\text{real spending}} + \pi
+$$</p>
+<h3 id="spending-policy-smoothed"><a class="header" href="#spending-policy-smoothed">Spending Policy (Smoothed)</a></h3>
+<p>Annual spending is usually a <strong>weighted average</strong> of:</p>
+<ul>
+<li>Last year’s actual distribution (<code>S_{t-1}</code>)</li>
+<li>Long-term policy rate = <code>(Long-term real geometric average return × Beginning VPF)</code> &lt;–==note <strong>beginning of period</strong>==</li>
+</ul>
+<p><strong>Example</strong> (Year ended 2020):<br>Spending (<code>S</code>) = $30M | Year-end VPF (2020, = beg 2021) = $500M | L.T. real geo avg return = 5%</p>
+<p>$$
+S(2021) = \frac{2}{3} \times $30\text{M} + \frac{1}{3} \times (5% \times $500\text{M}) = $20\text{M} + $8.333\text{M} = $28.333\text{M}
+$$</p>
+<blockquote>
+<p><strong>Why smooth?</strong> Pure % of current VPF transmits portfolio volatility directly into spending uncertainty. Smoothed policy stabilizes cash flows to the university.</p>
+</blockquote>
+<h3 id="key-implications-for-endowment-asset-allocation"><a class="header" href="#key-implications-for-endowment-asset-allocation">Key Implications for Endowment Asset Allocation</a></h3>
+<ul>
+<li>==Liquidity requirements are relatively low== (≈5.7% of VPF in example) → can ==allocate more to illiquid assets== (PE, HF, RE) to capture the illiquidity premium.</li>
+<li><strong>==Perpetual horizon==</strong> (no maturity) supports higher allocation to illiquid/higher-risk assets.</li>
+<li>Tolerating more short-term risk can ==produce higher long-term returns== → greater sustainability.</li>
+</ul>
+<p>#EXAMPLE</p>
+<blockquote>
+<ul>
+<li>Spending rate policy uses counter-cyclical smoothing: rates below 5% in strong return periods, above 5% in weak return periods</li>
+<li>This design exacerbates endowment liquidity needs during severe market downturns</li>
+<li>Smoothed policy stabilizes university cash flows, provides predictable distribution pattern, enables better resource deployment planning</li>
+</ul>
+</blockquote>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>How to address downturn/stress concerns?</p>
+<ul>
+<li>Ensure proposed allocation complies with liquidity budgeting framework under stress conditions</li>
+<li>Grides to closely monitor portfolio liquidity profile and conduct periodic stress tests, especially near minimum thresholds</li>
+<li>Address risk-profile “drift”: illiquid assets carry high rebalancing costs; liquidity decreases in market stress</li>
+<li>Maintain sufficient liquid assets and rebalancing mechanisms to keep risk profile within targets</li>
+<li>Proposed allocation reduces liquid assets → Must adopt effective rebalancing mechanism <strong>before investing</strong> and follow consistently</li>
+<li>Rebalancing options:
+<ul>
+<li>Systematic: calendar or percent-range rebalancing with pre-set tolerance bands</li>
+<li>Automatic: adjust correlated public-market allocation to rebalance private-market (illiquid) risk</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>Reasons to justify the increased risk profile include the following:</p>
+<ul>
+<li>Board members’ ==lower return expectations for public equity and fixed-income asset classes== imply higher risk required to achieve same returns</li>
+<li>Long-horizon investor illiquidity tolerance enables: <strong>improved diversification</strong>, <strong>higher expected returns</strong>, <strong>broader strategy access</strong>; in MVO, illiquid assets shift efficient frontier upward → greater efficiency (higher returns at all risk levels or higher $Sharpe\ ratio$)</li>
+<li>Endowment risk profile ==currently more conservative vs peer universities==</li>
+<li>Monte Carlo simulations: proposed allocation shows <strong>higher probability of meeting return target</strong> while <strong>better preserving purchasing power</strong></li>
+</ul>
+</blockquote>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>for a long-horizon institutional investor, the ability to tolerate illiquidity creates an opportunity to improve portfolio diversification and expected returns as well as access a broader set of investment strategies.
+In mean-variance optimization models, the inclusion of illiquid assets in the eligible investment universe may shift the ==efficient frontier upwards,== theoretically resulting in more-efficient investment portfolios (==i.e., portfolios with a higher expected return for a given level of risk==).  endowment has been building exposure to these strategies over the past two decades in a gradual manner. reputation as a well-informed, patient, and reliable long-term investo</p>
+</blockquote>
+<p><strong>Tradeoff — PE/HF/RE Holdings</strong><br><strong>Short-term</strong>: ==Higher management fees + illiquidity.==<br><strong>Long-term</strong>: ==Lower probability of capital depletion (more sustainable real spending + inflation protection).==</p>
+<p>#EXAMPLE</p>
+<blockquote>
+<ul>
+<li>Monte Carlo simulations: <strong>70%</strong> chance proposed SAA maintains ≥75% purchasing power over 20 years (5% spending rate) vs <strong>65%</strong> for current SAA</li>
+<li>Proposed SAA more <strong>efficient</strong> (higher Sharpe ratio)</li>
+<li>Confirm risk profile matches risk tolerance:
+<ul>
+<li>Return volatility: <strong>13.2%</strong></li>
+<li>Purchasing power erosion probability (Exhibit 10)</li>
+</ul>
+</li>
+<li>Confirm increased illiquid allocation aligns with <strong>liquidity budget</strong></li>
+</ul>
+</blockquote>
+<p>#EXAMPLE</p>
+<blockquote>
+<ul>
+<li>Proposed allocation shifts liquidity profile: <strong>reduces</strong> highly liquid/liquid categories; <strong>increases</strong> semi-liquid/illiquid categories across all scenarios, <strong>especially under high stress</strong></li>
+<li><strong>High-stress breach</strong> of liquidity budget minimums:
+<ul>
+<li>Highly liquid: <strong>9%</strong> (min <strong>10%</strong>)</li>
+<li>Moderately liquid: <strong>19%</strong> (min <strong>35%</strong>)</li>
+<li>Illiquid: hits <strong>upper limit 50%</strong></li>
+</ul>
+</li>
+<li><strong>Requirement</strong>: allocation must still meet cash-outflow &amp; rebalancing needs <strong>even under stress</strong></li>
+<li><strong>Action</strong>: reduce exposure to less-liquid commingled funds in public equity to improve extreme-stress liquidity</li>
+<li><strong>Ongoing</strong>: monitor liquidity profile closely; run periodic stress tests, particularly when near budget thresholds</li>
+</ul>
+</blockquote>
+<h1 id="f-issues-in-asset-manager-selection"><a class="header" href="#f-issues-in-asset-manager-selection">F. Issues in Asset Manager Selection</a></h1>
+<p>Smaller endowments often hire <strong>external managers</strong> because in-house operations carry high fixed costs (staff, technology, compliance) and external managers provide access to diverse styles.</p>
+<p><strong>Internal focus shifts to: strategic asset allocation, overall risk management, and manager performance evaluation.</strong></p>
+<h3 id="ethical--governance-considerations-non-arms-length-relationships"><a class="header" href="#ethical--governance-considerations-non-arms-length-relationships">Ethical &amp; Governance Considerations (Non-Arm’s Length Relationships)</a></h3>
+<ul>
+<li>Disclose any ==actual or perceived conflicts of interest== (e.g., external manager on university board or major donor).</li>
+<li>Recuse conflicted parties from hiring/monitoring decisions.</li>
+<li>Perform ongoing due diligence: understand strategy and verify performance against mandate. ==Avoid “set-it-and-forget-it”.==</li>
+</ul>
+<p>#EXAMPLE</p>
+<blockquote>
+<ul>
+<li>
+<p><strong>Code &amp; Standards violations</strong></p>
+<ul>
+<li>Falsely claims CFA Institute designated Langhorne a “member firm” — membership is individual only</li>
+<li>Breaches: <strong>Standard I(C) Misrepresentation</strong>; <strong>Standard VII(A) Conduct as Participants</strong>; <strong>Standard VII(B) Reference to CFA Institute</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>GIPS violations (performance reporting)</strong></p>
+<ul>
+<li>Net-of-fees composite returns permitted</li>
+<li><strong>Adjusting benchmark returns with a hypothetical fee for comparison is prohibited</strong> — gross-of-fees composite must be compared to unadjusted benchmark (Section 4.a.1 Disclosure Requirements)</li>
+<li>Hypothetical 1.00% fee &gt; actual composite fee (~0.63%)</li>
+<li>Fee calc: $\frac{(0.0100 \times 5\text{M}) + [0.0060 \times (60\text{M} - 5\text{M})]}{60\text{M}} = 0.0063 = 0.63%$</li>
+<li>Result: larger benchmark cost creates <strong>phantom outperformance</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Further Code &amp; Standards breaches (performance)</strong></p>
+<ul>
+<li><strong>Standard III(D) Performance Presentation</strong> — inaccurate comparison</li>
+<li><strong>Standard I(D) Misconduct</strong> — deceitful presentation (GIPS Fundamentals §0.A.7)</li>
+</ul>
+</li>
+<li>
+<p><strong>Independence &amp; Objectivity breach</strong></p>
+<ul>
+<li>All-expenses-paid golf outing for Foundation CIO &amp; president</li>
+<li><strong>Standard I(B) Independence and Objectivity</strong> — invitation “regardless of outcome” still functions as quid pro quo for future hiring of Langhorne==</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h1 id="g-integrating-esg-into-decision-making"><a class="header" href="#g-integrating-esg-into-decision-making">G. Integrating ESG into Decision Making</a></h1>
+<p><strong>Example</strong>: External manager holds Blue Co. (major campus food service provider) facing criticism over employee treatment. University faces dual issues: (i) investment holding and (ii) vendor relationship.</p>
+<h3 id="steps-for-esg-integration-in-investment-process"><a class="header" href="#steps-for-esg-integration-in-investment-process">Steps for ESG Integration in Investment Process</a></h3>
+<ol>
+<li><strong>Pre-hire evaluation</strong>: Assess external manager’s formal ESG policy and its consistency with the foundation’s policy.</li>
+<li><strong>Portfolio-level aggregation</strong>: Measure combined carbon footprint, climate sensitivity; compare ESG ratings vs. peers.</li>
+<li><strong>Continuous monitoring</strong>: Track changes in ESG ratings; early action reduces long-term remediation costs.</li>
+<li><strong>Responsible ownership tools</strong>: ==Proxy voting + active engagement.== ==<strong>Divestment is a last resort</strong>, not the default action.==</li>
+</ol>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>For the vendor relationship: The university can switch providers if Blue Co. fails to improve.</p>
+</blockquote>
+<h1 id="h-derivatives-vs-cash-market-rebalancing"><a class="header" href="#h-derivatives-vs-cash-market-rebalancing">H. Derivatives vs. Cash Market Rebalancing</a></h1>
+<p><strong>Scenario</strong>: Strategic equity allocation = 70%, drifted to 62% after correction → need to increase equity exposure.</p>
+<h3 id="cash-market-rebalancing-trade-underlying"><a class="header" href="#cash-market-rebalancing-trade-underlying">Cash Market Rebalancing (Trade Underlying)</a></h3>
+<ul>
+<li>Takes time (selection + execution) → performance drag.</li>
+<li>Accumulates transaction costs + potential market impact (especially large trades).</li>
+<li>Best for <strong>permanent or large</strong> rebalancing (buy-and-hold).</li>
+</ul>
+<h3 id="derivatives-rebalancing-eg-long-equity-index-futures"><a class="header" href="#derivatives-rebalancing-eg-long-equity-index-futures">Derivatives Rebalancing (e.g., Long Equity Index Futures)</a></h3>
+<ul>
+<li>Highly liquid, low transaction costs, <strong>no market impact</strong>.</li>
+<li><strong>Instant</strong> exposure; easily reversed → ideal for <strong>temporary</strong> rebalancing.</li>
+<li>Requires only margin (capital efficient).</li>
+<li><strong>Limitations</strong>: Tracking error if portfolio ≠ index; futures have expiries (roll risk, contango when <code>r &gt; y</code>); generally unavailable for illiquid assets like PE (use cash market for those).</li>
+</ul>
+<blockquote>
+<p><strong>Rule of thumb</strong>: Use ==derivatives for temporary/tactical adjustments; cash market for structural changes or illiquid asset classes==.</p>
+</blockquote>
+<p>#EXAMPLE</p>
+<blockquote>
+<ul>
+<li>Use derivatives instead of cash for rebalancing when:
+- ==The sell-off is viewed as temporary and external manager performance is satisfactory==.
+- ==The goal is to rebalance without reallocating among external managers==.
+<ul>
+<li>High liquidity and flexibility are required to adjust/reverse exposures quickly.</li>
+</ul>
+</li>
+<li>Advantages of derivatives:
+<ul>
+<li>Quick implementation.</li>
+<li>Tactical flexibility.</li>
+<li>==Ability to leave external managers in place==.</li>
+<li>High liquidity.</li>
+</ul>
+</li>
+<li>Risks:
+<ul>
+<li>Derivatives introduce tracking error and operational risks, but these are mitigated by the short-term nature of the rebalancing.</li>
+</ul>
+</li>
+<li>Example:
+<ul>
+<li>==Establish a $1.2%$ long position to the S&amp;P 500 Index using short-term S&amp;P 500 futures to rebalance US public equities==.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h1 id="i-tactical-asset-allocation-taa"><a class="header" href="#i-tactical-asset-allocation-taa">I. Tactical Asset Allocation (TAA)</a></h1>
+<p><strong>TAA</strong> = short-term deviations from long-term Strategic Asset Allocation (SAA) to exploit perceived opportunities.</p>
+<p><strong>Example</strong>:<br>SAA: Stocks 60% ±5% [55–65%], Bonds 40% ±5% [35–45%].<br>Manager is bullish on stocks → TAA: <strong>Stocks 65%</strong>, <strong>Bonds 35%</strong> (+5% shift from bonds to stocks).</p>
+<h3 id="implementation-tools-asset-class-views"><a class="header" href="#implementation-tools-asset-class-views">Implementation Tools (Asset-Class Views)</a></h3>
+<ul>
+<li>Long Equity Swap</li>
+<li>Long Equity Futures</li>
+<li>Long Equity Index ETFs</li>
+</ul>
+<h3 id="capital-efficiency-comparison-illustrative-5m-shift"><a class="header" href="#capital-efficiency-comparison-illustrative-5m-shift">Capital Efficiency Comparison (Illustrative $5M shift)</a></h3>
+<ul>
+<li><strong>Swaps &amp; Futures</strong>: No (or minimal) upfront capital beyond margin; remainder earns <code>R_f</code> → high flexibility.</li>
+<li><strong>ETFs</strong>: Require full notional capital upfront → least capital efficient; potential cash drag.</li>
+<li><strong>Capital Commitment</strong>: Total return swap requires much lower cash outlay than unlevered ETF (full notional); derivatives are cash-efficient for incremental exposure</li>
+<li><strong>Liquidity</strong>: ETF more efficient — exchange-traded, standardized, narrow spreads; swap is OTC, negotiated, customizable (maturity, leverage, cost)</li>
+<li><strong>Tracking Error</strong>: Swap replicates index exactly (counterparty obligated to deliver index return); ETF has tracking error from NAV premiums/discounts, cash drag, regulatory diversification rules; swap introduces counterparty credit risk and net exposure management complexity</li>
+</ul>
+<h3 id="key-implementation-notes"><a class="header" href="#key-implementation-notes">Key Implementation Notes</a></h3>
+<ul>
+<li>ETFs &amp; futures = exchange-traded → more liquid. Swaps = OTC → less liquid + counterparty risk.</li>
+<li>Futures: Daily mark-to-market (margin calls); must roll at expiry (contango risk if <code>F &gt; S_0</code> ==when carry cost <code>r &gt; yield y</code>==).</li>
+</ul>
+<blockquote>
+<ul>
+<li>Extracted text
+This implies that every time a futures is renewed, the Long has to lock in a Buy price that is higher than prevailing Spot Price.</li>
+</ul>
+<p>Recall: $F = \frac{S_0(1+r)^t}{(1+y)^t}$</p>
+<p>$r$: carry costs (i.e. interest rates)
+$y$: yield on the underlying
+$\therefore$ if $(r &gt; y) \Rightarrow (F &gt; S_0)$</p>
+</blockquote>
+<ul>
+<li>Tracking error: Futures/swaps ≈ 0 to index; ETFs often have residual cash → higher TE.</li>
+</ul>
+<hr>
+<h1 id="j-implementation-costs-of-taa"><a class="header" href="#j-implementation-costs-of-taa">J. Implementation Costs of TAA</a></h1>
+<p><strong>Example</strong>: Manager wants to implement <strong>+$10M TAA</strong> (or rebalancing) from bonds to stocks.</p>
+<h3 id="part-i--unlevered-trade-costs-bps-incl-commissions-spreads-roll-market-impact"><a class="header" href="#part-i--unlevered-trade-costs-bps-incl-commissions-spreads-roll-market-impact">Part I — Unlevered Trade Costs (bps, ==incl. commissions, spreads, roll, market impact==)</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Instrument</th><th>ETFs</th><th>Futures</th><th>Swaps</th></tr>
+</thead>
+<tbody>
+<tr><td>Trading Cost (bps)</td><td>45</td><td>55</td><td>66</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="part-ii--with-leverage-51-ae--5--80-debt--20-equity"><a class="header" href="#part-ii--with-leverage-51-ae--5--80-debt--20-equity">Part II — With Leverage (5:1, A/E = 5 → 80% debt / 20% equity)</a></h3>
+<p><code>R_f = 3%</code>, Loan rate = 3.6%.</p>
+<p><strong>ETF Levered Cost</strong> (per $100 exposure): $80 financed via debt → leverage cost = <code>3.6% × 80 = $2.88</code> → <strong>288 bps</strong>. (2.88 out of 100 total)</p>
+<p><strong>==Futures / Swaps== Levered</strong>: Only margin posted (e.g., 20% = $20);  earns <code>R_f</code>. Net carry cost lower (<strong>≈240 bps</strong>) because interest income on margin offsets part of financing cost. (3.00 - 0.60 = 2.40)</p>
+<h3 id="total-cost-summary-bps--levered-taa"><a class="header" href="#total-cost-summary-bps--levered-taa">Total Cost Summary (bps) — Levered TAA</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Component</th><th>ETFs</th><th>Futures</th><th>Swaps</th></tr>
+</thead>
+<tbody>
+<tr><td>Trading Cost (Unlevered)</td><td>45</td><td>55</td><td>66</td></tr>
+<tr><td>+ Net Cost of Leverage</td><td>288</td><td>240</td><td>240</td></tr>
+<tr><td><strong>= Total Cost</strong></td><td><strong>333</strong></td><td><strong>295</strong></td><td><strong>306</strong></td></tr>
+<tr><td>#EXAMPLE</td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>ETF: (USD5 million × 0.6667 × 2.15%)/USD5 million = 1.43% (or 143 bps) and
+Futures: (USD5 million × 0.6667 × 1.80%)/USD5 million = 1.20% (or 120 bps),
+ETF: 27 bps + 143 bps = 170 bps and
+Futures: 32 bps + 120 bps = 152 bps.</p>
+</blockquote>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>Given:</p>
+<ul>
+<li>
+<p>Increase allocation to Int’l equities by TSM.</p>
+</li>
+<li>
+<p>Unlevered Trade Costs (bps): ETFs 27bps, Futures 326bps</p>
+</li>
+<li>
+<p>Allowable Leverage = 3:1
+$$
+\left[\frac{A}{E} = \frac{3}{1}\right] \rightarrow \left{
+\begin{array}{l}
+A = L + E \
+3 = 2 + 1 \
+[100% = 67% + 33%]
+\end{array}
+\right.
+$$</p>
+</li>
+</ul>
+<p>Also: $R_F = 1.8%$ &amp; Loan Rate = $[R_F + 0.35%] = [1.8% + 0.35%] = 2.15%$</p>
+<p>&amp; Cost of using Leverage to implement the TAA:</p>
+<ol>
+<li>
+<p>For every ₹100 invested in the ETF</p>
+<ul>
+<li>₹67 is financed via Debt</li>
+<li>∴ Leverage Cost = $(2.15% \text{ of } ₹67) = ₹1.44$</li>
+<li>As a % of Total Invested = $(₹1.44/₹100) = 1.44%$ or $144$ bps.</li>
+</ul>
+</li>
+<li>
+<p>For every ₹100 exposure via Futures: $F = S_0(1+R_F)^T$</p>
+<ul>
+<li>Cost of Carry = $R_F = 1.8%$</li>
+<li>$(1.8% \text{ of } ₹100) = ₹1.80$</li>
+</ul>
+</li>
+</ol>
+<p><strong>TIP:</strong> Futures do not require any upfront investment.</p>
+<ul>
+<li>
+<p>∴ mgr can deposit the margin (equity) amount → $[33% \text{ of } ₹100] = ₹33$ and earn $R_F$.</p>
+</li>
+<li>
+<p>∴ Interest Income = $(1.8% \text{ of } ₹33) = ₹0.594$</p>
+</li>
+<li>
+<p>∴ Net Cost of Leverage:</p>
+<ul>
+<li>Assets (Cost on ₹100) ₹1.80</li>
+<li>
+<ul>
+<li>Equity (Inc on ₹33) ₹0.594</li>
+</ul>
+</li>
+<li>= Leverage (Net Cost) ₹1.206</li>
+<li>As a % of Total Invested → $(₹1.206/₹100) = 1.21%$ or $121$ bps</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>Recommendation</strong>: Select <strong>Futures</strong> contract to execute the levered TAA (lowest total implementation cost at 295 bps).</p>
+</blockquote>
+<p>#EXAMPLE</p>
+<blockquote>
+<ul>
+<li><strong>Decision</strong>: Implement 1% overweight via <strong>futures</strong> (lower-cost alternative)</li>
+<li><strong>Leverage structure</strong>: 3× (66.67% borrowed / 33.33% cash) → factor $0.6667$</li>
+<li><strong>ETF borrowing rate</strong>: $1.80% + 35\text{ bps} = 2.15%$</li>
+<li><strong>Futures funding</strong>: no investment-income offset at 3‑mo MRR ($1.80%$)</li>
+<li><strong>Additional leverage cost</strong>
+<ul>
+<li>ETF: $\frac{5\text{M} \times 0.6667 \times 2.15%}{5\text{M}} = 1.43%$ (143 bps)</li>
+<li>Futures: $\frac{5\text{M} \times 0.6667 \times 1.80%}{5\text{M}} = 1.20%$ (120 bps)</li>
+</ul>
+</li>
+<li><strong>Unlevered cost</strong>: ETF 27 bps · Futures 32 bps</li>
+<li><strong>Total levered cost</strong>: ETF $27 + 143 = 170$ bps · Futures $32 + 120 = 152$ bps</li>
+<li><strong>Advantage</strong>: Futures cheaper by <strong>18 bps</strong></li>
+</ul>
+</blockquote>
+<h3 id="implementation-options-advantages-vs-disadvantages"><a class="header" href="#implementation-options-advantages-vs-disadvantages">Implementation Options: Advantages vs. Disadvantages</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th><strong>Instrument</strong></th><th><strong>Advantages</strong></th><th><strong>Disadvantages</strong></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>ETFs</strong></td><td>• <strong>Most Cost-Effective:</strong> Lowest overall annual cost (~35 bps total: 15 bps price impact + 9.5 bps fee + tight bid-ask spreads).<br>• <strong>Operational Simplicity:</strong> Exposure is managed by the ETF manager (no daily margin tracking or contract rolling).<br>• <strong>High Flexibility:</strong> Standardized and exchange-traded, making it easy to adjust/modify the exposure before the 1-year horizon.</td><td>• <strong>Least Cash-Efficient:</strong> Requires full cash outlay upfront (100% funding needed).<br>• <strong>Tracking Error:</strong> Subject to NAV premiums/discounts, cash drag, and regulatory diversification rules.</td></tr>
+<tr><td><strong>Futures</strong></td><td>• <strong>High Cash Efficiency:</strong> Requires significantly less upfront cash/margin.<br>• <strong>Exchange-Traded:</strong> Highly liquid with tight bid-ask spreads similar to ETFs.</td><td>• <strong>Higher Total Cost:</strong> High roll costs (20 bps annual due to contango shape of the yield curve).<br>• <strong>Operational Overhead:</strong> Requires quarterly contract rolling and daily monitoring for margin calls.<br>• <strong>Tracking Error:</strong> Subject to ~8 bps tracking error from supply/demand liquidity, dividend misforecasts, and interest rate differentials.<br>• <strong>Interest Rate Risk:</strong> Exposes Thompson to yield curve/interest rate fluctuations.</td></tr>
+<tr><td><strong>Total Return Swaps</strong></td><td>• <strong>Zero Tracking Error:</strong> Exact index replication—the counterparty is contractually obligated to pay the exact total return of the S&amp;P 500.<br>• <strong>Customizable:</strong> OTC structure allows tailored maturity, leverage, and terms.<br>• <strong>High Cash Efficiency:</strong> Requires minimal initial cash outlay.</td><td>• <strong>Highest Cost:</strong> Dominated by a heavy 40 bps funding cost.<br>• <strong>Counterparty Credit Risk:</strong> Exposes the fund to default/credit risk of the swap counterparty, creating complex exposure management.<br>• <strong>Interest Rate Risk:</strong> Subject to interest rate fluctuations over the duration of the swap.</td></tr>
+</tbody>
+</table>
+</div>
+
+                    </main>
+
+                    <div class="copyright" style="font-size:0.9rem;opacity:0.7;padding:0 1rem 0.5rem;">© 2026 Pramod Thaz. All rights reserved.</div>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../PORTFOLIO MANAGEMENT/29. TRADE STRATEGIES AND EXEC.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../license.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../PORTFOLIO MANAGEMENT/29. TRADE STRATEGIES AND EXEC.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../license.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    <script src="/cfa-level-iii-notes/paywall.js"></script></body>
+</html>

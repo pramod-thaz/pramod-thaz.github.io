@@ -1,0 +1,960 @@
+<!DOCTYPE HTML>
+<html lang="en" class="latte sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>25. Active Equity Port Construction - CFA Level III Notes</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/catppuccin-e08be6a9.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "latte";
+            const default_dark_theme = "mocha";
+            window.path_to_searchindex_js = "../searchindex-2521da27.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-b96c3611.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('latte')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-mocha">Mocha</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CFA Level III Notes</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <p>#EXAMPLE questions</p>
+<ol>
+<li>Determine the manager with the highest active risk (circle your answer). Explain your reasoning.
+<ol>
+<li>The portfolio has the ==lowest correlation with the benchmark due to the largest cash position== leading to an increase in active risk.</li>
+</ol>
+</li>
+<li>Determine the manager with the highest unexplained risk and the investment approach of the manager with the highest unexplained risk (circle each answer).
+<ol>
+<li>Kawhi holds very ==few securities at very high weights which leads to high levels of idiosyncratic risk (unexplained risk)==. These facts combined with the ==low levels of sector deviation==, we can see that ==Kawhi is a stock picker. Note: Lowry is factor diversified, and Siakam is a sector rotator==</li>
+</ol>
+</li>
+<li>Determine the manager with the highest fees, the greatest dispersion in returns and the manager most likely executing sector bets (circle your answer). Justify your response
+<ol>
+<li>Highest fee Alfie Investors are ==willing to pay higher fees for higher active share. Higher active shares are an indicator of greater active management==</li>
+<li>Greater ==dispersion in returns is directly related to higher active risk (tracking error).== Alfie has the highest active risk considering the ==max single contribution allowed is the highest and the sector deviations is 0.== Alfie is a concentrated stock picker</li>
+<li>Sector bets Benny Decisions at the ==sector level that lead to <strong>lower correlation</strong> between securities leads== to higher active risk. ==Given that Benny and Aloo have the same active share but Benny has higher active risk, we can conclude that Benny is making sector bets.==</li>
+</ol>
+</li>
+<li>Determine (circle) if Liz has made appropriate statements based on exhibit 1. If inappropriate, identify the correct type of investo
+<ol>
+<li>Alfie is top-down sector rotator. Top-down arises from the fact that Alfie uses economic indicators over the past 15 years. We can see that sector deviations are common and maintained leading to a sector rotator</li>
+<li>Aloo is a bottom up manager with GARP (growth approach) style. Aloo identifies 1000 securities leading to bottomup. Seeking out above average growth signals a growth approach. To be more precise, due to the fact ==Aloo seeks out reasonable valuation multiples== he is looking at a GARP approach.</li>
+</ol>
+</li>
+<li>Determine the likely effect on both active risk and portfolio volatility for Angela compared to Devon (circle). Justify your response.
+<ol>
+<li>Decisions at the s==ector level that lead to lower correlation between securities leads to higher active risk==.</li>
+<li>Diversifying a ==portfolio (increasing allocation to technology sector) leads to lower volatility in portfolio returns==.</li>
+</ol>
+</li>
+<li>Determine whether the previous manager is likely to have high/low: i. Active risk ii. Active share
+<ol>
+<li>A concentrated portfolio ==holding 30 stocks (much less than benchmark) holds high active risk.== We can see the portfolio has become more ==uncorrelated with the benchmark== leading to higher active risk.</li>
+<li>With a ==small number of stocks that are not well diversified, the active share will be high==</li>
+</ol>
+</li>
+</ol>
+<h3 id="bb-questions-review-practice"><a class="header" href="#bb-questions-review-practice">BB questions review (PRACTICE)</a></h3>
+<blockquote>
+<p><strong>Concept Check 1</strong><br><strong>Question:</strong> Discuss the contributions of rewarded factors, alpha skills, position sizing, and breadth of expertise for Proteus. (Already extracted as Example 1, but serves as concept check in context.)</p>
+<ul>
+<li>Rewarded factors: Proteus recognizes the existence of rewarded factors, ==and it has significantly enhanced its measures of Quality, Value, and Momentum over time.==</li>
+<li>Alpha skills: Given the ==commercial success== of Proteus as a firm, we might safely assume that ==there is an alpha component in the process.==</li>
+<li>Position sizing: ==Position size limits are integrated into the investment process== to ensure ==diversification== limits idiosyncratic risks.</li>
+<li>Breadth of expertise: Proteus has 2==0 years of experience refining and improving== an investment process based on a consistent philosophy
+<strong>Concept Check 2</strong><br><strong>Question:</strong> Explain how ==Manager A, with his <strong>high level of Active Share</strong>, is able to achieve such a low active risk==. What are the implications for Manager B’s performance relative to that of Manager A?
+Both managers generated the same absolute return, but they achieved their performance in very different ways. ==All of Manager A’s performance can be explained from exposure to rewarded factors. There is no alpha, and the high R² shows that the four factors explain much of the monthly variability in returns.== Manager A did outperform the Market factor by 20 bps (0.65% – 0.45%). ==The excess return can be attributed to the significant exposure (0.25) to the strong-performing Momentum factor (0.60%).== Exposure to the Value factor explains the balance.
+Manager <strong>B generated significant alpha</strong> (20 bps per month). ==The relatively low R² indicates that much of the <strong>variability of returns is unexplained by the factors.==</strong> Manager B’s performance must, therefore, be attributed to either ==her alpha skills or idiosyncratic risks== that favored the manager’s investment approach during the period.
+<strong>Concept Check 3</strong><br><strong>Question:</strong> Discuss the drivers of return for Managers A and B.
+Manager B is a <strong>closet indexer</strong>. The ==low targeted active risk combined with the narrow sector deviation constraint== indicates that the manager is making very few active bets.
+Manager A is likely a <strong>concentrated stock picker</strong>. The ==10% active risk target indicates a willingness to tolerate significant performance deviations from the market==. The 5% limit on a single security’s contribution to portfolio risk ==indicates he is willing to run a concentrated portfolio.== The ==unwillingness to take sector deviations combined with the high tolerance for idiosyncratic risk indicates that the manager likely focuses on stock selection== and is, therefore, a stock picker.
+Manager C ==limits single-security risk contribution to no more than 1%, which implies a highly diversified portfolio.== ==The significant sector deviations despite this high diversification are often indicative of a multi-factor manager. <strong>The relatively low tracking error further supports the argument that Manager C is a multi-factor manager.</strong>==
+Manager D has characteristics consistent with a <strong>sector rotator.</strong> The <strong>==significant active risk and high tolerance for sector deviations</strong> and security concentration are what one would expect to find with a sector rotator.==
+A <strong>sector rotator</strong> shifts portfolio weightings dynamically across different economic sectors (such as technology, healthcare, financials, or energy) based on where they believe the business cycle is heading. a sector rotator’s primary bet is <strong>macro-driven asset allocation</strong>: leaning heavily into cyclical sectors during a recovery and defensive sectors during a downturn.</li>
+</ul>
+</blockquote>
+<ol>
+<li><strong>High Sector Deviations:</strong> If the S&amp;P 500 has 30% in technology, a sector rotator might jam 50% into tech</li>
+<li><strong>Security Concentration:</strong> letting single-security risk contribute meaningfully to the portfolio.</li>
+<li><strong>Significant Active Risk:</strong> Because entire sectors can violently outperform or underperform the broader market, sector rotation strategies naturally carry a high tracking error (active risk).</li>
+</ol>
+<blockquote>
+<p><strong>Question:</strong> Discuss the main differences between top-down and bottom-up portfolio management approaches
+<strong>Bottom-up managers</strong> look at characteristics of securities to build their portfolios. ==The factor exposure inherent in their portfolios may be intentional, or it may be a by-product of their security selection process.== <strong>Top-down managers</strong> articulate a macro view of the investment universe and build a portfolio emphasizing the macro factors that reflect those views. ==Although their macro views could then be translated into security views using a bottom-up approach, their performance will likely be dominated by their macro-level factor exposures.==</p>
+<p><strong>Alpha.</strong><br>In the context of Equation 2, ==the <strong>alpha of bottom-up managers is most likely attributable to their security selection skills</strong>.== Some portion of their active return can also be explained through exposure to rewarded factors. <strong>==Top-down managers’ alphas are largely derived from factor timing.==</strong>
+<strong>Question</strong>: Discuss the expected profile of each manager in terms of  • the sensitivity of their performance to risk factors,  • the level of security concentration, and  • the contribution of idiosyncratic risk to the total active risk of their portfolios.
+<strong>Multi factor:</strong> ==Cohen: We would not expect alpha to be a significant component of his performance.== His exposure to risk factors would be ==relatively stable across time periods because he does not believe in factor timing==. Because his primary emphasis is on long-term exposure to risk factors, ==he would hold a highly diversified portfolio to minimize idiosyncratic risk.== ==As a multi-factor manager running a diversified portfolio, his active risk should be relatively low.==
+<strong>Sector Rotator:</strong> Palmer’s performance is likely to be explained by ==tactical exposures to sectors, which we have said are unrewarded risks,== rather than static exposures to known rewarded factor returns. ==Her excess performance against her benchmark will likely be attributed to alpha==. ==With no professed skill in security selection, she is likely to <strong>hold a large number of securities in each sector</strong> to minimize idiosyncratic risk==. The active risk arising from her sector weightings will overshadow the active risk from security weightings. Her <strong>active risk is likely to be higher than that of multi-factor.</strong>
+<strong>Stock Picker:</strong> His focus on recent price movements indicates a sensitivity to the Momentum factor,He is size agnostic and may at times have exposure to the Size factor, a smaller-cap bias.  ==As a discretionary manager, he is to run a concentrated portfolio in order to more closely monitor his positions. However, if he makes extensive use of quantitative tools in monitoring his portfolio, he may be able to hold a more diversified portfolio.== His active risk will be high, and h<strong>is performance is likely to have a significant alpha component</strong>, whether positive or negative.
+<strong>Concept Check 4</strong><br><strong>Question:</strong> Discuss each manager’s ==implementation approach, security selection approach, portfolio concentration, objective function, and constraints==.
+Manager A is best characterized as a <strong>systematic, bottom-up manager</strong>.</p>
+<ul>
+<li><strong>Implementation approach.</strong> An implementation approach that is fully quantitative (allocations are unaffected by a portfolio manager’s judgment) is systematic.</li>
+<li><strong>Security selection approach.</strong> A scoring process that ranks individual securities based on their factor characteristics is a bottom-up approach.</li>
+<li><strong>Concentration.</strong> Although the limit of no more than 2% of the portfolio in any single position means the portfolio could hold as few as 50 securities, the tracking error constraint of 4% indicates that the portfolio is likely diversified.</li>
+<li><strong>Objective function.</strong> A process that aims to maximize the portfolio’s score based on the factor characteristics of single securities is an example of an explicit objective function.</li>
+<li><strong>Constraints.</strong> The tracking error constraint of less than 4% is a relative constraint function. The limit on any single position to no more than 2% of the portfolio is an absolute—not a relative—constraint. It does not depend on benchmark weights.
+Manager C holds significantly fewer positions than Manager A, and the <strong>weight of his top five securities is nearly four times that of Manager B</strong>. This indicates ==a willingness to assume a much higher level of idiosyncratic risk.== This observation is reinforced by Manager C’s higher Active Share and ==higher proportion of unexplained risk.==The ==Market beta of Manager C is== ==significantly greater, and the risk decomposition indicates that Manager C== appears more willing to make sector and style bets.== Finally, the absolute risk of Manager’s C portfolio is higher, even though it appears that he makes greater use of lower-risk bond and cash positions.
+<strong>Concept Check 6</strong><br><strong>Question:</strong> Does the pro forma custom portfolio meet the specifications ==of a well-structured portfolio, and are there any characteristics of this product that concern you==? (Already in Example 8.)
+It has significantly lower volatility than the MSCI World and a significantly higher dividend yield (although we do not have the information on the payout yield), the portfolio has a low security concentration, and the estimated turnover is lower than the required limit. It can also be implemented at a low cost.
+The factor analysis also confirms what we could expect from a high-payout/low-volatility portfolio. The Market beta is significantly below 1, the negative Size coefficient indicates a larger-capitalization bias, and finally, the portfolio has a Value and Quality bias. The risk attribution analysis indicates that the exposure to Quality companies is largely responsible for reducing the total risk of the portfolio.
+the portfolio construction process leads to a high tracking error (active risk).</li>
+</ul>
+<blockquote>
+<p>==The first recommendation would be to investigate further the source of the significant negative alpha. Because the excess performance is so strongly explained by exposure to specific factors, we should be concerned about how the portfolio would perform if factor returns were to decline.==
+==At the very least, these structural biases should be continuously monitored.==<br><strong>Concept Check 7</strong><br><strong>Question:</strong> Discuss the evolution of the fund’s characteristics and its implications for Lo’s success as a manager. (Already in Example 7.)
+==He is still very much a value manager investing in lower-beta securities.== However, the portfolio no longer has a small-cap tilt, and the exposure to the momentum factor has also declined. ==It is likely that these are <strong>both byproducts of the increase in AUM; for larger AUM,</strong> it becomes more <strong>difficult to maintain significant active weights on smaller companies while maintaining sufficient liquidity==</strong>. The decline in turnover is also consistent with the growth in AUM; ==higher turnover becomes more costly as AUM increases.== Finally, the ==decline in alpha is consistent with the challenges of scaling a successful strategy==.
+<strong>Concept Check 8.1 - 130/30 strategy</strong>
+Objective function: Maximize the portfolio factor score
+<strong>Objective function:</strong> The objective function would remain the same. Securities with a positive standardized score would be eligible for positive weights, and securities with a negative standardized factor score would receive negative weights (the fund would short these securities).<br><strong>Total exposure constraint:</strong> The portfolio now ==needs a constraint for gross exposure and one for net exposure.== The net exposure constraint in a 130/30 product is constrained to 100%
+<strong>Individual security constraint (Minimum weight of 0% and maximum weight of 3% ):</strong> To take advantage of the negative signals from the model, the portfolio must allow shorting. ==The minimum weight constraint must be relaxed.==
+<strong>Sector constraint (Benchmark weight ±5%):</strong> There is no need to change the aggregate sector constraint. ==The manager now has the ability to offset any overweight on the long side with a short position that would bring the portfolio’s exposure to that sector back within the current constraint.==
+<strong>Tracking error target (Active risk less than 5%):</strong> <strong>==Sector deviations have a greater bearing on active risk</strong> than do security-level differences.== Alpha Prime’s sector bets are very limited; thus, no change in the tracking error constraint is necessary.
+<strong>Concept Check 8.2</strong><br><strong>Question:</strong> Discuss the ==potential challenges of incorporating short positions== into the portfolio strategy. (Already in Example 9.)
+Shorting adds c<strong>omplexity to both the operational and the risk aspects</strong> of portfolio management. ==Operationally, the firm must establish relationships with one or more prime brokers and ensure that adequate collateral for the short positions remains available.==
+Some securities can be difficult to borrow, ==and the cost of borrowing some stocks can be prohibitive.==
+In addition, shorting introduces a new type of risk: ==A short transaction has no loss limit. If the stock moves against the manager in the short run, the manager may have to close the position before he is proven right.==
+<strong>Concept Check 9</strong><br><strong>Question:</strong> Why would the competitor’s long/short product have a higher information ratio? (Already in Example 10.)
+==Factor returns are usually built from a <strong>long portfolio having the desired factor characteristic against a short portfolio that does not</strong>.==
+A long-only factor investor is limited in his ability to short (relative to the benchmark) positions that do not have the desired characteristics. Adding the ability to lever the portfolio and to take short positions allows the ==manager to more <strong>fully express his views on both the winners and the losers</strong>==. ==This increased ability to translate insights into positions (<strong>higher transfer coefficient</strong>) leads to a higher information ratio.==
+In addition, the ==long/short product neutralizes the Market factor==, allowing the manager to focus on the other ==rewarded factors that are the source of his skill==.</p>
+</blockquote>
+</blockquote>
+<p>The three building blocks are ==<strong>rewarded factor weightings, alpha skills (selection + factor timing), position sizing.</strong>==</p>
+<h1 id="a-elements-of-active-equity-management--building-blocks-of-active-return-ar"><a class="header" href="#a-elements-of-active-equity-management--building-blocks-of-active-return-ar">A. Elements of Active Equity Management – Building Blocks of Active Return (AR)</a></h1>
+<p>![](Pasted image 20260619171931.png)
+AR = 3% above
+<strong>AR</strong> = Portfolio Return – Benchmark Return. Decomposed as:
+$AR = \sum_k (\beta_{PF,k} - \beta_{Bench,k}) \times F_k + \alpha + \varepsilon$
+${F,k}$ =premium for factor F</p>
+<p><strong>3 reasons for the extra 3% for K:</strong></p>
+<ul>
+<li>
+<p><strong>Factor Exposures</strong> ==(systematic / rewarded)==: Differences in β (tilts) to factors like size, value, momentum × factor premium (F). <em>Not alpha</em> — compensation for extra risk.
+![](_rect_imgs/25. X ACTIVE EQUITY PORT CONSTRUCTION - merged__PMAX_PM_PATHWAY_25_Active_Equity_Investing_Portfolio_Construction_p1_70-114.png)</p>
+</li>
+<li>
+<p><strong>Alpha (α)</strong>: ==Security selection + factor timing skill.== #imp
+![](_rect_imgs/25. X ACTIVE EQUITY PORT CONSTRUCTION - merged__PMAX_PM_PATHWAY_25_Active_Equity_Investing_Portfolio_Construction_p2_63-452.png)</p>
+</li>
+<li>
+<p>[ $\Delta AR(AA) = \sum (\Delta w_i)(R_{i,sector} - R_I)$ ]  &lt;-==- alloc in perf==
+![](_rect_imgs/25. X ACTIVE EQUITY PORT CONSTRUCTION - merged__PMAX_PM_PATHWAY_25_Active_Equity_Investing_Portfolio_Construction_p2_69-345.png)</p>
+</li>
+<li>
+<p><strong>Idiosyncratic / Random (ε)</strong>: ==Stock-specific luck/noise== (E[ε] = 0 long-term). ==PositionSizing==`
+![](_rect_imgs/25. X ACTIVE EQUITY PORT CONSTRUCTION - merged__PMAX_PM_PATHWAY_25_Active_Equity_Investing_Portfolio_Construction_p2_81-159.png)
+<strong>Example</strong>: PF-K (small-cap tilt) vs PF-L → extra 3% from size factor (rewarded, systematic), not skill.</p>
+</li>
+</ul>
+<p><strong>Summary</strong>: AR from (i) β differences, (ii) skill (selection/timing), (iii) random events.
+#EXAMPLE #dsicuss</p>
+<blockquote>
+<p>Both managers generated the same absolute return, but they achieved their performance in very different ways. ==All of Manager A’s performance can be explained from exposure to rewarded factors.== There is ==no alpha==, and ==the high R² shows that the four factors explain much of the monthly variability in returns==. Manager A did outperform the Market factor by 20 bps (0.65% – 0.45%). T==he excess return can be attributed to the significant exposure (0.25) to the strong-performing Momentum factor (0.60%). Exposure to the Value factor explains the balance.==</p>
+<p>Manager B generated significant alpha (20 bps per month). The relatively ==low R² indicates that much of the variability of returns is unexplained by the factors==. Manager B’s performance must, therefore, be attributed to ==either her alpha skills or idiosyncratic risks== that favored the manager’s investment approach during the period.</p>
+</blockquote>
+<p>#illustration</p>
+<blockquote>
+<p>Both managers pursue a Value orientation and therefore have exposure to the Value rewarded factor. Quanto achieves this exposure through a ==systematic, rules-based process== across a broad universe (emphasizing factor weightings and ==minimizing idiosyncratic risk==). Evolo achieves similar factor exposure through d==iscretionary security selection== and judgment (generating potential alpha from superior valuation models) but accepts ==higher idiosyncratic risk due to portfolio concentration==. The illustration shows that Equation 2 decomposition applies equally to systematic/quantitative and discretionary/fundamental approaches.</p>
+</blockquote>
+<h1 id="b-factor-weightings-multi-factor-model"><a class="header" href="#b-factor-weightings-multi-factor-model">B. Factor Weightings (Multi-Factor Model)</a></h1>
+<p>From CAPM single-factor → <strong>Multi-Factor Model (MFM)</strong>:</p>
+<p><strong>R,-Rf = Excess Return</strong>
+$(R_i - R_f) = \beta_1[R_m - R_f] + \beta_2[R_{sc}-R_{lc}] + \beta_3[R_u - R_l] + \beta_4[R_w - R_l] + (\alpha + \varepsilon)$
+#imp #EXAMPLE
+![](Pasted image 20260622105645.png)</p>
+<p>![](Pasted image 20260622105717.png)</p>
+<p><strong>Key Factors &amp; Tilts</strong> (neutral β = own benchmark exposure):</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Factor</th><th>Premium</th><th>==Neutral β==</th><th>Tilt &gt; 0</th><th>Tilt &lt; 0</th></tr>
+</thead>
+<tbody>
+<tr><td>Market</td><td>[Rm – Rf]</td><td>==β = 1==</td><td>Cyclical</td><td>Defensive</td></tr>
+<tr><td>Size</td><td>[Rsc – Rlc]</td><td>==β = 0==</td><td>Small Cap</td><td>Large Cap</td></tr>
+<tr><td>Valuation</td><td>[Ru – Rl]</td><td>==β = 0==</td><td>High ==B/P== (Value) –==not P/B==</td><td>Low B/P (Growth)</td></tr>
+<tr><td>Momentum</td><td>[Rw – Rl]</td><td>==β = 0==</td><td>Recent Winners</td><td>Recent Losers</td></tr>
+<tr><td>![](_rect_imgs/25. X ACTIVE EQUITY PORT CONSTRUCTION - merged__PMAX_PM_PATHWAY_25_Active_Equity_Investing_Portfolio_Construction_p3_71-56.png)</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>![](_rect_imgs/25. X ACTIVE EQUITY PORT CONSTRUCTION - merged__PMAX_PM_PATHWAY_25_Active_Equity_Investing_Portfolio_Construction_p4_64-630.png)</td><td></td><td></td><td></td><td></td></tr>
+<tr><td><strong>Performance Breakdown Example</strong> (realized premium 5.2%):</td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Largest contributor: Market tilt (β=1.2, premium positive).</li>
+<li>Largest drag: ==Size tilt (β=–0.3 while small-caps outperformed).==</li>
+<li>Unexplained (α + ε): Skill + luck (need long horizon to separate; E[ε]=0 long-term).</li>
+<li>==Missing factors (e.g., liquidity) can inflate unexplained portion.==</li>
+</ul>
+<p><strong>TIP</strong>: Higher β = greater risk exposure. ==Only <strong>long-term</strong> positive (α + ε) implies true α &gt; 0.==</p>
+<h1 id="c-alpha-skills"><a class="header" href="#c-alpha-skills">C. Alpha Skills</a></h1>
+<p><strong>Two Sources</strong>:</p>
+<ol>
+<li>==<strong>Security Selection</strong>== (β held constant): Overweight outperformers, underweight underperformers.
+<ul>
+<li>==Sector/Region selection also α (<strong>no evidence of systematic premium unlike size</strong>).==</li>
+</ul>
+</li>
+<li>==<strong>Factor Timing</strong>== (tactical β deviations): ↑β before factor premium rises; ↓β before it falls.
+<ul>
+<li>Policy/systematic β (replicable via indexes) = passive (not α).</li>
+<li>Tactical deviations only = true α.</li>
+<li>==<strong>Net client benefit</strong> only if management fee &lt; α.==</li>
+</ul>
+</li>
+</ol>
+<p><strong>Example</strong>: Policy β(size)=0.8, tactical ±0.3 allowed. Actual β=1.1 when small-cap premium = 10% → total AR 5%; of which systematic 2% (passive), tactical 3% (α).
+![](_rect_imgs/25. X ACTIVE EQUITY PORT CONSTRUCTION - merged__PMAX_PM_PATHWAY_25_Active_Equity_Investing_Portfolio_Construction_p6_72-157.png)
+Only active should be compensated. ==0.8 beta can be replicated by holding beta = 1 at 80% and 20% in t-bills- purely passive==</p>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>The three building blocks are alpha skills, position sizing, and rewarded factor weightings. Fund 1 generates active returns by skillfully timing exposures to factors (rewarded and unrewarded) and other asset classes → this is alpha skills.</p>
+</blockquote>
+<h1 id="d-position-sizing--active-weights"><a class="header" href="#d-position-sizing--active-weights">D. Position Sizing &amp; Active Weights</a></h1>
+<p><strong>Active Weight</strong> Δω_i = w_PF,i – w_B,i.</p>
+<ul>
+<li>==Loose limits== (==high Δω==) → ==↑ E(AR) but ↑ TE.==</li>
+<li>==Tight limits== → lower E(AR) &amp; TE; more diversified.</li>
+<li><strong>Attribution impact</strong>: Concentrated (loose limits) → higher unsystematic (α + ε); diversified (tight) → higher systematic. ==check # c/s below==
+![](_rect_imgs/25. X ACTIVE EQUITY PORT CONSTRUCTION - merged__PMAX_PM_PATHWAY_25_Active_Equity_Investing_Portfolio_Construction_p7_57-119.png)</li>
+</ul>
+<p>![](_rect_imgs/25. X ACTIVE EQUITY PORT CONSTRUCTION - merged__PMAX_PM_PATHWAY_25_Active_Equity_Investing_Portfolio_Construction_p8_72-615.png)</p>
+<ul>
+<li>==Sector bets &gt; stock bets on TE impact== (lower cross-sector correlation). #EXAMPLE
+![](_rect_imgs/25. X ACTIVE EQUITY PORT CONSTRUCTION - merged__PMAX_PM_PATHWAY_25_Active_Equity_Investing_Portfolio_Construction_p8_66-424.png)</li>
+<li><strong>TIP</strong>: ==More confident forecasts → larger active weights. Extreme: 1-stock portfolio = max TE.==</li>
+</ul>
+<p>#EXAMPLE #discuss</p>
+<blockquote>
+<ul>
+<li>Rewarded factors: Proteus recognizes the existence of rewarded factors, and it has significantly enhanced its measures of Quality, Value, and Momentum over time.</li>
+<li>Alpha skills: Given the commercial success of Proteus as a firm, we might safely assume that there is an alpha component in the process.</li>
+<li>Position sizing: Position size limits are integrated into the investment process to ensure diversification limits idiosyncratic risks.</li>
+<li>Breadth of expertise: Proteus has 20 years of experience refining and improving an investment process based on a consistent investment philosophy.
+#EXAMPLE
+|                     | Manager A | Manager B |
+| :—————— | ––––: | ––––: |
+| Active Share        |      0.73 |      0.71 |
+| Active risk         |      2.8% |  ==6.0%== |
+| Number of positions |       120 |       125 |
+<strong>Solution:</strong><br>Managers A and B have a similar number of positions and similar Active Share. Manager B has much higher active risk. Given similar levels of Active Share, it is likely that Manager B’s active risk is ==driven by active decisions at the sector level rather than at the security level.== We can assume that the realized outcomes of Manager B are likely to be much more dispersed about the benchmark (both in positive and negative directions) given the higher level of active risk.</li>
+</ul>
+</blockquote>
+<h1 id="e-constructing-the-portfolio--breadth-br"><a class="header" href="#e-constructing-the-portfolio--breadth-br">E. Constructing the Portfolio – Breadth (BR)</a></h1>
+<p><strong>Fundamental Law of Active Management</strong>:
+$E(AR) = IC \times TC \times \sqrt{BR} \times TE$</p>
+<ul>
+<li><strong>IC</strong> (Information Coefficient): Forecast accuracy (==corr predicted vs actual return==). ↑IC → ↑AR.</li>
+<li><strong>TC</strong> (Transfer Coefficient): Implementation skill (ideas → actual positions). TC=1 (no constraints), TC=0 (passive/index).</li>
+<li><strong>BR</strong> (Breadth): # independent decisions/opportunities. ==Low BR (e.g., 50 oil stocks = bet on oil price) → high idiosyncratic risk, unreliable AR.==</li>
+<li><strong>TE</strong>: Target active risk (client tolerance).</li>
+</ul>
+<p>==<strong>To achieve +AR long-term</strong>: IC &gt; 0, TC &gt; 0, TE &gt; 0, <strong>BR &gt; 0</strong> (must have opportunities - <strong>long or short</strong>).==</p>
+<h1 id="f-approaches-to-active-portfolio-construction"><a class="header" href="#f-approaches-to-active-portfolio-construction">F. Approaches to Active Portfolio Construction</a></h1>
+<p><strong>Systematic (Quant/Rules-Based) vs Discretionary (Fundamental)</strong>:</p>
+<ul>
+<li><strong>Systematic</strong>: Pre-set rules/model; factor exposures (rewarded premiums); ==diversified== (min idiosyncratic); optimization (max IR); ==manager discretion mainly at model design.==</li>
+<li><strong>Discretionary</strong>: ==Manager judgment per trade==; ==α via mispricing or timing;== ==concentrated==; less structured.</li>
+</ul>
+<p><strong>Top-Down (TD) vs Bottom-Up (BU)</strong>:</p>
+<ul>
+<li><strong>TD</strong>: Macro → sectors/industries → best stocks within; ==α from factor timing.==</li>
+<li><strong>BU</strong>: Company level (mispriced securities regardless of sector); α from security selection. More common in practice (e.g., deep-value).</li>
+<li>Hybrids common; ==both can produce concentrated or diversified portfolios.==</li>
+<li></li>
+</ul>
+<p>#EXAMPLE  BU vs TD</p>
+<blockquote>
+<p><strong>Factor exposure.</strong><br>Bottom-up managers look at characteristics of securities to build their portfolios. T==he factor exposure inherent in their portfolios may be intentional, or it may be a by-product of their security selection process.== Top-down managers articulate a macro view of the investment universe and build a portfolio emphasizing the macro factors that reflect those views. Although their macro views ==could then be translated into security views using a bottom-up approach, their performance will likely be dominated by their macro-level factor exposures.==</p>
+<p><strong>Alpha.</strong><br>The alpha of bottom-up managers is most likely ==attributable to their security selection skills.== Some portion of their active return can also be explained through exposure to rewarded factors. ==Top-down managers’ alphas are largely derived from factor timing.==</p>
+</blockquote>
+<h1 id="g-active-share-vs-active-risk-te"><a class="header" href="#g-active-share-vs-active-risk-te">G. Active Share vs Active Risk (TE)</a></h1>
+<p><strong>Active Share</strong> = $½ Σ |W_p,i - W_b,i|]</p>
+<p><strong>Active Risk (TE)</strong> = volatility (sd) of AR; incorporates ==correlations== (unlike Active Share).</p>
+<p>==<strong>Key Relationships</strong> (they do <strong>not</strong> always move together):== #imp</p>
+<ul>
+<li>==High factor tilt → high Active Risk== (drives both return &amp; volatility). #EXAMPLE</li>
+</ul>
+<blockquote>
+<ul>
+<li>Scaling active risk by doubling weights should scale active return linearly (IR unchanged) <em>if no constraints</em>. But inability to fully scale shorts prevents proportional active-return increase → IR falls. (Chart in curriculum shows diminishing returns to scale.)</li>
+</ul>
+</blockquote>
+<ul>
+<li>Neutral factor exposures + high Active Share → <strong>most TE from security selection.</strong></li>
+<li>Many stocks in PF/bench → smaller weight differences → lower Active Share impact on TE.</li>
+<li>↑ factor return volatility or idiosyncratic volatility → ↑ Active Risk.</li>
+<li>Lower PF–bench correlation → ↑ TE.</li>
+<li>Multi-factor (==high R²==) → ==Active Risk mostly systematic==; ==Active Share can be high (fractional holdings).==</li>
+<li>Stock-picking (BU, concentrated) → high Active Share + high TE.</li>
+<li>Sector rotation → high Active Risk (industry concentrations). #EXAMPLE</li>
+<li>==Closet indexer: low TE +== minimal sector deviations (charges active fee for near-passive).</li>
+<li>Optimization: ==Max IR (benchmark-aware) or Sharpe (agnostic)==; constraints absolute (e.g., max 5% stock) or relative (e.g., sector ±3% vs bench).</li>
+</ul>
+<p>#EXAMPLE
+Multi-factor products are diversified, balanced rewarded factors, high active share, low active risk (≈3%)—exactly matches Manager B.
+![](_rect_imgs/25. X ACTIVE EQUITY PORT CONSTRUCTION - merged__PMAX_Q_A_25_ACTIVE_EQUITY_INVESTING_PORTFOLIO_CONSTRUCTION_p5_66-409.png)</p>
+<p>Alternatively, ==using heuristic methods==, such as: i) Weighting stocks based on their scores along certain investment criteria. For example, given 2 growth stocks, a growth fund manager may allocate a greater weight to the stock with the higher forward looking EPS growth rate. ii) Weighting stocks based on their rank along a pre-specified investment characteristic. For example, supposing that 3 stocks meet the criteria, the one that is ranked first would receive a 50% allocation [3/(1+2+3)], the one ranked second would receive a 33% allocation [2/(1+2+3)], and the last would receive a 17% allocation [1/(1+2+3)].</p>
+<p><strong>TIP</strong>: ==Two funds, same fee → lower Active Share manager overcharging (closer to benchmark).==
+A high Active Share says only that a manager’s security-level weights are quite different from those of the index. ==A 0.5% underallocation to one security and a 0.5% over-allocation to another security will have the same impact on Active Share whether these two securities are in the same sector or in different sectors.==</p>
+<p>#EXAMPLE #imp
+Manager B is a <strong>closet indexer</strong>. ==The low targeted active risk combined with the narrow sector deviation constraint indicates that the manager is making very few active bets.==</p>
+<p>Manager A is likely a <strong>==concentrated stock picker==</strong>. The 10% active risk target indicates a ==willingness to tolerate significant performance deviations from the market==. The 5% limit on a ==single security’s contribution to portfolio risk== indicates he is willing to run a <strong>concentrated portfolio</strong>. The ==unwillingness to take sector deviations combined with the high tolerance for idiosyncratic risk== indicates that the manager likely focuses on stock selection and is, therefore, a stock picker.</p>
+<p>Manager C limits ==single-security risk contribution to no more than 1%==, which implies a <strong>highly diversified portfolio</strong>. The s==ignificant sector deviations despite this high diversification are often indicative of a multi-factor manager==. The relatively ==low tracking error== further supports the argument that Manager C is a ==multi-factor manager==.</p>
+<p>Manager D has characteristics consistent with a <strong>sector rotator</strong>. ==The significant active risk and high tolerance for sector deviations and security concentration== are what one would expect to find with a sector rotator.</p>
+<p><strong>Exhibit 16 &amp; 17: How Investment Style Shapes Risk Budget Allocation</strong></p>
+<p>The curriculum compares three managers drawing from the same Russell 1000 universe to show that <strong>similar active risk levels can come from very different sources</strong>.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Metric</th><th>Manager A (Factor Diversified)</th><th>Manager B (Factor Diversified)</th><th>Manager C (Sector Rotator)</th></tr>
+</thead>
+<tbody>
+<tr><td>Number of securities</td><td>251</td><td>835</td><td><strong>21</strong></td></tr>
+<tr><td>Weight of top 5 securities</td><td>6.54%</td><td>3.7%</td><td><strong>25.1%</strong></td></tr>
+<tr><td>Cash + Bond position</td><td>0.8%</td><td>0%</td><td><strong>21.3%</strong></td></tr>
+<tr><td>Market beta</td><td>0.90</td><td>0.97</td><td><strong>1.28</strong></td></tr>
+<tr><td>Active Risk</td><td>3.4%</td><td>3.66%</td><td><strong>4.5%</strong></td></tr>
+<tr><td>Active Share</td><td>0.76</td><td>0.63</td><td><strong>0.87</strong></td></tr>
+<tr><td>Average sector deviation</td><td>3.6%</td><td>3.9%</td><td><strong>5.6%</strong></td></tr>
+<tr><td><strong>Risk from Market</strong></td><td>98.0%</td><td>99.2%</td><td><strong>69.2%</strong></td></tr>
+<tr><td><strong>Risk from Sectors</strong></td><td>–0.8%</td><td>–3.8%</td><td><strong>+11.6%</strong></td></tr>
+<tr><td><strong>Risk from Styles</strong></td><td>+1.8%</td><td>+4.2%</td><td><strong>+9.7%</strong></td></tr>
+<tr><td><strong>Unexplained (Idiosyncratic)</strong></td><td>1.0%</td><td>0.4%</td><td><strong>9.5%</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Key Exam Insight</strong><br>Manager C (sector rotator) ==takes significantly more <strong>idiosyncratic, sector, and style risk</strong> than the multi-factor managers, even though his active risk is only moderately higher.== This illustrates that <strong>two portfolios with similar active risk can have very different return patterns</strong> over time because the sources of risk differ.</p>
+<h1 id="h-risk-budgeting"><a class="header" href="#h-risk-budgeting">H. Risk Budgeting</a></h1>
+<p>Allocate total tolerated risk across dimensions (==factors, securities, sectors, countries, etc.==).</p>
+<p><strong>4 Steps</strong>:</p>
+<ol>
+<li>Identify measures: Absolute (σ) for benchmark-agnostic; Relative (TE) for benchmark-aware. For example, a long/short equity manager benchmarked against a cash plus target will usually prefer an absolute risk measure (such as total vol￾atility of portfolio returns), whereas a long-only equity manager bench￾marked against a capitalization-weighted index may prefer a relative risk measure (such as active risk).</li>
+<li>==Map how decisions== (β tilts, security selection, factor timing) contribute to total risk. Total portfolio variance may be dominated by exposure to rewarded risk factors or by allocations to countries, sectors, or securities. ==If these exposures are dynamic, the timing of portfolio exposures also introduces risk. An important step in risk budgeting is to understand what drives a portfolio’s risk and to ensure the portfolio has the right kinds of specific risks.==</li>
+<li>Set target ==budget== (subjective; higher for active/high-conviction managers; lower for risk-averse). ● Targeted levels of risk vary widely among managers and strategies. Although there are general principles that limit the level of advisable risk in a specific strategy, it is also very much a policy issue.
+<ul>
+<li><strong>Implementation Constraints &amp; IR</strong>: Without limits, ↑ TE allows proportional ↑ Active Return via leverage + shorting → <strong>IR stays constant</strong>. ==With constraints (position limits, no leverage/short, illiquidity) → Active Return rises slower than TE (due to higher trading costs or weaker ideas) → <strong>IR falls</strong>.== #EXAMPLE</li>
+<li><strong>High Risk Targets &amp; Diversification</strong>: Most stocks have ~market risk. ==At very high risk budgets, eligible securities become scarce → portfolio concentrates → ↑ idiosyncratic risk== → <strong>lower Sharpe Ratio</strong> (sub-optimal risk-adjusted returns). Market-risk portfolio: easy to diversify away idio risk. ==on the other hand, 2× market-risk portfolio: limited names → concentrated.==</li>
+<li><strong>Leverage &amp; Geometric vs Arithmetic Return</strong>: ↑ Leverage → ↑ volatility → <strong>geometric (compounded) return declines</strong> relative to arithmetic mean (volatility drag). ==Higher turnover/volatility erodes the realized compounded growth rate even if arithmetic expected return looks attractive.==</li>
+</ul>
+</li>
+<li>Allocate efficiently considering ==position sizing &amp; correlations (more corr = less diversifications, so less bets).==</li>
+</ol>
+<p><strong>Practical Limits on High Risk Budgets</strong>: #imp see explanation above</p>
+<ul>
+<li>Constraints (no leverage/shorts, illiquidity) → diminishing IR.</li>
+<li>High volatility → lower geometric (compounded) returns vs arithmetic.</li>
+<li>Fewer eligible securities at very high risk → less diversification → sub-optimal Sharpe/IR.</li>
+<li>Specialize risk budget where manager has edge; hedge non-specialist risks (e.g., currency for stock-picker).</li>
+</ul>
+<p><strong>Numerical Example</strong> (Asset with 10% arithmetic return and 20% volatility):</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Leverage</th><th>Compounded Return (no funding cost)</th><th>Notes</th></tr>
+</thead>
+<tbody>
+<tr><td>1×</td><td>$10% - 20%^2/2 = 8%$</td><td>Base case</td></tr>
+<tr><td>2×</td><td>$2 \times 10% - (40%)^2/2 = 12%$</td><td>Improves</td></tr>
+<tr><td>3×</td><td>$3 \times 10% - (60%)^2/2 = 12%$</td><td>No further improvement</td></tr>
+</tbody>
+</table>
+</div>
+<p>When funding cost is included (e.g., 2% cost at 3× leverage), the compounded return falls back to 8% while volatility remains high → <strong>Sharpe Ratio declines sharply</strong>.</p>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>If the manager is running a long-only portfolio without leverage, s==he is likely able to increase her exposure to securities she wants to overweight, but she may be limited in her ability to reduce exposure to securities she wishes to avoid or underweight.== Increased exposure to the most desirable securities (in her view) will lead to increased security concentration and ==may substantially increase active risk.== The manager risks a ==degradation of her information ratio if there is not a corresponding increase in her active return.== If the manager ==can short== <strong>(i.e. leverage)</strong>, she will be able to increase underweighting when desired (assuming the securities can be easily borrowed). Although ==leverage can increase total exposure and reduce concentration issues,== its impact on volatility may be substantial</p>
+</blockquote>
+<h1 id="i-portfolio-risk-attribution"><a class="header" href="#i-portfolio-risk-attribution">I. Portfolio Risk Attribution</a></h1>
+<p><strong>Individual Assets</strong>:
+$\sigma_{PF}^2 = \sum_i \sum_j w_i w_j \text{cov}_{ij}$</p>
+<ul>
+<li>Isolate terms with specific w_i to find ==% contribution of asset i to total v ariance.==</li>
+<li>==High-σ + high-correlation assets dominate risk== (poor diversification).
+![](_rect_imgs/25. X ACTIVE EQUITY PORT CONSTRUCTION - merged__PMAX_PM_PATHWAY_25_Active_Equity_Investing_Portfolio_Construction_p17_55-108.png)
+![](_rect_imgs/25. X ACTIVE EQUITY PORT CONSTRUCTION - merged__PMAX_PM_PATHWAY_25_Active_Equity_Investing_Portfolio_Construction_p18_65-606.png)</li>
+</ul>
+<p><strong>Factor Exposures</strong> (better for large # stocks):
+$\sigma_{PF}^2 = \sum_i [\beta_i \times \sigma(\text{Factor } i)]^2 + \sigma_\varepsilon^2$ = ==systematic + unsystematic==
+(==Assume factors uncorrelated==.)</p>
+<ul>
+<li>Contribution of factor i <strong>==uses β instead of w</strong>.==</li>
+<li>Unsystematic (ε²) captures ==security selection differences, tactical timing, and omitted factors.==
+![](_rect_imgs/25. X ACTIVE EQUITY PORT CONSTRUCTION - merged__PMAX_PM_PATHWAY_25_Active_Equity_Investing_Portfolio_Construction_p19_68-125.png)
+#EXAMPLE</li>
+</ul>
+<blockquote>
+<p>Divide this result by the portfolio variance of returns:
+$CV_i = \sum_{j=1}^{n} x_i x_j C_{ij} = x_i C_{ip} \quad (14)$
+where<br>( x_i ) = the asset’s weight in the portfolio<br>( C_{ij} ) = the covariance of returns between asset ( i ) and asset ( j )<br>==( C_{ip} ) = the covariance of returns between asset ( i ) and the portfolio==
+[ 0.000858 / ==3.07%<strong>^2==</strong> = 0.000858 / 0.000942 = 91% ] of total portfolio variance is explained by the Market factor.</p>
+</blockquote>
+<p>#EXAMPLE  Step 2: Divide by ==portfolio variance (0.0374)²==</p>
+<p>#EXAMPLE</p>
+<h1 id="j-sources-of-active-risk-te"><a class="header" href="#j-sources-of-active-risk-te">J. Sources of Active Risk (TE)</a></h1>
+<p><strong>TE</strong> = sd of active returns (dispersion of AR around mean AR).
+![](_rect_imgs/25. X ACTIVE EQUITY PORT CONSTRUCTION - merged__PMAX_PM_PATHWAY_25_Active_Equity_Investing_Portfolio_Construction_p20_75-460.png)
+<strong>Normal Distribution</strong>:</p>
+<ul>
+<li>±1 TE → 68% probability</li>
+<li>±1.65 TE → 90%</li>
+<li>±1.96 TE → 95%</li>
+</ul>
+<p><strong>Notes</strong>:</p>
+<ul>
+<li>==Goal: High mean AR + low TE (consistent outperformance).==</li>
+<li>==Higher PF–bench correlation → lower TE.==</li>
+<li>Cash holdings → $\downarrow$ σ_PF ==(cash has 0 vol) but ↑ TE (deviates from fully invested benchmark).==
+#EXAMPLE</li>
+</ul>
+<blockquote>
+<p>Cash has a ==low volatility and a low correlation of returns with any asset.== Therefore, it will contribute to a reduction in absolute risk. However, ==because cash has a low correlation with other assets, it will contribute to an increase in active risk.==</p>
+</blockquote>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>Manager C holds s==ignificantly fewer positions== than Manager A, and the weight of his top five securities is nearly four times that of Manager B. ==This indicates a willingness to assume a much higher level of idiosyncratic risk.== This observation is reinforced by Manager C’s ==higher Active Share and higher proportion of unexplained risk.== The Market beta of Manager C is significantly greater, and the risk decomposition indicates that Manager C ==appears more willing to make sector and style bets==. Finally, the absolute risk of Manager’s C portfolio is higher, even though it appears that he makes greater use of lower-risk bond and cash positions.</p>
+</blockquote>
+<p>**Relative / Active Risk Attribution</p>
+<p><strong>When to Use</strong>: Manager benchmarked to an index; focus shifts from absolute volatility to <strong>active risk</strong> (deviation from benchmark).</p>
+<p><strong>Active ==Variance== Equation</strong>
+$AV_p = \sum_{i=1}^{n} \sum_{j=1}^{n} (x_i - b_i)(x_j - b_j) RC_{ij}$
+where</p>
+<ul>
+<li>x_i ​ = portfolio weight in asset i i i</li>
+<li>b_i ​ = benchmark weight in asset i i i</li>
+<li>$RC_{ij}​$ = covariance of <strong>relative</strong> (active) returns between assets i i i and j j j</li>
+</ul>
+<p>#EXAMPLE
+![](_rect_imgs/25. X ACTIVE EQUITY PORT CONSTRUCTION - merged__PMAX_Q_A_25_ACTIVE_EQUITY_INVESTING_PORTFOLIO_CONSTRUCTION_p4_66-564.png)</p>
+<blockquote>
+<p>Active risk is affected by the degree of cross-correlation. The correla￾tion of two stocks in different sectors is most likely lower than the correlation of two stocks in the same sector. Therefore, the correlation of the energy/financial pair is most likely lower than that of the automobile/automobile pair. Because both positions were implemented as an overweight and underweight, ==the lower correlation of the two stocks in the new position should contribute more to active risk than the two-stock position that it replaced</p>
+</blockquote>
+<p><strong>Asset Contribution to ==Active Variance</strong>==</p>
+<p>$CAV_i = (x_i - b_i) \times RC_{ip}$</p>
+<p>(RC_{ip} = covariance of relative returns between asset i and the portfolio.)
+<strong>Critical Principle</strong> In relative-risk framework:</p>
+<blockquote>
+<p>==“A <strong>lower-absolute-risk</strong> asset can <strong>increase</strong> active risk (if it has <strong>low covariance with the benchmark</strong>).”==</p>
+</blockquote>
+<ul>
+<li>==<strong>Higher-absolute-risk asset can decrease active risk</strong> (if high covariance with benchmark). What matters is <strong>relative (active) volatility and covariance</strong>, not standalone σ \sigma σ.==</li>
+</ul>
+<p>**Exhibit 13: Cash and Active Risk (Curriculum Numerical Example)</p>
+<p><strong>Setup</strong><br>Benchmark: 50% Index A + 50% Index B<br>Portfolio: 40% A + 40% B + <strong>20% Cash</strong></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Asset</th><th>Bench Wt</th><th>PF Wt</th><th>Abs. σ \sigma σ</th><th>Active Risk</th><th>Corr(Active Returns)</th><th>Var. Attributed to Asset</th></tr>
+</thead>
+<tbody>
+<tr><td>Index A</td><td>50%</td><td>40%</td><td>16%</td><td>5.0%</td><td>==–1.00 (vs B)==</td><td>==+14.3%==</td></tr>
+<tr><td>Index B</td><td>50%</td><td>40%</td><td>10%</td><td>5.0%</td><td>==+1.00 (vs A)==</td><td>==–14.3%==</td></tr>
+<tr><td>Cash</td><td>0%</td><td>20%</td><td>0.5%</td><td>12.0%</td><td>Mixed</td><td><strong>+100%</strong></td></tr>
+<tr><td><strong>Total</strong></td><td>100%</td><td>100%</td><td>—</td><td><strong>2.4%</strong></td><td>—</td><td>100%</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Key Takeaway from Example</strong></p>
+<ul>
+<li>Cash (very low absolute risk) <strong>drives 100% of active risk</strong> ==because it has low correlation with the equity benchmark.==</li>
+<li>Correlations of active returns between A and B are perfectly negative (–1) by construction (any outperformance of one is offset by the other).</li>
+<li>==Introducing low-vol assets vs. high-vol benchmark <strong>increases</strong> TE/active risk.==</li>
+<li>==High-vol assets can <strong>reduce</strong> active risk if they covary strongly with benchmark.==</li>
+</ul>
+<p><strong>Exhibit 14 Summary: Active Risk Factor Attribution</strong></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Metric</th><th>Russell 1000</th><th>Russell 1000 Value</th><th>Value Fund</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Total Active Risk (TE)</strong></td><td>2.0%</td><td>6.0%</td><td>11.4%</td></tr>
+<tr><td><strong>Market contrib.</strong></td><td>3.0%</td><td>6.0%</td><td>1.2%</td></tr>
+<tr><td><strong>Size contrib.</strong></td><td>56.4%</td><td>15.4%</td><td>0.8%</td></tr>
+<tr><td><strong>Value contrib.</strong></td><td>3.0%</td><td>53.9%</td><td>38.4%</td></tr>
+<tr><td><strong>Momentum contrib.</strong></td><td>0.5%</td><td>–5.4%</td><td>–4.1%</td></tr>
+<tr><td><strong>Total Explained</strong></td><td>62.8%</td><td>69.9%</td><td>36.4%</td></tr>
+<tr><td><strong>Total Unexplained</strong></td><td>37.2%</td><td>31.1%</td><td><strong>63.6%</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Insights</strong></p>
+<ul>
+<li>Building any ==non-market portfolio creates active risk== (Market factor explains little of TE).</li>
+<li>Style tilts (Value, Size) explain large portions of TE for style indexes/funds.</li>
+<li>Active Value Fund: Very high TE (11.4%); only ~36% explained by factors → <strong>63.6% unexplained</strong> (investigate sources of active risk).</li>
+<li>==Unexplained active risk = potential alpha (skill) <strong>or</strong> noise/idiosyncratic bets==.</li>
+</ul>
+<p><strong>risk is contextual</strong> — absolute vs. relative framing changes which assets appear “risky.” Managers must align risk-taking with skill set and clearly attribute sources of both absolute and active risk.</p>
+<h1 id="k-risk-measures--constraints-for-equity-portfolios"><a class="header" href="#k-risk-measures--constraints-for-equity-portfolios">K. Risk Measures &amp; Constraints for Equity Portfolios</a></h1>
+<h4 id="determining-the-appropriate-level-of-risk-curriculum-pp-163165"><a class="header" href="#determining-the-appropriate-level-of-risk-curriculum-pp-163165"><strong>Determining the Appropriate Level of Risk (Curriculum pp. 163–165)</strong></a></h4>
+<h3 id="overview"><a class="header" href="#overview">Overview</a></h3>
+<p>Establishing the right level of <strong>absolute risk</strong> ((\sigma)) or <strong>active risk</strong> (TE / tracking error) is subjective and depends on:</p>
+<ul>
+<li>==Investment style==</li>
+<li>==Conviction in ability to add value==</li>
+<li>==Available implementation tools (long-only vs. long-short, leverage, liquidity, position limits)==</li>
+</ul>
+<p><strong>Example Risk Targets by Mandate</strong></p>
+<ul>
+<li>Market-neutral hedge fund: ==Absolute risk ≈ 10%==</li>
+<li>Closet indexer (long-only): Active risk &lt; 2%</li>
+<li><strong>Benchmark-agnostic</strong> long-only: ==Active risk 6–10%==</li>
+<li><strong>Benchmark-agnostic</strong>: Absolute risk ==≈ 85% of index risk==</li>
+</ul>
+<p>==Three practical limits== that can degrade risk-adjusted performance if risk is pushed too high:</p>
+<ol>
+<li>Implementation constraints (degrade <strong>Information Ratio</strong>)</li>
+<li>Limited diversification opportunities (degrade <strong>Sharpe Ratio</strong>)</li>
+<li>Excessive leverage (reduces <strong>compounded/geometric return</strong>)</li>
+</ol>
+<h4 id="purpose-limit-losses-from-unexpected-events"><a class="header" href="#purpose-limit-losses-from-unexpected-events"><strong>Purpose</strong>: Limit losses from unexpected events.</a></h4>
+<p><strong>1. Heuristic Constraints</strong> (rules of thumb; Bottom-Up outcome):</p>
+<ul>
+<li>Position limits (single stock, sector, region; e.g., max 3% or 5× bench weight).</li>
+<li>Factor exposures, currency, leverage, illiquid stocks (e.g., ≤20% ADV), turnover.</li>
+<li>Risk is <em>outcome</em>, not explicit input.
+#EXAMPLE</li>
+</ul>
+<blockquote>
+<p>Because ==no single position or bet has dominated historical returns, a heuristic constraint on maximum position size is a logical one==. Given that his portfolio is built around a relatively small number of positions (80), single positions can easily remain in the portfolio for two or three years.
+#EXAMPLE
+![](_rect_imgs/25. X ACTIVE EQUITY PORT CONSTRUCTION - merged__PMAX_Q_A_25_ACTIVE_EQUITY_INVESTING_PORTFOLIO_CONSTRUCTION_p5_68-570.png)
+<strong>2. Formal / Statistical Constraints</strong> (historical distributions):</p>
+</blockquote>
+<ul>
+<li>Standard Deviation (σ)</li>
+<li>Active Risk / TE</li>
+<li>Skewness (positive/negative tails) #EXAMPLE Skewness = asymmetry of return distribution. Constraint “no more than 60% of deviations from mean are negative” directly limits negative skew.</li>
+<li>Drawdown (peak-to-trough loss)</li>
+<li>==Value at Risk (VaR): e.g., 5% daily VaR $2M = 5% chance of ≥$2M loss in a day (or 1 in 20 days)==
+<ul>
+<li>Measures the ==minimum loss t==hat may be experienced. For example, a 5% daily VaR of $2M, would imply that there is a ==5% probability that the portfolio can experience a $2M loss or more in any given day==. Alternatively, we can say that out of every 20 days, there will be one day (i.e. 1/20 = 5%) in which we can expect the loss to exceed $2M.</li>
+</ul>
+</li>
+<li>vi) Conditional VaR (CVaR): While VaR simply indicates the minimum loss that is possible, CVaR estimates what the average loss would be if the VaR threshold was breached. For example, while the VaR may be $2M, CVaR might be $2.7M (i.e. whenever the portfolio loss exceeded $2M, it averaged to around a $2.7M loss).</li>
+<li>vii) Incremental VaR (IVaR): Measures the change in portfolio VaR as a result of adding a new stock (and thus lowering the weight of an existing stock).</li>
+<li>viii) Marginal VaR (MVaR): Measures the effect that a very small change in the weight of the existing securities would have on portfolio VaR</li>
+</ul>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>■ No investment in any security whose index weight is less than 0.015% &gt; (approximately 15% of the securities in the index)
+■ Maximum position size equal to the lesser of 10× the index weight or &gt; the index weight plus 150 bps
+■ No position size that represents more than 5% of the security’s average &gt; daily trading volume (ADV) over the trailing three months &gt; The smaller securities in Isaac’s permissible universe trade about 1% of &gt; shares outstanding daily. <em>At what level of AUM is Isaac’s strategy likely to be</em> &gt; <em>affected by the liquidity and concentration constraints?</em>
+<strong>Solution:</strong>
+Based on the index capitalization of $20 trillion, the size constraint indicates &gt; that the smallest stocks in his portfolio will have a minimum market cap of &gt; about $3 billion (0.015% × $20 trillion). The ADV of the stocks at the lower &gt; end of his capitalization constraint would be about $30 million (1% × $3 &gt; billion). Because Isaac does not want to represent more than 5% of any secu￾rity’s ADV, the ==maximum position size for these smaller-cap stocks is about &gt; $1.5 million== (5% × $30 million). ==It appears that Isaac’s strategy will not be &gt; constrained until the portfolio reaches about $1 billion in size ($1.5 million &gt; ÷ 0.15% = $1 billion) $\rightarrow$ 0,15% = 10x index wt.== If the level of AUM exceeds $1 billion, his position size &gt; constraints will require the portfolio to hold a larger number of smaller-cap &gt; positions. There is room to grow this strategy.</p>
+</blockquote>
+<p><strong>Optimization Context</strong>: Use constraints (absolute or relative) + objectives (max IR or Sharpe) in quant/systematic approaches. ==Discretionary managers select securities first; risk is byproduct.==</p>
+<p>#EXAMPLE</p>
+<blockquote>
+<ul>
+<li><strong>Implementation approach.</strong> An implementation approach that is fully quantitative (allocations are unaffected by a portfolio manager’s judgment) is systematic.</li>
+<li><strong>Security selection approach.</strong> A s==coring process that ranks individual securities== based on their factor characteristics ==is a bottom-up approach==.</li>
+<li><strong>Concentration.</strong> Although the limit of no more than ==2% of the portfolio in any single position means the portfolio could hold as few as 50 securities, the tracking error constraint of 4% indicates that the portfolio is likely diversified.==</li>
+<li><strong>Objective function.</strong> A process that aims to maximize the portfolio’s score based on the factor characteristics of single securities is an example of an explicit objective function.</li>
+<li><strong>Constraints.</strong> ==The tracking error constraint of less than 4% is a relative constraint function.== The ==limit on any single position to no more than 2% of the portfolio is an absolute==—not a relative—constraint. It does not depend on benchmark weights.</li>
+</ul>
+<p>The following table summarizes this information for all three managers:</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left"></th><th style="text-align: left">Manager A</th><th style="text-align: left">Manager B</th><th style="text-align: left">Manager C</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Implementation approach</td><td style="text-align: left">Systematic</td><td style="text-align: left">Discretionary</td><td style="text-align: left">Discretionary</td></tr>
+<tr><td style="text-align: left">Security selection approach</td><td style="text-align: left">Bottom-up</td><td style="text-align: left">Bottom-up</td><td style="text-align: left">Top-down</td></tr>
+<tr><td style="text-align: left">Portfolio concentration</td><td style="text-align: left">Diversified</td><td style="text-align: left">Diversified</td><td style="text-align: left">Security diversified Factor concentrated</td></tr>
+<tr><td style="text-align: left">Objective function</td><td style="text-align: left">Explicit</td><td style="text-align: left">Explicit</td><td style="text-align: left">Explicit</td></tr>
+<tr><td style="text-align: left">Constraints</td><td style="text-align: left">Relative and absolute</td><td style="text-align: left">Relative</td><td style="text-align: left">Absolute</td></tr>
+</tbody>
+</table>
+</div>
+<h1 id="l-considerations-in-portfolio-construction-aum-costs-slippage-constraints"><a class="header" href="#l-considerations-in-portfolio-construction-aum-costs-slippage-constraints">L. Considerations in Portfolio Construction (AUM, Costs, Slippage, Constraints)</a></h1>
+<p><strong>AUM Trade-offs (Explicit vs Implicit Costs)</strong></p>
+<ul>
+<li><strong>Low AUM</strong>: ↑ explicit costs (higher % commissions, no volume discounts) but <strong>↓ implicit costs</strong> (market impact negligible; trades don’t move price).</li>
+<li><strong>High AUM</strong>: ↓ explicit costs (negotiated commissions) but <strong>↑ implicit costs</strong> (esp. small caps; large trades cause slippage/impact).</li>
+<li><strong>Net</strong>: High-AUM mgrs often constrained; low-AUM mgrs more agile but pay more in % terms.</li>
+</ul>
+<p><strong>Market Impact (Implicit Cost) ↑ When</strong></p>
+<ul>
+<li>Trade size large <strong>vs</strong> ADV (avg daily volume)</li>
+<li>Stock illiquid</li>
+<li>Portfolio turnover high</li>
+<li>Execution urgent/immediate</li>
+<li>Trade sends <strong>info signal</strong> (e.g., large institutional sell → price drops)</li>
+</ul>
+<p><strong>Mitigation for Info Signal</strong>: Break into smaller orders or use “unlit” venues (crossing networks). Long-term/passive investors can wait for liquidity.</p>
+<p><strong>Small-Cap vs Large-Cap Liquidity</strong></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Cap Size</th><th>Daily Vol ($)</th><th>Vol (% of Cap)</th><th>Implication</th></tr>
+</thead>
+<tbody>
+<tr><td>Small</td><td>Lower</td><td>Higher (e.g. 5%)</td><td>Lower $ capacity; higher % turnover</td></tr>
+<tr><td>Large</td><td>Higher</td><td>Lower (e.g. 2%)</td><td>Easier to trade large sizes</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>High-AUM / Small-Cap Constraints</strong> (to control impact)</p>
+<ul>
+<li>Position limit = f(mkt cap) e.g. index weight ±2%</li>
+<li>Position limit = f(ADV) e.g. max 25% of ADV</li>
+<li>Longer lags between rebalances (↓ turnover)<br>→ Risk: Becomes concentrated in largest/most liquid names or forced to diversify across more holdings.</li>
+</ul>
+<p><strong>Slippage Cost</strong><br>= Decision price (mid of bid-ask at decision time) – Execution price<br><strong>Incorporates</strong>: Stock vol, price trend, market impact itself.<br><strong>Higher for small caps</strong> (often dominates explicit commissions).<br><strong>Small-cap fund mitigations</strong>: Limit AUM (close to new investors), ↑ # holdings, ↓ turnover (buy-and-hold), break large orders, concentrate on liquid small/mid names, tilt toward mid/large caps.</p>
+<p><strong>Portfolio mgmt costs</strong>: explicit &amp; implicit (delay &amp; slippage)</p>
+<ul>
+<li>Slippage costs ↑ for smaller-cap securities &amp; during high volatility</li>
+<li>Immediate execution → ↑ market impact costs #EXAMPLE</li>
+</ul>
+<blockquote>
+<ul>
+<li>Fund 1 (large AUM + small-cap focus + small # securities + large trades) faces highest market-impact costs. Small-cap liquidity + large trade size relative to ADV = big implicit costs.</li>
+</ul>
+</blockquote>
+<ul>
+<li>Patient mgr can mitigate market impact by slowly building positions as liquidity allows, but faces ↑ volatility/trend price risk</li>
+</ul>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>AUM grew rapidly over the past 20 years. The number of positions in the portfolio nearly quadrupled while assets grew by a factor of 25. Still, there are aspects of his style that have not changed: ==He is still very much a value manager investing in lower-beta securities.== However, the portfolio no longer has a small-cap tilt, and the exposure to the momentum factor has also declined. ==It is likely that these are both byproducts of the increase in AUM; for larger AUM, it becomes more difficult to maintain significant active weights on smaller companies while maintaining sufficient liquidity==. The decline in turnover is also consistent with the growth in AUM; ==higher turnover becomes more costly as AUM increases.== Finally, the ==decline in alpha is consistent with the challenges of scaling a successful strategy==. The manager may have been able to generate significant alpha when managing smaller assets but found it increasingly difficult to do so as assets grew.</p>
+</blockquote>
+<h1 id="m-efficiency-of-a-portfolio-structure"><a class="header" href="#m-efficiency-of-a-portfolio-structure">M. Efficiency of a Portfolio Structure</a></h1>
+<p><strong>Well-Constructed PF Qualities</strong></p>
+<ol>
+<li>==Clear investment philosophy + <strong>consistent</strong> process==</li>
+<li>==Structural characteristics align with client goals==</li>
+<li>==Effective risk management (volatility controlled)==</li>
+<li>==Reasonably low operating costs==</li>
+</ol>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>Well-constructed portfolios ==should have low idiosyncratic== (unex￾plained) risk relative to total risk. Portfolio Y exhibits extremely high unexplained risk relative to total risk, and Portfolios X and Z have low unexplained risk rela￾tive to total risk. I==n comparing portfolios with comparable factor exposures, the portfolio with <strong>lower absolute volatility and lower active risk will likely be preferred</strong>,== assuming similar costs. Portfolio X has lower absolute volatility and lower active risk than Portfolio Z, although both have similar costs.
+Finally, ==for managers with similar costs, fees, and alpha skills, if two products have similar active and absolute risks, <strong>the portfolio having a higher active share is preferred.==</strong> Portfolio X has lower absolute volatility, lower active risk, and higher active share than Portfolio Z. As a result, Portfolio X best exhibits the risk char￾acteristics of a well-constructed portfolio</p>
+</blockquote>
+<p><strong>Efficiency Tests / Preferences</strong></p>
+<ul>
+<li>Same <strong>σ</strong> (absolute risk) or <strong>TE</strong> (active risk) → <strong>fewer holdings</strong> = more efficient (lower trading costs)</li>
+<li>Risk efficiency <strong>relative to mandate</strong>:
+<ul>
+<li>Passive → expect very low TE</li>
+<li>Active concentrated (stock picker) → high TE acceptable</li>
+</ul>
+</li>
+<li>Factor exposures <strong>align with mgr views</strong> (e.g., bullish on size → β_size &gt; benchmark)</li>
+<li>Factor-based PF → <strong>idio risk small %</strong> of total σ (focus on rewarded factors)</li>
+<li>Same factor βs → <strong>lower σ or TE preferred</strong> (more reliable exposure)</li>
+<li>Same σ/TE + same <strong>α</strong> → <strong>higher Active Share preferred</strong> (==true active deviation vs closet indexing==)</li>
+</ul>
+<p>#EXAMPLE
+The proposed solution is aligned with many of the characteristics of a well-constructed portfolio==. It is based on a consistent investment process,== and it appears to meet the requirements of the investor: ==It has significantly lower volatility than the MSCI World and a significantly higher dividend yield (although we do not have the information on the payout yield), the portfolio has a low security concentration, and the estimated turnover is lower than the required limit. It can also be implemented at a low cost. T==he factor analysis also confirms what we could expect from a high-payout/low-volatility portfolio. ==The Market beta is significantly below 1, the negative Size coefficient indicates a larger-capitalization bias, and finally, the portfolio has a Value and Quality bias==. The risk attribution analysis indicates that the ==exposure to Quality companies is largely responsible for reducing the total risk of the portfolio.==</p>
+<p>However, there are some aspects of the portfolio that create some concerns. Although the custom portfolio meets all of Larrabee’s specified objectives, <strong>==the portfolio construction process leads to a high tracking error (active risk).==</strong> Is there a systemic reason?</p>
+<h1 id="n-long-only-lo-strategies"><a class="header" href="#n-long-only-lo-strategies">N. Long-Only (L/O) Strategies</a></h1>
+<p><strong>Merits</strong></p>
+<ol>
+<li><strong>Risk Premiums</strong>: ==Capture size/value/etc. premia over LT== (ST volatile/negative possible)</li>
+<li><strong>Capacity &amp; Scalability</strong>: ==Easier to buy large sizes than short==</li>
+<li><strong>Limited Liability</strong>: Max loss = capital invested (price → 0)</li>
+<li><strong>Regulations</strong>: Some jurisdictions ban shorting → L/O only option</li>
+<li><strong>Transaction Simplicity</strong>: No borrow, collateral, lender calls, or lending fees</li>
+<li><strong>Lower Mgmt Fees</strong> (vs L/S)</li>
+<li><strong>Ideology</strong>: Provides capital to firms; shorting profits from misfortune; prices trend up LT → shorting unsustainable for many</li>
+</ol>
+<h1 id="o-long-short-ls-strategies"><a class="header" href="#o-long-short-ls-strategies">O. Long-Short (L/S) Strategies</a></h1>
+<p><strong>Merits</strong></p>
+<ol>
+<li><strong>Earn α both sides</strong> (long underpriced + short overpriced); <strong>most unconstrained</strong> strategy
+<ul>
+<li>Highest <strong>Transfer Coefficient (TC)</strong> → highest expected <strong>Active Return (AR)</strong> &amp; <strong>Information Ratio (IR)</strong></li>
+<li>Short proceeds can ↑ long weights or add more α ideas</li>
+</ul>
+</li>
+<li><strong>Hedge unwanted risks</strong> while keeping α (e.g., long undervalued pharma stocks + short pharma index to neutralize industry)
+<ul>
+<li>Neutralizing industry/sector → <strong>lower TE</strong> (industry deviations hurt TE more than single-stock deviations)</li>
+</ul>
+</li>
+<li><strong>Full extraction of factor premium</strong> (e.g., long small-caps + short large-caps → pure size premium; market risk cancels)
+<ul>
+<li>==Efficient use of leverage (short lower-return factor, fund higher-return factor)==</li>
+<li>Diversification + controlled factor exposures</li>
+</ul>
+</li>
+</ol>
+<p><strong>Risks</strong></p>
+<ol>
+<li><strong>Unlimited loss</strong> on shorts (price can rise without limit)</li>
+<li><strong>Higher leverage</strong> → ==<strong>higher TE</strong> vs long-only benchmark==</li>
+<li><strong>Operational complexity &amp; costs</strong>: Borrow fees, collateral (100% for high-quality; more for low-quality), lender recall risk</li>
+<li><strong>Short squeeze</strong>: Rising price forces collective covering → price spikes further</li>
+<li>Neutralizing a factor also <strong>eliminates its premium</strong></li>
+</ol>
+<p><strong>Key Metrics</strong></p>
+<ul>
+<li><strong>Net Exposure</strong> = |Long| – |Short|<br>(+ = net long; – = net short; 0 = market neutral)</li>
+<li><strong>Gross Exposure</strong> = |Long| + |Short| (higher = more aggressive/leverage)</li>
+</ul>
+<p>A compromise between:</p>
+<ul>
+<li>==↓ risk vs. not fully capturing market risk premium==</li>
+<li>↑ return potential from alpha &amp; other risk premiums at ==potential expense of ↑ active risk==</li>
+<li>==Greater diversification vs. ↑ costs &amp; complexity==</li>
+</ul>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>A long-only factor investor is limited in his ability to short (relative to the benchmark) positions that do not have the desired characteristics. Adding the ability to lever the portfolio and to take short positions ==allows the manager to more fully express his views on both the winners and the losers.== ==This increased ability to translate insights into positions (higher transfer coefficient) leads to a higher information ratio.== In addition, the long/short product ==neutralizes the Market factor, allowing the manager to focus on the other rewarded factors that are the source of his skill.==</p>
+</blockquote>
+<p><strong>Exam Tips</strong>:</p>
+<ul>
+<li>Distinguish rewarded factor exposure (systematic, not α) from true skill (α).</li>
+<li>Factor timing α only from <em>tactical</em> deviations, not policy β.</li>
+<li>==Active Share ≠ Active Risk (correlations matter for latter).==</li>
+<li>Breadth (BR) is critical — concentrated bets on one theme = low BR, high idiosyncratic risk.</li>
+<li>==Risk budgeting: allocate where you have edge; constraints reduce IR at high TE levels.==</li>
+<li>Long horizon needed to separate α from ε.</li>
+</ul>
+<h1 id="p-long-extension-le-strategies-enhanced-active"><a class="header" href="#p-long-extension-le-strategies-enhanced-active">P. Long-Extension (L/E) Strategies (“Enhanced Active”)</a></h1>
+<p><strong>Definition</strong>: ==Constrained L/S== (e.g., <strong>130/30</strong>)</p>
+<ul>
+<li>Start with $100 capital → Long $130, Short $30</li>
+<li><strong>Net Exposure</strong> = 100; <strong>Gross Exposure</strong> = 160</li>
+</ul>
+<p><strong>Benefits vs Pure L/O</strong></p>
+<ul>
+<li>Exploit <strong>more α opportunities</strong> (use short proceeds to extend longs)</li>
+<li>Increase exposure to attractive factors (e.g., raise small-cap β above 100%)</li>
+<li>Provides <strong>some leverage</strong> while remaining benchmark-aware</li>
+</ul>
+<p><strong>Risks</strong>: Same as L/S but <strong>lesser degree</strong> (constrained leverage/shorting).</p>
+<h1 id="q-market-neutral-mn-strategies"><a class="header" href="#q-market-neutral-mn-strategies">Q. Market-Neutral (M/N) Strategies</a></h1>
+<p><strong>Definition</strong>: L/S ==with <strong>β(mkt) = 0</strong>== (or any chosen factor β = 0).<br><strong>Purpose</strong>: Avoid needing market-timing skill; focus purely on other factors (size, value, etc.); portable α.</p>
+<p><strong>Construction Example</strong><br>Long $100 undervalued stocks (β_mkt = 1.2)<br>Short enough overvalued stocks (β_mkt = 1.5) to net zero:<br><strong>W_L × β_L – W_S × β_S = 0</strong><br>==(e.g., short ~$80 to offset).==</p>
+<p><strong>Can neutralize any systematic factor</strong> → create <strong>pure factor portfolios</strong> (uncorrelated factors → excellent diversification when combined).</p>
+<p><strong>Self-Financing &amp; Portability</strong></p>
+<ul>
+<li>Shorts can fully fund longs → little/no own capital needed for α portion.</li>
+<li>Use own capital to <strong>equitize</strong> (buy index) → separate <strong>α</strong> (M/N) from <strong>β</strong> (index).</li>
+<li>Portable: Add M/N sleeve to any existing portfolio.</li>
+<li><strong>Diversification benefit</strong>: α uncorrelated with β.</li>
+</ul>
+<p><strong>Lower overall risk</strong> than L/O (unwanted risks diversified away) but <strong>eliminates that risk’s premium</strong> too.</p>
+<p><strong>Limitations</strong><br>==i. <strong>βs unstable over time</strong> → hard to maintain neutrality (requires dynamic rebalancing).==<br>==ii. <strong>Zero β</strong> → no participation in market upside → must equitize with index to capture β return.==</p>
+<hr>
+                    </main>
+
+                    <div class="copyright" style="font-size:0.9rem;opacity:0.7;padding:0 1rem 0.5rem;">© 2026 Pramod Thaz. All rights reserved.</div>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../PORTFOLIO MANAGEMENT/24. ACTIVE EQUITY STRATEGIES.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../PORTFOLIO MANAGEMENT/26. LIABILITY BASED STRATEGIES.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../PORTFOLIO MANAGEMENT/24. ACTIVE EQUITY STRATEGIES.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../PORTFOLIO MANAGEMENT/26. LIABILITY BASED STRATEGIES.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    <script src="/cfa-level-iii-notes/paywall.js"></script></body>
+</html>

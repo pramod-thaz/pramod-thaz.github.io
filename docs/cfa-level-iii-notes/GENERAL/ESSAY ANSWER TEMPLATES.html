@@ -1,0 +1,521 @@
+<!DOCTYPE HTML>
+<html lang="en" class="latte sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>CFA Level 3 Essay Answer Templates &amp; Examples - CFA Level III Notes</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/catppuccin-e08be6a9.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "latte";
+            const default_dark_theme = "mocha";
+            window.path_to_searchindex_js = "../searchindex-2521da27.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-b96c3611.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('latte')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-mocha">Mocha</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CFA Level III Notes</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="cfa-level-3-essay-answer-templates--examples"><a class="header" href="#cfa-level-3-essay-answer-templates--examples">CFA Level 3 Essay Answer Templates &amp; Examples</a></h1>
+<h2 id="quick-reference"><a class="header" href="#quick-reference">Quick Reference</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Keyword</th><th>Template</th><th>Key Rule</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>DISCUSS</strong></td><td>Topic sentence + structured list (table/bullets). Each item = concept + case facts.</td><td>Table format preferred for multi-factor questions.</td></tr>
+<tr><td><strong>JUSTIFY</strong></td><td>Choice statement + quantitative/qualitative reasoning + dismiss alternatives.</td><td>Always paired with another verb. Show why wrong options are wrong.</td></tr>
+<tr><td><strong>DETERMINE</strong></td><td>Answer upfront → calculation/reasoning → why alternatives don’t fit.</td><td>Lead with your conclusion, never build up to it.</td></tr>
+<tr><td><strong>CALCULATE</strong></td><td>Formula name → variable definitions → step-by-step arithmetic → final answer.</td><td>Show every arithmetic step; partial credit matters.</td></tr>
+<tr><td><strong>EXPLAIN</strong></td><td>Numbered reasons/components. Each = theory + case application.</td><td>Enumerate clearly; state number of reasons upfront.</td></tr>
+<tr><td><strong>IDENTIFY</strong></td><td>Listing + description + case evidence per item.</td><td>Name it, define it, then tie to vignette.</td></tr>
+<tr><td><strong>DESCRIBE</strong></td><td>Topic definition → enumerated characteristics with explanation.</td><td>Start with “X refers to / is…”</td></tr>
+<tr><td><strong>RECOMMEND</strong></td><td>Direct action → primary rationale → (optional) dismiss alternatives.</td><td>Be specific: who should do what, when, and how much.</td></tr>
+<tr><td><strong>EVALUATE</strong></td><td>Framework definition → item-by-item assessment → conclusion.</td><td>Apply the same framework consistently to each item.</td></tr>
+<tr><td><strong>COMPARE / CONTRAST</strong></td><td>Side-by-side (table or parallel sentences) + key differences.</td><td>Table format with clear dimension labels.</td></tr>
+<tr><td><strong>CONSTRUCT</strong></td><td>Strategy definition → specific trade steps with numbers → profit/cost result.</td><td>Show the trade mechanics explicitly.</td></tr>
+<tr><td><strong>SUPPORT</strong></td><td>Restate conclusion → bullet reasons. Each = indicator + causal link.</td><td>Say what the indicator shows AND why it matters.</td></tr>
+<tr><td><strong>STATE</strong></td><td>Direct factual statement. No justification required.</td><td>One sentence, no elaboration.</td></tr>
+<tr><td><strong>CLASSIFY</strong></td><td>Category label + brief justification mapping to category definition.</td><td>Link the case facts to the category criteria.</td></tr>
+<tr><td><strong>SELECT</strong></td><td>Selection + reasoning from exhibit/calculation data.</td><td>Lead with which one, then why.</td></tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h1 id="part-1-answer-templates"><a class="header" href="#part-1-answer-templates">Part 1: Answer Templates</a></h1>
+<hr>
+<h2 id="discuss"><a class="header" href="#discuss">DISCUSS</a></h2>
+<p><strong>Template:</strong></p>
+<pre><code>[Topic] can be analyzed through the following [N] factors:
+[Factor 1]: [concept definition]. In the vignette, [case evidence].
+[Factor 2]: [concept definition]. Here, [case evidence].
+...
+</code></pre>
+<p><strong>Key rules:</strong></p>
+<ul>
+<li>Use a table when Discuss asks about multiple items with multiple dimensions</li>
+<li>Use bullet points for simpler lists</li>
+<li>Every item must: (a) name the concept, (b) explain it briefly, (c) tie it to the case</li>
+</ul>
+<p><strong>Example:</strong>
+The policy is not appropriate.</p>
+<ul>
+<li>The expected real return of 3.54% is less than the spending policy rate of 6%.</li>
+<li>Therefore, the current allocation and investment objectives are not sustainable.</li>
+</ul>
+<hr>
+<h2 id="justify"><a class="header" href="#justify">JUSTIFY</a></h2>
+<p><strong>Template:</strong></p>
+<pre><code>[Choice] is [correct/most appropriate] because [primary reason].
+[Formula/reasoning]: [calculation or logic].
+[Option A] is less suitable because [reason].
+[Option B] is less suitable because [reason].
+</code></pre>
+<p><strong>Key rules:</strong></p>
+<ul>
+<li>Justify never stands alone — always paired with Determine, Identify, Select, etc.</li>
+<li>Answer both parts: the choice AND the justification</li>
+<li>If asked for N reasons, give exactly N (or more)</li>
+<li>Dont just restate case facts</li>
+<li>Reference the numbers.</li>
+<li>Compare when needed.</li>
+</ul>
+<p><strong>Example:</strong>
+ROSS most likely has the lowest interest rate risk, as measured by modified duration. ROSS has the lowest average modified duration (6.99) compared to ASH (7.07) and PER (7.38). Lower ==modified duration== indicates lower sensitivity to changes in interest rates.</p>
+<hr>
+<h2 id="determine"><a class="header" href="#determine">DETERMINE</a></h2>
+<p><strong>Template:</strong></p>
+<pre><code>[Answer/conclusion].
+[Calculation]: [step-by-step with numbers].
+[Alternative] is not appropriate because [reason].
+</code></pre>
+<p><strong>Key rules:</strong></p>
+<ul>
+<li>State the answer immediately in the first sentence</li>
+<li>Then provide supporting evidence</li>
+<li>Explain why other options fail</li>
+</ul>
+<p><strong>Example:</strong>
+Portfolio C is the most appropriate portfolio. Because $120,000 / $5,000,000 = 2.4%, for any return less than 2.4%, Brown will need to access principal.</p>
+<ul>
+<li>Portfolio A: (8.2% − 2.4%) / 9.2% = 0.6304</li>
+<li>Portfolio B: (8.0% − 2.4%) / 8.5% = 0.6588</li>
+<li>Portfolio C: (7.7% − 2.4%) / 7.2% = 0.7361
+Portfolio C has the highest probability of meeting the threshold return.</li>
+</ul>
+<hr>
+<h2 id="calculate"><a class="header" href="#calculate">CALCULATE</a></h2>
+<p><strong>Template:</strong></p>
+<pre><code>[Formula name]: [formula]
+where [variable 1] = [value], [variable 2] = [value]
+Step 1: [intermediate result with arithmetic]
+Step 2: [intermediate result with arithmetic]
+Therefore, [final answer with units].
+</code></pre>
+<p><strong>Key rules:</strong></p>
+<ul>
+<li>Name the formula/model first</li>
+<li>Define all variables with their source values</li>
+<li>Show every arithmetic step</li>
+<li>State the final answer prominently</li>
+</ul>
+<p><strong>Example:</strong>
+The growth rate in aggregate market value of equity = growth rate of nominal GDP + change in profit share + change in P/E + dividend yield.
+Nominal GDP growth = labor input (0.5%) + productivity (1.3%) + inflation (2.2%) = 4.0%.
+Equity return (9.0%) = 4.0% + 0% + ΔP/E + 2.8%
+Therefore, ΔP/E = 9.0% − 4.0% − 2.8% = <strong>2.2%</strong>.</p>
+<hr>
+<h2 id="explain"><a class="header" href="#explain">EXPLAIN</a></h2>
+<p><strong>Template:</strong></p>
+<pre><code>[N] factors explain [topic]:
+1. [Reason 1]: [theoretical statement]. In this case, [case evidence].
+2. [Reason 2]: [theoretical statement]. Here, [case evidence].
+</code></pre>
+<p><strong>Key rules:</strong></p>
+<ul>
+<li>State the number of reasons upfront</li>
+<li>Each reason: theory → application</li>
+<li>Explicitly reference case facts by name</li>
+</ul>
+<p><strong>Example:</strong>
+Country C most likely has a higher expected currency return for the following reasons:</p>
+<ol>
+<li>Country C expects a substantial increase in foreign direct investment over the next 5 years. FDI flows are favorable because they indicate long-term commitment.</li>
+<li>Country C has a lower forecasted debt/GDP ratio compared to Country D. Debt must be serviced and refinanced, potentially triggering a crisis.</li>
+</ol>
+<hr>
+<h2 id="identify"><a class="header" href="#identify">IDENTIFY</a></h2>
+<p><strong>Template:</strong></p>
+<pre><code>[Item 1]: [definition/description]. The vignette shows [case evidence].
+[Item 2]: [definition/description]. This is evidenced by [case fact].
+</code></pre>
+<p><strong>Key rules:</strong></p>
+<ul>
+<li>Name the item first, then describe it, then connect to the vignette</li>
+<li>If identifying a bias: name it, define it, show where it appears in the case</li>
+</ul>
+<p><strong>Example:</strong>
+Mental accounting explains George’s decision. Mental accounting involves separating assets into distinct buckets based on their intended use. George is mentally allocating the company shares strictly for retirement and treating them separately from his other wealth, leading him to delay withdrawals despite the risk exposure.</p>
+<hr>
+<h2 id="describe"><a class="header" href="#describe">DESCRIBE</a></h2>
+<p><strong>Template:</strong></p>
+<pre><code>[Topic] refers to [definition/clarification].
+Its key characteristics are:
+• [Characteristic 1]: [explanation].
+• [Characteristic 2]: [explanation].
+</code></pre>
+<p><strong>Key rules:</strong></p>
+<ul>
+<li>Begin with a clear definition</li>
+<li>Enumerate characteristics</li>
+<li>Connect to the specific context if applicable</li>
+</ul>
+<p><strong>Example:</strong>
+Watson should present a covered call strategy. In a covered call, the portfolio manager owns the underlying stock and sells a call option on that stock. Income is generated through the option premium. The strategy limits upside from share price appreciation but provides income in a flat or moderately rising market.</p>
+<hr>
+<h2 id="recommend"><a class="header" href="#recommend">RECOMMEND</a></h2>
+<p><strong>Template:</strong></p>
+<pre><code>[I/We] recommend [specific action].
+This is because [primary reason].
+Additionally, [supporting reason].
+[Alternative] is less suitable because [reason]. (optional)
+</code></pre>
+<p><strong>Key rules:</strong></p>
+<ul>
+<li>Be specific: who does what, when, how much</li>
+<li>Lead with the action, then explain why</li>
+<li>Include numbers where applicable</li>
+</ul>
+<p><strong>Example:</strong>
+Casey should recommend that the Simpsons begin liquidating a portion of their concentrated position in Lattice shares over the next three years to meet their short-term liquidity needs. Since these shares have been held long-term, the realized capital gains will only be subject to a 10% tax.</p>
+<hr>
+<h2 id="evaluate"><a class="header" href="#evaluate">EVALUATE</a></h2>
+<p><strong>Template:</strong></p>
+<pre><code>[Framework/metric] is used to evaluate [topic].
+For [item 1]: [assessment with evidence from case].
+For [item 2]: [assessment with evidence from case].
+Therefore, [conclusion].
+</code></pre>
+<p><strong>Key rules:</strong></p>
+<ul>
+<li>Define the evaluation framework upfront</li>
+<li>Apply it consistently to each item</li>
+<li>End with a clear conclusion</li>
+</ul>
+<p><strong>Example:</strong></p>
+<ol>
+<li>
+<p>G is describing active currency management based on market technicals. Market technicians believe historical price data incorporates all relevant information. The description of using price patterns and momentum indicators confirms this.</p>
+</li>
+<li>
+<p>All else remaining constant, a change in discount rate from 5.5% to 4.75% will increase the PBO.</p>
+</li>
+</ol>
+<hr>
+<h2 id="compare--contrast"><a class="header" href="#compare--contrast">COMPARE / CONTRAST</a></h2>
+<p><strong>Template:</strong></p>
+<pre><code>[Item A] differs from [Item B] in the following dimensions:
+• [Dimension 1]: A has [characteristic] vs B has [characteristic].
+• [Dimension 2]: A has [characteristic] vs B has [characteristic].
+</code></pre>
+<p><strong>Key rules:</strong></p>
+<ul>
+<li>Use a table for structured comparison</li>
+<li>Compare the same dimensions for both items</li>
+<li>Cite numbers from exhibits</li>
+</ul>
+<p><strong>Example:</strong>
+<strong>Time Horizon:</strong> While both are long-term, the pension plan’s horizon is shorter due to its frozen status — no new participants will join. The DC plan has a longer horizon as participants accumulate over their careers.
+<strong>Liquidity Constraints:</strong> The pension plan has higher liquidity needs due to ongoing payout targets to retirees. The DC plan has lower liquidity needs since withdrawals are limited until retirement.</p>
+<hr>
+<h2 id="construct"><a class="header" href="#construct">CONSTRUCT</a></h2>
+<p><strong>Template:</strong></p>
+<pre><code>[Strategy] involves [brief definition].
+Step 1: [specific action with numbers]
+Step 2: [specific action with numbers]
+The [cost/profit/return] is [amount/percentage].
+</code></pre>
+<p><strong>Key rules:</strong></p>
+<ul>
+<li>Define the strategy first</li>
+<li>Show the trade construction step-by-step</li>
+<li>Calculate the expected outcome</li>
+</ul>
+<p><strong>Example:</strong>
+The carry trade involves borrowing in low-yield currencies and investing in high-yield currencies.
+Borrow in USD at 2.211%
+Invest in China at 5.667%
+Profit = 5.667% − 2.211% = 3.456%
+Risks include: (1) exchange rate risk — the high-yield currency may depreciate; (2) sudden reversal risk — carry trades tend to unwind rapidly during market stress.</p>
+<hr>
+<h2 id="support"><a class="header" href="#support">SUPPORT</a></h2>
+<p><strong>Template:</strong></p>
+<pre><code>[Conclusion] is supported by [N] reasons.
+[Indicator 1]: [what the indicator shows and why it implies the conclusion].
+[Indicator 2]: [what the indicator shows and why it implies the conclusion].
+</code></pre>
+<p><strong>Key rules:</strong></p>
+<ul>
+<li>Restate the conclusion</li>
+<li>For each reason, explain both the direction AND the mechanism</li>
+<li>Connect each reason to the specific context</li>
+</ul>
+<p><strong>Example:</strong>
+Overconfidence bias occurs when people demonstrate unwarranted faith in their own abilities. Richard exhibits this through his conviction that his stock picks will outperform despite contrary evidence. He relies on his own research and dismisses analyst recommendations, which is consistent with overconfidence.</p>
+<hr>
+<h2 id="state"><a class="header" href="#state">STATE</a></h2>
+<p><strong>Template:</strong></p>
+<pre><code>[Fact/conclusion]. [If asked to explain: brief one-sentence reason].
+</code></pre>
+<p><strong>Key rules:</strong></p>
+<ul>
+<li>One sentence, direct and factual</li>
+<li>No justification unless explicitly asked</li>
+<li>If paired with “Explain,” add one brief reason</li>
+</ul>
+<p><strong>Example:</strong>
+CHER’s justification is incorrect. Adding shorts to a portfolio may amplify, rather than reduce, tracking error by increasing the portfolio’s active share.</p>
+<hr>
+<h2 id="classify"><a class="header" href="#classify">CLASSIFY</a></h2>
+<p><strong>Template:</strong></p>
+<pre><code>[Category label]. [Subject] exhibits [characteristics of category] because [case evidence].
+</code></pre>
+<p><strong>Key rules:</strong></p>
+<ul>
+<li>State the category first</li>
+<li>Map case facts to category criteria</li>
+<li>Use the vocabulary from the curriculum</li>
+</ul>
+<p><strong>Example:</strong>
+CHER’s approach should be classified as <strong>discretionary and bottom-up</strong>. On the systematic vs. discretionary spectrum, his approach is discretionary given the concentrated nature of the portfolio and focus on company fundamentals. On the top-down vs. bottom-up spectrum, it is bottom-up given its emphasis on company-specific factors.</p>
+<hr>
+<h2 id="select"><a class="header" href="#select">SELECT</a></h2>
+<p><strong>Template:</strong></p>
+<pre><code>[Selection] is the most appropriate.
+[Reason 1]: [quantitative or qualitative support from exhibits].
+[Reason 2]: [additional supporting reason].
+[Alternatives not selected]: [brief reason each].
+</code></pre>
+<p><strong>Key rules:</strong></p>
+<ul>
+<li>Lead with the selection</li>
+<li>Support with exhibit data</li>
+<li>Address why others were not chosen</li>
+</ul>
+<p><strong>Example:</strong>
+Allocation B is the most appropriate. It has the largest allocation to JPY assets (hedging not permitted), the largest allocation to developed equity with no volatile emerging markets, and global real estate that addresses both inflation and current income needs. Allocation A has excessive emerging market exposure. Allocation C has insufficient liability-hedging assets.</p>
+
+                    </main>
+
+                    <div class="copyright" style="font-size:0.9rem;opacity:0.7;padding:0 1rem 0.5rem;">© 2026 Pramod Thaz. All rights reserved.</div>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../GENERAL/FORMULAS.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../GENERAL/FORMULAS.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    <script src="/cfa-level-iii-notes/paywall.js"></script></body>
+</html>

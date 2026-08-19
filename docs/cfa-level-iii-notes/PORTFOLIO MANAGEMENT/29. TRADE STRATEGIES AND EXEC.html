@@ -1,0 +1,673 @@
+<!DOCTYPE HTML>
+<html lang="en" class="latte sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>29. Trade Strategies And Exec - CFA Level III Notes</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/catppuccin-e08be6a9.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "latte";
+            const default_dark_theme = "mocha";
+            window.path_to_searchindex_js = "../searchindex-2521da27.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-b96c3611.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('latte')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-mocha">Mocha</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CFA Level III Notes</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="a-motivations-to-trade-prcc"><a class="header" href="#a-motivations-to-trade-prcc">A. Motivations to Trade (PRCC)</a></h1>
+<p><strong>Mnemonic for Trade Motivations (PRCC):</strong>
+<strong>P</strong>rofit Seeking</p>
+<ul>
+<li>Alpha decay rate drives urgency: fast decay → market orders &amp; lit venues (accept price), slow decay (fundamental) → limit orders + patient accumulation.</li>
+<li>Short-term α: high turnover, only most liquid markets (exchanges); ==weigh α vs total costs (comm + impact)==. <strong>OTC unsuitable.</strong></li>
+<li>Info leakage concern (star PM buying) → use <strong>dark pools</strong> (anonymity via lagged reporting) but risk non-fill vs lit markets (higher fill probability, but signals market).</li>
+<li>Tech advances → faster alpha decay overall.</li>
+</ul>
+<p><strong>R</strong>isk Management / Hedging</p>
+<ul>
+<li>Duration drift (pension): spot trades or derivatives (cheaper if temporary).</li>
+<li>Index reconst: buy adds / sell deletes.</li>
+<li>FX hedge on foreign stocks via FX derivs.</li>
+<li>Credit: ==use CDS instead of selling illiquid bonds.==</li>
+<li>Levered strategies: forced sales on margin calls / value drops below threshold.</li>
+</ul>
+<p><strong>C</strong>ash Flow Needs</p>
+<ul>
+<li>Margin calls: immediate liquidity (sell other assets).</li>
+<li>Rebalancing to SAA: gradual (low urgency).</li>
+<li>Inflows: <strong>equitize</strong> cash (T-bills + long index futures or ETFs) → maintain equity exposure while deploying gradually.</li>
+<li>Outflows/redemptions: sell most liquid first (lowest cost) but tradeoff vs tax (unrealized gains). Crises → liquidity dominates tax concerns.</li>
+</ul>
+<p><strong>C</strong>orporate Actions</p>
+<ul>
+<li>Reinvest dividends/coupons.</li>
+<li>M&amp;A: trade acquirer/target.</li>
+<li>Index adds: buy near close to minimize tracking error (TE).</li>
+<li></li>
+</ul>
+<ul>
+<li><strong>Logic Alert (Cash Equitization):</strong> Inflows are ==equitized via T-bills + Long Index Future==s to prevent cash drag, then gradually unwound as stocks are bought.</li>
+<li><strong>Deadly Exam Traps (Information Signal):</strong> Large buy orders signal the market, driving price $\uparrow$ (increasing cost). ==Moving to dark pools hides intent but drastically $\uparrow$ execution risk (order may not fill).==</li>
+</ul>
+<p><strong>Market vs Limit Orders</strong>
+Market (marketable) orders instruct execution at the best available price at the time of trading, whereas limit orders instruct execution at the best available price as long as the ==price is equal to or better than the specified limit price—that is, a price equal to or lower than the limit price in the case of buys and equal to or higher in the case of sells.==</p>
+<p>#EXAMPLE</p>
+<blockquote>
+<ul>
+<li>Place limit order to buy 400,000 shares at $\le $21.00$ per share to avoid overpayment and potential losses from price declines.</li>
+</ul>
+</blockquote>
+<h1 id="b-inputs-into-trade-strategies-osmr"><a class="header" href="#b-inputs-into-trade-strategies-osmr">B. INPUTS INTO TRADE STRATEGIES (OSMR)</a></h1>
+<p><strong>Symbolic Architecture</strong></p>
+<ul>
+<li>
+<p><strong>Inputs (OSMR):</strong> <strong>O</strong>rder Characteristics (Side, Size vs ADV), <strong>S</strong>ecurity Characteristics (Type, $\alpha$-decay, Volatility, Liquidity), <strong>M</strong>arket Conditions (Crisis, Seasonal), <strong>R</strong>isk Aversion.
+<strong>O</strong>rder Characteristics</p>
+<ul>
+<li>Market side: buys slower in rising markets (seller shortage).</li>
+<li>Size (% ADV): small (1% ADV) = fast/low impact; large (25% ADV) = high impact → slice over time but timing risk.</li>
+</ul>
+<p>#EXAMPLE</p>
+<ul>
+<li>==Greater trade urgency results in lower execution risk== due to shorter execution time, which ==decreases exposure to price volatility and changing market conditions==.</li>
+<li>Lower urgency increases execution risk by extending exposure to volatility.</li>
+<li>Higher urgency and larger order sizes increase market impact.</li>
+<li>High alpha decay rates require more aggressive trading to realize alpha.</li>
+</ul>
+<p><strong>S</strong>ecurity Characteristics</p>
+<ul>
+<li>Type: ADRs often cheaper/more efficient than local EM shares.</li>
+<li>Alpha decay: undervalued stock more urgent if markets rising (price converges faster); less urgent if falling.</li>
+<li>Price volatility: high vol = greater timing risk (e.g., ±$10 vs ±$2 on $50 stock).</li>
+<li>Liquidity: higher liq = faster exec, lower spreads/impact.</li>
+</ul>
+<p><strong>M</strong>arket Conditions</p>
+<ul>
+<li>Crisis: ↑vol, ↓liq, wide spreads → high costs. Slice orders (Trader’s Dilemma: lower impact vs adverse move risk over longer horizon).</li>
+<li>Seasonal: holidays → low activity.</li>
+<li>On-the-run (new issue) bonds more liquid than off-the-run.</li>
+</ul>
+<p><strong>R</strong>isk Aversion (RA)</p>
+<ul>
+<li>High RA → greater urgency (accept higher cost to avoid unfilled risk exposure).</li>
+</ul>
+</li>
+<li>
+<p><strong>Embedded Strategic Audit (The Trader’s Dilemma):</strong> * <em>Constraint:</em> Trading too fast $\to$ High Market Impact (price moves against you).
+<em>Constraint:</em> Trading too slow $\to$ High Price/Execution Risk (adverse macro price drift during horizon).</p>
+</li>
+</ul>
+<p>#EXAMPLE #justify</p>
+<blockquote>
+<ul>
+<li>Large orders (e.g., 50,000 shares) have greater market impact.</li>
+<li>Large orders signal that intrinsic value differs from current market price.</li>
+<li>==The second order has greater market impact because trader has a reputation of representing informed investors.==</li>
+</ul>
+</blockquote>
+<h1 id="c-benchmarks-for-trade-execution-pipp"><a class="header" href="#c-benchmarks-for-trade-execution-pipp">C. BENCHMARKS FOR TRADE EXECUTION (PIPP)</a></h1>
+<ul>
+<li><strong>Pre-Trade:</strong>
+<ul>
+<li>$P_{Decision}$ (time mgr decides),</li>
+<li>$P_{Arrival}$ (time order hits floor; used for short-term $\alpha$; transact close to current mkt price (greater urgency).==)</li>
+<li>$P_{Close-1}$, $P_{Open}$ (used by fundamental/long-term mgrs; ==caution: trade may affect auction price==). ==Index funds use closing price post-trade benchmark → minimize fund risk &amp; TE.==</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>#EXAMPLE #justify</p>
+<ul>
+<li>Pre-trade benchmarks are reference prices established before trading begins (e.g., decision price, previous close, opening price, or arrival price).</li>
+<li>Portfolio managers often use valuation-driven decision prices or alpha expectations to specify these benchmarks.</li>
+<li>==Waiting for other benchmarks as inputs would result in the perceived opportunity expiring before it could be exploited==.</li>
+<li>Appropriate benchmarks in time-sensitive scenarios include the decision price or the arrival price.</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Intraday:</strong>  ==No short-term price view
+<ul>
+<li>Volume Weighted Average Price (VWAP) : ==best when trading during high-vol periods but outlier-sensitive (e.g., earnings drop).==</li>
+<li>Time Weighted Average Price (TWAP): ==time-weighted equal slices; robust to outliers/unpredictable volume.==</li>
+</ul>
+</li>
+</ul>
+<p>#EXAMPLE</p>
+<blockquote>
+<ul>
+<li><strong>Intraday Benchmarks:</strong>
+<ul>
+<li><strong>VWAP (Volume-Weighted Average Price):</strong> Includes all trades, including outliers.</li>
+<li><strong>TWAP (Time-Weighted Average Price):</strong> Excludes potential trade outliers.</li>
+</ul>
+</li>
+<li><strong>Use Cases:</strong> Portfolio managers use intraday benchmarks for passive trading (seeking liquidity) or rebalancing/executing trade lists to minimize risk.
+<ul>
+<li><strong>Arrival Price:</strong> A pre-trade benchmark.</li>
+<li><strong>VWAP:</strong> Includes outliers.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Post-Trade:</strong> $P_{Close}$ (used by mutual funds for NAV matching; ==but large post-trade moves distort.==).</li>
+<li><strong>Price Target:</strong> Intrinsic/fair value (mgr aims to buy below or sell above).</li>
+<li><strong>Logic &amp; Inconsistency Alerts:</strong> * VWAP is highly susceptible to outlier volume events (e.g., earnings drops). If volume profile is unpredictable, TWAP is strictly superior.
+<ul>
+<li>Pre-Trade $P_{Close-1}$ ignores overnight news. Post-Trade $P_{Close}$ misrepresents execution if intraday spikes occur.</li>
+</ul>
+</li>
+</ul>
+<p>#EXAMPLE</p>
+<blockquote>
+<ul>
+<li>Use ARRIVAL PRICE due to:
+<ul>
+<li>==trade urgency of the order==</li>
+<li>High liquidity of shares</li>
+<li>Small order size relative to expected volume</li>
+</ul>
+</li>
+<li>==TWAP and VWAP are passive participation strategies suited for low-urgency orders.==</li>
+</ul>
+</blockquote>
+<h1 id="d-selection-of-a-trade-strategy"><a class="header" href="#d-selection-of-a-trade-strategy">D. SELECTION OF A TRADE STRATEGY</a></h1>
+<p><strong>Symbolic Architecture &amp; Logic Alerts</strong></p>
+<ul>
+<li><strong>Short-Term $\alpha$:</strong> Urgent. Frontload trades in lit markets. Priority: Speed &gt; Market Impact. ==pre-market portion + limit order at target (e.g., $90). Lit markets (fill certainty &gt; anonymity). VWAP/TWAP inappropriate (short horizon).==</li>
+<li><strong>Long-Term $\alpha$:</strong> Non-urgent. Slice orders over time to hide intent &amp; lower bid-ask spread. ==shop dealers + break into small pieces (↓info leak + dealer inventory risk → tighter spreads). Drawbacks: hard to benchmark, adverse price move risk.==</li>
+<li><strong>Risk Rebalance:</strong> Continuous offset to maintain zero net $\beta$. <em>Execution Risk</em> = Unintended $\beta$ drift during rebalancing. ==(e.g., reduce currency while keeping β=0): simultaneous buys/sells, gradual. Focus min impact + no unintended risk (execution risk if exposures drift). TWAP suitable if within-day.==</li>
+<li><strong>Client Redemption:</strong> Trade at Market-on-Close (MOC) to match NAV &amp; minimize tracking error, despite higher market impact. ==trade late day/closing auction for min TE vs index close. Large orders: split pre-close + auction to reduce impact.</li>
+<li>New Mandate (large inflow, perf vs close): ==equitize with futures (or ETFs) near close → maintain exposure, gradual stock purchases + futures unwind. Min impact + TE.==</li>
+<li><strong>Principal vs Agent:</strong> Dealer acts as <em>Principal</em> (uses own capital, takes P risk $\to$ charges wider spread) vs <em>Agent</em> (matchmaker, lower cost). Order-driven (CLOB) vs Quote-driven (OTC).
+*Quote-driven (OTC, RFQ for illiq) vs order-driven (exchanges, central limit book, DMA for liquid/electronic).</li>
+</ul>
+<p>==Primary goal of trading strategy: balance expected costs, risks, &amp; alpha consistent w/ mgr’s objectives, risk aversion, &amp; constraints.==</p>
+<p>#EXAMPLE</p>
+<blockquote>
+<ul>
+<li>==Pre-trade benchmarks are specified by portfolio managers seeking short-term alpha via undervalued/overvalued securities.==</li>
+<li>Decision price is the most appropriate pre-trade benchmark when the exact price at the time of the decision is known.</li>
+<li>==Closing price is a post-trade benchmark, typically used by index managers and mutual funds to execute at the daily close.==</li>
+<li>==TWAP benchmark price is used to exclude potential trade outliers.==</li>
+</ul>
+</blockquote>
+<hr>
+<h1 id="e-trading-algorithms-splads"><a class="header" href="#e-trading-algorithms-splads">E. TRADING ALGORITHMS (==SPLADS==)</a></h1>
+<p><strong>Symbolic Architecture &amp; Mnemonic Lists</strong></p>
+<ul>
+<li><strong>Mnemonic (SPLADS):</strong>
+<ul>
+<li><strong>S</strong>cheduled (POV, VWAP, TWAP): Minimizes impact. <em>Trap:</em> POV (% of Vol) may never complete if daily volume is anemic. ==Ideal when: min impact primary, no expected adverse move, high risk tolerance, small order (5-10% ADV), liquid security, rebalancing.==
+<ul>
+<li><strong>POV</strong> (% of volume)HG: ==adapts to liq; risk incomplete fill on low-vol day; can chase adverse moves.==</li>
+</ul>
+<ul>
+<li><strong>VWAP</strong>: times to typical intraday volume profile (open/close peaks).</li>
+<li><strong>TWAP</strong>: equal time slices; ==robust to outliers but may hit low-volume periods.==</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>#EXAMPLE #justify</p>
+<blockquote>
+<p>While VWAP algorithms follow a fixed time schedule that risks incomplete execution in low-volume stocks and POV algorithms chase real-time volume without guaranteeing completion within the period, ==TWAP algorithms allocate equal shares and order percentages across intervals to ensure the full order executes on time.== Given Bean’s priority of complete execution in one day, he is likely to use a TWAP algorithm for the Dynopax sell order.</p>
+</blockquote>
+<ul>
+<li><strong>P</strong>rofit Generator: algos: quant/HFT, Formulates investment decisions (Quants/HFT).</li>
+<li><strong>L</strong>iquidity Seeking: Sweeps dark/lit pools during offset surges using market orders to hide $\alpha$. Uses market orders (==avoids signaling via limit==s). ==Ideal: large urgent order w/o impact, erratic liq.==</li>
+<li><strong>A</strong>rrival Price: Executes immediately to track $P_{Arrival}$. High risk aversion. ==Ideal: expected immediate price move, risk averse (avoid unfilled risk), liquid/small order.==</li>
+<li><strong>D</strong>ark Strategies: Large orders, illiquid, prevents info leak, high execution risk. ==Ideal: prevent info leak, large order would impact lit, illiq, partial fill acceptable.==</li>
+<li><strong>S</strong>mart order routers:</li>
+</ul>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>Small orders, multi-venue. Market order (urgent/RA) or limit (tolerate some risk; leak minimal if small size).</p>
+</blockquote>
+<p>#EXAMPLE
+Liquidity-seeking algorithms are appropriate for large orders that the portfolio manager or trader would like to execute quickly without having a substantial impact on the security price.
+POV algorithms (also known as participation algorithms) send orders following a volume participation schedule
+Arrival price algorithms are used for orders in which the portfolio manager or trader believes prices are likely to move unfavorably, they are used when the security is relatively liquid or the order is not outsized.</p>
+<p>#EXAMPLE</p>
+<blockquote>
+<ul>
+<li>Scheduled algorithms are appropriate when:
+<ul>
+<li>Order size is small (e.g., $\le 5%–10%$ of expected volume).</li>
+<li>Security is relatively liquid.</li>
+<li>o==r the orders are part of a risk-balanced basket and trading all orders at a similar pace will maintain the risk balance.==</li>
+</ul>
+</li>
+<li>Arrival price algorithms are used when ==believes prices are likely to move unfavorably==.</li>
+<li>Opportunistic algorithms are used ==for larger or more complex orders.==</li>
+</ul>
+</blockquote>
+<p>#EXAMPLE #justify</p>
+<blockquote>
+<p>VWAP is preferrable under: 1. Low order volume relative to average daily volume (5000/80,000 = 6.25%) since we are concerned about minimizing market impact. 2. Relatively liquid securities which are associated with narrow bid/ask spreads. 3. Low Urgency to complete trade since we are trading passively over time.</p>
+<p>Dark pools are preferrable under: 1. Larger percentage of volume (50,000/100,000 = 50%). Using dark pools to avoid market impact of their large orders. 2. Trade in relatively illiquid securities associated with wide bid/ask spreads. 3. When execution is not guaranteed</p>
+<p>Arrive price is preferrable under: 1. High urgency of trade and are often front-loaded. 2. Believe prices move unfavorably and look to capture alpha. 3. Low order volume relative to average daily volume (5000/80,000 = 6.25%) since we are concerned about minimizing market impact. 4. Low price volatility is related to lower execution risk with trades front-loaded. Traders are risk averse.</p>
+<p>TWAP preferrable under: 1. Low urgency of trade with trades spread out over time. 2. With no view on price movements during trade horizon 3. Low order volume relative to average daily volume (10,000/250,000 = 4%) since we are concerned about minimizing market impact. 4. High price volatility is related to higher execution risk with trades spread out over time. Traders have greater risk tolerance</p>
+</blockquote>
+<h1 id="f-trade-characteristics-of-various-markets"><a class="header" href="#f-trade-characteristics-of-various-markets">F. TRADE CHARACTERISTICS OF VARIOUS MARKETS</a></h1>
+<p><strong>Symbolic Architecture</strong></p>
+<ul>
+<li><strong>Equities:</strong> -
+<ul>
+<li>Lit exchanges (central limit book, transparent, electronic, DMA common, algos heavy).</li>
+<li>ATS/dark pools for anonymity (higher exec risk, no central book).</li>
+<li>Trend: smaller orders, more slicing/algos for best exec. Large/urgent/illiq → high-touch brokers.</li>
+</ul>
+</li>
+<li><strong>Fixed Income:</strong> OTC quote-driven (dealers post bids/asks). Heterogeneous issues, generally illiquid (hold-to-mat). Dealers often principal (inventory risk → spread). On-the-run more liq (agent possible). Algos viable for liquid bonds.</li>
+<li><strong>Exchange Traded Derivatives (ETD):</strong> CLOB transparent, limited algos. Transparent like equities, electronic; algos less common than stocks.</li>
+<li><strong>OTC Derivatives:</strong> Dealers, large/custom, held-to-maturity. Quote-driven dealers (principal). Customized, very large size, low transparency. Usually held to maturity or exit via price concession. Reg push for central clearing/transparency - public trade display → ↑ standardization, price discovery, ↓ counterparty risk. ==historically opaque (little public data on prices, sizes, structure)==</li>
+<li><strong>Spot Currency:</strong> OTC tiered (interbank large blocks → regional → retail, widening spreads). RFQ for large urgent (dealer often principal). TWAP or agent for non-urgent.</li>
+</ul>
+<h1 id="g-measuring-trade-costs-implementation-shortfall"><a class="header" href="#g-measuring-trade-costs-implementation-shortfall">G. MEASURING TRADE COSTS (IMPLEMENTATION SHORTFALL)</a></h1>
+<p><strong>Symbolic Architecture &amp; Variable Logic</strong></p>
+<p><strong>Implementation Shortfall</strong>
+![](Pasted image 20260731052904.png)</p>
+<ul>
+<li>
+<p><strong>Framework Formula:</strong> $IS = Execution Cost + Fixed Fees + Opportunity Cost$.</p>
+<ul>
+<li>$Execution Cost = Delay Cost + Trade Cost$.</li>
+<li>$Delay Cost = N_{Filled} \times (P_{Arrival} - P_{Decision})$.</li>
+<li>$Trade Cost = N_{Filled} \times (P_{Trade} - P_{Arrival})$.</li>
+<li>$Opportunity Cost = N_{Unfilled} \times (P_{Close} - P_{Decision})$.</li>
+</ul>
+</li>
+<li>
+<p><strong>Alternative Formula:</strong> $IS = Return(Paper) - Return(Actual)$.
+$R_{paper} = (P_{close} – P_{decision}) \times Total Order Size$
+$R_{actual} = P_{close} \times N_{filled}  - TradeCost - Fees$</p>
+</li>
+</ul>
+<p><strong>Numerical Step-Logic (IS Calculation):</strong></p>
+<ul>
+<li><em>Data Map:</em> Target Buy 11k ABC. $P_{Decision} = 40.00$. $P_{Arrival} = 40.25$. Fill = 8k total (Avg Cost = $$323,980$). Cancel 3k @ $P_{Close} = 41.20$. Commissions = $$400$.</li>
+<li><strong>Step 1 (Delay):</strong> $8k \times (40.25 - 40.00) = $2,000$.</li>
+<li><strong>Step 2 (Trade):</strong> $$323,980 - (8k \times 40.25) = $1,980$.</li>
+<li><strong>Step 3 (Oppt Cost):</strong> $3k \times (41.20 - 40.00) = $3,600$.</li>
+<li><strong>Step 4 (Total IS):</strong> $$2,000 + $1,980 + $400 + $3,600 = $7,980$.</li>
+<li><strong>Alternative Step-Logic:</strong>
+<ul>
+<li>$R(Paper) = 11k \times (41.20 - 40.00) = $13,200$.</li>
+<li>$R(Actual) = (8k \times 41.20) - ($323,980 + $400) = $5,220$.</li>
+<li>$IS = $13,200 - $5,220 = $7,980$.</li>
+</ul>
+</li>
+</ul>
+<p>#EXAMPLE ==note calc in bps (denominator is paper Portfolio at initiation)==
+<strong>DONT FORGET FEES</strong></p>
+<blockquote>
+<ul>
+<li>Extracted text
+Paper return = $S \times (P_n - P_d)$
+Paper return = $10,000 \times (16.50 - 16.05) = 4,500$</li>
+</ul>
+<p>Actual return = $(\sum s_j)(P_n) - \sum s_j p_j - \text{Fees}$</p>
+<p>Actual return
+= $4200 \times (16.50 - 16.05) + 4000 \times (16.50 - 16.25)$
+$- [120 + 0.03 \times 4000] = 2650$</p>
+<p>Implementation Shortfall = $4,500 - 2650 = 1,850$</p>
+<p>The value of the paper portfolio at <strong>initiation</strong> is:
+$10,000 \times 16.05 = 160,050$</p>
+<p>Leading to implementation shortfall of:
+$= \frac{1,850}{160,050} \times 10,000 = 115.59 \text{ BPS}$</p>
+</blockquote>
+<p>#EXAMPLE #imp ==<strong>selling example</strong>==</p>
+<blockquote>
+<ul>
+<li>Extracted text</li>
+</ul>
+<p>Sell Order for 10,000 shares:</p>
+<p>Time: Decision Mkt Arrival Mkt Close
+Benchmark Price: ₹27.10 ₹26.50 ₹26</p>
+<p>$\text{IS} = [R(\text{Paper}) - R(\text{Actual})]$</p>
+<p>(i) $R(\text{Paper}) = [10k (\text{₹}27.10 - \text{₹}26)] = \text{₹}11,000$</p>
+<ul>
+<li>Had the entire 10k shares been filled at decision time (and at no cost), then the Return by the end of the day = ₹11,000.</li>
+<li>This would be a Return as the shares would have been sold before their price ↓.</li>
+</ul>
+<p>(ii) $R(\text{Actual})$ for the 9k shares filled:</p>
+<ul>
+<li>Ending Value = $[6k @ \text{₹}26.80] = \text{₹}160,800$</li>
+<li>$[3k @ \text{₹}26.30] = \text{₹}78,900$</li>
+<li>Less: fees = $(9k @ \text{₹}0.03) = -\text{₹}270$</li>
+<li>$\therefore R(\text{Actual}) = \text{₹}5430$</li>
+</ul>
+<p>$\therefore \text{IS} = [\text{₹}11,000 - \text{₹}5430] = \text{₹}5,570$</p>
+<p>As a (%) of Base Value at Decision time:
+$$
+\left[\frac{\text{Implementation Shortfall}}{(\text{Total Order}) \times (\text{Price at Decision})}\right] = \left[\frac{\text{₹}5,570}{(10k @ \text{₹}27.10)}\right] = 2.06% \times 206 \text{bps}
+$$</p>
+</blockquote>
+<h1 id="h-evaluating-trade-execution"><a class="header" href="#h-evaluating-trade-execution">H. EVALUATING TRADE EXECUTION</a></h1>
+<p>==Compare actual exec price to benchmark → calculate bps out/underperformance (<strong>sign flips for sells: over-receive = outperform).==</strong></p>
+<ol>
+<li>
+<p><strong>Arrival Price</strong> → (Exec – Arrival)/==Arrival==</p>
+</li>
+<li>
+<p><strong>VWAP</strong>→ (Exec – VWAP)/==VWAP==</p>
+</li>
+<li>
+<p><strong>TWAP</strong>→ (Exec – TWAP)/==TWAP==</p>
+</li>
+<li>
+<p><strong>MOC</strong> (Market on Close)</p>
+</li>
+<li>
+<p><strong>MAC (Market Adjusted Cost)</strong>:</p>
+<ul>
+<li>Total cost vs Arrival (bps)</li>
+<li>Market move (bps) during period × β</li>
+<li><strong>MAC = Total Cost bps – (β × Mkt bps)</strong> Residual = trade-specific performance.</li>
+<li></li>
+</ul>
+<p><strong>Numerical Step-Logic (Market Adjusted Cost - MAC)</strong></p>
+<ul>
+<li><em>Objective:</em> Strip ==broader market $\Delta$ out of Trade Cost==.</li>
+<li><em>Data Map:</em> Buy order, $\beta=1.3$. $P_{Arr}=70$, $P_{Trade}=72$. Index hits $2000$, $VWAP_{Index}=2030$.</li>
+<li>==<strong>Step 1 (Total Cost via Arrival):</strong> $(72 - 70) / 70 = 2.86%$ ($286$ bps).==</li>
+<li>==<strong>Step 2 (Market $\Delta$):</strong> $(2030 - 2000) / 2000 = 1.5%$ ($150$ bps).==</li>
+<li>==<strong>Step 3 (MAC):</strong> $Total Cost - [\beta \times R_{Market}] = 286 - [1.3 \times 150] = 91$ bps. Buy order underperformed benchmark by 91 bps (independent of market movement).==</li>
+</ul>
+</li>
+<li>
+<p><strong>Added Value</strong>: Actual arrival cost bps – Model-expected cost bps (model inputs: order size, vol, liq, urgency, RA). Positive = underperformed model expectation.</p>
+</li>
+</ol>
+<p>#EXAMPLE</p>
+<blockquote>
+<p>A pre-trade benchmark is often specified by portfolio managers who are buying or selling securities seeking short-term alpha by buying undervalued or selling overvalued securities in the market.
+Closing price is a post-trade benchmark and is typically used by index managers and mutual funds that wish to execute transactions at the closing price for the day.
+TWAP benchmark price is used when portfolio managers wish to exclude potential trade outliers</p>
+</blockquote>
+<h1 id="i-trade-governance"><a class="header" href="#i-trade-governance">I. TRADE GOVERNANCE</a></h1>
+<p>Regulatory mandate: asset managers must have trade policy document articulating trading policies &amp; escalation procedures.
+Trade policy objective: ensure execution &amp; order-handling align w/ fiduciary duty for best execution.</p>
+<p><strong>Best Execution</strong>: Must consider ==Price, Cost, Speed, Likelihood of execution/settlement, Size==. Tradeoffs common (e.g., ==low-cost broker may be slow → adverse move risk==).</p>
+<ul>
+<li><strong>Mnemonic for Best Execution Factors (==PCSLS==):</strong> <strong>P</strong>rice, <strong>C</strong>ost, <strong>S</strong>peed, <strong>L</strong>ikelihood of execution, <strong>S</strong>ize.</li>
+</ul>
+<p>#EXAMPLE</p>
+<blockquote>
+<ul>
+<li>Execution approach may vary by asset class, security liquidity, and trading mechanism (order-driven, quote-driven, or brokered markets).</li>
+<li>Partially executed orders in pooled accounts must be allocated on a pro-rata basis.</li>
+<li>Broker selection principles must remain consistent across all managed asset classes.</li>
+<li>Trade error policy:
+<ul>
+<li>Errors and resulting gains/losses must be disclosed to the compliance department and documented in a trade error log.</li>
+<li>==The priority is to ensure errors are resolved in a way that prevents adverse impact for the client, not to ensure complete disclosure.==</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><strong>Trading Strategy Factors</strong>:</p>
+<ul>
+<li>Urgency (α decay speed)</li>
+<li>Liquidity (order vs ADV)</li>
+<li>Venue (exchange / OTC / dark)</li>
+<li>Rationale (info advantage/active vs passive rebal)
+==Develop asset-class-specific approaches (stocks ≠ bonds).==</li>
+</ul>
+<p><strong>Broker Selection Criteria:</strong> Quality/History, Stability, Reputation, Settlement (Willingness to commit principal capital), Speed, Cost.
+Quality (hist vs VWAP/TWAP), Stability (diff mkt cond), Reputation (ethics), Settlement capability (principal capacity), Speed, Cost competitiveness.
+Lit venues: easy performance metrics (transparent). OTC: harder benchmarking + higher counterparty/settlement risk.</p>
+<p><strong>Monitoring</strong>:</p>
+<ul>
+<li>Trades followed investment strategy?</li>
+<li>Exec quality vs benchmark?</li>
+<li>Cost vs opportunities missed (unfilled)?</li>
+<li>Better broker/venue available?</li>
+</ul>
+<p><strong>Block trade allocation</strong>: Must be fair (e.g., pro-rata or same avg price), transparent policy disclosed in advance. Trading errors borne by firm (not clients).</p>
+<p><strong>Record retention</strong>: Demonstrate fairness to clients, regulator exams, internal process improvement.</p>
+<p>==Trade cost analysis (TCA): enables investors to better manage costs &amp; improve trading activities via appropriate partners &amp; venues.==</p>
+<p><strong>Deadly Exam Traps (Governance Compliance):</strong> * ==Trade errors are strictly absorbed by the firm, never the client.==</p>
+<ul>
+<li>==Block trade partial fills must be allocated pro-rata and c==harged identical average prices to all participating accounts.</li>
+<li>==OTC execution is severely difficult to benchmark due to opacity.==</li>
+</ul>
+<p>#EXAMPLE</p>
+<blockquote>
+<pre><code>- Implement a policy for treating trade errors.
+- Errors from trading and any resulting gains/losses need to be disclosed to a firm’s compliance department and documented in a trade error log.
+- The trade error log should include any related documentation and evidence that trade errors are resolved in a way that avoids adverse impact to the client.
+</code></pre>
+<ul>
+<li>list of eligible brokers should be based on best execution, not lowest cost alone</li>
+<li>OTC derivatives should be traded on venues with pricecnn transparency rules, but the recommendation is too narrow.</li>
+</ul>
+</blockquote>
+<p>#EXAMPLE</p>
+<blockquote>
+<ul>
+<li>Maintain a ==list of approved brokers and execution venues for trading and the criteria used to create this lis==t.</li>
+<li>List creation and maintenance should be a collaborative effort between portfolio execution, compliance, and risk management.</li>
+<li>Best practice: Establish a Best Execution Monitoring Committee to regularly update the list.</li>
+<li>==Pooling trades for execution may be appropriate for accounts with similar strategies and trading needs.==</li>
+<li>If a pooled trade is partially executed, orders ==must be allocated to accounts on a pro-rata basis to prevent disadvantaging any account.==</li>
+</ul>
+</blockquote>
+
+                    </main>
+
+                    <div class="copyright" style="font-size:0.9rem;opacity:0.7;padding:0 1rem 0.5rem;">© 2026 Pramod Thaz. All rights reserved.</div>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../PORTFOLIO MANAGEMENT/28. CREDIT STRATEGIES.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../PORTFOLIO MANAGEMENT/30. CASE STUDY IN PORTFOLIO MANAGEMENT.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../PORTFOLIO MANAGEMENT/28. CREDIT STRATEGIES.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../PORTFOLIO MANAGEMENT/30. CASE STUDY IN PORTFOLIO MANAGEMENT.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    <script src="/cfa-level-iii-notes/paywall.js"></script></body>
+</html>
