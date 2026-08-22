@@ -1,7 +1,6 @@
 # Regime Detection — Daily Brief
 
-**Report date:** 2026-08-21 08:51
-**Data as of:** 2026-08-20 (last trading day)
+**Data as of:** 2026-08-21 (last trading day)
 
 ## Chart
 
@@ -13,10 +12,10 @@
 
 | Indicator | Latest | Status |
 |-----------|--------|--------|
-| p_bull | 0.567 | OK |
-| Rate of Change (5d) | 0.0226 | GROWTH |
+| p_bull | 0.556 | OK |
+| Rate of Change (5d) | 0.0126 | Stable |
 | Composite Alert | 0.00 | Low |
-| SPX 60d return | +2.24% | — |
+| SPX 60d return | +2.06% | — |
 | Bearish Divergence | No | — |
 | IQR Expanding | No | — |
 
