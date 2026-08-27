@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regime Pulse - Pramod Thaz</title>
+    <!-- Load the Markdown parser from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 10px;
+            padding: 0 20px;
+            color: #333;
+        }
+        img {
+            width:1000px;
+        }
+        /* Style for a nice loading indicator */
+        #loading {
+            font-style: italic;
+            color: #666;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Removes the double border spacing */
+            }
+
+        th, td {
+        padding: 10px;             /* Gives the data room to breathe */
+        text-align: left;          /* Aligns text neatly */
+        border-bottom: 1px solid #ddd; /* Creates a clean, subtle grid line */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- This placeholder holds the loading state or the converted Markdown -->
+    <div id="content">
+        <p id="loading">Loading content...</p>
+    </div>
+
+    <script>
+        // 1. Set the path to your Markdown file here
+        const markdownFileUrl = 'samples.md'; 
+
+        // 2. Fetch the file content asynchronously
+        fetch(markdownFileUrl)
+            .then(response => {
+                // Check if the file actually exists
+                if (!response.ok) {
+                    throw new Error(`Could not find the file: status ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(markdownText => {
+                // 3. Convert the plain text Markdown into HTML structure
+                const htmlOutput = marked.parse(markdownText);
+                
+                // 4. Swap the placeholder text with the actual rendered HTML
+                document.getElementById('content').innerHTML = htmlOutput;
+            })
+            .catch(error => {
+                // Handle missing files or network problems gracefully
+                console.error('Error fetching Markdown:', error);
+                document.getElementById('content').innerHTML = `
+                    <p style="color: red;"><strong>Error:</strong> Failed to load the document.</p>
+                `;
+            });
+    </script>
+
+</body>
+</html>
