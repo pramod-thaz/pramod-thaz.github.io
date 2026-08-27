@@ -1,19 +1,19 @@
-![[perf-mgmt.png]]
+![Performance Attribution](perf-mgmt.png)
 
 ---
 
-![[abm-simulation.PNG]]
+![Agent Based Simulation](abm-simulation.PNG)
 
 ---
 
-![[back-testing.PNG]]
+![Apartment Multi-family Operations](back-testing.PNG)
 
 ---
 
-![[budget.PNG]]
+![Advanced Excel Models](budget.PNG)
 
 ---
 
-![[apt-operations.png]]
+![Operations Dashboard](apt-operations.png)
 
 
