@@ -29,7 +29,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="theme/catppuccin-e08be6a9.css">
+        <link rel="stylesheet" href="theme/catppuccin-fd573d36.css">
 
 
         <!-- Provide site root and default themes to javascript -->
@@ -37,10 +37,10 @@
             const path_to_root = "";
             const default_light_theme = "latte";
             const default_dark_theme = "mocha";
-            window.path_to_searchindex_js = "searchindex-5208a78b.js";
+            window.path_to_searchindex_js = "searchindex-40a0dff7.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-bd98f0ce.js"></script>
+        <script src="toc-3b814226.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -181,6 +181,117 @@
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="posts"><a class="header" href="#posts">Posts</a></h1>
 <p>Latest posts (newest first) appear here.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="factor-rotation--regime-aware-systematic-portfolio"><a class="header" href="#factor-rotation--regime-aware-systematic-portfolio">Factor Rotation — Regime-Aware Systematic Portfolio</a></h1>
+<h2 id="executive-summary"><a class="header" href="#executive-summary">Executive Summary</a></h2>
+<p>A systematic factor rotation strategy that combines two independent regime signals — one, that is slow-moving &amp; lagged and the other more latent derived micro-structure signal that is contemporaneous — to dynamically allocate across 9 uncorrelated factor ETFs. The ensemble achieves <strong>2.6× SPY’s Sharpe ratio</strong> with <strong>less than one-third the drawdown</strong> of SPY over a 10-year out-of-sample period.</p>
+<hr>
+<h2 id="performance-jul-2016--aug-2026"><a class="header" href="#performance-jul-2016--aug-2026">Performance (Jul 2016 – Aug 2026)</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Metric</th><th>Ensemble (1.0×)</th><th>SPY</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>CAGR</strong></td><td>+24.32%</td><td>+14.01%</td></tr>
+<tr><td><strong>Sharpe</strong></td><td>2.04</td><td>0.90</td></tr>
+<tr><td><strong>Sortino</strong></td><td>3.97</td><td>1.26</td></tr>
+<tr><td><strong>Calmar</strong></td><td>3.08</td><td>0.55</td></tr>
+<tr><td><strong>Max DD</strong></td><td>-7.89%</td><td>-25.48%</td></tr>
+<tr><td><strong>Alpha (CAPM)</strong></td><td>+19.43%</td><td>—</td></tr>
+<tr><td><strong>Beta vs SPY</strong></td><td>0.35</td><td>1.00</td></tr>
+<tr><td><strong>Rebalances</strong></td><td>42/115</td><td></td></tr>
+<tr><td><strong>Avg Turnover</strong></td><td>0.26</td><td></td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Growth of $1 (with drawdown):</strong></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="posts/assets/ria_pitch_performance.png" alt="Performance"><span class="img-wrapper"><img src="posts/assets/ria_pitch_performance.png" alt="Performance"></span></label></p>
+<hr>
+<h2 id="how-it-works"><a class="header" href="#how-it-works">How It Works</a></h2>
+<h3 id="1-dual-signal-regime-detection"><a class="header" href="#1-dual-signal-regime-detection">1. Dual-Signal Regime Detection</a></h3>
+<p>Two independent signals identify market regime with no look-ahead bias:</p>
+<ul>
+<li>
+<p>Slow — Lagged smoothed signal processed through a Gaussian Process + Dirichlet Process mixture. Detects macro regime shifts (expansionary vs contractionary).</p>
+</li>
+<li>
+<p>Real-Time — Latent variable derived from SPX prices detects stress before (in theory) it propagates to broader markets.</p>
+</li>
+</ul>
+<p>The two signals are <strong>near-independent</strong> (correlation 0.15), providing complementary coverage: One catches slow-moving liquidity cycles, while the other catches fast-moving stress events.</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="posts/assets/regime_comparison_ria.png" alt="Regime Signals"><span class="img-wrapper"><img src="posts/assets/regime_comparison_ria.png" alt="Regime Signals"></span></label></p>
+<h3 id="2-factor-rotation-via-bayesian-optimization"><a class="header" href="#2-factor-rotation-via-bayesian-optimization">2. Factor Rotation via Bayesian Optimization</a></h3>
+<p>Monthly allocation across 9 uncorrelated factor ETFs:</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Factor</th><th>Role</th></tr>
+</thead>
+<tbody>
+<tr><td>Momentum</td><td>Equity trend</td></tr>
+<tr><td>Min Volatility</td><td>Defensive equity</td></tr>
+<tr><td>Intermediate Bonds</td><td>Rate hedge</td></tr>
+<tr><td>Gold</td><td>Inflation hedge</td></tr>
+<tr><td>Quality</td><td>Quality tilt</td></tr>
+<tr><td>Commodities</td><td>Real assets</td></tr>
+<tr><td>Managed Futures</td><td>Trend following</td></tr>
+<tr><td>(2× SPY)</td><td>Leveraged equity</td></tr>
+<tr><td>(-1× SPY)</td><td>Short equity</td></tr>
+</tbody>
+</table>
+</div>
+<p>The Bayesian optimizer maximizes risk-adjusted returns while penalizing turnover. The regime signal modulates risk aversion in real-time — when stress is detected, the optimizer naturally reduces exposure to risky factors.</p>
+<h3 id="3-downside-protection"><a class="header" href="#3-downside-protection">3. Downside Protection</a></h3>
+<p>During stress periods, the strategy’s risk aversion parameter increases by 2.5×, causing the optimizer to shift toward defensive factors (low-vol, bonds, gold) without explicit override rules. This is thus more <strong>structural protection</strong>, than tactical timing.</p>
+<hr>
+<h2 id="transaction-costs"><a class="header" href="#transaction-costs">Transaction Costs</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Component</th><th>Estimate</th></tr>
+</thead>
+<tbody>
+<tr><td>Average monthly turnover</td><td>33.66%</td></tr>
+<tr><td>One-way cost (bid-ask + impact)</td><td>5–10 bps</td></tr>
+<tr><td>Annual cost drag</td><td>0.20%–0.40%</td></tr>
+<tr><td>Sharpe impact</td><td>2.04 → 2.01</td></tr>
+</tbody>
+</table>
+</div>
+<p>The strategy trades liquid, highly-quoted ETFs with tight spreads. Transaction costs reduce Sharpe by approximately 3bps..</p>
+<p>The optimizer includes a built-in turnover penalty that limits unnecessary trading. Rebalancing occurs only when weight changes exceed 5%.</p>
+<hr>
+<h2 id="key-takeaways"><a class="header" href="#key-takeaways">Key Takeaways</a></h2>
+<ul>
+<li><strong>Superior risk-adjusted returns</strong>: Sharpe 2.04 vs SPY 0.90 (2.6× improvement)</li>
+<li><strong>Structural downside protection</strong>: Max DD -7.89% vs SPY -25.48%</li>
+<li><strong>Regime-aware allocation</strong>: Automatically reduces exposure during microstructure stress</li>
+<li><strong>Low cost drag</strong>: Transaction costs reduce Sharpe by only 0.03</li>
+<li><strong>Fully systematic</strong>: No discretionary decisions, no parameter overfitting</li>
+</ul>
+<hr>
+<h2 id="important-disclosures"><a class="header" href="#important-disclosures">Important Disclosures</a></h2>
+<ul>
+<li><strong>Out-of-sample results</strong>: All performance shown is out-of-sample (Jul 2016 – Aug 2026). In-sample training period used for model calibration only.</li>
+<li><strong>No guarantees</strong>: Past performance does not guarantee future results.</li>
+<li><strong>Model risk</strong>: Regime detection models may produce false signals. Strategy relies on two independent signals to mitigate this risk.</li>
+<li><strong>Leverage risk</strong>: The strategy uses leveraged ETFs (SSO) which carry additional risks including decay in choppy markets.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="dashboard-samples--artifacts"><a class="header" href="#dashboard-samples--artifacts">Dashboard Samples &amp; Artifacts</a></h1>
+<p>Selected screenshots from work across performance measurement, agent-based simulation, and multi-family operations.</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="posts/assets/perf-mgmt.png" alt="Performance Attribution"><span class="img-wrapper"><img src="posts/assets/perf-mgmt.png" alt="Performance Attribution"></span></label></p>
+<hr>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="posts/assets/abm-simulation.PNG" alt="Agent Based Simulation"><span class="img-wrapper"><img src="posts/assets/abm-simulation.PNG" alt="Agent Based Simulation"></span></label></p>
+<hr>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="posts/assets/back-testing.PNG" alt="Apartment Multi-family Operations"><span class="img-wrapper"><img src="posts/assets/back-testing.PNG" alt="Apartment Multi-family Operations"></span></label></p>
+<hr>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="posts/assets/budget.PNG" alt="Advanced Excel Models"><span class="img-wrapper"><img src="posts/assets/budget.PNG" alt="Advanced Excel Models"></span></label></p>
+<hr>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="posts/assets/apt-operations.png" alt="Operations Dashboard"><span class="img-wrapper"><img src="posts/assets/apt-operations.png" alt="Operations Dashboard"></span></label></p>
+<hr>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="posts/assets/stress-testing.PNG" alt="Stress Testing"><span class="img-wrapper"><img src="posts/assets/stress-testing.PNG" alt="Stress Testing"></span></label></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="first-post"><a class="header" href="#first-post">First post</a></h1>
 <p>This is a placeholder first post. Replace me in Obsidian, then run <code>./scripts/publish.sh</code> when ready.</p>

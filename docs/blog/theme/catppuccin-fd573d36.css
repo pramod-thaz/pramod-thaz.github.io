@@ -866,3 +866,52 @@
   --blockquote-warning-color: #f9e2af;
   --blockquote-caution-color: #f38ba8;
 }
+
+/* ===== FiraGO (matches resume site) ===== */
+@font-face {
+  font-family: 'FiraGo';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/FiraGO-Regular.latin.woff2') format('woff2');
+  unicode-range: U+0000-007F, U+0080-00FF;
+}
+@font-face {
+  font-family: 'FiraGo';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/FiraGO-Regular.latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-017F, U+0180-024F, U+0250-02AF, U+1E00-1EFF, U+2C60-2C7F, U+A720-A7FF, U+AB30-AB6F;
+}
+@font-face {
+  font-family: 'FiraGo';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/FiraGO-Medium.latin.woff2') format('woff2');
+  unicode-range: U+0000-007F, U+0080-00FF;
+}
+@font-face {
+  font-family: 'FiraGo';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/FiraGO-SemiBold.latin.woff2') format('woff2');
+  unicode-range: U+0000-007F, U+0080-00FF;
+}
+@font-face {
+  font-family: 'FiraGo';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/FiraGO-Bold.latin.woff2') format('woff2');
+  unicode-range: U+0000-007F, U+0080-00FF;
+}
+
+html, body, .sidebar, .content, main, .menu-title, .chapter li a {
+  font-family: 'FiraGo', 'Open Sans', sans-serif;
+}
+code, pre, .hljs {
+  font-family: 'FiraGo', 'Source Code Pro', monospace;
+}
