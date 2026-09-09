@@ -65,11 +65,14 @@
       border-bottom: 3px solid var(--accent);
     }
     .topbar-inner {
+      display: flex; flex-direction: column; gap: 8px; padding: 10px 0;
+    }
+    .topbar-row {
       display: flex; align-items: center; justify-content: space-between;
-      gap: 18px; min-height: 62px; padding: 10px 0; flex-wrap: wrap;
+      gap: 18px; flex-wrap: wrap;
     }
     .brand b { font-size: 15px; letter-spacing: .03em; font-weight: 700; color: #fff; }
-    .brand .creds { display: block; font-size: 12px; color: #a5b4fc; font-weight: 400; margin-top: 3px; }
+    .brand .creds { font-size: 12px; color: #a5b4fc; font-weight: 400; }
     nav { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
     nav a { color: #c7d2e1; font-size: 13.5px; font-weight: 600; text-decoration: none; }
     nav a:hover { color: #a5b4fc; text-decoration: none; }
@@ -176,7 +179,8 @@
     @media (max-width: 860px) {
       .tracks, .proof, .grid-3 { grid-template-columns: 1fr; }
       .hero { padding-top: 36px; }
-      .topbar-inner { justify-content: center; text-align: center; }
+      .topbar-inner { align-items: stretch; }
+      .topbar-row { justify-content: center; text-align: center; }
       .process { flex-direction: column; }
       .process .arrow { transform: rotate(90deg); align-self: center; }
     }
@@ -186,19 +190,23 @@
 
   <header class="topbar">
     <div class="wrap topbar-inner">
-      <div class="brand">
-        <b>PRAMOD THAZ</b>
-        <span class="creds">Austin, TX · San Antonio, TX · CAIA Charterholder · CFA Level III Candidate · MBA (UCLA Anderson) · B.Tech (Indian Institute of Technology)</span>
+      <div class="topbar-row">
+        <div class="brand">
+          <b>PRAMOD THAZ</b>
+        </div>
+        <nav>
+          <a href="#services">Services</a>
+          <a href="#institutional">Analytics &amp; AI</a>
+          <a href="due-diligence.html">CRE Due Diligence</a>
+          <a href="meridian-deck.html">Meridian</a>
+          <a href="#proof">Career Path</a>
+          <a href="resume.html">Résumé</a>
+        </nav>
       </div>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#institutional">Analytics &amp; AI</a>
-        <a href="due-diligence.html">CRE Due Diligence</a>
-        <a href="meridian-deck.html">Meridian</a>
-        <a href="#proof">Career Path</a>
-        <a href="resume.html">Résumé</a>
-      </nav>
-      <a href="mailto:pramodty@gmail.com"><img src="./images/email.svg" width="150" height="26" alt="pramodty@gmail.com" /></a>
+      <div class="topbar-row">
+        <span class="creds">CAIA Charterholder · CFA Level III Candidate · MBA (UCLA Anderson) · B.Tech (Indian Institute of Technology)</span>
+        <a href="mailto:pramodty@gmail.com"><img src="./images/email.svg" width="150" height="26" alt="pramodty@gmail.com" /></a>
+      </div>
     </div>
   </header>
 
@@ -387,8 +395,8 @@
               <div class="kpi"><b>25+ yrs</b><span>Public markets + private CRE</span></div>
             </div>
             <p class="note">
-              UCLA Anderson MBA + B.Tech (Indian Institute of Technology), CAIA / CFA Level III. The full résumé and technical appendix
-              live on a secondary page — proof objects, not the front door.
+              Full career history, credentials, and technical appendix on the
+              <a href="resume.html">résumé page →</a>.
             </p>
           </div>
         </div>
