@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Posts - Cerebrations</title>
+        <title>Phase 4 — Putting It All Together: Multi-Sensor Market Prediction - Cerebrations</title>
 
 
         <!-- Custom HTML head -->
@@ -12,34 +12,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon-de23e50b.svg">
-        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
-        <link rel="stylesheet" href="../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../css/general-e96d0476.css">
-        <link rel="stylesheet" href="../css/chrome-d279d366.css">
-        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
-        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
-        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../theme/catppuccin-fd573d36.css">
+        <link rel="stylesheet" href="../../theme/catppuccin-fd573d36.css">
 
 
         <!-- Provide site root and default themes to javascript -->
         <script>
-            const path_to_root = "../";
+            const path_to_root = "../../";
             const default_light_theme = "latte";
             const default_dark_theme = "mocha";
-            window.path_to_searchindex_js = "../searchindex-ef1e6dbf.js";
+            window.path_to_searchindex_js = "../../searchindex-ef1e6dbf.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-9a401823.js"></script>
+        <script src="../../toc-9a401823.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -106,7 +106,7 @@
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
-                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
             </noscript>
             <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -140,7 +140,7 @@
                     <h1 class="menu-title">Cerebrations</h1>
 
                     <div class="right-buttons">
-                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
                             <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
@@ -174,14 +174,39 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="posts"><a class="header" href="#posts">Posts</a></h1>
-<p>Working notes, essays, and work samples.</p>
-<h2 id="categories"><a class="header" href="#categories">Categories</a></h2>
+                        <p><em>Part of the <a href="2026-09-01-bayesian-investor-00-series-index.html">The Bayesian Investor — A Primer for the CIO</a> series.</em></p>
+<h1 id="phase-4--putting-it-all-together-multi-sensor-market-prediction"><a class="header" href="#phase-4--putting-it-all-together-multi-sensor-market-prediction">Phase 4 — Putting It All Together: Multi-Sensor Market Prediction</a></h1>
+<p>Now the roadmap pays off. Phases 1 and 2 gave you beliefs and models; Phase 3 gave you speed. Phase 4 fuses them into a working investment system, applied to the real problems of public markets and commercial real estate.</p>
+<h2 id="sensor-fusion-the-air-traffic-controller"><a class="header" href="#sensor-fusion-the-air-traffic-controller">Sensor fusion: the air-traffic controller</a></h2>
+<p>The master image for this phase is the <strong>air-traffic controller</strong> in a busy control tower.</p>
+<p>The controller has many sources of information: radar blips, radio calls from pilots, satellite weather feeds, flight plans filed hours ago. No single source is complete. Radar can be fuzzy; a pilot’s radio call is instantaneous but partial; weather feeds are global but indirect. The controller’s job is to take all of these noisy, partial streams and build <em>one consistent picture</em> of what is in the air right now — and then act on it.</p>
+<p>This is exactly what your firm does with markets. Consider a commercial real estate thesis: should you invest in a certain corridor? The evidence streams in from many directions — <strong>satellite imagery of parking lots</strong> (how full are the lots?), <strong>foot traffic data</strong> (how many people walk the streets?), <strong>credit-card and leasing data</strong> (are tenants actually paying?), <strong>macro signals</strong> (is the economy expanding?). Individually, each feed is noisy and incomplete. Fused together, weighted by reliability, they become a picture: is this corridor genuinely getting busier, or is the satellite just catching a holiday weekend?</p>
+<p><strong>Sensor fusion is the discipline of combining many noisy, partial views into one weighted, confident view.</strong> It is the same move the bookmaker makes — many small pieces of evidence, each weighed by trust, merged into a continuously updated belief. In Phase 4, your team wires the Phase 1 updating loop to the Phase 3 streaming instruments, and points them at the Phase 2 models. The satellite feed doesn’t replace the foot-traffic feed; it corrects and is corrected by it. That’s fusion.</p>
+<h2 id="black-litterman-the-portfolio-doctor"><a class="header" href="#black-litterman-the-portfolio-doctor">Black-Litterman: the portfolio doctor</a></h2>
+<p>One of the most famous tools in this phase is the <strong>Black-Litterman model</strong>, and it deserves a story because it’s genuinely intuitive.</p>
+<p>Imagine a patient — your portfolio — whose treatment plan is currently the market’s equilibrium. An equilibrium, in this context, is simply the price the market as a whole has settled on for every asset — the balance point where the crowd’s buying and selling have canceled each other out. There’s a standard prescription: the market portfolio, priced at that settled state. It’s a reasonable starting point, but it reflects the <em>average</em> opinion of everyone, not yours. Now suppose your analysts walk in with a strongly-held, well-researched second opinion: “We believe energy will outperform,” “We think European real estate is mispriced.”</p>
+<p>The naive responses are both wrong. Ignore the analysts, and you’re just a passive index fund with a fixed view. Follow them blindly, and you’re betting the firm on possibly overconfident opinions. Black-Litterman is the <strong>portfolio doctor</strong> who reconciles the two:</p>
 <ul>
-<li><a href="bayesian-workflow/index.html">Bayesian Workflow</a> — regime-aware systematic investing and probabilistic decision systems</li>
-<li><a href="general/index.html">General</a> — essays, notes, and work samples</li>
-<li><a href="real-assets/index.html">Real Assets</a> — commercial real estate and private markets</li>
+<li>Start with the market’s equilibrium — the baseline prescription.</li>
+<li>Let the analysts’ views <em>adjust</em> that baseline — but only by an amount proportional to <strong>how confident</strong> each view is.</li>
+<li>A confident, well-supported view moves the portfolio meaningfully. A shaky, speculative view barely nudges it.</li>
+<li>The result: a portfolio that respects both the market’s wisdom and your team’s edge, never letting either run the show alone.</li>
 </ul>
+<p><strong>For a CIO, this is the difference between opinion and process.</strong> Your analysts will always have views; the question is whether those views enter the portfolio as disciplined, confidence-weighted adjustments or as unexamined convictions. Black-Litterman is the disciplined channel.</p>
+<h2 id="regime-switching-the-model-that-notices-the-weather-changed"><a class="header" href="#regime-switching-the-model-that-notices-the-weather-changed">Regime-switching: the model that notices the weather changed</a></h2>
+<p>Finally, the roadmap’s most advanced application: <strong>regime-switching</strong> — and the analogy is a well-tuned thermostat that knows more than temperature.</p>
+<p>Markets don’t behave the same way forever. There are <strong>regimes</strong> — periods where the market is fundamentally in a different mood: risk-on rallies, risk-off selloffs, quiet sideways drift, crisis conditions. The rules that govern returns in one regime are different from another. A model that assumes “the market always behaves like it did last year” is like planning a year of outdoor events using last year’s weather.</p>
+<p>A <strong>dynamic Bayesian network</strong> — and that phrase is simpler than it sounds — is a model that tracks these hidden states. “Bayesian” means it updates with evidence, as we’ve established. “Network” means it tracks several related things at once — volatility, the correlations between assets (how closely their prices move together), momentum — as one connected system. And “dynamic” means it does this over time. Together: a system that watches many market signals at once and quietly maintains a belief about <em>which regime we’re in right now</em>.</p>
+<p>The payoff is the quiet announcement: <em>“Based on the evidence, we now believe we’re in a risk-on regime.”</em> And because it’s Bayesian, that announcement always comes with its confidence: “we’re fairly sure” versus “we’re not sure yet — too early to say.” Your risk budgets, your allocations, your hedging decisions can then respond to the regime — not reactively after a crisis, but <em>as the evidence shifts</em>, the way the bookmaker’s price moves through the match.</p>
+<h2 id="the-full-stack-how-the-four-phases-compose"><a class="header" href="#the-full-stack-how-the-four-phases-compose">The full stack: how the four phases compose</a></h2>
+<p>Let’s show how it all connects, because a CIO needs to see the machine, not just the parts.</p>
+<ul>
+<li><strong>Phase 1</strong> taught the atom: start with a belief, update with evidence, carry your confidence.</li>
+<li><strong>Phase 2</strong> built the molecules: models of markets and portfolios, estimated by sampling, with hierarchical structure that borrows strength and uncertainty bands that tell the truth.</li>
+<li><strong>Phase 3</strong> added the engine: filters that keep those models <em>current</em> as the world moves, tracking the invisible (volatility, fair value) in real time.</li>
+<li><strong>Phase 4</strong> assembled the system: sensor fusion feeding the models, Black-Litterman turning views into disciplined portfolio adjustments, regime-switching re-weighting the firm as the market’s mood turns.</li>
+</ul>
+<p>The bookmaker, in other words, has been given an entire trading desk. Every piece is the same move — belief, evidence, update, confidence — scaled up from a coin flip to a global investment platform.</p>
 
                     </main>
 
@@ -189,11 +214,11 @@
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../posts/bayesian-workflow/2026-09-07-bayesian-investor-06-use-case-1-portfolio-construction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
-                            <a rel="next prefetch" href="../posts/bayesian-workflow/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../posts/bayesian-workflow/2026-09-05-bayesian-investor-04-phase-3-dynamic-tracking.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
@@ -203,11 +228,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../posts/bayesian-workflow/2026-09-07-bayesian-investor-06-use-case-1-portfolio-construction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
-                    <a rel="next prefetch" href="../posts/bayesian-workflow/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../posts/bayesian-workflow/2026-09-05-bayesian-investor-04-phase-3-dynamic-tracking.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
@@ -227,13 +252,13 @@
         </script>
 
 
-        <script src="../elasticlunr-ef4e11c1.min.js"></script>
-        <script src="../mark-09e88c2c.min.js"></script>
-        <script src="../searcher-09f2665d.js"></script>
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard-1626706a.min.js"></script>
-        <script src="../highlight-abc7f01d.js"></script>
-        <script src="../book-609e4cb8.js"></script>
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
 
