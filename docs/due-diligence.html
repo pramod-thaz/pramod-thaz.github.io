@@ -65,6 +65,17 @@
     nav { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
     nav a { color: #c7d2e1; font-size: 13.5px; font-weight: 600; text-decoration: none; }
     nav a:hover { color: #a5b4fc; text-decoration: none; }
+    .nav-toggle {
+      display: none; background: transparent; border: 0; cursor: pointer;
+      padding: 6px 4px; line-height: 0;
+    }
+    .nav-toggle span {
+      display: block; width: 20px; height: 2px; margin: 4px 0;
+      background: #fff; transition: transform .2s ease, opacity .2s ease;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
     .hero { padding: 64px 0 8px; }
     .eyebrow { font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin: 0 0 12px; }
@@ -122,7 +133,18 @@
       .grid-3 { grid-template-columns: 1fr; }
       .hero { padding-top: 36px; }
       .topbar-inner { align-items: stretch; }
-      .topbar-row { justify-content: center; text-align: center; }
+      .topbar-row { justify-content: space-between; text-align: left; }
+      .nav-toggle { display: inline-block; }
+      nav {
+        display: none;
+        position: absolute; left: 0; right: 0; top: 100%;
+        flex-direction: column; align-items: stretch; gap: 0;
+        background: var(--dark); border-top: 1px solid var(--dark-line);
+        box-shadow: 0 10px 20px rgba(0,0,0,.25);
+        padding: 6px 28px 14px;
+      }
+      nav.open { display: flex; }
+      nav a { padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,.08); font-size: 14px; }
       .process { flex-direction: column; }
       .process .arrow { transform: rotate(90deg); align-self: center; }
     }
@@ -136,6 +158,9 @@
         <div class="brand">
           <b>PRAMOD THAZ</b>
         </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <nav>
           <a href="index.html#services">Services</a>
           <a href="index.html#institutional">Analytics &amp; AI</a>
@@ -269,6 +294,19 @@
       &nbsp;·&nbsp; <a href="resume.html">Résumé</a>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('navToggle');
+      var nav = btn && btn.nextElementSibling;
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        btn.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    })();
+  </script>
 
 </body>
 </html>

@@ -77,9 +77,53 @@
     nav { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
     nav a { color: #c7d2e1; font-size: 13.5px; font-weight: 600; text-decoration: none; }
     nav a:hover { color: #a5b4fc; text-decoration: none; }
+    .nav-toggle {
+      display: none; background: transparent; border: 0; cursor: pointer;
+      padding: 6px 4px; line-height: 0;
+    }
+    .nav-toggle span {
+      display: block; width: 20px; height: 2px; margin: 4px 0;
+      background: #fff; transition: transform .2s ease, opacity .2s ease;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
     /* ── Hero ── */
-    .hero { padding: 60px 0 8px; }
+    .hero {
+      display: flex; align-items: stretch; gap: 40px;
+      min-height: 620px;
+    }
+    .hero-text {
+      flex: 0 0 50%;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 64px 0 96px;
+    }
+    .hero-img {
+      flex: 0 0 50%; position: relative;
+      display: flex; align-items: flex-end; justify-content: flex-end;
+      padding: 24px 0;
+    }
+    .hero-img img {
+      width: 80%; height: 100%; object-fit: cover; object-position: right bottom;
+      display: block;
+    }
+    .hero-cta {
+      position: absolute; z-index: 1;
+      bottom: 24px; right: 24px;
+      display: flex; flex-direction: column; align-items: flex-end; gap: 14px;
+      text-align: right;
+    }
+    .hero-cta-text {
+      margin: 0; font-size: 19px; font-weight: 700; line-height: 1.3;
+      letter-spacing: -.01em; text-transform: uppercase; color: var(--ink);
+    }
+    .btn-pill {
+      display: inline-block; padding: 12px 24px; border-radius: 999px;
+      background: var(--accent); color: #fff;
+      font-weight: 600; font-size: 14px; text-decoration: none;
+    }
+    .btn-pill:hover { background: var(--accent-hover); text-decoration: none; }
     .eyebrow {
       font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase;
       color: var(--accent); font-weight: 700; margin: 0 0 12px;
@@ -179,9 +223,27 @@
 
     @media (max-width: 860px) {
       .tracks, .proof, .grid-3 { grid-template-columns: 1fr; }
-      .hero { padding-top: 36px; }
+      .hero { flex-direction: column; gap: 0; min-height: 0; padding: 0 28px; }
+      .hero-text { padding: 44px 0 20px; }
+      .hero-img { width: 100%; justify-content: center; padding: 0 0 28px; }
+      .hero-img img { width: 100%; height: auto; }
+      .hero-cta {
+        position: static; margin-top: 18px;
+        align-items: flex-start; text-align: left; max-width: 100%;
+      }
       .topbar-inner { align-items: stretch; }
-      .topbar-row { justify-content: center; text-align: center; }
+      .topbar-row { justify-content: space-between; text-align: left; }
+      .nav-toggle { display: inline-block; }
+      nav {
+        display: none;
+        position: absolute; left: 0; right: 0; top: 100%;
+        flex-direction: column; align-items: stretch; gap: 0;
+        background: var(--dark); border-top: 1px solid var(--dark-line);
+        box-shadow: 0 10px 20px rgba(0,0,0,.25);
+        padding: 6px 28px 14px;
+      }
+      nav.open { display: flex; }
+      nav a { padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,.08); font-size: 14px; }
       .process { flex-direction: column; }
       .process .arrow { transform: rotate(90deg); align-self: center; }
     }
@@ -195,6 +257,9 @@
         <div class="brand">
           <b>PRAMOD THAZ</b>
         </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <nav>
           <a href="#services">Services</a>
           <a href="#institutional">Analytics &amp; AI</a>
@@ -213,15 +278,23 @@
 
   <main>
     <div class="wrap hero">
-      <p class="eyebrow">Consulting · Products · Austin, TX · San Antonio, TX</p>
-      <h1>Translating Complex Data into Robust, Uncertainty-Aware Financial Systems</h1>
-      <p class="lede">
-        From institutional multi-asset risk frameworks to automated CRE engineering due diligence models.
-        Two consulting services for different audiences — plus a product that ties them together.
-      </p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#institutional">Explore institutional solutions →</a>
-        <a class="btn btn-ghost" href="due-diligence.html">Explore CRE services →</a>
+      <div class="hero-text">
+        <p class="eyebrow">Consulting · Products · Austin, TX · San Antonio, TX</p>
+        <h1>Translating Complex Data into Robust, Uncertainty-Aware Financial Systems</h1>
+        <p class="lede">
+          From institutional multi-asset risk frameworks to automated CRE due diligence models.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#institutional">Explore institutional solutions →</a>
+          <a class="btn btn-ghost" href="due-diligence.html">Explore CRE services →</a>
+        </div>
+      </div>
+      <div class="hero-img" role="img" aria-label="Multi-asset Bayesian workflow diagram">
+        <img src="./images/multi-asset-bayesian-workflow.jpeg" alt="Multi-asset Bayesian workflow">
+        <div class="hero-cta">
+          <p class="hero-cta-text">Revolutionize multi-asset investing using Bayesian workflows.</p>
+          <a class="btn btn-pill" href="https://pramod-thaz.github.io/blog/posts/bayesian-workflow/2026-09-01-bayesian-investor-00-series-index.html">Learn how…</a>
+        </div>
       </div>
     </div>
 
@@ -428,6 +501,19 @@
       &nbsp;·&nbsp; <a href="resume.html">Résumé &amp; technical appendix</a>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('navToggle');
+      var nav = btn && btn.nextElementSibling;
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        btn.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    })();
+  </script>
 
 </body>
 </html>
