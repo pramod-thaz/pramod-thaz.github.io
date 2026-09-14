@@ -100,19 +100,18 @@
       padding: 64px 0 96px;
     }
     .hero-img {
-      flex: 0 0 50%; position: relative;
-      display: flex; align-items: flex-end; justify-content: flex-end;
+      flex: 0 0 50%;
+      display: flex; flex-direction: column;
+      align-items: flex-end; justify-content: flex-end;
       padding: 24px 0;
     }
     .hero-img img {
-      width: 80%; height: 100%; object-fit: cover; object-position: right bottom;
+      width: 80%; height: auto;
       display: block;
     }
     .hero-cta {
-      position: absolute; z-index: 1;
-      bottom: 24px; right: 24px;
       display: flex; flex-direction: column; align-items: flex-end; gap: 14px;
-      text-align: right;
+      text-align: right; margin-top: 14px;
     }
     .hero-cta-text {
       margin: 0; font-size: 19px; font-weight: 700; line-height: 1.3;
