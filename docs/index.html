@@ -1,518 +1,396 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Translating complex data into robust, uncertainty-aware financial systems. Institutional quantitative risk & AI consulting, CRE engineering due diligence workflow automation, and the Meridian unified decision & underwriting system. Austin, TX.">
-  <meta name="keywords" content="Pramod Thaz,Bayesian,multi-asset analytics,quantitative risk,commercial real estate,due diligence,ASTM E2018-24,capital reserves,Meridian">
-  <meta name="author" content="Pramod Thaz">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="google-site-verification" content="UiNTsuY9WuPG53Ud8LWZsNZZk0hpQV-bVPCFYClrzAU" />
-  <link rel="canonical" href="https://pramod-thaz.github.io/">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org/",
-    "@type": "Person",
-    "name": "Pramod Thaz",
-    "alternateName": ["Pramod Thazhichayil", "T. Y. Pramod"],
-    "url": "https://pramod-thaz.github.io/",
-    "sameAs": ["https://github.com/pramod-thaz"]
-  }
-  </script>
-  <meta property="og:title" content="Pramod Thaz — Translating Complex Data into Robust, Uncertainty-Aware Financial Systems">
-  <meta property="og:description" content="Two consulting services — institutional quantitative risk & AI, and CRE engineering due diligence workflow automation — plus the Meridian unified decision & underwriting system.">
-  <meta property="og:url" content="https://pramod-thaz.github.io/">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://pramod-thaz.github.io/images/og-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <link rel="preload" href="./fonts/FiraGO-Regular.latin.woff2" as="font" crossorigin="anonymous">
-  <link href="./build.css" rel="stylesheet">
-  <link href="./fira-go.css" rel="stylesheet">
-  <title>Pramod Thaz — Multi-Asset Quantitative Systems · Probabilistic Decision Modeling · CRE Due Diligence Analytics</title>
-  <style>
-    :root {
-      --ink: #24303b;
-      --body: #4a5560;
-      --muted: #7a8694;
-      --line: #e6e9ee;
-      --bg: #ffffff;
-      --accent: #4f46e5;
-      --accent-hover: #4338ca;
-      --accent-soft: #eef2ff;
-      --dark: #1a202c;
-      --dark-line: #2d3748;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: "FiraGO", system-ui, sans-serif;
-      color: var(--ink);
-      background: var(--bg);
-      line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
-
-    /* ── Top bar: name + details + nav ── */
-    .topbar {
-      background: var(--dark);
-      color: #fff;
-      position: sticky; top: 0; z-index: 20;
-      border-bottom: 3px solid var(--accent);
-    }
-    .topbar-inner {
-      display: flex; flex-direction: column; gap: 4px; padding: 10px 0;
-    }
-    .topbar-row {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 18px; flex-wrap: wrap;
-    }
-    .topbar-row.align-top { align-items: flex-start; }
-    .brand b { font-size: 15px; letter-spacing: .03em; font-weight: 700; color: #fff; }
-    .topbar .creds { font-size: 11.5px; color: #94a3b8; font-weight: 400; font-style: italic; }
-    nav { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
-    nav a { color: #c7d2e1; font-size: 13.5px; font-weight: 600; text-decoration: none; }
-    nav a:hover { color: #a5b4fc; text-decoration: none; }
-    .nav-toggle {
-      display: none; background: transparent; border: 0; cursor: pointer;
-      padding: 6px 4px; line-height: 0;
-    }
-    .nav-toggle span {
-      display: block; width: 20px; height: 2px; margin: 4px 0;
-      background: #fff; transition: transform .2s ease, opacity .2s ease;
-    }
-    .nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-    .nav-toggle.open span:nth-child(2) { opacity: 0; }
-    .nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-
-    /* ── Hero ── */
-    .hero {
-      display: flex; align-items: stretch; gap: 40px;
-      min-height: 620px;
-    }
-    .hero-text {
-      flex: 0 0 50%;
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 64px 0 96px;
-    }
-    .hero-img {
-      flex: 0 0 50%;
-      display: flex; flex-direction: column;
-      align-items: flex-end; justify-content: flex-end;
-      padding: 24px 0;
-    }
-    .hero-img img {
-      width: 80%; height: auto;
-      display: block;
-    }
-    .hero-cta {
-      display: flex; flex-direction: column; align-items: flex-end; gap: 14px;
-      text-align: right; margin-top: 14px;
-    }
-    .hero-cta-text {
-      margin: 0; font-size: 19px; font-weight: 700; line-height: 1.3;
-      letter-spacing: -.01em; text-transform: uppercase; color: var(--ink);
-    }
-    .btn-pill {
-      display: inline-block; padding: 12px 24px; border-radius: 999px;
-      background: var(--accent); color: #fff;
-      font-weight: 600; font-size: 14px; text-decoration: none;
-    }
-    .btn-pill:hover { background: var(--accent-hover); text-decoration: none; }
-    .eyebrow {
-      font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase;
-      color: var(--accent); font-weight: 700; margin: 0 0 12px;
-    }
-    .numeral {
-      display: inline-flex; align-items: center; justify-content: center;
-      min-width: 44px; height: 44px; padding: 0 14px; border-radius: 10px;
-      background: var(--accent); color: #fff;
-      font-size: 22px; font-weight: 700; line-height: 1; margin: 0 0 14px;
-    }
-    .numeral-sm {
-      display: inline-flex; align-items: center; justify-content: center;
-      min-width: 26px; height: 26px; padding: 0 7px; border-radius: 6px;
-      background: var(--accent); color: #fff;
-      font-size: 13px; font-weight: 700; line-height: 1;
-    }
-    h1 {
-      font-size: clamp(30px, 4.4vw, 46px); line-height: 1.12;
-      margin: 0 0 16px; font-weight: 700; color: var(--ink);
-      max-width: 840px; letter-spacing: -.01em;
-    }
-    .lede { font-size: 18px; color: var(--body); max-width: 720px; margin: 0 0 14px; }
-    .meta { color: var(--muted); font-size: 13.5px; margin: 0; }
-    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0 0; }
-    .btn {
-      display: inline-block; padding: 11px 18px; border-radius: 4px;
-      font-weight: 600; font-size: 14px; text-decoration: none; border: 1px solid transparent;
-    }
-    .btn-primary { background: var(--accent); color: #fff; }
-    .btn-primary:hover { background: var(--accent-hover); text-decoration: none; }
-    .btn-ghost { background: transparent; color: var(--accent); border-color: var(--accent); }
-    .btn-ghost:hover { background: var(--accent-soft); text-decoration: none; }
-
-    /* ── Track cards ── */
-    .tracks { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin: 44px 0 56px; }
-    .track {
-      background: #fff; border: 1px solid var(--line); padding: 24px 24px 20px;
-      position: relative; display: flex; flex-direction: column;
-    }
-    .track:before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accent); }
-    .track h2 { font-size: 19px; margin: 0 0 6px; color: var(--ink); line-height: 1.25; }
-    .track .for { font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0 0 8px; display: flex; align-items: center; gap: 8px; }
-    .track p { margin: 0 0 10px; color: var(--body); font-size: 14.5px; }
-    .track ul { margin: 0 0 16px; padding-left: 18px; font-size: 14px; color: var(--ink); }
-    .track li { margin: 0 0 5px; }
-    .track .btn { margin-top: auto; align-self: flex-start; }
-
-    /* Track 3 — product, colored differently */
-    .track.product { background: var(--dark); border-color: var(--dark-line); }
-    .track.product:before { background: var(--accent); }
-    .track.product h2 { color: #f7fafc; }
-    .track.product .for { color: #818cf8; }
-    .track.product p { color: #cbd5e1; }
-    .track.product ul { color: #e2e8f0; }
-    .track.product .btn-product { background: var(--accent); color: #fff; }
-    .track.product .btn-product:hover { background: #6366f1; text-decoration: none; }
-
-    /* ── Sections ── */
-    section { padding: 40px 0 8px; }
-    section h2 { font-size: 28px; color: var(--ink); margin: 0 0 8px; line-height: 1.2; }
-    .rule { height: 3px; width: 52px; background: var(--accent); margin: 0 0 22px; }
-    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
-    .module { background: #fff; border: 1px solid var(--line); padding: 18px 18px 16px; }
-    .module h3 { margin: 0 0 10px; font-size: 16px; color: var(--ink); line-height: 1.3; }
-    .module .spec { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); margin: 0 0 4px; }
-    .module dl { margin: 0; font-size: 14px; }
-    .module dt { font-weight: 700; margin: 9px 0 2px; font-size: 12.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
-    .module dd { margin: 0; color: var(--body); }
-
-    .cap { background: #fff; border: 1px solid var(--line); padding: 18px 18px 16px; }
-    .cap h3 { margin: 0 0 8px; font-size: 16px; color: var(--ink); line-height: 1.3; }
-    .cap p { margin: 0; font-size: 14px; color: var(--body); }
-
-    .process { display: flex; align-items: stretch; gap: 12px; margin: 22px 0 0; flex-wrap: wrap; }
-    .process .step { flex: 1; min-width: 190px; background: #f8fafc; border: 1px solid var(--line); padding: 14px 16px; font-size: 14px; color: var(--body); }
-    .process .step b { display: block; margin-bottom: 4px; color: var(--ink); }
-    .process .arrow { align-self: center; color: var(--accent); font-weight: 700; font-size: 20px; padding: 0 2px; }
-
-    /* ── Proof ── */
-    .proof { display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: start; }
-    .jobs { display: grid; gap: 14px; }
-    .job { background: #fff; border: 1px solid var(--line); padding: 16px 18px; }
-    .job h3 { margin: 0 0 4px; font-size: 16px; color: var(--ink); }
-    .job .org { font-weight: 600; font-size: 13px; color: var(--accent); }
-    .job p { margin: 8px 0 0; font-size: 14px; color: var(--body); }
-    .kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .kpi { background: var(--ink); color: #fff; padding: 14px 16px; }
-    .kpi b { display: block; font-size: 20px; color: #a5b4fc; }
-    .kpi span { font-size: 12px; color: #c7d2e1; }
-    .note { font-size: 13.5px; color: var(--body); background: #f8fafc; border-left: 3px solid var(--accent); padding: 12px 14px; margin: 18px 0 0; }
-
-    /* ── Contact / footer ── */
-    .contact-meta { color: var(--muted); font-size: 13.5px; margin-top: 18px; }
-    footer { background: var(--dark); color: #c7d2e1; padding: 28px 0 36px; font-size: 13px; margin-top: 40px; }
-    footer a { color: #a5b4fc; }
-    footer strong { color: #fff; }
-
-    @media (max-width: 860px) {
-      .tracks, .proof, .grid-3 { grid-template-columns: 1fr; }
-      .hero { flex-direction: column; gap: 0; min-height: 0; padding: 0 28px; }
-      .hero-text { padding: 44px 0 20px; }
-      .hero-img { width: 100%; justify-content: center; padding: 0 0 28px; }
-      .hero-img img { width: 100%; height: auto; }
-      .hero-cta {
-        position: static; margin-top: 18px;
-        align-items: flex-start; text-align: left; max-width: 100%;
-      }
-      .topbar-inner { align-items: stretch; }
-      .topbar-row { justify-content: space-between; text-align: left; }
-      .nav-toggle { display: inline-block; }
-      nav {
-        display: none;
-        position: absolute; left: 0; right: 0; top: 100%;
-        flex-direction: column; align-items: stretch; gap: 0;
-        background: var(--dark); border-top: 1px solid var(--dark-line);
-        box-shadow: 0 10px 20px rgba(0,0,0,.25);
-        padding: 6px 28px 14px;
-      }
-      nav.open { display: flex; }
-      nav a { padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,.08); font-size: 14px; }
-      .process { flex-direction: column; }
-      .process .arrow { transform: rotate(90deg); align-self: center; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meridian — AI-first institutional real estate asset management</title>
+<meta name="description" content="Meridian is the AI layer on the documents and the workbook you already use. Ask the portfolio, get a cited number, keep Excel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow" aria-hidden="true"></div>
 
-  <header class="topbar">
-    <div class="wrap topbar-inner">
-      <div class="topbar-row">
-        <div class="brand">
-          <b>PRAMOD THAZ</b>
-        </div>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-        <nav>
-          <a href="#services">Services</a>
-          <a href="#institutional">Analytics &amp; AI</a>
-          <a href="due-diligence.html">CRE Due Diligence</a>
-          <a href="meridian-deck.html">Meridian</a>
-          <a href="blog/index.html">Blog</a>
-          <a href="resume.html">Résumé</a>
-        </nav>
-      </div>
-      <div class="topbar-row align-top">
-        <span class="creds">CAIA Charterholder · CFA Level III Candidate · MBA (UCLA Anderson) · B.Tech (Indian Institute of Technology)</span>
-        <a href="mailto:pramodty@gmail.com"><img src="./images/email.svg" width="150" height="26" alt="pramodty@gmail.com" /></a>
-      </div>
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="Meridian home"><span class="brand-mark" aria-hidden="true"></span>Meridian</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#kgraph"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><circle cx="3.2" cy="8" r="1.9"/><circle cx="12.4" cy="4" r="1.9"/><circle cx="12.4" cy="12" r="1.9"/><path d="M4.9 7.1l5.6-2.3M4.9 8.9l5.6 2.3"/></svg>Graph</a>
+      <a href="#documents"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="2" width="9" height="12" rx="1.6"/><path d="M6 5.5h4M6 8h4M6 10.5h2.6"/></svg>Documents</a>
+      <a href="#formula"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 2.8h7.8a1.7 1.7 0 0 1 1.7 1.7v8.7H4.7A1.7 1.7 0 0 1 3 11.5z"/><path d="M3 11.5V2.8"/><path d="M6 5.8h3.6"/></svg>Lexicon</a>
+      <a href="#workbook"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="2.5" width="11" height="11" rx="1.6"/><path d="M2.5 6.2h11M2.5 9.8h11M6.2 2.5v11M9.8 2.5v11"/></svg>Excel</a>
+      <a href="#desk"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="2.5" width="11" height="11" rx="1.6"/><path d="M2.5 6h11M6 6v7.5"/></svg>Desk</a>
+      <a href="#compare"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2l1.5 4.5L14 8l-4.5 1.5L8 14l-1.5-4.5L2 8l4.5-1.5z"/></svg>Why Meridian</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://pramod-thaz.github.io/resume.html">The founder</a>
+      <a class="btn ghost" href="https://pramod-thaz.github.io/blog/">Blog</a>
+      <a class="btn solid" href="mailto:pramodty@gmail.com?subject=Meridian%20demo">Book a demo</a>
     </div>
-  </header>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="#kgraph"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><circle cx="3.2" cy="8" r="1.9"/><circle cx="12.4" cy="4" r="1.9"/><circle cx="12.4" cy="12" r="1.9"/><path d="M4.9 7.1l5.6-2.3M4.9 8.9l5.6 2.3"/></svg>Graph</a><a href="#documents"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="2" width="9" height="12" rx="1.6"/><path d="M6 5.5h4M6 8h4M6 10.5h2.6"/></svg>Documents</a><a href="#formula"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 2.8h7.8a1.7 1.7 0 0 1 1.7 1.7v8.7H4.7A1.7 1.7 0 0 1 3 11.5z"/><path d="M3 11.5V2.8"/><path d="M6 5.8h3.6"/></svg>Lexicon</a><a href="#workbook"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="2.5" width="11" height="11" rx="1.6"/><path d="M2.5 6.2h11M2.5 9.8h11M6.2 2.5v11M9.8 2.5v11"/></svg>Excel</a><a href="#desk"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="2.5" width="11" height="11" rx="1.6"/><path d="M2.5 6h11M6 6v7.5"/></svg>Desk</a><a href="#compare"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2l1.5 4.5L14 8l-4.5 1.5L8 14l-1.5-4.5L2 8l4.5-1.5z"/></svg>Why Meridian</a><a href="https://pramod-thaz.github.io/resume.html">The founder</a><a href="https://pramod-thaz.github.io/blog/">Blog</a><a href="mailto:pramodty@gmail.com?subject=Meridian%20demo">Book a demo</a>
+  </div>
+</header>
 
-  <main>
-    <div class="wrap hero">
-      <div class="hero-text">
-        <p class="eyebrow">Consulting · Products · Austin, TX · San Antonio, TX</p>
-        <h1>Translating Complex Data into Robust, Uncertainty-Aware Financial Systems</h1>
-        <p class="lede">
-          From institutional multi-asset risk frameworks to automated CRE due diligence models.
-        </p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#institutional">Explore institutional solutions →</a>
-          <a class="btn btn-ghost" href="due-diligence.html">Explore CRE services →</a>
+<div class="shell" id="top">
+  <main class="content">
+
+    <!-- HERO -->
+    <section class="hero" data-agent="hero">
+      <p class="eyebrow"><span class="dot"></span>AI-FIRST INSTITUTIONAL ASSET MANAGEMENT</p>
+      <h1>Talk to your portfolio like a colleague.<br><span class="h1-sub">Get <em>instant answers</em> with receipts.</span></h1>
+      <p class="lede">Meridian instantly reads your documents — financials, deal memos, and investor presentations — then answers with the exact property, time-period, and math attached. Built on your own Portfolio's Graph, every answer traces a flawless paper trail from portfolio down to the individual tenant lease.</p>
+      <p class="lede lede-strong">Crucially, Meridian plugs directly into your own Excel models, acting as an engine that runs your approved underwriting, asset management, fund, servicing or any models automatically.</p>
+      <div class="hero-cta">
+        <a class="btn solid big" href="mailto:pramodty@gmail.com?subject=Meridian%20demo">Book a demo</a>
+        <a class="btn ghost big" href="#path">See the platform</a>
+      </div>
+      <p class="hero-meta">FILE-FIRST &nbsp;·&nbsp; EVERY FIGURE CITED &nbsp;·&nbsp; EXCEL STAYS THE SYSTEM OF RECORD</p>
+
+      <div class="stage hero-stage">
+        <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">meridian — portfolio desk</span><span class="live"><i></i>LIVE DEMO</span></div>
+        <div class="askbar">
+          <span class="ask-k mono">ASK</span>
+          <p class="ask-line"><span id="typed"></span><span class="caret" aria-hidden="true"></span></p>
+          <p class="status mono" id="heroStatus"></p>
+        </div>
+        <div class="hero-panels" id="heroPanels">
+          <div class="panel on" data-panel="noi">
+            <div class="panel-top mono"><span><i class="dot"></i>ALDER PORTFOLIO · TRAILING TWELVE</span><span>NOI</span></div>
+            <div class="metric"><em>Beacon Wharf</em><b data-count="1310000" data-fmt="m">$0</b><small>NOI · Jan–Dec</small></div>
+            <div class="metric"><em>Juniper Court</em><b data-count="764000" data-fmt="m">$0</b><small>NOI · Apr–Mar</small></div>
+            <div class="metric dim"><em>Vesper Lofts</em><b>Not printed</b><small>NOI line absent</small></div>
+          </div>
+          <div class="panel" data-panel="occ">
+            <div class="panel-top mono"><span><i class="dot"></i>BEACON WHARF · RENT ROLL</span><span>OCCUPANCY</span></div>
+            <div class="bar-row"><span>Studio</span><i style="--w:95%"><b></b></i><b>95%</b></div>
+            <div class="bar-row"><span>1 Bed</span><i style="--w:93%"><b></b></i><b>93%</b></div>
+            <div class="bar-row"><span>2 Bed</span><i style="--w:89%"><b></b></i><b>89%</b></div>
+            <p class="fine mono">96 UNITS · 4 PAST LEASE-END · PET + OTHER CHARGES SPLIT</p>
+          </div>
+          <div class="panel" data-panel="model">
+            <div class="panel-top mono"><span><i class="dot"></i>BEACON WHARF · EXCEL MODEL</span><span>VALUE</span></div>
+            <p class="formula mono">=XLOOKUP(A2,A:A,B:B)/C2</p>
+            <p class="big" data-count="22807018" data-fmt="full">$0</p>
+            <p class="fine">NOI 1,310,000 · cap 5.74% · resolves in the sheet</p>
+          </div>
+        </div>
+        <div class="hero-tabs mono" role="tablist" aria-label="Demo views">
+          <button class="on" data-goto="noi" role="tab">NOI</button>
+          <button data-goto="occ" role="tab">Occupancy</button>
+          <button data-goto="model" role="tab">Excel value</button>
         </div>
       </div>
-      <div class="hero-img" role="img" aria-label="Multi-asset Bayesian workflow diagram">
-        <img src="./images/multi-asset-bayesian-workflow.jpeg" alt="Multi-asset Bayesian workflow">
-        <div class="hero-cta">
-          <p class="hero-cta-text">Revolutionize multi-asset investing using Bayesian workflows.</p>
-          <a class="btn btn-pill" href="https://pramod-thaz.github.io/blog/posts/bayesian-workflow/2026-09-01-bayesian-investor-00-series-index.html">Learn how…</a>
+      <div class="strip mono" aria-label="Coverage">
+        <span>MULTIFAMILY</span><span>COMMERCIAL</span><span>CREDIT / DEBT</span><span>RENT ROLL</span><span>T12 / OS</span><span>DEALS</span><span>ASSET GRAPH</span><span>INVESTOR PACKS</span>
+      </div>
+    </section>
+
+    <!-- 02 KNOWLEDGE GRAPH (early) -->
+    <section class="scene" id="kgraph" data-agent="graph">
+      <div class="scene-head">
+        <p class="eyebrow"><span class="n mono">02</span> KNOWLEDGE GRAPH · PORTFOLIO → TENANT</p>
+        <h2>Interrogate the Portfolio Graph.</h2>
+        <p class="graph-sub">Extract auditable, cross-referenced metrics.</p>
+        <p>Navigate your entire portfolio footprint in one question. Pull exact, context-mapped numbers with line-item citations. Drag any node — the pulse is the walk the agent just ran.</p>
+      </div>
+      <div class="stage kg-stage">
+        <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">graph — alder portfolio trace</span><span class="live"><i></i><span id="kgLive">WALKING</span></span></div>
+        <div class="kg-wrap">
+          <canvas id="kgCanvas" height="440" aria-label="Portfolio to tenant knowledge graph. Drag nodes to explore."></canvas>
+          <div class="kg-tip mono" id="kgTip" hidden></div>
+        </div>
+        <div class="kg-legend mono">
+          <span><i class="sw fibo"></i>FIBO · legal / financial</span>
+          <span><i class="sw rec"></i>REC · physical / operational</span>
+          <span><i class="sw ream"></i>REAM · asset-management join</span>
+          <span class="kg-hint">DRAG NODES · HOVER FOR TYPE + FIELDS</span>
+        </div>
+        <div class="kg-path mono" id="kgPath">Query the asset graph. Extract interconnected market and property truths — fully cited back to the source lease or underwriting model.</div>
+      </div>
+      <div class="lc-row">
+        <div class="lc"><p class="mono">ACQUISITIONS · DUE DILIGENCE</p><b>Map chaotic data rooms instantly.</b><span>Query the Portfolio Graph to surface hidden lease liabilities and tenant exposures with direct PDF citations before you model them in Excel.</span></div>
+        <div class="lc"><p class="mono">ASSET MANAGEMENT · OPERATIONS</p><b>Bridge rent rolls and statements.</b><span>Ask complex, cross-property questions and get answers mapped directly to the source document.</span></div>
+        <div class="lc"><p class="mono">FUND MANAGEMENT · REPORTING</p><b>Defend metrics to LPs.</b><span>Aggregate asset-level truth into fund-level insights. Interrogate your interconnected ledger with a flawless, automated paper trail.</span></div>
+      </div>
+    </section>
+
+    <!-- ANSWER -->
+    <section class="scene" id="answer" data-agent="answer">
+      <div class="scene-head">
+        <p class="eyebrow"><span class="n mono">03</span> THE ANSWER</p>
+        <h2>The answer cites its source.</h2>
+        <p>Query your own knowledge universe. Extract exact numbers, dates, and insights fully sourced — if the line was never printed, Meridian says so. Watch the agent on the right.</p>
+      </div>
+      <div class="stage">
+        <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">ask — portfolio NOI, trailing twelve</span><span class="live"><i></i>ANSWER</span></div>
+        <div class="chat">
+          <p class="bubble">What is NOI for the portfolio?</p>
+          <div class="sources">
+            <article><span class="mono">BEACON WHARF · OS</span><strong>1,310,000</strong><em>Operating statement · Jan–Dec</em><code class="mono">lexicon: t12-noi ✓</code></article>
+            <article><span class="mono">JUNIPER COURT · OS</span><strong>764,000</strong><em>Operating statement · Apr–Mar</em><code class="mono">lexicon: t12-noi ✓</code></article>
+            <article class="dim"><span class="mono">VESPER LOFTS · OS</span><strong>Not printed</strong><em>No NOI line on the statement</em><code class="mono">LINE ABSENT</code></article>
+          </div>
+          <div class="quote-row">
+            <p class="quote">“Net operating income …… 1,310,000” — kept on the line, not retyped.</p>
+            <p class="shield mono">QUOTES ARE EVIDENCE, NEVER THE ANSWER TEXT</p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="wrap" id="services">
-      <div class="tracks">
-        <article class="track">
-          <p class="for"><span class="numeral-sm">I</span> Consulting</p>
-          <h2>Institutional Quantitative Risk &amp; AI</h2>
-          <p>For pensions, quant funds, risk teams, and LPs who evaluate mathematically rigorous, uncertainty-aware frameworks.</p>
-          <ul>
-            <li>Probabilistic modeling &amp; Bayesian risk frameworks</li>
-            <li>Hidden Markov models &amp; regime-switching alpha</li>
-            <li>Black-Litterman Bayesian Networks / DAGs / DCGs &amp; view-adjusted allocation</li>
-          </ul>
-          <a class="btn btn-primary" href="#institutional">Explore institutional solutions →</a>
+    <!-- DOCUMENTS -->
+    <section class="scene" id="documents" data-agent="docs">
+      <div class="scene-head">
+        <p class="eyebrow"><span class="n mono">04</span> DOCUMENTS</p>
+        <h2>Documents become the book.</h2>
+        <p>Rent rolls and twelve-month statements are read as tables. A presentation stays a narrative. A mismatch stays visible in the exception queue — never silently absorbed.</p>
+      </div>
+      <div class="stage">
+        <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">ingest — files to graph</span>
+          <span class="seg mono" id="docSeg"><button class="on" data-doc="rr">Rent roll</button><button data-doc="os">Statement</button><button data-doc="memo">Memo</button></span>
+        </div>
+        <div class="split">
+          <div class="files" id="docFiles">
+            <div class="file on" data-doc="rr"><b>beacon-wharf-roll.pdf</b><span>96 units · leases · charges</span><em class="mono">ADAPTER · NO MODEL NEEDED</em></div>
+            <div class="file" data-doc="os"><b>juniper-court-t12.pdf</b><span>12 months · line by line · totals checked</span><em class="mono">ADAPTER · TOTALS VERIFIED</em></div>
+            <div class="file quiet" data-doc="memo"><b>vesper-lofts-deck.pdf</b><span>Narrative · forward-looking stays narrative</span><em class="mono">NARRATIVE LANE</em></div>
+          </div>
+          <div class="table-wrap">
+            <div class="docpane on" data-doc="rr">
+              <div class="t-head mono"><span>UNIT</span><span>STATUS</span><span>TENANT</span><span>RENT</span></div>
+              <div class="t-row"><span>B-101</span><span class="pill ok">Occupied</span><span>Ellis, R.</span><span>2,240</span></div>
+              <div class="t-row"><span>B-102</span><span class="pill warn">Vacant</span><span>—</span><span>—</span></div>
+              <div class="t-row"><span>B-114</span><span class="pill ok">Occupied</span><span>Pet +$35</span><span>1,265</span></div>
+              <div class="review mono">EXCEPTION · 3 TOTAL-MISMATCH ROWS — KEPT VISIBLE</div>
+            </div>
+            <div class="docpane" data-doc="os">
+              <div class="t-head mono"><span>LINE</span><span>PERIOD</span><span>TOTAL</span><span>CHECK</span></div>
+              <div class="t-row"><span>Net operating income</span><span>Apr–Mar</span><span>764,000</span><span class="pill ok">✓ months sum</span></div>
+              <div class="t-row"><span>Gross potential rent</span><span>Apr–Mar</span><span>1,180,400</span><span class="pill ok">✓ months sum</span></div>
+              <div class="t-row"><span>Cash balance rows</span><span>Apr–Mar</span><span>—</span><span class="pill warn">3 mismatches queued</span></div>
+              <div class="review mono">PARENTHESES ARE NEGATIVES · SECTION HEADERS STAY ROWS</div>
+            </div>
+            <div class="docpane" data-doc="memo">
+              <div class="memo"><p class="mono">OFFERING MEMO · NARRATIVE</p><h3>Growth story, not a ledger.</h3><p>Kept as prose with evidence links. The model never turns a forward-looking sentence into a number.</p></div>
+              <div class="review mono">TYPE PINNED BY ROUTER · PROPOSALS QUEUED FOR HUMANS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEXICON + KB -->
+    <section class="scene" id="formula" data-agent="lexicon">
+      <div class="scene-head">
+        <p class="eyebrow"><span class="n mono">05</span> LEXICON + KNOWLEDGE BASE</p>
+        <h2>Your lexicon. Your data. Instant, sourced insights.</h2>
+        <p>The firm formula is readable: your definitions live on notes — not buried in code. The agent resolves every KPI through them, then executes the walk. Draft with AI, promote when approved.</p>
+      </div>
+      <div class="bento">
+        <div class="stage note-stage">
+          <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">lexicon — trailing-twelve NOI</span><span class="live"><i></i>APPROVED</span></div>
+          <div class="note-body">
+            <p class="note-k mono">WALK · anchor → hops → sum(amount_total)</p>
+            <h3>Trailing-twelve NOI</h3>
+            <p>Sum the printed NOI line on each statement. Missing line? Report <b>LINE ABSENT</b> — never invent.</p>
+            <pre class="code mono">anchor: BuildingAsset
+hops: hasStatementLine → StatementLine
+where: label = "Net Operating Income"
+numerator: sum(amount_total)</pre>
+            <p class="fine">Occupied rent sums <span class="mono">contract_rent</span>; vacant uses <span class="mono">market_rent</span>. Annualize ×12 only when complete.</p>
+          </div>
+        </div>
+        <div class="stage chart-stage">
+          <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">beacon wharf · monthly NOI series</span><span class="live"><i></i>SERIES</span></div>
+          <svg viewBox="0 0 640 180" role="img" aria-label="Monthly NOI series"><path class="area" d="M16 140 C70 140 90 90 140 96 S230 150 300 110 S400 40 470 58 S560 120 624 80 V180 H16 Z"/><path class="line" d="M16 140 C70 140 90 90 140 96 S230 150 300 110 S400 40 470 58 S560 120 624 80"/></svg>
+          <div class="kb-row">
+            <div class="kb"><p class="mono">CUSTOM KB · your terms</p><b>Renewal trade-out, exposure, DSCR…</b><span>Draft with AI, promote when approved.</span></div>
+            <div class="kb"><p class="mono">CALCULATOR · python-backed</p><b>Cap-rate value</b><span>NOI from gross rent × expense ratio.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXCEL MODELS + WORKBOOKS -->
+    <section class="scene" id="workbook" data-agent="workbook">
+      <div class="scene-head">
+        <p class="eyebrow"><span class="n mono">06</span> EXCEL MODELS &amp; WORKBOOKS</p>
+        <h2>Your Excel models still calculate.</h2>
+        <p>Meridian runs the workbook you already have. Cells stay cells. A named calculation sits beside the sheet — and the agent uses it, not a guess.</p>
+      </div>
+      <div class="stage">
+        <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><svg class="xlicon" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="4.5"/><path d="M8 7.5l8 9M16 7.5l-8 9"/></svg><span class="mono">Excel · beacon-wharf-uw.xlsx — calculated live</span>
+          <span class="seg mono" id="wbSeg"><button class="on" data-wb="value">Value</button><button data-wb="sens">Sensitivity</button><button data-wb="bridge">NOI bridge</button></span>
+        </div>
+        <div class="wbpanes">
+          <div class="wbpane on" data-wb="value">
+            <div class="sheet" aria-label="Workbook demo">
+              <div class="s-head mono"><span></span><span>A</span><span>B</span><span>C</span><span>D</span></div>
+              <div class="s-row"><span class="mono">1</span><span>Property</span><span>NOI</span><span>Cap</span><span>Value</span></div>
+              <div class="s-row"><span class="mono">2</span><span>Beacon Wharf</span><span>1,310,000</span><span>5.74%</span><span class="fx mono">=XLOOKUP(A2,A:A,B:B)/C2</span></div>
+              <div class="s-row"><span class="mono">3</span><span></span><span></span><span></span><span class="val">22,807,018</span></div>
+            </div>
+            <div class="chiprow"><span class="chip mono">NAMED CALC · cap-rate-value</span><span class="chip mono">SORT · XLOOKUP · SEQUENCE SPILL ✓</span></div>
+          </div>
+          <div class="wbpane" data-wb="sens">
+            <div class="tornado">
+              <div class="t-row2"><span>Cap 4.75%</span><i style="--w:88%"></i><b>27.6M</b></div>
+              <div class="t-row2"><span>Cap 5.74%</span><i style="--w:70%"></i><b>22.8M</b></div>
+              <div class="t-row2"><span>Cap 6.75%</span><i style="--w:58%"></i><b>19.4M</b></div>
+              <div class="t-row2"><span>Rent −5%</span><i style="--w:64%"></i><b>21.6M</b></div>
+            </div>
+            <div class="chiprow"><span class="chip mono">SENSITIVITY RUNS IN THE SHEET + PYTHON</span></div>
+          </div>
+          <div class="wbpane" data-wb="bridge">
+            <div class="bridge"><i style="--h:52%"></i><i style="--h:70%"></i><i style="--h:44%"></i><i style="--h:78%"></i><i style="--h:62%"></i><i style="--h:86%"></i><b class="mono">NOI BRIDGE · ACTUALS → REFORECAST</b></div>
+            <div class="chiprow"><span class="chip mono">REFORECAST FROM LIVE ACTUALS, NOT A COPY-PASTE</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTOMATION -->
+    <section class="scene" id="automate" data-agent="python">
+      <div class="scene-head">
+        <p class="eyebrow"><span class="n mono">07</span> AUTOMATION</p>
+        <h2>Python, schedules, and agents — in the same loop.</h2>
+        <p>The assistant doesn't just chat. It runs saved Python, refreshes the sheet, writes dated notes, and pings governed metrics to the tools you already use.</p>
+      </div>
+      <div class="bento">
+        <div class="stage code-stage">
+          <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">snippets / cap-rate-value.py</span><span class="live"><i></i>SANDBOXED</span></div>
+<pre class="code big-code"><code><span class="k">def</span> <span class="f">value</span>(noi, cap_rate):
+    <span class="k">return</span> noi / cap_rate
+
+noi = gross_rent * (<span class="n">1</span> - expense_ratio)  <span class="c"># default 0.35</span>
+<span class="k">print</span>(<span class="f">value</span>(noi, <span class="n">0.0574</span>))  <span class="c"># → 22,807,018</span></code></pre>
+          <div class="chiprow"><span class="chip mono">RUNS WHERE THE ANSWER RUNS</span><span class="chip mono">INPUTS: METRIC · SNIPPET · VALUE+DEFAULT</span></div>
+        </div>
+        <div class="stage sched-stage">
+          <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">playbooks — agentic AM</span><span class="live"><i></i>SCHEDULED</span></div>
+          <div class="sched">
+            <div class="sched-row"><span class="mono">DAILY 07:00</span><b>financial_review</b><em>OS + roll → variance note</em></div>
+            <div class="sched-row"><span class="mono">MON 08:00</span><b>lease_monitor</b><em>expirations → chase list</em></div>
+            <div class="sched-row"><span class="mono">ON INGEST</span><b>deal_screen</b><em>CIM + roll → IC memo draft</em></div>
+          </div>
+          <p class="fine mono">SAME NUMBER IN THE NOTE AND IN YOUR COPILOT VIA MCP</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESK -->
+    <section class="scene" id="desk" data-agent="desk">
+      <div class="scene-head">
+        <p class="eyebrow"><span class="n mono">08</span> THE DESK</p>
+        <h2>The dashboard is a note.</h2>
+        <p>Markdown is the desk. Transclude PDFs, link notes, drop in live tables and charts, pin a canvas board for the week. Scratch drafts stay ephemeral — signed packs stay put.</p>
+      </div>
+      <div class="bento">
+        <article class="stage page">
+          <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">beacon-wharf.md</span><span class="live"><i></i>DURABLE</span></div>
+          <div class="page-body">
+            <h3>Beacon Wharf</h3>
+            <p class="link">↳ Juniper Court · Vesper Lofts · <span>![[beacon-roll.pdf]]</span></p>
+            <div class="mini-chart" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="mini-table"><span>NOI (T12)</span><span>1.31M · cited</span><span>Occupancy</span><span>93% · rent roll</span><span>Value</span><span>22.8M · from sheet</span></div>
+            <p class="trans mono">![[juniper-t12.pdf#NOI]] · ![[lease-B101#terms]] · live table ↓</p>
+          </div>
         </article>
-
-        <article class="track">
-          <p class="for"><span class="numeral-sm">II</span> Consulting</p>
-          <h2>CRE Engineering &amp; Due Diligence Systems</h2>
-          <p>For engineering firms, inspectors, and lenders who need operational friction removed from their report pipeline.</p>
-          <ul>
-            <li>ASTM E2018-24 capital reserve modeling</li>
-            <li>PDF / field-note to Excel pro-forma automation</li>
-            <li>Lender-ready formatting &amp; report backlog clearance</li>
-          </ul>
-          <a class="btn btn-ghost" href="due-diligence.html">Explore CRE services →</a>
-        </article>
-
-        <article class="track product">
-          <p class="for"><span class="numeral-sm">III</span> Product</p>
-          <h2>Meridian — Unified Decision &amp; Underwriting System</h2>
-          <p>Institutional look-through and Bayesian analytics for mixed public/private portfolios — bridging sparse private-asset data with real-time public markets.</p>
-          <ul>
-            <li>Unified look-through across REITs, CRE, private debt</li>
-            <li>Bayesian un-smoothing with full audit lineage</li>
-            <li>In-memory DuckDB + FastAPI engine, no durable plaintext</li>
-          </ul>
-          <a class="btn btn-product" href="meridian-deck.html" target="_blank" rel="noopener">Full deck ↗</a>
+        <article class="stage canvas">
+          <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">this-week.canvas</span><span class="live ephemeral"><i></i>EPHEMERAL DRAFT</span></div>
+          <div class="canvas-body">
+            <h3>This week</h3>
+            <div class="ticket"><b>Expirations · 90 days</b><span>4 units · chase list drafted by agent</span></div>
+            <div class="ticket"><b>Budget vs actual</b><span>Variance table + commentary queued</span></div>
+            <div class="ticket"><b>Review · Vesper Lofts</b><span>NOI line absent — confirm, don't fill</span></div>
+          </div>
         </article>
       </div>
-    </div>
-
-    <section id="institutional">
-      <div class="wrap">
-        <div class="numeral">I</div>
-        <h2>Institutional Probabilistic Analytics &amp; Risk Consulting</h2>
-        <div class="rule"></div>
-        <p class="lede" style="font-size:16px;max-width:820px;">
-          Rigorous, uncertainty-aware frameworks for institutions that need decisions to survive a risk committee.
-          Three solution modules, one for each sub-audience.
-        </p>
-        <div class="grid-3">
-          <div class="module">
-            <p class="spec">Allocators &amp; pension funds</p>
-            <h3>Multi-asset risk-budgeting &amp; structural allocation under uncertainty</h3>
-            <dl>
-              <dt>Problem</dt><dd>Traditional mean-variance optimization breaks out-of-sample due to extreme sensitivity to expected-return inputs.</dd>
-              <dt>Deliverable</dt><dd>Custom hierarchical Bayesian shrinkage &amp; Black-Litterman Directed Acyclic Graph (DAG) models.</dd>
-              <dt>Value</dt><dd>Absorbs subjective market views, buffers against tail risk, and stabilizes asset weights across changing macro regimes without over-concentrating positions.</dd>
-            </dl>
-          </div>
-          <div class="module">
-            <p class="spec">Quant funds &amp; systematic alpha</p>
-            <h3>Causal discovery &amp; regime-switching market mechanics</h3>
-            <dl>
-              <dt>Problem</dt><dd>Linear backtests overfit static historical distributions and break down during structural regime shifts.</dd>
-              <dt>Deliverable</dt><dd>PyMC/JAX-driven Hidden Markov Models (HMMs) with Student-t emission distributions and causal d-separation frameworks.</dd>
-              <dt>Value</dt><dd>Isolates true causal alpha drivers from latent market noise and enables dynamic real-time risk / volatility targeting.</dd>
-            </dl>
-          </div>
-          <div class="module">
-            <p class="spec">Risk teams &amp; LPs / GPs</p>
-            <h3>Probabilistic performance attribution &amp; style-drift identification</h3>
-            <dl>
-              <dt>Problem</dt><dd>Retrospective Brinson-Fachler models fail to separate true manager selection skill from accidental factor / sector tilts.</dd>
-              <dt>Deliverable</dt><dd>Latent-variable hierarchical attribution frameworks.</dd>
-              <dt>Value</dt><dd>Decouples alpha, selection skill, and market friction into dynamic latent states — flagging hidden style drift before it compromises fund performance.</dd>
-            </dl>
-          </div>
-        </div>
-        <p class="note">
-          Meridian began as this practice's proof-of-concept for Bayesian
-          un-smoothing: P(V<sub>real</sub> | M<sub>public</sub>) &prop; P(M<sub>public</sub> | V<sub>real</sub>) &middot; P(V<sub>appraisal</sub>),
-          reconciling real-time public-market signals with smoothed private appraisals across mixed
-          public/private portfolios.
-        </p>
-      </div>
     </section>
 
-    <section id="due">
-      <div class="wrap">
-        <div class="numeral">II</div>
-        <h2>Fractional Due Diligence &amp; Engineering Workflow Analytics</h2>
-        <div class="rule"></div>
-        <p class="lede" style="font-size:17px;max-width:820px;">
-          <b>Clear your report backlog. Scale inspection volume without adding fixed overhead.</b>
-        </p>
-        <p style="max-width:820px;color:var(--body);">
-          Field engineers excel at physical site walks and structural assessments — not spending hours
-          wrestling with ASTM spreadsheets and formatting 12-year Capital Reserves tables. I serve as a
-          backend financial analytics desk for engineering firms, translating raw field notes and draft
-          PDFs into institutional-grade, lender-ready Excel pro-formas.
-        </p>
-        <div class="grid-3">
-          <div class="cap">
-            <h3>ASTM E2018-24 Capital Reserve Automation</h3>
-            <p>Convert raw field observations into formula-linked, multi-scenario 12-year reserve tables.</p>
-          </div>
-          <div class="cap">
-            <h3>Lender &amp; Private Equity Formatting</h3>
-            <p>Standardize technical engineering findings directly into institutional CRE underwriting templates.</p>
-          </div>
-          <div class="cap">
-            <h3>Report Backlog Clearance</h3>
-            <p>Zero field liability — a fractional analytics and production desk that helps senior engineers double weekly inspection capacity.</p>
-          </div>
-        </div>
-        <div class="process" role="img" aria-label="Three-step process: field notes to ASTM Excel pro-forma">
-          <div class="step"><b>Field Notes / PDF Drafts</b>Raw site observations and draft reports</div>
-          <div class="arrow">→</div>
-          <div class="step"><b>Automated Pipeline / Parsing</b>Document-to-model extraction and normalization</div>
-          <div class="arrow">→</div>
-          <div class="step"><b>Dynamic ASTM Excel Pro-Forma</b>Lender-ready, formula-linked 12-year reserves</div>
-        </div>
-        <p class="note">
-          Zero field liability: physical observations, EULs, ERULs, and unit costs stay with your field
-          observer. Under the hood, this pipeline is Meridian's Document-to-Model Engine (FastAPI + DuckDB +
-          PDF transclusion) — the technology that parses engineering reports and Excel DCFs into the pro-forma.
-          Sample deliverable: a two-asset data-center + industrial-warehouse dashboard —
-          <a href="due-diligence.html#preview">preview the workbook →</a>. To review the live Excel file,
-          request access via <a href="mailto:pramodty@gmail.com">pramodty@gmail.com</a>.
-        </p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="due-diligence.html">Visit the due-diligence page →</a>
+    <!-- PLATFORM -->
+    <section class="scene" id="path" data-agent="close">
+      <div class="scene-head">
+        <p class="eyebrow"><span class="n mono">09</span> THE PLATFORM</p>
+        <h2>One desk for the whole lifecycle.</h2>
+        <p>From acquisitions to fund management — the same asset graph, lexicon, and Excel models carry every answer.</p>
+      </div>
+      <ol class="path future">
+        <li><span class="mono">COMMAND CENTER</span><b>Every property on one page</b><em>Portfolio KPIs, anomaly watch, morning board</em></li>
+        <li><span class="mono">LEASING &amp; EXPOSURE</span><b>Dates, renewals, trade-outs</b><em>Critical dates, exposure watchlists, chase lists</em></li>
+        <li><span class="mono">FILE-FIRST CLOSE</span><b>Budget against actuals</b><em>T-12 / BvA packs, variance commentary, signed month-end packs</em></li>
+        <li><span class="mono">DEAL INTELLIGENCE</span><b>Screen in the workbook</b><em>Data-room mapping, comps, underwriting models, IC memos</em></li>
+        <li><span class="mono">CAPITAL &amp; INVESTORS</span><b>Debt, ownership, packs</b><em>Ownership look-through, covenants, NCREIF-aligned packs, MCP metrics</em></li>
+        <li><span class="mono">FEEDS &amp; SCALE</span><b>From the systems you run</b><em>Selective PM feeds, freshness SLAs, commercial suites, enterprise trust</em></li>
+      </ol>
+    </section>
+
+    <!-- COMPARE -->
+    <section class="scene" id="compare" data-agent="close">
+      <div class="scene-head">
+        <p class="eyebrow"><span class="n mono">10</span> WHY MERIDIAN</p>
+        <h2>Everything they do.<br>Everything they can't.</h2>
+        <p>The feed-based OS got you normalized data and rented analysts. Meridian makes the desk itself intelligent — and extensible by you.</p>
+      </div>
+      <div class="stage cmp-stage">
+        <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">meridian vs feed-based platforms</span><span class="live"><i></i>AHEAD</span></div>
+        <div class="cmp">
+          <div class="cmp-head mono"><span></span><span>FEED OS</span><span>MERIDIAN</span></div>
+          <div class="cmp-row"><span>Daily PM feeds</span><span>✓ 100+ connectors</span><span class="win">✓ file-first + selective feeds — trust before volume</span></div>
+          <div class="cmp-row"><span>Rent-roll analytics</span><span>✓ dashboards</span><span class="win">✓ deterministic adapters + lexicon walks, cited</span></div>
+          <div class="cmp-row"><span>Analysts on staff</span><span>✓ rented AMs</span><span class="win">✓ software agents + playbooks you own</span></div>
+          <div class="cmp-row"><span>Excel models</span><span>— export to Excel</span><span class="win">✓ Excel calculates in place (Formualizer)</span></div>
+          <div class="cmp-row"><span>Firm formulas</span><span>— hardcoded</span><span class="win">✓ readable lexicon + custom knowledge base</span></div>
+          <div class="cmp-row"><span>Ad-hoc math</span><span>— back to spreadsheets</span><span class="win">✓ sandboxed Python in the answer loop</span></div>
+          <div class="cmp-row"><span>Desk</span><span>— another BI portal</span><span class="win">✓ markdown notes, PDF transclusion, canvas</span></div>
+          <div class="cmp-row"><span>AI access</span><span>✓ copilots on their cloud</span><span class="win">✓ governed metrics via MCP — same number everywhere</span></div>
         </div>
       </div>
     </section>
 
-    <section id="proof">
-      <div class="wrap">
-        <h2>Career Path</h2>
-        <div class="rule"></div>
-        <div class="proof">
-          <div class="jobs">
-            <div class="job">
-              <h3>Teachers Retirement System of Texas</h3>
-              <div class="org">Performance measurement · ~$200B multi-asset trust</div>
-              <p>Production performance infrastructure across funds, aggregates, and composites. Multi-decade validated history used for research and governance.</p>
-            </div>
-            <div class="job">
-              <h3>USAA Real Estate</h3>
-              <div class="org">Enterprise performance &amp; attribution</div>
-              <p>Institutionalized traceability standards that corrected reported performance by ≥450 bp in key asset classes. NCREIF / MSCI methodology work.</p>
-            </div>
-            <div class="job">
-              <h3>GE Capital Real Estate</h3>
-              <div class="org">Risk &amp; analytics · ~$80B CRE book</div>
-              <p>Stress framework presented to Federal Reserve oversight. Underwriting and syndication systems on ~$3B of complex transactions.</p>
-            </div>
-            <div class="job">
-              <h3>Independent CRE practice</h3>
-              <div class="org">Underwriting · asset management</div>
-              <p>Acquisition support on ~$100–300M multifamily and creative office. First comprehensive budgeting framework for a large SFR platform (~30,000 units).</p>
-            </div>
-          </div>
-          <div>
-            <div class="kpis">
-              <div class="kpi"><b>~$200B</b><span>Performance monitoring &amp; attribution of the trust platform at a pension fund</span></div>
-              <div class="kpi"><b>≥450 bp</b><span>Reporting correction at USAA RE</span></div>
-              <div class="kpi"><b>~$80B</b><span>CRE book stress-tested at GE</span></div>
-              <div class="kpi"><b>25+ yrs</b><span>Public markets + private CRE</span></div>
-            </div>
-            <p class="note">
-              Full career history, credentials, and technical appendix on the
-              <a href="resume.html">résumé page →</a>.
-            </p>
-          </div>
-        </div>
+    <!-- CLOSE -->
+    <section class="close" id="close" data-agent="close">
+      <p class="eyebrow center">STOP STITCHING REPORTS. START ASKING.</p>
+      <h2>The AI layer on the documents and the workbook you already use.</h2>
+      <p>Not a replacement property system. Not a rented analyst. Not a new dashboard product.</p>
+      <div class="hero-cta center">
+        <a class="btn solid big" href="#top">Bring one rent roll</a>
+        <a class="btn ghost big" href="#path">Explore the platform</a>
       </div>
+      <p class="fine mono center">DEMO DATA SHOWN IS ILLUSTRATIVE · YOUR FILES STAY YOURS</p>
     </section>
 
-    <section id="contact">
-      <div class="wrap">
-        <h2>How to start</h2>
-        <div class="rule"></div>
-        <p class="lede" style="font-size:17px;">
-          Engineering firms: send a redacted field-note pack or a draft PCR. I return a scoped workbook
-          and a turnaround time. Allocators and risk teams: a 30-minute call on the decision that is
-          currently made with a point estimate.
-        </p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="mailto:pramodty@gmail.com">pramodty@gmail.com</a>
-          <a class="btn btn-ghost" href="https://github.com/pramod-thaz" target="_blank" rel="noopener">github.com/pramod-thaz</a>
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand"><span class="brand-mark" aria-hidden="true"></span><b>Meridian</b><p>AI-first institutional real estate asset management.</p></div>
+        <div class="footer-cols">
+          <div><p class="mono">PLATFORM</p><a href="#answer">Cited answers</a><a href="#documents">Document ingest</a><a href="#workbook">Excel models</a><a href="#formula">Lexicon + KB</a></div>
+          <div><p class="mono">DESK</p><a href="#desk">Notes + canvas</a><a href="#automate">Python + playbooks</a><a href="#kgraph">Knowledge graph</a><a href="#path">Platform</a></div>
+          <div><p class="mono">COMPANY</p><a href="#compare">Why Meridian</a><a href="https://pramod-thaz.github.io/resume.html">The founder</a><a href="https://pramod-thaz.github.io/blog/">Blog</a><a href="mailto:pramodty@gmail.com">Contact</a></div>
         </div>
-        <p class="contact-meta">Austin, Texas · Independent consultant · Field inspections stay with your team · Not investment advice</p>
       </div>
-    </section>
+      <p class="footer-base mono">© 2026 DOMARP LLC · MERIDIAN · MARKDOWN-NATIVE · CITED, NOT INVENTED</p>
+    </footer>
+
   </main>
 
-  <footer>
-    <div class="wrap">
-      <strong>Pramod Thaz</strong> &nbsp;·&nbsp; also Pramod Thazhichayil / T. Y. Pramod
-      &nbsp;·&nbsp; <a href="resume.html">Résumé &amp; technical appendix</a>
+  <!-- PERSISTENT AGENT RAIL -->
+  <aside class="rail" id="agentRail" aria-label="Meridian AI agent, following the page">
+    <div class="agent chat-agent" id="agentBox">
+      <div class="agent-bar chat-bar"><span class="avatar" aria-hidden="true">M</span><span class="agent-name">Meridian AI agent</span><span class="live"><i></i>LIVE</span></div>
+      <div class="agent-body chat" id="agentBody" aria-live="polite"><div class="aboot mono">STARTING…</div></div>
     </div>
-  </footer>
+    <p class="rail-note mono">THE AGENT FOLLOWS THE PAGE · EACH SECTION RETOOLS IT</p>
+  </aside>
+</div>
 
-  <script>
-    (function () {
-      var btn = document.getElementById('navToggle');
-      var nav = btn && btn.nextElementSibling;
-      if (!btn || !nav) return;
-      btn.addEventListener('click', function () {
-        var open = nav.classList.toggle('open');
-        btn.classList.toggle('open', open);
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    })();
-  </script>
-
+<script src="graph.js?v=1"></script>
+<script src="main.js?v=1"></script>
 </body>
 </html>
