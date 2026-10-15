@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meridian — AI-first institutional real estate asset management</title>
+<meta name="description" content="Meridian is the AI layer on the documents and the workbook you already use. Ask the portfolio, get a cited number, keep Excel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="Meridian home"><span class="brand-mark" aria-hidden="true"></span>Meridian</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#kgraph"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><circle cx="3.2" cy="8" r="1.9"/><circle cx="12.4" cy="4" r="1.9"/><circle cx="12.4" cy="12" r="1.9"/><path d="M4.9 7.1l5.6-2.3M4.9 8.9l5.6 2.3"/></svg>Graph</a>
+      <a href="#documents"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="2" width="9" height="12" rx="1.6"/><path d="M6 5.5h4M6 8h4M6 10.5h2.6"/></svg>Documents</a>
+      <a href="#formula"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 2.8h7.8a1.7 1.7 0 0 1 1.7 1.7v8.7H4.7A1.7 1.7 0 0 1 3 11.5z"/><path d="M3 11.5V2.8"/><path d="M6 5.8h3.6"/></svg>Lexicon</a>
+      <a href="#workbook"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="2.5" width="11" height="11" rx="1.6"/><path d="M2.5 6.2h11M2.5 9.8h11M6.2 2.5v11M9.8 2.5v11"/></svg>Excel</a>
+      <a href="#desk"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="2.5" width="11" height="11" rx="1.6"/><path d="M2.5 6h11M6 6v7.5"/></svg>Desk</a>
+      <a href="#compare"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2l1.5 4.5L14 8l-4.5 1.5L8 14l-1.5-4.5L2 8l4.5-1.5z"/></svg>Why?</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn ghost" href="https://pramod-thaz.github.io/resume.html">The founder</a>
+      <a class="btn ghost" href="https://pramod-thaz.github.io/consulting.html">Consulting</a>
+      <a class="btn ghost" href="https://pramod-thaz.github.io/blog/">Blog</a>
+      <a class="btn solid" href="mailto:pramodty@gmail.com?subject=Meridian%20demo">Book a demo</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="#kgraph"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><circle cx="3.2" cy="8" r="1.9"/><circle cx="12.4" cy="4" r="1.9"/><circle cx="12.4" cy="12" r="1.9"/><path d="M4.9 7.1l5.6-2.3M4.9 8.9l5.6 2.3"/></svg>Graph</a><a href="#documents"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="2" width="9" height="12" rx="1.6"/><path d="M6 5.5h4M6 8h4M6 10.5h2.6"/></svg>Documents</a><a href="#formula"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 2.8h7.8a1.7 1.7 0 0 1 1.7 1.7v8.7H4.7A1.7 1.7 0 0 1 3 11.5z"/><path d="M3 11.5V2.8"/><path d="M6 5.8h3.6"/></svg>Lexicon</a><a href="#workbook"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="2.5" width="11" height="11" rx="1.6"/><path d="M2.5 6.2h11M2.5 9.8h11M6.2 2.5v11M9.8 2.5v11"/></svg>Excel</a><a href="#desk"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="2.5" width="11" height="11" rx="1.6"/><path d="M2.5 6h11M6 6v7.5"/></svg>Desk</a><a href="#compare"><svg class="nav-ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2l1.5 4.5L14 8l-4.5 1.5L8 14l-1.5-4.5L2 8l4.5-1.5z"/></svg>Why?</a><a href="https://pramod-thaz.github.io/resume.html">The founder</a><a href="https://pramod-thaz.github.io/consulting.html">Consulting</a><a href="https://pramod-thaz.github.io/blog/">Blog</a><a href="mailto:pramodty@gmail.com?subject=Meridian%20demo">Book a demo</a>
+  </div>
+</header>
+
+<div class="shell" id="top">
+  <main class="content">
+
+    <!-- HERO -->
+    <section class="hero" data-agent="hero">
+      <p class="eyebrow"><span class="dot"></span>AI-FIRST INSTITUTIONAL ASSET MANAGEMENT</p>
+      <h1>Talk to your portfolio like a colleague.<br><span class="h1-sub">Get <em>instant answers</em> with receipts.</span></h1>
+      <p class="lede">Meridian instantly reads your documents — financials, deal memos, and investor presentations — then answers with the exact property, time-period, and math attached. Built on your own Portfolio's Graph, every answer traces a flawless paper trail from portfolio down to the individual tenant lease.</p>
+      <p class="lede lede-strong">Crucially, Meridian plugs directly into your own Excel models, acting as an engine that runs your approved underwriting, asset management, fund, servicing or any models automatically.</p>
+      <div class="hero-cta">
+        <a class="btn solid big" href="mailto:pramodty@gmail.com?subject=Meridian%20demo">Book a demo</a>
+        <a class="btn ghost big" href="#path">See the platform</a>
+      </div>
+      <p class="hero-meta">FILE-FIRST &nbsp;·&nbsp; EVERY FIGURE CITED &nbsp;·&nbsp; EXCEL STAYS THE SYSTEM OF RECORD</p>
+
+      <div class="stage hero-stage">
+        <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">meridian — portfolio desk</span><span class="live"><i></i>LIVE DEMO</span></div>
+        <div class="askbar">
+          <span class="ask-k mono">ASK</span>
+          <p class="ask-line"><span id="typed"></span><span class="caret" aria-hidden="true"></span></p>
+          <p class="status mono" id="heroStatus"></p>
+        </div>
+        <div class="hero-panels" id="heroPanels">
+          <div class="panel on" data-panel="noi">
+            <div class="panel-top mono"><span><i class="dot"></i>ALDER PORTFOLIO · TRAILING TWELVE</span><span>NOI</span></div>
+            <div class="metric"><em>Beacon Wharf</em><b data-count="1310000" data-fmt="m">$0</b><small>NOI · Jan–Dec</small></div>
+            <div class="metric"><em>Juniper Court</em><b data-count="764000" data-fmt="m">$0</b><small>NOI · Apr–Mar</small></div>
+            <div class="metric dim"><em>Vesper Lofts</em><b>Not printed</b><small>NOI line absent</small></div>
+          </div>
+          <div class="panel" data-panel="occ">
+            <div class="panel-top mono"><span><i class="dot"></i>BEACON WHARF · RENT ROLL</span><span>OCCUPANCY</span></div>
+            <div class="bar-row"><span>Studio</span><i style="--w:95%"><b></b></i><b>95%</b></div>
+            <div class="bar-row"><span>1 Bed</span><i style="--w:93%"><b></b></i><b>93%</b></div>
+            <div class="bar-row"><span>2 Bed</span><i style="--w:89%"><b></b></i><b>89%</b></div>
+            <p class="fine mono">96 UNITS · 4 PAST LEASE-END · PET + OTHER CHARGES SPLIT</p>
+          </div>
+          <div class="panel" data-panel="model">
+            <div class="panel-top mono"><span><i class="dot"></i>BEACON WHARF · EXCEL MODEL</span><span>VALUE</span></div>
+            <p class="formula mono">=XLOOKUP(A2,A:A,B:B)/C2</p>
+            <p class="big" data-count="22807018" data-fmt="full">$0</p>
+            <p class="fine">NOI 1,310,000 · cap 5.74% · resolves in the sheet</p>
+          </div>
+        </div>
+        <div class="hero-tabs mono" role="tablist" aria-label="Demo views">
+          <button class="on" data-goto="noi" role="tab">NOI</button>
+          <button data-goto="occ" role="tab">Occupancy</button>
+          <button data-goto="model" role="tab">Excel value</button>
+        </div>
+      </div>
+      <div class="strip mono" aria-label="Coverage">
+        <span>MULTIFAMILY</span><span>COMMERCIAL</span><span>CREDIT / DEBT</span><span>RENT ROLL</span><span>T12 / OS</span><span>DEALS</span><span>ASSET GRAPH</span><span>INVESTOR PACKS</span>
+      </div>
+    </section>
+
+    <!-- 02 KNOWLEDGE GRAPH (early) -->
+    <section class="scene" id="kgraph" data-agent="graph">
+      <div class="scene-head">
+        <p class="eyebrow"><span class="n mono">02</span> KNOWLEDGE GRAPH · PORTFOLIO → TENANT</p>
+        <h2>Interrogate the Portfolio Graph.</h2>
+        <p class="graph-sub">Extract auditable, cross-referenced metrics.</p>
+        <p>Navigate your entire portfolio footprint in one question. Pull exact, context-mapped numbers with line-item citations. Drag any node — the pulse is the walk the agent just ran.</p>
+      </div>
+      <div class="stage kg-stage">
+        <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">graph — alder portfolio trace</span><span class="live"><i></i><span id="kgLive">WALKING</span></span></div>
+        <div class="kg-wrap">
+          <canvas id="kgCanvas" height="440" aria-label="Portfolio to tenant knowledge graph. Drag nodes to explore."></canvas>
+          <div class="kg-tip mono" id="kgTip" hidden></div>
+        </div>
+        <div class="kg-legend mono">
+          <span><i class="sw fibo"></i>FIBO · legal / financial</span>
+          <span><i class="sw rec"></i>REC · physical / operational</span>
+          <span><i class="sw ream"></i>REAM · asset-management join</span>
+          <span class="kg-hint">DRAG NODES · HOVER FOR TYPE + FIELDS</span>
+        </div>
+        <div class="kg-path mono" id="kgPath">Query the asset graph. Extract interconnected market and property truths — fully cited back to the source lease or underwriting model.</div>
+      </div>
+      <div class="lc-row">
+        <div class="lc"><p class="mono">ACQUISITIONS · DUE DILIGENCE</p><b>Map chaotic data rooms instantly.</b><span>Query the Portfolio Graph to surface hidden lease liabilities and tenant exposures with direct PDF citations before you model them in Excel.</span></div>
+        <div class="lc"><p class="mono">ASSET MANAGEMENT · OPERATIONS</p><b>Bridge rent rolls and statements.</b><span>Ask complex, cross-property questions and get answers mapped directly to the source document.</span></div>
+        <div class="lc"><p class="mono">FUND MANAGEMENT · REPORTING</p><b>Defend metrics to LPs.</b><span>Aggregate asset-level truth into fund-level insights. Interrogate your interconnected ledger with a flawless, automated paper trail.</span></div>
+      </div>
+    </section>
+
+    <!-- ANSWER -->
+    <section class="scene" id="answer" data-agent="answer">
+      <div class="scene-head">
+        <p class="eyebrow"><span class="n mono">03</span> THE ANSWER</p>
+        <h2>The answer cites its source.</h2>
+        <p>Query your own knowledge universe. Extract exact numbers, dates, and insights fully sourced — if the line was never printed, Meridian says so. Watch the agent on the right.</p>
+      </div>
+      <div class="stage">
+        <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">ask — portfolio NOI, trailing twelve</span><span class="live"><i></i>ANSWER</span></div>
+        <div class="chat">
+          <p class="bubble">What is NOI for the portfolio?</p>
+          <div class="sources">
+            <article><span class="mono">BEACON WHARF · OS</span><strong>1,310,000</strong><em>Operating statement · Jan–Dec</em><code class="mono">lexicon: t12-noi ✓</code></article>
+            <article><span class="mono">JUNIPER COURT · OS</span><strong>764,000</strong><em>Operating statement · Apr–Mar</em><code class="mono">lexicon: t12-noi ✓</code></article>
+            <article class="dim"><span class="mono">VESPER LOFTS · OS</span><strong>Not printed</strong><em>No NOI line on the statement</em><code class="mono">LINE ABSENT</code></article>
+          </div>
+          <div class="quote-row">
+            <p class="quote">“Net operating income …… 1,310,000” — kept on the line, not retyped.</p>
+            <p class="shield mono">QUOTES ARE EVIDENCE, NEVER THE ANSWER TEXT</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCUMENTS -->
+    <section class="scene" id="documents" data-agent="docs">
+      <div class="scene-head">
+        <p class="eyebrow"><span class="n mono">04</span> DOCUMENTS</p>
+        <h2>Documents become the book.</h2>
+        <p>Rent rolls and twelve-month statements are read as tables. A presentation stays a narrative. A mismatch stays visible in the exception queue — never silently absorbed.</p>
+      </div>
+      <div class="stage">
+        <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">ingest — files to graph</span>
+          <span class="seg mono" id="docSeg"><button class="on" data-doc="rr">Rent roll</button><button data-doc="os">Statement</button><button data-doc="memo">Memo</button></span>
+        </div>
+        <div class="split">
+          <div class="files" id="docFiles">
+            <div class="file on" data-doc="rr"><b>beacon-wharf-roll.pdf</b><span>96 units · leases · charges</span><em class="mono">ADAPTER · NO MODEL NEEDED</em></div>
+            <div class="file" data-doc="os"><b>juniper-court-t12.pdf</b><span>12 months · line by line · totals checked</span><em class="mono">ADAPTER · TOTALS VERIFIED</em></div>
+            <div class="file quiet" data-doc="memo"><b>vesper-lofts-deck.pdf</b><span>Narrative · forward-looking stays narrative</span><em class="mono">NARRATIVE LANE</em></div>
+          </div>
+          <div class="table-wrap">
+            <div class="docpane on" data-doc="rr">
+              <div class="t-head mono"><span>UNIT</span><span>STATUS</span><span>TENANT</span><span>RENT</span></div>
+              <div class="t-row"><span>B-101</span><span class="pill ok">Occupied</span><span>Ellis, R.</span><span>2,240</span></div>
+              <div class="t-row"><span>B-102</span><span class="pill warn">Vacant</span><span>—</span><span>—</span></div>
+              <div class="t-row"><span>B-114</span><span class="pill ok">Occupied</span><span>Pet +$35</span><span>1,265</span></div>
+              <div class="review mono">EXCEPTION · 3 TOTAL-MISMATCH ROWS — KEPT VISIBLE</div>
+            </div>
+            <div class="docpane" data-doc="os">
+              <div class="t-head mono"><span>LINE</span><span>PERIOD</span><span>TOTAL</span><span>CHECK</span></div>
+              <div class="t-row"><span>Net operating income</span><span>Apr–Mar</span><span>764,000</span><span class="pill ok">✓ months sum</span></div>
+              <div class="t-row"><span>Gross potential rent</span><span>Apr–Mar</span><span>1,180,400</span><span class="pill ok">✓ months sum</span></div>
+              <div class="t-row"><span>Cash balance rows</span><span>Apr–Mar</span><span>—</span><span class="pill warn">3 mismatches queued</span></div>
+              <div class="review mono">PARENTHESES ARE NEGATIVES · SECTION HEADERS STAY ROWS</div>
+            </div>
+            <div class="docpane" data-doc="memo">
+              <div class="memo"><p class="mono">OFFERING MEMO · NARRATIVE</p><h3>Growth story, not a ledger.</h3><p>Kept as prose with evidence links. The model never turns a forward-looking sentence into a number.</p></div>
+              <div class="review mono">TYPE PINNED BY ROUTER · PROPOSALS QUEUED FOR HUMANS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEXICON + KB -->
+    <section class="scene" id="formula" data-agent="lexicon">
+      <div class="scene-head">
+        <p class="eyebrow"><span class="n mono">05</span> LEXICON + KNOWLEDGE BASE</p>
+        <h2>Your lexicon. Your data. Instant, sourced insights.</h2>
+        <p>The firm formula is readable: your definitions live on notes — not buried in code. The agent resolves every KPI through them, then executes the walk. Draft with AI, promote when approved.</p>
+      </div>
+      <div class="bento">
+        <div class="stage note-stage">
+          <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">lexicon — trailing-twelve NOI</span><span class="live"><i></i>APPROVED</span></div>
+          <div class="note-body">
+            <p class="note-k mono">WALK · anchor → hops → sum(amount_total)</p>
+            <h3>Trailing-twelve NOI</h3>
+            <p>Sum the printed NOI line on each statement. Missing line? Report <b>LINE ABSENT</b> — never invent.</p>
+            <pre class="code mono">anchor: BuildingAsset
+hops: hasStatementLine → StatementLine
+where: label = "Net Operating Income"
+numerator: sum(amount_total)</pre>
+            <p class="fine">Occupied rent sums <span class="mono">contract_rent</span>; vacant uses <span class="mono">market_rent</span>. Annualize ×12 only when complete.</p>
+          </div>
+        </div>
+        <div class="stage chart-stage">
+          <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">beacon wharf · monthly NOI series</span><span class="live"><i></i>SERIES</span></div>
+          <svg viewBox="0 0 640 180" role="img" aria-label="Monthly NOI series"><path class="area" d="M16 140 C70 140 90 90 140 96 S230 150 300 110 S400 40 470 58 S560 120 624 80 V180 H16 Z"/><path class="line" d="M16 140 C70 140 90 90 140 96 S230 150 300 110 S400 40 470 58 S560 120 624 80"/></svg>
+          <div class="kb-row">
+            <div class="kb"><p class="mono">CUSTOM KB · your terms</p><b>Renewal trade-out, exposure, DSCR…</b><span>Draft with AI, promote when approved.</span></div>
+            <div class="kb"><p class="mono">CALCULATOR · python-backed</p><b>Cap-rate value</b><span>NOI from gross rent × expense ratio.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXCEL MODELS + WORKBOOKS -->
+    <section class="scene" id="workbook" data-agent="workbook">
+      <div class="scene-head">
+        <p class="eyebrow"><span class="n mono">06</span> EXCEL MODELS &amp; WORKBOOKS</p>
+        <h2>Your Excel models still calculate.</h2>
+        <p>Meridian runs the workbook you already have. Cells stay cells. A named calculation sits beside the sheet — and the agent uses it, not a guess.</p>
+      </div>
+      <div class="stage">
+        <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><svg class="xlicon" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="4.5"/><path d="M8 7.5l8 9M16 7.5l-8 9"/></svg><span class="mono">Excel · beacon-wharf-uw.xlsx — calculated live</span>
+          <span class="seg mono" id="wbSeg"><button class="on" data-wb="value">Value</button><button data-wb="sens">Sensitivity</button><button data-wb="bridge">NOI bridge</button></span>
+        </div>
+        <div class="wbpanes">
+          <div class="wbpane on" data-wb="value">
+            <div class="sheet" aria-label="Workbook demo">
+              <div class="s-head mono"><span></span><span>A</span><span>B</span><span>C</span><span>D</span></div>
+              <div class="s-row"><span class="mono">1</span><span>Property</span><span>NOI</span><span>Cap</span><span>Value</span></div>
+              <div class="s-row"><span class="mono">2</span><span>Beacon Wharf</span><span>1,310,000</span><span>5.74%</span><span class="fx mono">=XLOOKUP(A2,A:A,B:B)/C2</span></div>
+              <div class="s-row"><span class="mono">3</span><span></span><span></span><span></span><span class="val">22,807,018</span></div>
+            </div>
+            <div class="chiprow"><span class="chip mono">NAMED CALC · cap-rate-value</span><span class="chip mono">SORT · XLOOKUP · SEQUENCE SPILL ✓</span></div>
+          </div>
+          <div class="wbpane" data-wb="sens">
+            <div class="tornado">
+              <div class="t-row2"><span>Cap 4.75%</span><i style="--w:88%"></i><b>27.6M</b></div>
+              <div class="t-row2"><span>Cap 5.74%</span><i style="--w:70%"></i><b>22.8M</b></div>
+              <div class="t-row2"><span>Cap 6.75%</span><i style="--w:58%"></i><b>19.4M</b></div>
+              <div class="t-row2"><span>Rent −5%</span><i style="--w:64%"></i><b>21.6M</b></div>
+            </div>
+            <div class="chiprow"><span class="chip mono">SENSITIVITY RUNS IN THE SHEET + PYTHON</span></div>
+          </div>
+          <div class="wbpane" data-wb="bridge">
+            <div class="bridge"><i style="--h:52%"></i><i style="--h:70%"></i><i style="--h:44%"></i><i style="--h:78%"></i><i style="--h:62%"></i><i style="--h:86%"></i><b class="mono">NOI BRIDGE · ACTUALS → REFORECAST</b></div>
+            <div class="chiprow"><span class="chip mono">REFORECAST FROM LIVE ACTUALS, NOT A COPY-PASTE</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTOMATION -->
+    <section class="scene" id="automate" data-agent="python">
+      <div class="scene-head">
+        <p class="eyebrow"><span class="n mono">07</span> AUTOMATION</p>
+        <h2>Python, schedules, and agents — in the same loop.</h2>
+        <p>The assistant doesn't just chat. It runs saved Python, refreshes the sheet, writes dated notes, and pings governed metrics to the tools you already use.</p>
+      </div>
+      <div class="bento">
+        <div class="stage code-stage">
+          <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">snippets / cap-rate-value.py</span><span class="live"><i></i>SANDBOXED</span></div>
+<pre class="code big-code"><code><span class="k">def</span> <span class="f">value</span>(noi, cap_rate):
+    <span class="k">return</span> noi / cap_rate
+
+noi = gross_rent * (<span class="n">1</span> - expense_ratio)  <span class="c"># default 0.35</span>
+<span class="k">print</span>(<span class="f">value</span>(noi, <span class="n">0.0574</span>))  <span class="c"># → 22,807,018</span></code></pre>
+          <div class="chiprow"><span class="chip mono">RUNS WHERE THE ANSWER RUNS</span><span class="chip mono">INPUTS: METRIC · SNIPPET · VALUE+DEFAULT</span></div>
+        </div>
+        <div class="stage sched-stage">
+          <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">playbooks — agentic AM</span><span class="live"><i></i>SCHEDULED</span></div>
+          <div class="sched">
+            <div class="sched-row"><span class="mono">DAILY 07:00</span><b>financial_review</b><em>OS + roll → variance note</em></div>
+            <div class="sched-row"><span class="mono">MON 08:00</span><b>lease_monitor</b><em>expirations → chase list</em></div>
+            <div class="sched-row"><span class="mono">ON INGEST</span><b>deal_screen</b><em>CIM + roll → IC memo draft</em></div>
+          </div>
+          <p class="fine mono">SAME NUMBER IN THE NOTE AND IN YOUR COPILOT VIA MCP</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESK -->
+    <section class="scene" id="desk" data-agent="desk">
+      <div class="scene-head">
+        <p class="eyebrow"><span class="n mono">08</span> THE DESK</p>
+        <h2>The dashboard is a note.</h2>
+        <p>Markdown is the desk. Transclude PDFs, link notes, drop in live tables and charts, pin a canvas board for the week. Scratch drafts stay ephemeral — signed packs stay put.</p>
+      </div>
+      <div class="bento">
+        <article class="stage page">
+          <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">beacon-wharf.md</span><span class="live"><i></i>DURABLE</span></div>
+          <div class="page-body">
+            <h3>Beacon Wharf</h3>
+            <p class="link">↳ Juniper Court · Vesper Lofts · <span>![[beacon-roll.pdf]]</span></p>
+            <div class="mini-chart" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="mini-table"><span>NOI (T12)</span><span>1.31M · cited</span><span>Occupancy</span><span>93% · rent roll</span><span>Value</span><span>22.8M · from sheet</span></div>
+            <p class="trans mono">![[juniper-t12.pdf#NOI]] · ![[lease-B101#terms]] · live table ↓</p>
+          </div>
+        </article>
+        <article class="stage canvas">
+          <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">this-week.canvas</span><span class="live ephemeral"><i></i>EPHEMERAL DRAFT</span></div>
+          <div class="canvas-body">
+            <h3>This week</h3>
+            <div class="ticket"><b>Expirations · 90 days</b><span>4 units · chase list drafted by agent</span></div>
+            <div class="ticket"><b>Budget vs actual</b><span>Variance table + commentary queued</span></div>
+            <div class="ticket"><b>Review · Vesper Lofts</b><span>NOI line absent — confirm, don't fill</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PLATFORM -->
+    <section class="scene" id="path" data-agent="close">
+      <div class="scene-head">
+        <p class="eyebrow"><span class="n mono">09</span> THE PLATFORM</p>
+        <h2>One desk for the whole lifecycle.</h2>
+        <p>From acquisitions to fund management — the same asset graph, lexicon, and Excel models carry every answer.</p>
+      </div>
+      <ol class="path future">
+        <li><span class="mono">COMMAND CENTER</span><b>Every property on one page</b><em>Portfolio KPIs, anomaly watch, morning board</em></li>
+        <li><span class="mono">LEASING &amp; EXPOSURE</span><b>Dates, renewals, trade-outs</b><em>Critical dates, exposure watchlists, chase lists</em></li>
+        <li><span class="mono">FILE-FIRST CLOSE</span><b>Budget against actuals</b><em>T-12 / BvA packs, variance commentary, signed month-end packs</em></li>
+        <li><span class="mono">DEAL INTELLIGENCE</span><b>Screen in the workbook</b><em>Data-room mapping, comps, underwriting models, IC memos</em></li>
+        <li><span class="mono">CAPITAL &amp; INVESTORS</span><b>Debt, ownership, packs</b><em>Ownership look-through, covenants, NCREIF-aligned packs, MCP metrics</em></li>
+        <li><span class="mono">FEEDS &amp; SCALE</span><b>From the systems you run</b><em>Selective PM feeds, freshness SLAs, commercial suites, enterprise trust</em></li>
+      </ol>
+    </section>
+
+    <!-- COMPARE -->
+    <section class="scene" id="compare" data-agent="close">
+      <div class="scene-head">
+        <p class="eyebrow"><span class="n mono">10</span> WHY MERIDIAN</p>
+        <h2>Everything they do.<br>Everything they can't.</h2>
+        <p>The feed-based OS got you normalized data and rented analysts. Meridian makes the desk itself intelligent — and extensible by you.</p>
+      </div>
+      <div class="stage cmp-stage">
+        <div class="stage-bar"><span class="lights"><i></i><i></i><i></i></span><span class="mono">meridian vs feed-based platforms</span><span class="live"><i></i>AHEAD</span></div>
+        <div class="cmp">
+          <div class="cmp-head mono"><span></span><span>FEED OS</span><span>MERIDIAN</span></div>
+          <div class="cmp-row"><span>Daily PM feeds</span><span>✓ 100+ connectors</span><span class="win">✓ file-first + selective feeds — trust before volume</span></div>
+          <div class="cmp-row"><span>Rent-roll analytics</span><span>✓ dashboards</span><span class="win">✓ deterministic adapters + lexicon walks, cited</span></div>
+          <div class="cmp-row"><span>Analysts on staff</span><span>✓ rented AMs</span><span class="win">✓ software agents + playbooks you own</span></div>
+          <div class="cmp-row"><span>Excel models</span><span>— export to Excel</span><span class="win">✓ Excel calculates in place (Formualizer)</span></div>
+          <div class="cmp-row"><span>Firm formulas</span><span>— hardcoded</span><span class="win">✓ readable lexicon + custom knowledge base</span></div>
+          <div class="cmp-row"><span>Ad-hoc math</span><span>— back to spreadsheets</span><span class="win">✓ sandboxed Python in the answer loop</span></div>
+          <div class="cmp-row"><span>Desk</span><span>— another BI portal</span><span class="win">✓ markdown notes, PDF transclusion, canvas</span></div>
+          <div class="cmp-row"><span>AI access</span><span>✓ copilots on their cloud</span><span class="win">✓ governed metrics via MCP — same number everywhere</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSE -->
+    <section class="close" id="close" data-agent="close">
+      <p class="eyebrow center">STOP STITCHING REPORTS. START ASKING.</p>
+      <h2>The AI layer on the documents and the workbook you already use.</h2>
+      <p>Not a replacement property system. Not a rented analyst. Not a new dashboard product.</p>
+      <div class="hero-cta center">
+        <a class="btn solid big" href="#top">Bring one rent roll</a>
+        <a class="btn ghost big" href="#path">Explore the platform</a>
+      </div>
+      <p class="fine mono center">DEMO DATA SHOWN IS ILLUSTRATIVE · YOUR FILES STAY YOURS</p>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand"><span class="brand-mark" aria-hidden="true"></span><b>Meridian</b><p>AI-first institutional real estate asset management.</p></div>
+        <div class="footer-cols">
+          <div><p class="mono">PLATFORM</p><a href="#answer">Cited answers</a><a href="#documents">Document ingest</a><a href="#workbook">Excel models</a><a href="#formula">Lexicon + KB</a></div>
+          <div><p class="mono">DESK</p><a href="#desk">Notes + canvas</a><a href="#automate">Python + playbooks</a><a href="#kgraph">Knowledge graph</a><a href="#path">Platform</a></div>
+          <div><p class="mono">COMPANY</p><a href="#compare">Why Meridian</a><a href="https://pramod-thaz.github.io/resume.html">The founder</a><a href="https://pramod-thaz.github.io/consulting.html">Consulting</a><a href="https://pramod-thaz.github.io/blog/">Blog</a><a href="mailto:pramodty@gmail.com">Contact</a></div>
+        </div>
+      </div>
+      <p class="footer-base mono">© 2026 DOMARP LLC · MERIDIAN · MARKDOWN-NATIVE · CITED, NOT INVENTED</p>
+    </footer>
+
+  </main>
+
+  <!-- PERSISTENT AGENT RAIL -->
+  <aside class="rail" id="agentRail" aria-label="Meridian AI agent, following the page">
+    <div class="agent chat-agent" id="agentBox">
+      <div class="agent-bar chat-bar"><span class="avatar" aria-hidden="true">M</span><span class="agent-name">Meridian AI agent</span><span class="live"><i></i>LIVE</span></div>
+      <div class="agent-body chat" id="agentBody" aria-live="polite"><div class="aboot mono">STARTING…</div></div>
+    </div>
+    <p class="rail-note mono">THE AGENT FOLLOWS THE PAGE · EACH SECTION RETOOLS IT</p>
+  </aside>
+</div>
+
+<script src="graph.js?v=1"></script>
+<script src="main.js?v=1"></script>
+</body>
+</html>
