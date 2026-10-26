@@ -2,12 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://pramod-thaz.github.io/</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://pramod-thaz.github.io/resume.html</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://pramod-thaz.github.io/consulting.html</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://pramod-thaz.github.io/due-diligence.html</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://pramod-thaz.github.io/pramod-thazhichayil/</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://pramod-thaz.github.io/blog/</loc>
@@ -20,8 +31,5 @@
   </url>
   <url>
     <loc>https://pramod-thaz.github.io/cfa-level-iii-notes/</loc>
-  </url>
-  <url>
-    <loc>https://pramod-thaz.github.io/pramod-thazhichayil/</loc>
   </url>
 </urlset>
