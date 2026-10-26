@@ -1,11 +1,11 @@
-Pramod Thaz — Résumé
+Pramod Thaz — Founder, Grafolio.ai
 --------
 
-Professional résumé website for **Pramod Thaz** — multi-asset analytics, Bayesian decision systems, and custom AI for finance.
+Personal site for **Pramod Thaz**, founder of [Grafolio.ai](https://grafolio.ai) and builder of [_REFLEKT (formerly Meridian)](https://grafolio.ai/reflekt/), an AI-first portfolio management app for institutional commercial real estate. Based in San Antonio, TX. CAIA charterholder; passed Level III of the CFA Program; MBA, UCLA Anderson.
 
 Live at **[https://pramod-thaz.github.io/](https://pramod-thaz.github.io/)**
 
-Built with the [Universal Résumé Template](https://github.com/WebPraktikos/universal-resume) (Tailwind CSS + FiraGO). Two pages: the résumé and a technical appendix.
+Built with the [Universal Résumé Template](https://github.com/WebPraktikos/universal-resume) (Tailwind CSS + FiraGO). The résumé is `docs/index.html` (also `docs/resume.html`), with consulting and due-diligence pages alongside.
 
 ## Run locally
 
